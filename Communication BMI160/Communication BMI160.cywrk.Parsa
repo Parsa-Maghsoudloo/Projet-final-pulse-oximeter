@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtWrkspcCustomData" version="4">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="1b906a0f-a7b6-4e4d-a428-82f98b53cb35">
+<CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35 type_name="CyDesigner.Common.ProjMgmt.GUI.CyExplorerWindow+CyExplorerWindowState" version="3" SelectedTab="Source">
+<TreeKeys>
+<v>Source</v>
+<v>Components</v>
+<v>Output</v>
+</TreeKeys>
+<TreeStates>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Communication BMI160\MotionSensor\CM4 (Core 1)\Source Files\RTOS and Task Files\motion_task.c">
+<ExpandedNodeIds>
+<v>Communication BMI160</v>
+<v>Communication BMI160\MotionSensor</v>
+<v>Communication BMI160\MotionSensor\TopDesign</v>
+<v>Communication BMI160\MotionSensor\MotionSensor.cydwr</v>
+<v>Communication BMI160\MotionSensor\MotionSensor.cydwr\Pins</v>
+<v>Communication BMI160\MotionSensor\MotionSensor.cydwr\Analog</v>
+<v>Communication BMI160\MotionSensor\MotionSensor.cydwr\DMA</v>
+<v>Communication BMI160\MotionSensor\MotionSensor.cydwr\Clocks</v>
+<v>Communication BMI160\MotionSensor\MotionSensor.cydwr\Interrupts</v>
+<v>Communication BMI160\MotionSensor\MotionSensor.cydwr\System</v>
+<v>Communication BMI160\MotionSensor\MotionSensor.cydwr\Directives</v>
+<v>Communication BMI160\MotionSensor\CM0p (Core 0)</v>
+<v>Communication BMI160\MotionSensor\CM0p (Core 0)\ARM GCC Generic</v>
+<v>Communication BMI160\MotionSensor\CM0p (Core 0)\ARM GCC Generic\cy8c6xx7_cm0plus.ld</v>
+<v>Communication BMI160\MotionSensor\CM0p (Core 0)\ARM IAR Generic</v>
+<v>Communication BMI160\MotionSensor\CM0p (Core 0)\ARM IAR Generic\cy8c6xx7_cm0plus.icf</v>
+<v>Communication BMI160\MotionSensor\CM0p (Core 0)\ARM MDK Generic</v>
+<v>Communication BMI160\MotionSensor\CM0p (Core 0)\ARM MDK Generic\cy8c6xx7_cm0plus.scat</v>
+<v>Communication BMI160\MotionSensor\CM0p (Core 0)\Header Files</v>
+<v>Communication BMI160\MotionSensor\CM0p (Core 0)\Source Files</v>
+<v>Communication BMI160\MotionSensor\CM0p (Core 0)\Source Files\ARM GCC Generic</v>
+<v>Communication BMI160\MotionSensor\CM0p (Core 0)\Source Files\ARM GCC Generic\startup_psoc6_01_cm0plus.S</v>
+<v>Communication BMI160\MotionSensor\CM0p (Core 0)\Source Files\ARM IAR Generic</v>
+<v>Communication BMI160\MotionSensor\CM0p (Core 0)\Source Files\ARM IAR Generic\startup_psoc6_01_cm0plus.s</v>
+<v>Communication BMI160\MotionSensor\CM0p (Core 0)\Source Files\ARM MDK Generic</v>
+<v>Communication BMI160\MotionSensor\CM0p (Core 0)\Source Files\ARM MDK Generic\startup_psoc6_01_cm0plus.s</v>
+<v>Communication BMI160\MotionSensor\CM0p (Core 0)\Source Files\main_cm0p.c</v>
+<v>Communication BMI160\MotionSensor\CM0p (Core 0)\Source Files\system_psoc6_cm0plus.c</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\ARM GCC Generic</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\ARM GCC Generic\cy8c6xx7_cm4_dual.ld</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\ARM IAR Generic</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\ARM IAR Generic\cy8c6xx7_cm4_dual.icf</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\ARM MDK Generic</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\ARM MDK Generic\cy8c6xx7_cm4_dual.scat</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\BMI160 Library</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\BMI160 Library\bmi160.c</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\BMI160 Library\bmi160.h</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\BMI160 Library\bmi160_defs.h</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Header Files</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Header Files\RTOS and Task Files</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Header Files\RTOS and Task Files\FreeRTOSConfig.h</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Header Files\RTOS and Task Files\motion_task.h</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Header Files\RTOS and Task Files\uart_debug.h</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\I2CM Support</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\I2CM Support\i2cm_support.c</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\I2CM Support\i2cm_support.h</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Source Files</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Source Files\ARM GCC Generic</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Source Files\ARM GCC Generic\startup_psoc6_01_cm4.S</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Source Files\ARM IAR Generic</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Source Files\ARM IAR Generic\startup_psoc6_01_cm4.s</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Source Files\ARM MDK Generic</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Source Files\ARM MDK Generic\startup_psoc6_01_cm4.s</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Source Files\RTOS and Task Files</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Source Files\RTOS and Task Files\motion_task.c</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Source Files\RTOS and Task Files\uart_debug.c</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Source Files\main_cm4.c</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Source Files\system_psoc6_cm4.c</v>
+<v>Communication BMI160\MotionSensor\Shared Files</v>
+<v>Communication BMI160\MotionSensor\Shared Files\cyapicallbacks.h</v>
+<v>Communication BMI160\MotionSensor\Shared Files\stdio_user.c</v>
+<v>Communication BMI160\MotionSensor\Shared Files\stdio_user.h</v>
+<v>Communication BMI160\MotionSensor\Shared Files\system_psoc6.h</v>
+<v>Communication BMI160\MotionSensor\Generated_Source</v>
+<v>Communication BMI160\MotionSensor\Generated_Source\PSoC6</v>
+<v>Communication BMI160\CE223468_PSoC6_Interfacing_BMI160(I2C)_FreeRTOS.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\ARM MDK Generic</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\ARM MDK Generic\cy8c6xx7_cm4_dual.scat</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\BMI160 Library</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\BMI160 Library\bmi160.c</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\BMI160 Library\bmi160.h</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\BMI160 Library\bmi160_defs.h</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Header Files</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Header Files\RTOS and Task Files</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Header Files\RTOS and Task Files\FreeRTOSConfig.h</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Header Files\RTOS and Task Files\motion_task.h</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Header Files\RTOS and Task Files\uart_debug.h</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\I2CM Support</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\I2CM Support\i2cm_support.c</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\I2CM Support\i2cm_support.h</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Source Files</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Source Files\ARM GCC Generic</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Source Files\ARM GCC Generic\startup_psoc6_01_cm4.S</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Source Files\ARM IAR Generic</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Source Files\ARM IAR Generic\startup_psoc6_01_cm4.s</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Source Files\ARM MDK Generic</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Source Files\ARM MDK Generic\startup_psoc6_01_cm4.s</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Source Files\RTOS and Task Files</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Source Files\RTOS and Task Files\motion_task.c</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Source Files\RTOS and Task Files\uart_debug.c</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Source Files\main_cm4.c</v>
+<v>Communication BMI160\MotionSensor\CM4 (Core 1)\Source Files\system_psoc6_cm4.c</v>
+<v>Communication BMI160\MotionSensor\Shared Files</v>
+<v>Communication BMI160\MotionSensor\Shared Files\cyapicallbacks.h</v>
+<v>Communication BMI160\MotionSensor\Shared Files\stdio_user.c</v>
+<v>Communication BMI160\MotionSensor\Shared Files\stdio_user.h</v>
+<v>Communication BMI160\MotionSensor\Shared Files\system_psoc6.h</v>
+<v>Communication BMI160\MotionSensor\Generated_Source</v>
+<v>Communication BMI160\MotionSensor\Generated_Source\PSoC6</v>
+<v>Communication BMI160\MotionSensor\Generated_Source\PSoC6\pdl</v>
+<v>Communication BMI160\MotionSensor\Generated_Source\PSoC6\DEBUG_UART</v>
+<v>Communication BMI160\MotionSensor\Generated_Source\PSoC6\DEBUG_UART_SCBCLK</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Communication BMI160</v>
+<v>Communication BMI160\MotionSensor</v>
+<v>Communication BMI160\MotionSensor\TopDesign</v>
+<v>Communication BMI160\MotionSensor\TopDesign\TopDesign.cysch</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Communication BMI160</v>
+<v>Communication BMI160\MotionSensor</v>
+<v>Communication BMI160\MotionSensor\TopDesign</v>
+<v>Communication BMI160\MotionSensor\TopDesign\TopDesign.cysch</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Communication BMI160</v>
+<v>Communication BMI160\MotionSensor</v>
+<v>Communication BMI160\MotionSensor\CortexM0p</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_clk.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_device.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_efuse.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_flash.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_gpio.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ipc_drv.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ipc_pipe.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ipc_sema.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_lvd.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_profile.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_prot.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_common.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_ezi2c.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_i2c.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_spi.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_uart.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_sysanalog.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_sysclk.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_sysint.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_syslib.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_syslib_gcc.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_syspm.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_systick.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_trigmux.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_wdt.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cyfitter_sysint_cfg.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\DEBUG_UART.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\I2Cm.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\main_cm0p.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\retarget.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\startup_psoc6_01_cm0plus.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\stdio_user.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\system_psoc6_cm0plus.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\MotionSensor.elf</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\MotionSensor.hex</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\MotionSensor.map</v>
+<v>Communication BMI160\MotionSensor\CortexM4</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\bmi160.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\croutine.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_clk.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_device.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_efuse.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_flash.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_gpio.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ipc_drv.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ipc_pipe.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ipc_sema.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_lvd.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_profile.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_prot.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_scb_common.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_scb_ezi2c.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_scb_i2c.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_scb_spi.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_scb_uart.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_sysanalog.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_sysclk.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_sysint.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_syslib.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_syslib_gcc.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_syspm.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_systick.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_trigmux.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_wdt.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\cyfitter_sysint_cfg.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\DEBUG_UART.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\event_groups.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\heap_1.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\I2Cm.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\i2cm_support.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\list.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\main_cm4.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\motion_task.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\port.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\queue.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\retarget.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\startup_psoc6_01_cm4.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\stdio_user.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\stream_buffer.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\system_psoc6_cm4.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\tasks.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\timers.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\Listing Files\uart_debug.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\MotionSensor.elf</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\MotionSensor.hex</v>
+<v>Communication BMI160\MotionSensor\CortexM4\ARM_GCC_541\Debug\MotionSensor.map</v>
+<v>Communication BMI160\MotionSensor\MotionSensor.gpdsc</v>
+<v>Communication BMI160\MotionSensor\MotionSensor.rpt</v>
+<v>Communication BMI160\MotionSensor\MotionSensor_timing.html</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Communication BMI160</v>
+<v>Communication BMI160\MotionSensor</v>
+<v>Communication BMI160\MotionSensor\CortexM0p</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_clk.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_device.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_efuse.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_flash.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_gpio.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ipc_drv.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ipc_pipe.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ipc_sema.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_lvd.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_profile.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_prot.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_common.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_ezi2c.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_i2c.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_spi.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_uart.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_sysanalog.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_sysclk.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_sysint.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_syslib.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_syslib_gcc.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_syspm.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_systick.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_trigmux.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_wdt.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cyfitter_sysint_cfg.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\DEBUG_UART.lst</v>
+<v>Communication BMI160\MotionSensor\CortexM0p\ARM_GCC_541\Debug\Listing Files\I2Cm.lst</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStates>
+<TreeKeysV2>
+<v>Datasheet</v>
+</TreeKeysV2>
+<TreeStatesV2>
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<ExpandedNodeIds>
+<v>Communication BMI160</v>
+<v>Communication BMI160\MotionSensor</v>
+<v>Communication BMI160\MotionSensor\PSoC 6 Architecture TRM</v>
+<v>Communication BMI160\MotionSensor\PSoC 63 Family Datasheet</v>
+<v>Communication BMI160\MotionSensor\Peripheral Driver Library</v>
+<v>Communication BMI160\MotionSensor\System Reference Guides</v>
+<v>Communication BMI160\MotionSensor\GPIO_PDL_v1_0.pdf</v>
+<v>Communication BMI160\MotionSensor\SCB_I2C_PDL_v2_0.pdf</v>
+<v>Communication BMI160\MotionSensor\SCB_UART_PDL_v2_0.pdf</v>
+<v>Communication BMI160\MotionSensor\SysInt_PDL_v1_0.pdf</v>
+</ExpandedNodeIds>
+<VisibleNodeIds>
+<v>Communication BMI160</v>
+<v>Communication BMI160\MotionSensor</v>
+<v>Communication BMI160\MotionSensor\PSoC 6 Architecture TRM</v>
+<v>Communication BMI160\MotionSensor\PSoC 63 Family Datasheet</v>
+<v>Communication BMI160\MotionSensor\Peripheral Driver Library</v>
+<v>Communication BMI160\MotionSensor\System Reference Guides</v>
+<v>Communication BMI160\MotionSensor\GPIO_PDL_v1_0.pdf</v>
+<v>Communication BMI160\MotionSensor\SCB_I2C_PDL_v2_0.pdf</v>
+<v>Communication BMI160\MotionSensor\SCB_UART_PDL_v2_0.pdf</v>
+<v>Communication BMI160\MotionSensor\SysInt_PDL_v1_0.pdf</v>
+</VisibleNodeIds>
+</CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
+</TreeStatesV2>
+</CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
+</dataGuid>
+<dataGuid v="5f2be1a5-0687-4501-bb8c-cf21cb8211bf">
+<CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf type_name="CyDesigner.Common.ProjMgmt.GUI.CyBookmarkData" version="1">
+<indicators />
+</CyGuid_5f2be1a5-0687-4501-bb8c-cf21cb8211bf>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<Unloaded />
+<OpenDocs>
+<name v=".\MotionSensor.cydsn\main_cm4.c" />
+<name v=".\MotionSensor.cydsn\motion_task.c" />
+<name v=".\MotionSensor.cydsn\TopDesign\TopDesign.cysch" />
+</OpenDocs>
+<OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
+
+  Actipro Docking/MDI for WinForms
+  Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
+  http://www.actiprosoftware.com
+
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1222, 541" SelectedTabbedMdiWindow="9bcbffe5-309a-4113-8fd5-19c34fc1b3d5"><DocumentWindow Key="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Projet2\MotionSensor.cydsn\main_cm4.c" Guid="ae3c0dc4-d4db-4d96-905a-e39a90ae4eed" /><DocumentWindow Key="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Projet2\MotionSensor.cydsn\motion_task.c" Guid="9bcbffe5-309a-4113-8fd5-19c34fc1b3d5" /><DocumentWindow Key="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Projet2\MotionSensor.cydsn\TopDesign\TopDesign.cysch" Guid="7b55cb50-cdd0-4a9a-b3f1-06e86f1de35f" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+<config v="" />
+<AutoUpdate v="true" />
+</CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
+</CyXmlSerializer>
