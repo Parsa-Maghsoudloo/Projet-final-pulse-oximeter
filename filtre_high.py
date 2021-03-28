@@ -23,6 +23,7 @@ for i in range(0, len(line_IR)):
         high_RED.append(float(line_RED[i]))
     except ValueError:
         print(i)
+
 ################################################
 ####Affichage###################################
 time = len(high_IR) / Fs

@@ -2,8 +2,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 from numpy.fft import fft, fftfreq
 from scipy import signal
-
-
+from test import a, b, c
 
 file_high_IR = open("SpO2_signal_high_BPM\IR.txt", 'r')
 file_high_RED = open("SpO2_signal_high_BPM\RED.txt")
@@ -23,7 +22,7 @@ for i in range(0, len(line_IR)):
         high_IR.append(float(line_IR[i]))
         high_RED.append(float(line_RED[i]))
     except ValueError:
-        print(i)
+        print('Erreur : ', i)
 
 sos = signal.butter(6, 1, 'high', fs=Fs, output='sos')
 sos2 = signal.butter(6, 6, 'low', fs=Fs, output='sos')
@@ -54,8 +53,15 @@ mask_low_IR = (-2500 < low_peaks_IR) & (low_peaks_IR < -1500)
 mask_high_RED = (5000 < high_peaks_RED) & (high_peaks_RED < 6000)
 mask_low_RED = (-2500 < low_peaks_RED) & (low_peaks_RED < -1000)
 
-AC_RED = np.mean(high_peaks_RED[mask_high_RED]) - np.mean(low_peaks_RED[mask_low_RED])
-AC_IR = np.mean(high_peaks_IR[mask_high_IR]) - np.mean(low_peaks_IR[mask_low_IR])
+mask_test_RED = 0 < high_peaks_RED
+mask_test_RED_low = low_peaks_RED < 0
+mask_test_IR = 0 < high_peaks_IR
+mask_test_IR_low = low_peaks_IR < 0
+# AC_RED = np.mean(high_peaks_RED[mask_high_RED]) - np.mean(low_peaks_RED[mask_low_RED])
+# AC_IR = np.mean(high_peaks_IR[mask_high_IR]) - np.mean(low_peaks_IR[mask_low_IR])
+
+AC_RED = np.median(high_peaks_RED[mask_test_RED]) - np.median(low_peaks_RED[mask_test_RED_low])
+AC_IR = np.median(high_peaks_IR[mask_test_IR]) - np.median(low_peaks_IR[mask_test_IR_low])
 
 high_IR_filtered_DC = signal.sosfilt(sos3, high_IR)
 high_RED_filtered_DC = signal.sosfilt(sos3, high_RED)
@@ -63,10 +69,9 @@ high_RED_filtered_DC = signal.sosfilt(sos3, high_RED)
 DC_IR = np.mean(high_IR_filtered_DC)
 DC_RED = np.mean(high_RED_filtered_DC)
 
-R = (AC_RED/DC_RED)/(AC_IR/DC_IR)
-print(R)
+R = (AC_RED / DC_RED) / (AC_IR / DC_IR)
+print('R : ', R)
 
-a = -0.18794074
-b = 1.075176295
+print('%SpO2 : ', a * R ** 2 + b * R + c)
 
-print(a*R + b)
+
