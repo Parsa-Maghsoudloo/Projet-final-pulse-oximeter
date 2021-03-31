@@ -5,6 +5,7 @@ file_normal_IR = open("SpO2_signal_normal_BPM\IR.txt", 'r')
 file_normal_RED = open("SpO2_signal_normal_BPM\RED.txt")
 
 read_size = len(file_normal_IR.read())
+print(read_size)
 file_normal_IR.seek(0)
 Fs = 250
 
@@ -23,6 +24,7 @@ for i in range(0, len(line_IR)):
 
 
 time = len(normal_IR) / Fs
+
 plt.figure(1)
 x = np.linspace(0, time, len(normal_IR))
 plt.plot(x, normal_IR, label='IR')

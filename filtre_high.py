@@ -8,6 +8,7 @@ file_high_IR = open("SpO2_signal_high_BPM\IR.txt", 'r')
 file_high_RED = open("SpO2_signal_high_BPM\RED.txt")
 
 read_size = len(file_high_IR.read())
+
 file_high_IR.seek(0)
 Fs = 250
 
@@ -17,6 +18,7 @@ line_RED = file_high_RED.read()
 line_RED = line_RED.split(',')
 high_IR = []
 high_RED = []
+
 for i in range(0, len(line_IR)):
     try:
         high_IR.append(float(line_IR[i]))
@@ -33,6 +35,7 @@ plt.plot(x, high_IR, label='IR')
 plt.plot(x, high_RED, label='RED')
 plt.legend()
 plt.show()
+print(high_RED)
 ################################################
 #Fourier
 n = len(high_IR)

@@ -72,6 +72,14 @@ DC_RED = np.mean(high_RED_filtered_DC)
 R = (AC_RED / DC_RED) / (AC_IR / DC_IR)
 print('R : ', R)
 
+
+A=1.59
+
+B=-34.65
+
+C=112.68
+
 print('%SpO2 : ', a * R ** 2 + b * R + c)
+
 
 
