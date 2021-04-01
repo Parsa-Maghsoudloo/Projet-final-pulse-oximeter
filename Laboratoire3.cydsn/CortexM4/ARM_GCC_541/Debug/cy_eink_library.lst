@@ -1,0 +1,5011 @@
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m4
+   3              		.eabi_attribute 27, 1
+   4              		.fpu fpv4-sp-d16
+   5              		.eabi_attribute 20, 1
+   6              		.eabi_attribute 21, 1
+   7              		.eabi_attribute 23, 3
+   8              		.eabi_attribute 24, 1
+   9              		.eabi_attribute 25, 1
+  10              		.eabi_attribute 26, 1
+  11              		.eabi_attribute 30, 1
+  12              		.eabi_attribute 34, 1
+  13              		.eabi_attribute 18, 4
+  14              		.thumb
+  15              		.syntax unified
+  16              		.file	"cy_eink_library.c"
+  17              		.text
+  18              	.Ltext0:
+  19              		.cfi_sections	.debug_frame
+  20              		.section	.text.Cy_EINK_Start,"ax",%progbits
+  21              		.align	2
+  22              		.global	Cy_EINK_Start
+  23              		.thumb
+  24              		.thumb_func
+  25              		.type	Cy_EINK_Start, %function
+  26              	Cy_EINK_Start:
+  27              	.LFB590:
+  28              		.file 1 "eInk Library\\cy_eink_library.c"
+   1:eInk Library/cy_eink_library.c **** /******************************************************************************
+   2:eInk Library/cy_eink_library.c **** * File Name: cy_eink_library.c
+   3:eInk Library/cy_eink_library.c **** *
+   4:eInk Library/cy_eink_library.c **** * Version: 1.10
+   5:eInk Library/cy_eink_library.c **** *
+   6:eInk Library/cy_eink_library.c **** * Description: This file contains the library functions for controlling
+   7:eInk Library/cy_eink_library.c **** *              the E-INK display.
+   8:eInk Library/cy_eink_library.c **** *
+   9:eInk Library/cy_eink_library.c **** * Hardware Dependency: CY8CKIT-028-EPD E-INK Display Shield
+  10:eInk Library/cy_eink_library.c **** *
+  11:eInk Library/cy_eink_library.c **** *******************************************************************************
+  12:eInk Library/cy_eink_library.c **** * Copyright (2017), Cypress Semiconductor Corporation. All rights reserved.
+  13:eInk Library/cy_eink_library.c **** *******************************************************************************
+  14:eInk Library/cy_eink_library.c **** * This software, including source code, documentation and related materials
+  15:eInk Library/cy_eink_library.c **** * (“Software”), is owned by Cypress Semiconductor Corporation or one of its
+  16:eInk Library/cy_eink_library.c **** * subsidiaries (“Cypress”) and is protected by and subject to worldwide patent
+  17:eInk Library/cy_eink_library.c **** * protection (United States and foreign), United States copyright laws and
+  18:eInk Library/cy_eink_library.c **** * international treaty provisions. Therefore, you may use this Software only
+  19:eInk Library/cy_eink_library.c **** * as provided in the license agreement accompanying the software package from
+  20:eInk Library/cy_eink_library.c **** * which you obtained this Software (“EULA”).
+  21:eInk Library/cy_eink_library.c **** *
+  22:eInk Library/cy_eink_library.c **** * If no EULA applies, Cypress hereby grants you a personal, nonexclusive,
+  23:eInk Library/cy_eink_library.c **** * non-transferable license to copy, modify, and compile the Software source
+  24:eInk Library/cy_eink_library.c **** * code solely for use in connection with Cypress’s integrated circuit products.
+  25:eInk Library/cy_eink_library.c **** * Any reproduction, modification, translation, compilation, or representation
+  26:eInk Library/cy_eink_library.c **** * of this Software except as specified above is prohibited without the express
+  27:eInk Library/cy_eink_library.c **** * written permission of Cypress.
+  28:eInk Library/cy_eink_library.c **** *
+  29:eInk Library/cy_eink_library.c **** * Disclaimer: THIS SOFTWARE IS PROVIDED AS-IS, WITH NO WARRANTY OF ANY KIND, 
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 2
+
+
+  30:eInk Library/cy_eink_library.c **** * EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, NONINFRINGEMENT, IMPLIED 
+  31:eInk Library/cy_eink_library.c **** * WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. Cypress 
+  32:eInk Library/cy_eink_library.c **** * reserves the right to make changes to the Software without notice. Cypress 
+  33:eInk Library/cy_eink_library.c **** * does not assume any liability arising out of the application or use of the 
+  34:eInk Library/cy_eink_library.c **** * Software or any product or circuit described in the Software. Cypress does 
+  35:eInk Library/cy_eink_library.c **** * not authorize its products for use in any products where a malfunction or 
+  36:eInk Library/cy_eink_library.c **** * failure of the Cypress product may reasonably be expected to result in 
+  37:eInk Library/cy_eink_library.c **** * significant property damage, injury or death (“High Risk Product”). By 
+  38:eInk Library/cy_eink_library.c **** * including Cypress’s product in a High Risk Product, the manufacturer of such 
+  39:eInk Library/cy_eink_library.c **** * system or application assumes all risk of such use and in doing so agrees to 
+  40:eInk Library/cy_eink_library.c **** * indemnify Cypress against all liability.
+  41:eInk Library/cy_eink_library.c **** *******************************************************************************/
+  42:eInk Library/cy_eink_library.c **** /******************************************************************************
+  43:eInk Library/cy_eink_library.c **** * This file contains the library functions for controlling the E-INK display.
+  44:eInk Library/cy_eink_library.c **** *
+  45:eInk Library/cy_eink_library.c **** * For the details of the E-INK display and library functions, see the code  
+  46:eInk Library/cy_eink_library.c **** * example document of CE218133 - PSoC 6 MCU E-INK Display with CapSense
+  47:eInk Library/cy_eink_library.c **** *
+  48:eInk Library/cy_eink_library.c **** * For the details of E-INK display hardware and driver interface, see the documents
+  49:eInk Library/cy_eink_library.c **** * available at the following location:
+  50:eInk Library/cy_eink_library.c **** * http://www.pervasivedisplays.com/products/271
+  51:eInk Library/cy_eink_library.c ****  *******************************************************************************/
+  52:eInk Library/cy_eink_library.c **** 
+  53:eInk Library/cy_eink_library.c **** /* Header file includes */
+  54:eInk Library/cy_eink_library.c **** #include "cy_eink_library.h"
+  55:eInk Library/cy_eink_library.c **** 
+  56:eInk Library/cy_eink_library.c **** /* Range of ASCII printable characters: "!" to "~" */
+  57:eInk Library/cy_eink_library.c **** #define CY_EINK_ASCII_MIN  (uint8_t) (0x21)
+  58:eInk Library/cy_eink_library.c **** #define CY_EINK_ASCII_MAX  (uint8_t) (0x7E)
+  59:eInk Library/cy_eink_library.c **** 
+  60:eInk Library/cy_eink_library.c **** /*******************************************************************************
+  61:eInk Library/cy_eink_library.c **** * Function Name: void Cy_EINK_Start(int8_t temperature)
+  62:eInk Library/cy_eink_library.c **** ********************************************************************************
+  63:eInk Library/cy_eink_library.c **** *
+  64:eInk Library/cy_eink_library.c **** * Summary: Initialize the E-INK display hardware, starts the required PSoC 
+  65:eInk Library/cy_eink_library.c **** *  components, and also performs temperature compensation of E-INK parameters.
+  66:eInk Library/cy_eink_library.c **** *
+  67:eInk Library/cy_eink_library.c **** *  Note: This function does not turn on the E-INK display.
+  68:eInk Library/cy_eink_library.c **** *
+  69:eInk Library/cy_eink_library.c **** * Parameters:
+  70:eInk Library/cy_eink_library.c **** *  int8_t temperature : Ambient temperature in degree Celsius
+  71:eInk Library/cy_eink_library.c **** *
+  72:eInk Library/cy_eink_library.c **** * Return:
+  73:eInk Library/cy_eink_library.c **** *  None
+  74:eInk Library/cy_eink_library.c **** *
+  75:eInk Library/cy_eink_library.c **** * Side Effects:
+  76:eInk Library/cy_eink_library.c **** *  Lower ambient temperature results in higher refresh times
+  77:eInk Library/cy_eink_library.c **** *
+  78:eInk Library/cy_eink_library.c **** *******************************************************************************/
+  79:eInk Library/cy_eink_library.c **** void Cy_EINK_Start(int8_t temperature)
+  80:eInk Library/cy_eink_library.c **** {
+  29              		.loc 1 80 0
+  30              		.cfi_startproc
+  31              		@ args = 0, pretend = 0, frame = 0
+  32              		@ frame_needed = 0, uses_anonymous_args = 0
+  33              	.LVL0:
+  34 0000 10B5     		push	{r4, lr}
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 3
+
+
+  35              		.cfi_def_cfa_offset 8
+  36              		.cfi_offset 4, -8
+  37              		.cfi_offset 14, -4
+  38 0002 0446     		mov	r4, r0
+  81:eInk Library/cy_eink_library.c ****     /* Initialize the E-INK display hardware and associated PSoC components */
+  82:eInk Library/cy_eink_library.c ****     Pv_EINK_Init();
+  39              		.loc 1 82 0
+  40 0004 FFF7FEFF 		bl	Pv_EINK_Init
+  41              	.LVL1:
+  83:eInk Library/cy_eink_library.c ****     
+  84:eInk Library/cy_eink_library.c ****     /* Perform temperature compensation of E-INK parameters */
+  85:eInk Library/cy_eink_library.c ****     Pv_EINK_SetTempFactor(temperature);
+  42              		.loc 1 85 0
+  43 0008 2046     		mov	r0, r4
+  44 000a FFF7FEFF 		bl	Pv_EINK_SetTempFactor
+  45              	.LVL2:
+  46 000e 10BD     		pop	{r4, pc}
+  47              		.cfi_endproc
+  48              	.LFE590:
+  49              		.size	Cy_EINK_Start, .-Cy_EINK_Start
+  50              		.section	.text.Cy_EINK_Power,"ax",%progbits
+  51              		.align	2
+  52              		.global	Cy_EINK_Power
+  53              		.thumb
+  54              		.thumb_func
+  55              		.type	Cy_EINK_Power, %function
+  56              	Cy_EINK_Power:
+  57              	.LFB591:
+  86:eInk Library/cy_eink_library.c **** }
+  87:eInk Library/cy_eink_library.c **** 
+  88:eInk Library/cy_eink_library.c **** /*******************************************************************************
+  89:eInk Library/cy_eink_library.c **** * Function Name: bool Cy_EINK_Power(bool powerCtrl)
+  90:eInk Library/cy_eink_library.c **** ********************************************************************************
+  91:eInk Library/cy_eink_library.c **** *
+  92:eInk Library/cy_eink_library.c **** * Summary: This function is used to turn on/off the E-INK display power.
+  93:eInk Library/cy_eink_library.c **** *
+  94:eInk Library/cy_eink_library.c **** *  Note: This function can not be used to clear the E-INK display. The display 
+  95:eInk Library/cy_eink_library.c **** *  will retain the previously written frame even when it's turned off.
+  96:eInk Library/cy_eink_library.c **** *
+  97:eInk Library/cy_eink_library.c **** * Parameters:
+  98:eInk Library/cy_eink_library.c **** *  bool powerCtrl : "False" turns off and "True" turns on the display.
+  99:eInk Library/cy_eink_library.c **** *
+ 100:eInk Library/cy_eink_library.c **** * Return:
+ 101:eInk Library/cy_eink_library.c **** *  bool           : "True" if operation was successful; "False" otherwise
+ 102:eInk Library/cy_eink_library.c **** *
+ 103:eInk Library/cy_eink_library.c **** * Side Effects:
+ 104:eInk Library/cy_eink_library.c **** *  None
+ 105:eInk Library/cy_eink_library.c **** *
+ 106:eInk Library/cy_eink_library.c **** *******************************************************************************/
+ 107:eInk Library/cy_eink_library.c **** bool Cy_EINK_Power(bool powerCtrl)
+ 108:eInk Library/cy_eink_library.c **** {
+  58              		.loc 1 108 0
+  59              		.cfi_startproc
+  60              		@ args = 0, pretend = 0, frame = 0
+  61              		@ frame_needed = 0, uses_anonymous_args = 0
+  62              	.LVL3:
+  63 0000 08B5     		push	{r3, lr}
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 4
+
+
+  64              		.cfi_def_cfa_offset 8
+  65              		.cfi_offset 3, -8
+  66              		.cfi_offset 14, -4
+  67              	.LVL4:
+ 109:eInk Library/cy_eink_library.c ****     /* Variable to store operation status */
+ 110:eInk Library/cy_eink_library.c ****     uint8_t pwrStatus = CY_EINK_OPERATION_FAILURE;
+ 111:eInk Library/cy_eink_library.c ****     
+ 112:eInk Library/cy_eink_library.c ****     /* Turn on the E-INK power if powerCtrl is "true" */
+ 113:eInk Library/cy_eink_library.c ****     if (powerCtrl == CY_EINK_ON)
+  68              		.loc 1 113 0
+  69 0002 10B1     		cbz	r0, .L4
+ 114:eInk Library/cy_eink_library.c ****     {
+ 115:eInk Library/cy_eink_library.c ****         pwrStatus = Pv_EINK_HardwarePowerOn();
+  70              		.loc 1 115 0
+  71 0004 FFF7FEFF 		bl	Pv_EINK_HardwarePowerOn
+  72              	.LVL5:
+  73 0008 01E0     		b	.L5
+  74              	.LVL6:
+  75              	.L4:
+ 116:eInk Library/cy_eink_library.c ****     }
+ 117:eInk Library/cy_eink_library.c ****     /* Turn off the E-INK power if powerCtrl is "false" */
+ 118:eInk Library/cy_eink_library.c ****     else
+ 119:eInk Library/cy_eink_library.c ****     {
+ 120:eInk Library/cy_eink_library.c ****         pwrStatus = Pv_EINK_HardwarePowerOff();
+  76              		.loc 1 120 0
+  77 000a FFF7FEFF 		bl	Pv_EINK_HardwarePowerOff
+  78              	.LVL7:
+  79              	.L5:
+ 121:eInk Library/cy_eink_library.c ****     }
+ 122:eInk Library/cy_eink_library.c ****     /* If the operation was successful, return "true" */
+ 123:eInk Library/cy_eink_library.c ****     if (pwrStatus == PV_EINK_RES_OK)
+  80              		.loc 1 123 0
+  81 000e 08B9     		cbnz	r0, .L7
+ 124:eInk Library/cy_eink_library.c ****     {
+ 125:eInk Library/cy_eink_library.c ****         pwrStatus = CY_EINK_OPERATION_SUCCESS;
+  82              		.loc 1 125 0
+  83 0010 0120     		movs	r0, #1
+  84              	.LVL8:
+  85 0012 08BD     		pop	{r3, pc}
+  86              	.LVL9:
+  87              	.L7:
+ 126:eInk Library/cy_eink_library.c ****     }
+ 127:eInk Library/cy_eink_library.c ****     /* If the operation was not successful, return "false" */
+ 128:eInk Library/cy_eink_library.c ****     else
+ 129:eInk Library/cy_eink_library.c ****     {
+ 130:eInk Library/cy_eink_library.c ****         pwrStatus = CY_EINK_OPERATION_FAILURE;
+  88              		.loc 1 130 0
+  89 0014 0020     		movs	r0, #0
+  90              	.LVL10:
+ 131:eInk Library/cy_eink_library.c ****     }
+ 132:eInk Library/cy_eink_library.c ****     
+ 133:eInk Library/cy_eink_library.c ****     /* Return the outcome of the power control operation */
+ 134:eInk Library/cy_eink_library.c ****     return (pwrStatus);
+ 135:eInk Library/cy_eink_library.c **** }
+  91              		.loc 1 135 0
+  92 0016 08BD     		pop	{r3, pc}
+  93              		.cfi_endproc
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 5
+
+
+  94              	.LFE591:
+  95              		.size	Cy_EINK_Power, .-Cy_EINK_Power
+  96              		.section	.text.Cy_EINK_Clear,"ax",%progbits
+  97              		.align	2
+  98              		.global	Cy_EINK_Clear
+  99              		.thumb
+ 100              		.thumb_func
+ 101              		.type	Cy_EINK_Clear, %function
+ 102              	Cy_EINK_Clear:
+ 103              	.LFB592:
+ 136:eInk Library/cy_eink_library.c **** 
+ 137:eInk Library/cy_eink_library.c **** /*******************************************************************************
+ 138:eInk Library/cy_eink_library.c **** * Function Name: void Cy_EINK_Clear(bool background, bool powerCycle)
+ 139:eInk Library/cy_eink_library.c **** ********************************************************************************
+ 140:eInk Library/cy_eink_library.c **** *
+ 141:eInk Library/cy_eink_library.c **** * Summary: This function is used to clear the display to all white or all black
+ 142:eInk Library/cy_eink_library.c **** *  pixels.
+ 143:eInk Library/cy_eink_library.c **** *
+ 144:eInk Library/cy_eink_library.c **** *  Note1: The E-INK display should be powered on (using Cy_EINK_Power function) 
+ 145:eInk Library/cy_eink_library.c **** *  before calling this function if "powerCycle" is false. Otherwise the display 
+ 146:eInk Library/cy_eink_library.c **** *  won't be cleared.
+ 147:eInk Library/cy_eink_library.c **** *
+ 148:eInk Library/cy_eink_library.c **** *  Note2: This function is intended to be called only after a reset/power up.
+ 149:eInk Library/cy_eink_library.c **** *  Use Cy_EINK_ShowFrame() function to clear the display if you know the frame
+ 150:eInk Library/cy_eink_library.c **** *  that has been written to the display.
+ 151:eInk Library/cy_eink_library.c **** *
+ 152:eInk Library/cy_eink_library.c **** * Parameters:
+ 153:eInk Library/cy_eink_library.c **** *  bool background   : False for black background and True for white background.
+ 154:eInk Library/cy_eink_library.c **** *  bool powerCycle   : True for automatic power cycle. False otherwise
+ 155:eInk Library/cy_eink_library.c **** * 
+ 156:eInk Library/cy_eink_library.c **** * Return:
+ 157:eInk Library/cy_eink_library.c **** *  None
+ 158:eInk Library/cy_eink_library.c **** *
+ 159:eInk Library/cy_eink_library.c **** * Side Effects:
+ 160:eInk Library/cy_eink_library.c **** *  This is a blocking function that can take as many as 2 seconds 
+ 161:eInk Library/cy_eink_library.c **** *
+ 162:eInk Library/cy_eink_library.c **** *******************************************************************************/
+ 163:eInk Library/cy_eink_library.c **** void Cy_EINK_Clear(bool background, bool powerCycle)
+ 164:eInk Library/cy_eink_library.c **** {
+ 104              		.loc 1 164 0
+ 105              		.cfi_startproc
+ 106              		@ args = 0, pretend = 0, frame = 0
+ 107              		@ frame_needed = 0, uses_anonymous_args = 0
+ 108              	.LVL11:
+ 109 0000 38B5     		push	{r3, r4, r5, lr}
+ 110              		.cfi_def_cfa_offset 16
+ 111              		.cfi_offset 3, -16
+ 112              		.cfi_offset 4, -12
+ 113              		.cfi_offset 5, -8
+ 114              		.cfi_offset 14, -4
+ 115 0002 0446     		mov	r4, r0
+ 165:eInk Library/cy_eink_library.c ****     /* If power cycle operation requested, turn on E-INK power */
+ 166:eInk Library/cy_eink_library.c ****     if (powerCycle)
+ 116              		.loc 1 166 0
+ 117 0004 0D46     		mov	r5, r1
+ 118 0006 11B1     		cbz	r1, .L10
+ 167:eInk Library/cy_eink_library.c ****     {
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 6
+
+
+ 168:eInk Library/cy_eink_library.c ****         Cy_EINK_Power(CY_EINK_ON);
+ 119              		.loc 1 168 0
+ 120 0008 0120     		movs	r0, #1
+ 121              	.LVL12:
+ 122 000a FFF7FEFF 		bl	Cy_EINK_Power
+ 123              	.LVL13:
+ 124              	.L10:
+ 169:eInk Library/cy_eink_library.c ****     }
+ 170:eInk Library/cy_eink_library.c ****     /* Clear the display to white background */
+ 171:eInk Library/cy_eink_library.c ****     if (background == CY_EINK_WHITE_BACKGROUND)
+ 125              		.loc 1 171 0
+ 126 000e 44B1     		cbz	r4, .L11
+ 172:eInk Library/cy_eink_library.c ****     {
+ 173:eInk Library/cy_eink_library.c ****         /* Two consecutive display updates to reduce ghosting */
+ 174:eInk Library/cy_eink_library.c ****         Pv_EINK_FullStageHandler(CY_EINK_WHITE_FRAME, PV_EINK_STAGE4);
+ 127              		.loc 1 174 0
+ 128 0010 0321     		movs	r1, #3
+ 129 0012 0020     		movs	r0, #0
+ 130 0014 FFF7FEFF 		bl	Pv_EINK_FullStageHandler
+ 131              	.LVL14:
+ 175:eInk Library/cy_eink_library.c ****         Pv_EINK_FullStageHandler(CY_EINK_WHITE_FRAME, PV_EINK_STAGE4);
+ 132              		.loc 1 175 0
+ 133 0018 0321     		movs	r1, #3
+ 134 001a 0020     		movs	r0, #0
+ 135 001c FFF7FEFF 		bl	Pv_EINK_FullStageHandler
+ 136              	.LVL15:
+ 137 0020 09E0     		b	.L12
+ 138              	.L11:
+ 176:eInk Library/cy_eink_library.c ****     }
+ 177:eInk Library/cy_eink_library.c ****     /* Clear the display to black background */
+ 178:eInk Library/cy_eink_library.c ****     else if (background == CY_EINK_BLACK_BACKGROUND)
+ 139              		.loc 1 178 0
+ 140 0022 44B9     		cbnz	r4, .L12
+ 179:eInk Library/cy_eink_library.c ****     {
+ 180:eInk Library/cy_eink_library.c ****         /* Two consecutive display updates to reduce ghosting */
+ 181:eInk Library/cy_eink_library.c ****         Pv_EINK_FullStageHandler(CY_EINK_BLACK_FRAME, PV_EINK_STAGE4);
+ 141              		.loc 1 181 0
+ 142 0024 064C     		ldr	r4, .L15
+ 143 0026 0321     		movs	r1, #3
+ 144 0028 2046     		mov	r0, r4
+ 145 002a FFF7FEFF 		bl	Pv_EINK_FullStageHandler
+ 146              	.LVL16:
+ 182:eInk Library/cy_eink_library.c ****         Pv_EINK_FullStageHandler(CY_EINK_BLACK_FRAME, PV_EINK_STAGE4);
+ 147              		.loc 1 182 0
+ 148 002e 0321     		movs	r1, #3
+ 149 0030 2046     		mov	r0, r4
+ 150 0032 FFF7FEFF 		bl	Pv_EINK_FullStageHandler
+ 151              	.LVL17:
+ 152              	.L12:
+ 183:eInk Library/cy_eink_library.c ****     }
+ 184:eInk Library/cy_eink_library.c ****     else
+ 185:eInk Library/cy_eink_library.c ****     {
+ 186:eInk Library/cy_eink_library.c ****     }
+ 187:eInk Library/cy_eink_library.c ****     
+ 188:eInk Library/cy_eink_library.c ****     /* If power cycle operation requested, turn off E-INK power */
+ 189:eInk Library/cy_eink_library.c ****     if (powerCycle)
+ 153              		.loc 1 189 0
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 7
+
+
+ 154 0036 15B1     		cbz	r5, .L9
+ 190:eInk Library/cy_eink_library.c ****     {
+ 191:eInk Library/cy_eink_library.c ****         Cy_EINK_Power(CY_EINK_OFF);
+ 155              		.loc 1 191 0
+ 156 0038 0020     		movs	r0, #0
+ 157 003a FFF7FEFF 		bl	Cy_EINK_Power
+ 158              	.LVL18:
+ 159              	.L9:
+ 160 003e 38BD     		pop	{r3, r4, r5, pc}
+ 161              	.L16:
+ 162              		.align	2
+ 163              	.L15:
+ 164 0040 FFFF0F10 		.word	269484031
+ 165              		.cfi_endproc
+ 166              	.LFE592:
+ 167              		.size	Cy_EINK_Clear, .-Cy_EINK_Clear
+ 168              		.section	.text.Cy_EINK_ShowFrame,"ax",%progbits
+ 169              		.align	2
+ 170              		.global	Cy_EINK_ShowFrame
+ 171              		.thumb
+ 172              		.thumb_func
+ 173              		.type	Cy_EINK_ShowFrame, %function
+ 174              	Cy_EINK_ShowFrame:
+ 175              	.LFB593:
+ 192:eInk Library/cy_eink_library.c ****     }
+ 193:eInk Library/cy_eink_library.c **** }
+ 194:eInk Library/cy_eink_library.c **** 
+ 195:eInk Library/cy_eink_library.c **** /*******************************************************************************
+ 196:eInk Library/cy_eink_library.c **** * Function Name: void Cy_EINK_ShowFrame(cy_eink_frame_t* prevFrame, 
+ 197:eInk Library/cy_eink_library.c **** *      cy_eink_frame_t* newFrame,CY_EINK_UpdateType updateType, bool powerCycle)
+ 198:eInk Library/cy_eink_library.c **** ********************************************************************************
+ 199:eInk Library/cy_eink_library.c **** *
+ 200:eInk Library/cy_eink_library.c **** * Summary: Updates the E-INK display with a frame/image stored in the flash or RAM.
+ 201:eInk Library/cy_eink_library.c **** *
+ 202:eInk Library/cy_eink_library.c **** *  Notes: This function requires the previous frame data as well as the new frame
+ 203:eInk Library/cy_eink_library.c **** *  data. If the previous frame data changes from the actual frame previously 
+ 204:eInk Library/cy_eink_library.c **** *  written to the display, considerable ghosting may occur.
+ 205:eInk Library/cy_eink_library.c **** *
+ 206:eInk Library/cy_eink_library.c **** *  The E-INK display should be powered on (using Cy_EINK_Power function) before 
+ 207:eInk Library/cy_eink_library.c **** *  calling this function, if "powerCycle" parameter is false. Otherwise the display 
+ 208:eInk Library/cy_eink_library.c **** *  won't be updated.
+ 209:eInk Library/cy_eink_library.c **** *
+ 210:eInk Library/cy_eink_library.c **** * Parameters:
+ 211:eInk Library/cy_eink_library.c **** *  cy_eink_frame_t* prevFrame    : Pointer to the previous frame written on the display
+ 212:eInk Library/cy_eink_library.c **** *  cy_eink_frame_t* newFrame     : Pointer to the new frame that need to be written
+ 213:eInk Library/cy_eink_library.c **** *  cy_eink_update_t              : Full update (2/4 stages) or  Partial update
+ 214:eInk Library/cy_eink_library.c **** *  bool powerCycle               : "true" for automatic power cycle, "false" for manual
+ 215:eInk Library/cy_eink_library.c **** *
+ 216:eInk Library/cy_eink_library.c **** *  Return:
+ 217:eInk Library/cy_eink_library.c **** *  None
+ 218:eInk Library/cy_eink_library.c **** *
+ 219:eInk Library/cy_eink_library.c **** * Side Effects:
+ 220:eInk Library/cy_eink_library.c **** *  This is a blocking function that can take as many as 2 seconds 
+ 221:eInk Library/cy_eink_library.c **** *
+ 222:eInk Library/cy_eink_library.c **** ********************************************************************************/
+ 223:eInk Library/cy_eink_library.c **** void Cy_EINK_ShowFrame(cy_eink_frame_t* prevFrame, cy_eink_frame_t* newFrame,
+ 224:eInk Library/cy_eink_library.c ****                        cy_eink_update_t updateType, bool powerCycle)
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 8
+
+
+ 225:eInk Library/cy_eink_library.c **** {
+ 176              		.loc 1 225 0
+ 177              		.cfi_startproc
+ 178              		@ args = 0, pretend = 0, frame = 0
+ 179              		@ frame_needed = 0, uses_anonymous_args = 0
+ 180              	.LVL19:
+ 181 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 182              		.cfi_def_cfa_offset 24
+ 183              		.cfi_offset 3, -24
+ 184              		.cfi_offset 4, -20
+ 185              		.cfi_offset 5, -16
+ 186              		.cfi_offset 6, -12
+ 187              		.cfi_offset 7, -8
+ 188              		.cfi_offset 14, -4
+ 189 0002 0746     		mov	r7, r0
+ 190 0004 0E46     		mov	r6, r1
+ 191 0006 1446     		mov	r4, r2
+ 226:eInk Library/cy_eink_library.c ****     /* If power cycle operation requested, turn on E-INK power */
+ 227:eInk Library/cy_eink_library.c ****     if (powerCycle)
+ 192              		.loc 1 227 0
+ 193 0008 1D46     		mov	r5, r3
+ 194 000a 13B1     		cbz	r3, .L18
+ 228:eInk Library/cy_eink_library.c ****     {
+ 229:eInk Library/cy_eink_library.c ****         Cy_EINK_Power(CY_EINK_ON);
+ 195              		.loc 1 229 0
+ 196 000c 0120     		movs	r0, #1
+ 197              	.LVL20:
+ 198 000e FFF7FEFF 		bl	Cy_EINK_Power
+ 199              	.LVL21:
+ 200              	.L18:
+ 230:eInk Library/cy_eink_library.c ****     }
+ 231:eInk Library/cy_eink_library.c ****     /* Partial update stage */
+ 232:eInk Library/cy_eink_library.c ****     if (updateType == CY_EINK_PARTIAL)
+ 201              		.loc 1 232 0
+ 202 0012 24B9     		cbnz	r4, .L19
+ 233:eInk Library/cy_eink_library.c ****     {
+ 234:eInk Library/cy_eink_library.c ****         /* Update the display with changes from previous frame */
+ 235:eInk Library/cy_eink_library.c ****         Pv_EINK_PartialStageHandler(prevFrame, newFrame);
+ 203              		.loc 1 235 0
+ 204 0014 3146     		mov	r1, r6
+ 205 0016 3846     		mov	r0, r7
+ 206 0018 FFF7FEFF 		bl	Pv_EINK_PartialStageHandler
+ 207              	.LVL22:
+ 208 001c 15E0     		b	.L20
+ 209              	.L19:
+ 236:eInk Library/cy_eink_library.c ****     }
+ 237:eInk Library/cy_eink_library.c ****     /* Full update stages */
+ 238:eInk Library/cy_eink_library.c ****     else if ((updateType == CY_EINK_FULL_4STAGE) || 
+ 210              		.loc 1 238 0
+ 211 001e 631E     		subs	r3, r4, #1
+ 212 0020 DBB2     		uxtb	r3, r3
+ 213 0022 012B     		cmp	r3, #1
+ 214 0024 11D8     		bhi	.L20
+ 239:eInk Library/cy_eink_library.c ****              (updateType == CY_EINK_FULL_2STAGE))
+ 240:eInk Library/cy_eink_library.c ****     {
+ 241:eInk Library/cy_eink_library.c ****         /* Stage 1: update the display with the inverted version of the previous 
+ 242:eInk Library/cy_eink_library.c ****            frame */
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 9
+
+
+ 243:eInk Library/cy_eink_library.c ****         Pv_EINK_FullStageHandler(prevFrame, PV_EINK_STAGE1);
+ 215              		.loc 1 243 0
+ 216 0026 0021     		movs	r1, #0
+ 217 0028 3846     		mov	r0, r7
+ 218 002a FFF7FEFF 		bl	Pv_EINK_FullStageHandler
+ 219              	.LVL23:
+ 244:eInk Library/cy_eink_library.c ****         
+ 245:eInk Library/cy_eink_library.c ****         /* Additional stages that reduce ghosting for a 4 stage full update */
+ 246:eInk Library/cy_eink_library.c ****         if (updateType == CY_EINK_FULL_4STAGE)
+ 220              		.loc 1 246 0
+ 221 002e 012C     		cmp	r4, #1
+ 222 0030 07D1     		bne	.L21
+ 247:eInk Library/cy_eink_library.c ****         {
+ 248:eInk Library/cy_eink_library.c ****             /* Stage 2: update the display with an all white frame */
+ 249:eInk Library/cy_eink_library.c ****             Pv_EINK_FullStageHandler(prevFrame, PV_EINK_STAGE2);
+ 223              		.loc 1 249 0
+ 224 0032 0121     		movs	r1, #1
+ 225 0034 3846     		mov	r0, r7
+ 226 0036 FFF7FEFF 		bl	Pv_EINK_FullStageHandler
+ 227              	.LVL24:
+ 250:eInk Library/cy_eink_library.c ****             /* Stage 3: update the display with the inverted version of the new 
+ 251:eInk Library/cy_eink_library.c ****                frame */
+ 252:eInk Library/cy_eink_library.c ****             Pv_EINK_FullStageHandler(newFrame, PV_EINK_STAGE3);
+ 228              		.loc 1 252 0
+ 229 003a 0221     		movs	r1, #2
+ 230 003c 3046     		mov	r0, r6
+ 231 003e FFF7FEFF 		bl	Pv_EINK_FullStageHandler
+ 232              	.LVL25:
+ 233              	.L21:
+ 253:eInk Library/cy_eink_library.c ****         }
+ 254:eInk Library/cy_eink_library.c ****         
+ 255:eInk Library/cy_eink_library.c ****         /* Stage 4: update the display with the new frame */
+ 256:eInk Library/cy_eink_library.c ****         Pv_EINK_FullStageHandler(newFrame, PV_EINK_STAGE4);
+ 234              		.loc 1 256 0
+ 235 0042 0321     		movs	r1, #3
+ 236 0044 3046     		mov	r0, r6
+ 237 0046 FFF7FEFF 		bl	Pv_EINK_FullStageHandler
+ 238              	.LVL26:
+ 239              	.L20:
+ 257:eInk Library/cy_eink_library.c ****     }
+ 258:eInk Library/cy_eink_library.c ****     else
+ 259:eInk Library/cy_eink_library.c ****     {
+ 260:eInk Library/cy_eink_library.c ****     }
+ 261:eInk Library/cy_eink_library.c ****     
+ 262:eInk Library/cy_eink_library.c ****     /* If power cycle operation requested, turn off E-INK power */
+ 263:eInk Library/cy_eink_library.c ****     if (powerCycle)
+ 240              		.loc 1 263 0
+ 241 004a 15B1     		cbz	r5, .L17
+ 264:eInk Library/cy_eink_library.c ****     {
+ 265:eInk Library/cy_eink_library.c ****         Cy_EINK_Power(CY_EINK_OFF);
+ 242              		.loc 1 265 0
+ 243 004c 0020     		movs	r0, #0
+ 244 004e FFF7FEFF 		bl	Cy_EINK_Power
+ 245              	.LVL27:
+ 246              	.L17:
+ 247 0052 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 248              		.cfi_endproc
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 10
+
+
+ 249              	.LFE593:
+ 250              		.size	Cy_EINK_ShowFrame, .-Cy_EINK_ShowFrame
+ 251              		.section	.text.Cy_EINK_ImageToFrameBuffer,"ax",%progbits
+ 252              		.align	2
+ 253              		.global	Cy_EINK_ImageToFrameBuffer
+ 254              		.thumb
+ 255              		.thumb_func
+ 256              		.type	Cy_EINK_ImageToFrameBuffer, %function
+ 257              	Cy_EINK_ImageToFrameBuffer:
+ 258              	.LFB594:
+ 266:eInk Library/cy_eink_library.c ****     }
+ 267:eInk Library/cy_eink_library.c **** }
+ 268:eInk Library/cy_eink_library.c **** 
+ 269:eInk Library/cy_eink_library.c **** /*******************************************************************************
+ 270:eInk Library/cy_eink_library.c **** * Function Name: void Cy_EINK_ImageToFrameBuffer(cy_eink_frame_t* frameBuffer,
+ 271:eInk Library/cy_eink_library.c **** *                               cy_eink_frame_t* image, uint8_t* imgCoordinates)
+ 272:eInk Library/cy_eink_library.c **** ********************************************************************************
+ 273:eInk Library/cy_eink_library.c **** *
+ 274:eInk Library/cy_eink_library.c **** * Summary: Copies pixel block data between the specified x and y coordinates 
+ 275:eInk Library/cy_eink_library.c **** *  from an image (typically stored in the flash) to a frame buffer in RAM.
+ 276:eInk Library/cy_eink_library.c **** *
+ 277:eInk Library/cy_eink_library.c **** *  Notes: Image array should be of the same size as frame buffer.
+ 278:eInk Library/cy_eink_library.c **** *
+ 279:eInk Library/cy_eink_library.c **** *  Copying is done at byte level. Pixel level operations are not supported.
+ 280:eInk Library/cy_eink_library.c **** *
+ 281:eInk Library/cy_eink_library.c **** *  This function does not update the E-INK display. After frame buffer update,
+ 282:eInk Library/cy_eink_library.c **** *  use Cy_EINK_ShowFrame() function to update the display if required.
+ 283:eInk Library/cy_eink_library.c **** *
+ 284:eInk Library/cy_eink_library.c **** *  This function can be used to clear the frame buffer by passing an all-white 
+ 285:eInk Library/cy_eink_library.c **** *  or an all-black image.
+ 286:eInk Library/cy_eink_library.c **** *
+ 287:eInk Library/cy_eink_library.c **** * Parameters:
+ 288:eInk Library/cy_eink_library.c **** *  cy_eink_frame_t* frameBuffer   : Pointer to the frame buffer array in RAM
+ 289:eInk Library/cy_eink_library.c **** *  cy_eink_frame_t* image         : Pointer to the image array (typically in flash)
+ 290:eInk Library/cy_eink_library.c **** *  uint8_t* imgCoordinates   : Pointer to a 4-byte array of image coordinates
+ 291:eInk Library/cy_eink_library.c **** *
+ 292:eInk Library/cy_eink_library.c **** * Return:
+ 293:eInk Library/cy_eink_library.c **** *  None
+ 294:eInk Library/cy_eink_library.c **** *
+ 295:eInk Library/cy_eink_library.c **** * Side Effects:
+ 296:eInk Library/cy_eink_library.c **** *  This is a blocking function that can take as many as 5808 RAM write cycles
+ 297:eInk Library/cy_eink_library.c **** *  to complete.
+ 298:eInk Library/cy_eink_library.c **** *
+ 299:eInk Library/cy_eink_library.c **** *******************************************************************************/
+ 300:eInk Library/cy_eink_library.c **** void Cy_EINK_ImageToFrameBuffer(cy_eink_frame_t* frameBuffer, cy_eink_frame_t* image,
+ 301:eInk Library/cy_eink_library.c ****                                 uint8_t* imgCoordinates)
+ 302:eInk Library/cy_eink_library.c **** {
+ 259              		.loc 1 302 0
+ 260              		.cfi_startproc
+ 261              		@ args = 0, pretend = 0, frame = 0
+ 262              		@ frame_needed = 0, uses_anonymous_args = 0
+ 263              	.LVL28:
+ 264 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 265              		.cfi_def_cfa_offset 24
+ 266              		.cfi_offset 3, -24
+ 267              		.cfi_offset 4, -20
+ 268              		.cfi_offset 5, -16
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 11
+
+
+ 269              		.cfi_offset 6, -12
+ 270              		.cfi_offset 7, -8
+ 271              		.cfi_offset 14, -4
+ 272 0002 0746     		mov	r7, r0
+ 273 0004 0E46     		mov	r6, r1
+ 274 0006 1546     		mov	r5, r2
+ 303:eInk Library/cy_eink_library.c ****     /* Counter variable for horizontal pixel lines */
+ 304:eInk Library/cy_eink_library.c ****     uint16_t pixelLineCounter;
+ 305:eInk Library/cy_eink_library.c ****     
+ 306:eInk Library/cy_eink_library.c ****     /* Variable that stores the starting location of the current pixel line */
+ 307:eInk Library/cy_eink_library.c ****     uint16_t startLocation;
+ 308:eInk Library/cy_eink_library.c ****     
+ 309:eInk Library/cy_eink_library.c ****     /* Variable that stores the length of the pixel line */
+ 310:eInk Library/cy_eink_library.c ****     uint16_t lineLength;
+ 311:eInk Library/cy_eink_library.c ****     
+ 312:eInk Library/cy_eink_library.c ****     /* Do this for all horizontal pixel lines between Y1 and Y2 coordinates */
+ 313:eInk Library/cy_eink_library.c ****     for (pixelLineCounter  = imgCoordinates[CY_EINK_IMG_Y1];
+ 275              		.loc 1 313 0
+ 276 0008 9478     		ldrb	r4, [r2, #2]	@ zero_extendqisi2
+ 277              	.LVL29:
+ 278 000a 0DE0     		b	.L25
+ 279              	.LVL30:
+ 280              	.L26:
+ 314:eInk Library/cy_eink_library.c ****          pixelLineCounter <= imgCoordinates[CY_EINK_IMG_Y2];
+ 315:eInk Library/cy_eink_library.c ****          pixelLineCounter++)
+ 316:eInk Library/cy_eink_library.c ****     {
+ 317:eInk Library/cy_eink_library.c ****         
+ 318:eInk Library/cy_eink_library.c ****         /* Find the starting location of the pixel line */
+ 319:eInk Library/cy_eink_library.c ****         startLocation = (pixelLineCounter * PV_EINK_HORIZONTAL_SIZE) + 
+ 281              		.loc 1 319 0
+ 282 000c 2A78     		ldrb	r2, [r5]	@ zero_extendqisi2
+ 283 000e 04EB4410 		add	r0, r4, r4, lsl #5
+ 284 0012 1044     		add	r0, r0, r2
+ 285 0014 80B2     		uxth	r0, r0
+ 286              	.LVL31:
+ 320:eInk Library/cy_eink_library.c ****                          imgCoordinates[CY_EINK_IMG_X1];
+ 321:eInk Library/cy_eink_library.c ****         
+ 322:eInk Library/cy_eink_library.c ****        /* Find the length of the pixel line to be copied */
+ 323:eInk Library/cy_eink_library.c ****         lineLength = imgCoordinates[CY_EINK_IMG_X2] - imgCoordinates[CY_EINK_IMG_X1];
+ 287              		.loc 1 323 0
+ 288 0016 6B78     		ldrb	r3, [r5, #1]	@ zero_extendqisi2
+ 289 0018 9A1A     		subs	r2, r3, r2
+ 290              	.LVL32:
+ 324:eInk Library/cy_eink_library.c ****         
+ 325:eInk Library/cy_eink_library.c ****         /* Copy the pixel line from the image to the same location in the 
+ 326:eInk Library/cy_eink_library.c ****            frame buffer */
+ 327:eInk Library/cy_eink_library.c ****         memcpy (&frameBuffer[startLocation], &image[startLocation], lineLength);
+ 291              		.loc 1 327 0
+ 292 001a 92B2     		uxth	r2, r2
+ 293 001c 3118     		adds	r1, r6, r0
+ 294 001e 3844     		add	r0, r0, r7
+ 295              	.LVL33:
+ 296 0020 FFF7FEFF 		bl	memcpy
+ 297              	.LVL34:
+ 315:eInk Library/cy_eink_library.c ****     {
+ 298              		.loc 1 315 0
+ 299 0024 0134     		adds	r4, r4, #1
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 12
+
+
+ 300              	.LVL35:
+ 301 0026 A4B2     		uxth	r4, r4
+ 302              	.LVL36:
+ 303              	.L25:
+ 314:eInk Library/cy_eink_library.c ****          pixelLineCounter++)
+ 304              		.loc 1 314 0 discriminator 1
+ 305 0028 EB78     		ldrb	r3, [r5, #3]	@ zero_extendqisi2
+ 313:eInk Library/cy_eink_library.c ****          pixelLineCounter <= imgCoordinates[CY_EINK_IMG_Y2];
+ 306              		.loc 1 313 0 discriminator 1
+ 307 002a 9C42     		cmp	r4, r3
+ 308 002c EED9     		bls	.L26
+ 328:eInk Library/cy_eink_library.c ****         
+ 329:eInk Library/cy_eink_library.c ****     }
+ 330:eInk Library/cy_eink_library.c **** }
+ 309              		.loc 1 330 0
+ 310 002e F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 311              		.cfi_endproc
+ 312              	.LFE594:
+ 313              		.size	Cy_EINK_ImageToFrameBuffer, .-Cy_EINK_ImageToFrameBuffer
+ 314              		.section	.text.Cy_EINK_TextToFrameBuffer,"ax",%progbits
+ 315              		.align	2
+ 316              		.global	Cy_EINK_TextToFrameBuffer
+ 317              		.thumb
+ 318              		.thumb_func
+ 319              		.type	Cy_EINK_TextToFrameBuffer, %function
+ 320              	Cy_EINK_TextToFrameBuffer:
+ 321              	.LFB595:
+ 331:eInk Library/cy_eink_library.c **** 
+ 332:eInk Library/cy_eink_library.c **** /*******************************************************************************
+ 333:eInk Library/cy_eink_library.c **** * Function Name: void Cy_EINK_TextToFrameBuffer(cy_eink_frame_t* frameBuffer, 
+ 334:eInk Library/cy_eink_library.c **** *                char* string, cy_eink_font_t* fontInfo , uint8_t* fontCor)
+ 335:eInk Library/cy_eink_library.c **** ********************************************************************************
+ 336:eInk Library/cy_eink_library.c **** *
+ 337:eInk Library/cy_eink_library.c **** * Summary: Converts a text input (string) to pixel data and stores it at the
+ 338:eInk Library/cy_eink_library.c **** *  specified coordinates of a frame buffer.
+ 339:eInk Library/cy_eink_library.c **** *
+ 340:eInk Library/cy_eink_library.c **** *  Notes: This function only supports printable ASCII characters from "!" to "~"
+ 341:eInk Library/cy_eink_library.c **** *
+ 342:eInk Library/cy_eink_library.c **** *  X and Y locations used in this function are font coordinates, rather than the
+ 343:eInk Library/cy_eink_library.c **** *  pixel coordinates used in Cy_EINK_ImageToFrameBuffer() function. See the 
+ 344:eInk Library/cy_eink_library.c **** *  CY_EINK_fonts.h for details.
+ 345:eInk Library/cy_eink_library.c **** *
+ 346:eInk Library/cy_eink_library.c **** *  This function does not update the E-INK display. After frame buffer update,
+ 347:eInk Library/cy_eink_library.c **** *  use CY_EINK_ShowFrame() function to update the display if required.
+ 348:eInk Library/cy_eink_library.c **** *
+ 349:eInk Library/cy_eink_library.c **** * Parameters:
+ 350:eInk Library/cy_eink_library.c **** *  cy_eink_frame_t* frameBuffer : Pointer to the frame buffer array in RAM
+ 351:eInk Library/cy_eink_library.c **** *  char* string                 : Pointer to the string
+ 352:eInk Library/cy_eink_library.c **** *  cy_eink_font_t* fontInfo     : Structure that stores font information
+ 353:eInk Library/cy_eink_library.c **** *  uint8_t* fontCor             : Pointer to the 2-byte array containing X and
+ 354:eInk Library/cy_eink_library.c **** *                                 Y locations
+ 355:eInk Library/cy_eink_library.c **** *
+ 356:eInk Library/cy_eink_library.c **** * Return:
+ 357:eInk Library/cy_eink_library.c **** *  None
+ 358:eInk Library/cy_eink_library.c **** *
+ 359:eInk Library/cy_eink_library.c **** * Side Effects:
+ 360:eInk Library/cy_eink_library.c **** *  This is a blocking function that can take as many as 5808 RAM write cycles
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 13
+
+
+ 361:eInk Library/cy_eink_library.c **** *  to complete.
+ 362:eInk Library/cy_eink_library.c **** *
+ 363:eInk Library/cy_eink_library.c **** *******************************************************************************/
+ 364:eInk Library/cy_eink_library.c **** void Cy_EINK_TextToFrameBuffer(cy_eink_frame_t* frameBuffer, char* string, 
+ 365:eInk Library/cy_eink_library.c ****                             cy_eink_font_t* fontInfo, uint8_t* fontCor)
+ 366:eInk Library/cy_eink_library.c **** { 
+ 322              		.loc 1 366 0
+ 323              		.cfi_startproc
+ 324              		@ args = 0, pretend = 0, frame = 0
+ 325              		@ frame_needed = 0, uses_anonymous_args = 0
+ 326              	.LVL37:
+ 327 0000 2DE9F047 		push	{r4, r5, r6, r7, r8, r9, r10, lr}
+ 328              		.cfi_def_cfa_offset 32
+ 329              		.cfi_offset 4, -32
+ 330              		.cfi_offset 5, -28
+ 331              		.cfi_offset 6, -24
+ 332              		.cfi_offset 7, -20
+ 333              		.cfi_offset 8, -16
+ 334              		.cfi_offset 9, -12
+ 335              		.cfi_offset 10, -8
+ 336              		.cfi_offset 14, -4
+ 337 0004 8A46     		mov	r10, r1
+ 338              	.LVL38:
+ 367:eInk Library/cy_eink_library.c ****     /* Pointer variable for current character under conversion */
+ 368:eInk Library/cy_eink_library.c ****     char* currentChar;
+ 369:eInk Library/cy_eink_library.c ****     
+ 370:eInk Library/cy_eink_library.c ****     /* Variable for storing the location in the frame buffer to which 
+ 371:eInk Library/cy_eink_library.c ****        the font data is printed */
+ 372:eInk Library/cy_eink_library.c ****     uint16_t printLocation;
+ 373:eInk Library/cy_eink_library.c ****     /* Variable for storing the character location in the font */
+ 374:eInk Library/cy_eink_library.c ****     uint16_t charLocation;
+ 375:eInk Library/cy_eink_library.c ****     
+ 376:eInk Library/cy_eink_library.c ****     /* Variable that stores the pixel data byte location in the frame 
+ 377:eInk Library/cy_eink_library.c ****        buffer */
+ 378:eInk Library/cy_eink_library.c ****     uint16_t frameByte;
+ 379:eInk Library/cy_eink_library.c ****     /* Variable that stores the pixel data byte location in the font array */
+ 380:eInk Library/cy_eink_library.c ****     uint16_t fontByte;
+ 381:eInk Library/cy_eink_library.c ****     
+ 382:eInk Library/cy_eink_library.c ****     /* Counter variable for the vertical loop */
+ 383:eInk Library/cy_eink_library.c ****     uint8_t verticalCounter;
+ 384:eInk Library/cy_eink_library.c ****     /* Counter variable for the horizontal loop */
+ 385:eInk Library/cy_eink_library.c ****     uint8_t horizontalCounter;
+ 386:eInk Library/cy_eink_library.c ****     
+ 387:eInk Library/cy_eink_library.c ****     /* Repeat this process until the null character of the string is reached */
+ 388:eInk Library/cy_eink_library.c ****     for (currentChar = string;  *currentChar != '\0'; currentChar++)
+ 339              		.loc 1 388 0
+ 340 0006 80E0     		b	.L29
+ 341              	.LVL39:
+ 342              	.L43:
+ 389:eInk Library/cy_eink_library.c ****     {
+ 390:eInk Library/cy_eink_library.c ****         /* Check if X and Y coordinates are between the font's max limits */
+ 391:eInk Library/cy_eink_library.c ****         if ((fontCor[CY_EINK_FONT_X] < (fontInfo->xSpan)) && 
+ 343              		.loc 1 391 0
+ 344 0008 1D78     		ldrb	r5, [r3]	@ zero_extendqisi2
+ 345 000a 167A     		ldrb	r6, [r2, #8]	@ zero_extendqisi2
+ 346 000c B542     		cmp	r5, r6
+ 347 000e 6AD2     		bcs	.L30
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 14
+
+
+ 392:eInk Library/cy_eink_library.c ****             (fontCor[CY_EINK_FONT_Y] < (fontInfo->ySpan)))
+ 348              		.loc 1 392 0 discriminator 1
+ 349 0010 5E78     		ldrb	r6, [r3, #1]	@ zero_extendqisi2
+ 350 0012 577A     		ldrb	r7, [r2, #9]	@ zero_extendqisi2
+ 391:eInk Library/cy_eink_library.c ****             (fontCor[CY_EINK_FONT_Y] < (fontInfo->ySpan)))
+ 351              		.loc 1 391 0 discriminator 1
+ 352 0014 BE42     		cmp	r6, r7
+ 353 0016 66D2     		bcs	.L30
+ 393:eInk Library/cy_eink_library.c ****         {
+ 394:eInk Library/cy_eink_library.c ****             /* Find the actual pixel location in the frame buffer where the
+ 395:eInk Library/cy_eink_library.c ****                pixel data should be copied */
+ 396:eInk Library/cy_eink_library.c ****             printLocation = (fontInfo->xOffset) + (fontCor[CY_EINK_FONT_X]   * 
+ 354              		.loc 1 396 0
+ 355 0018 1779     		ldrb	r7, [r2, #4]	@ zero_extendqisi2
+ 397:eInk Library/cy_eink_library.c ****                             (fontInfo->xSize))  + (((fontCor[CY_EINK_FONT_Y] * 
+ 398:eInk Library/cy_eink_library.c ****                             (fontInfo->ySize))  + (fontInfo->yOffset))    * 
+ 356              		.loc 1 398 0
+ 357 001a 92F807E0 		ldrb	lr, [r2, #7]	@ zero_extendqisi2
+ 358 001e 92F805C0 		ldrb	ip, [r2, #5]	@ zero_extendqisi2
+ 359 0022 0EFB06C6 		mla	r6, lr, r6, ip
+ 396:eInk Library/cy_eink_library.c ****                             (fontInfo->xSize))  + (((fontCor[CY_EINK_FONT_Y] * 
+ 360              		.loc 1 396 0
+ 361 0026 92F806C0 		ldrb	ip, [r2, #6]	@ zero_extendqisi2
+ 362 002a 06EB4616 		add	r6, r6, r6, lsl #5
+ 363 002e 05FB0C65 		mla	r5, r5, ip, r6
+ 364 0032 3D44     		add	r5, r5, r7
+ 365 0034 AFB2     		uxth	r7, r5
+ 366              	.LVL40:
+ 399:eInk Library/cy_eink_library.c ****                              PV_EINK_HORIZONTAL_SIZE);
+ 400:eInk Library/cy_eink_library.c ****             
+ 401:eInk Library/cy_eink_library.c ****             /* Check if the current character is a printable ASCII character 
+ 402:eInk Library/cy_eink_library.c ****                between "!" and "~" */
+ 403:eInk Library/cy_eink_library.c ****             if ((*currentChar <= CY_EINK_ASCII_MAX) &&
+ 367              		.loc 1 403 0
+ 368 0036 A4F12105 		sub	r5, r4, #33
+ 369 003a EDB2     		uxtb	r5, r5
+ 370 003c 5D2D     		cmp	r5, #93
+ 371 003e 4ED8     		bhi	.L44
+ 404:eInk Library/cy_eink_library.c ****                 (*currentChar >= CY_EINK_ASCII_MIN))
+ 405:eInk Library/cy_eink_library.c ****             {
+ 406:eInk Library/cy_eink_library.c ****                 /* Find the location of pixel data corresponding to the 
+ 407:eInk Library/cy_eink_library.c ****                    current character from the font array */
+ 408:eInk Library/cy_eink_library.c ****                 charLocation = (*currentChar - CY_EINK_ASCII_MIN) *
+ 372              		.loc 1 408 0
+ 373 0040 213C     		subs	r4, r4, #33
+ 374 0042 1EFB0CFE 		smulbb	lr, lr, ip
+ 375 0046 1EFB04FE 		smulbb	lr, lr, r4
+ 376 004a 1FFA8EFC 		uxth	ip, lr
+ 377              	.LVL41:
+ 409:eInk Library/cy_eink_library.c ****                                ((fontInfo->ySize) * (fontInfo->xSize));
+ 410:eInk Library/cy_eink_library.c ****                 
+ 411:eInk Library/cy_eink_library.c ****                 /* Vertical copying loop */
+ 412:eInk Library/cy_eink_library.c ****                 for (verticalCounter = 0; verticalCounter < (fontInfo->ySize); 
+ 378              		.loc 1 412 0
+ 379 004e 4FF0000E 		mov	lr, #0
+ 380 0052 23E0     		b	.L32
+ 381              	.LVL42:
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 15
+
+
+ 382              	.L35:
+ 413:eInk Library/cy_eink_library.c ****                      verticalCounter++)
+ 414:eInk Library/cy_eink_library.c ****                 {
+ 415:eInk Library/cy_eink_library.c ****                     /* Horizontal copying loop */
+ 416:eInk Library/cy_eink_library.c ****                     for (horizontalCounter = 0; 
+ 417:eInk Library/cy_eink_library.c ****                          horizontalCounter < (fontInfo->xSize); 
+ 418:eInk Library/cy_eink_library.c ****                          horizontalCounter++)
+ 419:eInk Library/cy_eink_library.c ****                     {
+ 420:eInk Library/cy_eink_library.c ****                         /* Calculate the current pixel data byte location of 
+ 421:eInk Library/cy_eink_library.c ****                            the frame buffer */
+ 422:eInk Library/cy_eink_library.c ****                         frameByte = horizontalCounter + (printLocation +
+ 383              		.loc 1 422 0
+ 384 0054 1FFA86F8 		uxth	r8, r6
+ 385 0058 1FFA8EF4 		uxth	r4, lr
+ 386 005c 04EB4415 		add	r5, r4, r4, lsl #5
+ 387 0060 3D44     		add	r5, r5, r7
+ 388 0062 4544     		add	r5, r5, r8
+ 389 0064 ADB2     		uxth	r5, r5
+ 390              	.LVL43:
+ 423:eInk Library/cy_eink_library.c ****                                     (PV_EINK_HORIZONTAL_SIZE * verticalCounter));
+ 424:eInk Library/cy_eink_library.c ****                         
+ 425:eInk Library/cy_eink_library.c ****                         /* Calculate the current pixel data byte location of 
+ 426:eInk Library/cy_eink_library.c ****                            the font */
+ 427:eInk Library/cy_eink_library.c ****                         fontByte = charLocation + (verticalCounter * 
+ 391              		.loc 1 427 0
+ 392 0066 09FB04C4 		mla	r4, r9, r4, ip
+ 393 006a 4444     		add	r4, r4, r8
+ 394 006c A4B2     		uxth	r4, r4
+ 395              	.LVL44:
+ 428:eInk Library/cy_eink_library.c ****                                    (fontInfo->xSize)) + horizontalCounter;
+ 429:eInk Library/cy_eink_library.c ****                         
+ 430:eInk Library/cy_eink_library.c ****                         /* Copy the pixel data as is for black font on white 
+ 431:eInk Library/cy_eink_library.c ****                            background */
+ 432:eInk Library/cy_eink_library.c ****                         if ((fontInfo->color) == CY_EINK_WHITE_BACKGROUND)
+ 396              		.loc 1 432 0
+ 397 006e 917A     		ldrb	r1, [r2, #10]	@ zero_extendqisi2
+ 398 0070 21B1     		cbz	r1, .L33
+ 433:eInk Library/cy_eink_library.c ****                         {
+ 434:eInk Library/cy_eink_library.c ****                             frameBuffer[frameByte] = ~(fontInfo->fontData
+ 435:eInk Library/cy_eink_library.c ****                                                                  [fontByte]);
+ 399              		.loc 1 435 0
+ 400 0072 1168     		ldr	r1, [r2]
+ 401 0074 0C5D     		ldrb	r4, [r1, r4]	@ zero_extendqisi2
+ 402              	.LVL45:
+ 434:eInk Library/cy_eink_library.c ****                                                                  [fontByte]);
+ 403              		.loc 1 434 0
+ 404 0076 E443     		mvns	r4, r4
+ 405 0078 4455     		strb	r4, [r0, r5]
+ 406 007a 03E0     		b	.L34
+ 407              	.LVL46:
+ 408              	.L33:
+ 436:eInk Library/cy_eink_library.c ****                         }
+ 437:eInk Library/cy_eink_library.c ****                         /* Copy the inverted pixel data for white font on black
+ 438:eInk Library/cy_eink_library.c ****                            background */
+ 439:eInk Library/cy_eink_library.c ****                         else if ((fontInfo->color) == CY_EINK_BLACK_BACKGROUND)
+ 409              		.loc 1 439 0
+ 410 007c 11B9     		cbnz	r1, .L34
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 16
+
+
+ 440:eInk Library/cy_eink_library.c ****                         {
+ 441:eInk Library/cy_eink_library.c ****                             frameBuffer[frameByte] = fontInfo->fontData
+ 442:eInk Library/cy_eink_library.c ****                                                               [fontByte];
+ 411              		.loc 1 442 0
+ 412 007e 1168     		ldr	r1, [r2]
+ 413 0080 0C5D     		ldrb	r4, [r1, r4]	@ zero_extendqisi2
+ 414              	.LVL47:
+ 441:eInk Library/cy_eink_library.c ****                                                               [fontByte];
+ 415              		.loc 1 441 0
+ 416 0082 4455     		strb	r4, [r0, r5]
+ 417              	.L34:
+ 418:eInk Library/cy_eink_library.c ****                     {
+ 418              		.loc 1 418 0
+ 419 0084 0136     		adds	r6, r6, #1
+ 420              	.LVL48:
+ 421 0086 F6B2     		uxtb	r6, r6
+ 422              	.LVL49:
+ 423 0088 00E0     		b	.L36
+ 424              	.LVL50:
+ 425              	.L45:
+ 426 008a 0026     		movs	r6, #0
+ 427              	.L36:
+ 428              	.LVL51:
+ 417:eInk Library/cy_eink_library.c ****                          horizontalCounter++)
+ 429              		.loc 1 417 0 discriminator 1
+ 430 008c 92F80690 		ldrb	r9, [r2, #6]	@ zero_extendqisi2
+ 416:eInk Library/cy_eink_library.c ****                          horizontalCounter < (fontInfo->xSize); 
+ 431              		.loc 1 416 0 discriminator 1
+ 432 0090 4E45     		cmp	r6, r9
+ 433 0092 DFD3     		bcc	.L35
+ 413:eInk Library/cy_eink_library.c ****                 {
+ 434              		.loc 1 413 0
+ 435 0094 0EF1010E 		add	lr, lr, #1
+ 436              	.LVL52:
+ 437 0098 5FFA8EFE 		uxtb	lr, lr
+ 438              	.LVL53:
+ 439              	.L32:
+ 412:eInk Library/cy_eink_library.c ****                      verticalCounter++)
+ 440              		.loc 1 412 0 discriminator 1
+ 441 009c D479     		ldrb	r4, [r2, #7]	@ zero_extendqisi2
+ 442 009e A645     		cmp	lr, r4
+ 443 00a0 F3D3     		bcc	.L45
+ 444 00a2 20E0     		b	.L30
+ 445              	.LVL54:
+ 446              	.L39:
+ 443:eInk Library/cy_eink_library.c ****                         }
+ 444:eInk Library/cy_eink_library.c ****                         else
+ 445:eInk Library/cy_eink_library.c ****                         {
+ 446:eInk Library/cy_eink_library.c ****                         }
+ 447:eInk Library/cy_eink_library.c ****                     }
+ 448:eInk Library/cy_eink_library.c ****                 }
+ 449:eInk Library/cy_eink_library.c ****             }
+ 450:eInk Library/cy_eink_library.c ****             /* For space and non-printable ASCII characters */
+ 451:eInk Library/cy_eink_library.c ****             else
+ 452:eInk Library/cy_eink_library.c ****             {
+ 453:eInk Library/cy_eink_library.c ****                 /* Vertical copying loop */
+ 454:eInk Library/cy_eink_library.c ****                 for (verticalCounter = 0; 
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 17
+
+
+ 455:eInk Library/cy_eink_library.c ****                      verticalCounter < (fontInfo->ySize); 
+ 456:eInk Library/cy_eink_library.c ****                      verticalCounter++)
+ 457:eInk Library/cy_eink_library.c ****                 {
+ 458:eInk Library/cy_eink_library.c ****                     /* Horizontal copying loop */
+ 459:eInk Library/cy_eink_library.c ****                     for (horizontalCounter = 0; 
+ 460:eInk Library/cy_eink_library.c ****                          horizontalCounter < (fontInfo->xSize);
+ 461:eInk Library/cy_eink_library.c ****                          horizontalCounter++)
+ 462:eInk Library/cy_eink_library.c ****                     {
+ 463:eInk Library/cy_eink_library.c ****                         /* Calculate the current pixel data byte location of 
+ 464:eInk Library/cy_eink_library.c ****                            the frame buffer */
+ 465:eInk Library/cy_eink_library.c ****                         frameByte = horizontalCounter + (printLocation +
+ 447              		.loc 1 465 0
+ 448 00a4 06EB4614 		add	r4, r6, r6, lsl #5
+ 449 00a8 3C44     		add	r4, r4, r7
+ 450 00aa 2C44     		add	r4, r4, r5
+ 451 00ac A4B2     		uxth	r4, r4
+ 452              	.LVL55:
+ 466:eInk Library/cy_eink_library.c ****                                     (PV_EINK_HORIZONTAL_SIZE * verticalCounter));
+ 467:eInk Library/cy_eink_library.c ****                         
+ 468:eInk Library/cy_eink_library.c ****                         /* Copy white pixels to create a space for fonts with 
+ 469:eInk Library/cy_eink_library.c ****                            white background */
+ 470:eInk Library/cy_eink_library.c ****                         if ((fontInfo->color) == CY_EINK_WHITE_BACKGROUND)
+ 453              		.loc 1 470 0
+ 454 00ae 92F80AE0 		ldrb	lr, [r2, #10]	@ zero_extendqisi2
+ 455 00b2 BEF1000F 		cmp	lr, #0
+ 456 00b6 04D0     		beq	.L37
+ 471:eInk Library/cy_eink_library.c ****                         {
+ 472:eInk Library/cy_eink_library.c ****                             frameBuffer[frameByte] = CY_EINK_CLEAR_TO_WHITE;
+ 457              		.loc 1 472 0
+ 458 00b8 4FF0FF0E 		mov	lr, #255
+ 459 00bc 00F804E0 		strb	lr, [r0, r4]
+ 460 00c0 03E0     		b	.L38
+ 461              	.L37:
+ 473:eInk Library/cy_eink_library.c ****                         }
+ 474:eInk Library/cy_eink_library.c ****                         /* Copy black pixels to create a space for fonts with 
+ 475:eInk Library/cy_eink_library.c ****                            black background */
+ 476:eInk Library/cy_eink_library.c ****                         else
+ 477:eInk Library/cy_eink_library.c ****                         {
+ 478:eInk Library/cy_eink_library.c ****                             frameBuffer[frameByte] = CY_EINK_CLEAR_TO_BLACK;
+ 462              		.loc 1 478 0
+ 463 00c2 4FF0000E 		mov	lr, #0
+ 464 00c6 00F804E0 		strb	lr, [r0, r4]
+ 465              	.L38:
+ 461:eInk Library/cy_eink_library.c ****                     {
+ 466              		.loc 1 461 0
+ 467 00ca 0135     		adds	r5, r5, #1
+ 468              	.LVL56:
+ 469 00cc EDB2     		uxtb	r5, r5
+ 470              	.LVL57:
+ 471 00ce 00E0     		b	.L40
+ 472              	.LVL58:
+ 473              	.L46:
+ 474 00d0 0025     		movs	r5, #0
+ 475              	.L40:
+ 476              	.LVL59:
+ 460:eInk Library/cy_eink_library.c ****                          horizontalCounter++)
+ 477              		.loc 1 460 0 discriminator 1
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 18
+
+
+ 478 00d2 9479     		ldrb	r4, [r2, #6]	@ zero_extendqisi2
+ 459:eInk Library/cy_eink_library.c ****                          horizontalCounter < (fontInfo->xSize);
+ 479              		.loc 1 459 0 discriminator 1
+ 480 00d4 A542     		cmp	r5, r4
+ 481 00d6 E5D3     		bcc	.L39
+ 456:eInk Library/cy_eink_library.c ****                 {
+ 482              		.loc 1 456 0
+ 483 00d8 0136     		adds	r6, r6, #1
+ 484              	.LVL60:
+ 485 00da F6B2     		uxtb	r6, r6
+ 486              	.LVL61:
+ 487 00dc 00E0     		b	.L31
+ 488              	.LVL62:
+ 489              	.L44:
+ 490 00de 0026     		movs	r6, #0
+ 491              	.L31:
+ 492              	.LVL63:
+ 455:eInk Library/cy_eink_library.c ****                      verticalCounter++)
+ 493              		.loc 1 455 0 discriminator 1
+ 494 00e0 D479     		ldrb	r4, [r2, #7]	@ zero_extendqisi2
+ 454:eInk Library/cy_eink_library.c ****                      verticalCounter < (fontInfo->ySize); 
+ 495              		.loc 1 454 0 discriminator 1
+ 496 00e2 A642     		cmp	r6, r4
+ 497 00e4 F4D3     		bcc	.L46
+ 498              	.LVL64:
+ 499              	.L30:
+ 479:eInk Library/cy_eink_library.c ****                         }
+ 480:eInk Library/cy_eink_library.c ****                     }
+ 481:eInk Library/cy_eink_library.c ****                 }
+ 482:eInk Library/cy_eink_library.c ****             }
+ 483:eInk Library/cy_eink_library.c ****         }
+ 484:eInk Library/cy_eink_library.c ****         /* Move on to the next character by incrementing the horizontal
+ 485:eInk Library/cy_eink_library.c ****            location */
+ 486:eInk Library/cy_eink_library.c ****         fontCor[CY_EINK_FONT_X]++;
+ 500              		.loc 1 486 0
+ 501 00e6 1C78     		ldrb	r4, [r3]	@ zero_extendqisi2
+ 502 00e8 0134     		adds	r4, r4, #1
+ 503 00ea E4B2     		uxtb	r4, r4
+ 504 00ec 1C70     		strb	r4, [r3]
+ 487:eInk Library/cy_eink_library.c ****         
+ 488:eInk Library/cy_eink_library.c ****         /* Reset the X location and increment the Y location if the X span 
+ 489:eInk Library/cy_eink_library.c ****            is reached */
+ 490:eInk Library/cy_eink_library.c ****         if (fontCor[CY_EINK_FONT_X] >= (fontInfo->xSpan))
+ 505              		.loc 1 490 0
+ 506 00ee 157A     		ldrb	r5, [r2, #8]	@ zero_extendqisi2
+ 507 00f0 AC42     		cmp	r4, r5
+ 508 00f2 04D3     		bcc	.L41
+ 491:eInk Library/cy_eink_library.c ****         {
+ 492:eInk Library/cy_eink_library.c ****             fontCor[CY_EINK_FONT_X] = 0;
+ 509              		.loc 1 492 0
+ 510 00f4 0024     		movs	r4, #0
+ 511 00f6 1C70     		strb	r4, [r3]
+ 493:eInk Library/cy_eink_library.c ****             fontCor[CY_EINK_FONT_Y]++;
+ 512              		.loc 1 493 0
+ 513 00f8 5C78     		ldrb	r4, [r3, #1]	@ zero_extendqisi2
+ 514 00fa 0134     		adds	r4, r4, #1
+ 515 00fc 5C70     		strb	r4, [r3, #1]
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 19
+
+
+ 516              	.L41:
+ 494:eInk Library/cy_eink_library.c ****         }
+ 495:eInk Library/cy_eink_library.c ****         /* End the function if the Y span is reached */
+ 496:eInk Library/cy_eink_library.c ****         if (fontCor[CY_EINK_FONT_Y] > (fontInfo->ySpan))
+ 517              		.loc 1 496 0
+ 518 00fe 5D78     		ldrb	r5, [r3, #1]	@ zero_extendqisi2
+ 519 0100 547A     		ldrb	r4, [r2, #9]	@ zero_extendqisi2
+ 520 0102 A542     		cmp	r5, r4
+ 521 0104 06D8     		bhi	.L28
+ 388:eInk Library/cy_eink_library.c ****     {
+ 522              		.loc 1 388 0 discriminator 2
+ 523 0106 0AF1010A 		add	r10, r10, #1
+ 524              	.LVL65:
+ 525              	.L29:
+ 388:eInk Library/cy_eink_library.c ****     {
+ 526              		.loc 1 388 0 is_stmt 0 discriminator 1
+ 527 010a 9AF80040 		ldrb	r4, [r10]	@ zero_extendqisi2
+ 528 010e 002C     		cmp	r4, #0
+ 529 0110 7FF47AAF 		bne	.L43
+ 530              	.L28:
+ 531 0114 BDE8F087 		pop	{r4, r5, r6, r7, r8, r9, r10, pc}
+ 532              		.cfi_endproc
+ 533              	.LFE595:
+ 534              		.size	Cy_EINK_TextToFrameBuffer, .-Cy_EINK_TextToFrameBuffer
+ 535              		.text
+ 536              	.Letext0:
+ 537              		.file 2 "c:\\users\\nancy\\documents\\myriane\\autres\\psoc creator\\4.4\\psoc creator\\import\\gn
+ 538              		.file 3 "c:\\users\\nancy\\documents\\myriane\\autres\\psoc creator\\4.4\\psoc creator\\import\\gn
+ 539              		.file 4 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/device/cy_device.h"
+ 540              		.file 5 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/scb/cy_scb_spi.h"
+ 541              		.file 6 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/tcpwm/cy_tcpwm_counter.h"
+ 542              		.file 7 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/tcpwm/cy_tcpwm_pwm.h"
+ 543              		.file 8 "eInk Library\\cy_eink_fonts.h"
+ 544              		.file 9 "eInk Library\\pervasive_eink_hardware_driver.h"
+ 545              		.file 10 "eInk Library\\cy_eink_library.h"
+ 546              		.file 11 "Generated_Source\\PSoC6\\pdl\\cmsis/include/core_cm4.h"
+ 547              		.file 12 "Generated_Source\\PSoC6/CY_EINK_SPIM.h"
+ 548              		.file 13 "Generated_Source\\PSoC6/CY_EINK_Timer.h"
+ 549              		.file 14 "Generated_Source\\PSoC6/PWM_1.h"
+ 550              		.section	.debug_info,"",%progbits
+ 551              	.Ldebug_info0:
+ 552 0000 570D0000 		.4byte	0xd57
+ 553 0004 0400     		.2byte	0x4
+ 554 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 555 000a 04       		.byte	0x4
+ 556 000b 01       		.uleb128 0x1
+ 557 000c B60C0000 		.4byte	.LASF227
+ 558 0010 0C       		.byte	0xc
+ 559 0011 A0020000 		.4byte	.LASF228
+ 560 0015 A8070000 		.4byte	.LASF229
+ 561 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 562 001d 00000000 		.4byte	0
+ 563 0021 00000000 		.4byte	.Ldebug_line0
+ 564 0025 02       		.uleb128 0x2
+ 565 0026 CB010000 		.4byte	.LASF0
+ 566 002a 02       		.byte	0x2
+ 567 002b 1B       		.byte	0x1b
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 20
+
+
+ 568 002c 30000000 		.4byte	0x30
+ 569 0030 03       		.uleb128 0x3
+ 570 0031 01       		.byte	0x1
+ 571 0032 06       		.byte	0x6
+ 572 0033 A20C0000 		.4byte	.LASF2
+ 573 0037 02       		.uleb128 0x2
+ 574 0038 F1000000 		.4byte	.LASF1
+ 575 003c 02       		.byte	0x2
+ 576 003d 1D       		.byte	0x1d
+ 577 003e 42000000 		.4byte	0x42
+ 578 0042 03       		.uleb128 0x3
+ 579 0043 01       		.byte	0x1
+ 580 0044 08       		.byte	0x8
+ 581 0045 A4080000 		.4byte	.LASF3
+ 582 0049 02       		.uleb128 0x2
+ 583 004a 2D0C0000 		.4byte	.LASF4
+ 584 004e 02       		.byte	0x2
+ 585 004f 29       		.byte	0x29
+ 586 0050 54000000 		.4byte	0x54
+ 587 0054 03       		.uleb128 0x3
+ 588 0055 02       		.byte	0x2
+ 589 0056 05       		.byte	0x5
+ 590 0057 83070000 		.4byte	.LASF5
+ 591 005b 02       		.uleb128 0x2
+ 592 005c 110A0000 		.4byte	.LASF6
+ 593 0060 02       		.byte	0x2
+ 594 0061 2B       		.byte	0x2b
+ 595 0062 66000000 		.4byte	0x66
+ 596 0066 03       		.uleb128 0x3
+ 597 0067 02       		.byte	0x2
+ 598 0068 07       		.byte	0x7
+ 599 0069 7F0A0000 		.4byte	.LASF7
+ 600 006d 02       		.uleb128 0x2
+ 601 006e 44060000 		.4byte	.LASF8
+ 602 0072 02       		.byte	0x2
+ 603 0073 3F       		.byte	0x3f
+ 604 0074 78000000 		.4byte	0x78
+ 605 0078 03       		.uleb128 0x3
+ 606 0079 04       		.byte	0x4
+ 607 007a 05       		.byte	0x5
+ 608 007b 50030000 		.4byte	.LASF9
+ 609 007f 02       		.uleb128 0x2
+ 610 0080 35040000 		.4byte	.LASF10
+ 611 0084 02       		.byte	0x2
+ 612 0085 41       		.byte	0x41
+ 613 0086 8A000000 		.4byte	0x8a
+ 614 008a 03       		.uleb128 0x3
+ 615 008b 04       		.byte	0x4
+ 616 008c 07       		.byte	0x7
+ 617 008d 8E020000 		.4byte	.LASF11
+ 618 0091 03       		.uleb128 0x3
+ 619 0092 08       		.byte	0x8
+ 620 0093 05       		.byte	0x5
+ 621 0094 36020000 		.4byte	.LASF12
+ 622 0098 03       		.uleb128 0x3
+ 623 0099 08       		.byte	0x8
+ 624 009a 07       		.byte	0x7
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 21
+
+
+ 625 009b 6A010000 		.4byte	.LASF13
+ 626 009f 04       		.uleb128 0x4
+ 627 00a0 04       		.byte	0x4
+ 628 00a1 05       		.byte	0x5
+ 629 00a2 696E7400 		.ascii	"int\000"
+ 630 00a6 03       		.uleb128 0x3
+ 631 00a7 04       		.byte	0x4
+ 632 00a8 07       		.byte	0x7
+ 633 00a9 DF040000 		.4byte	.LASF14
+ 634 00ad 03       		.uleb128 0x3
+ 635 00ae 08       		.byte	0x8
+ 636 00af 04       		.byte	0x4
+ 637 00b0 06070000 		.4byte	.LASF15
+ 638 00b4 05       		.uleb128 0x5
+ 639 00b5 04       		.byte	0x4
+ 640 00b6 03       		.uleb128 0x3
+ 641 00b7 04       		.byte	0x4
+ 642 00b8 07       		.byte	0x7
+ 643 00b9 F2060000 		.4byte	.LASF16
+ 644 00bd 06       		.uleb128 0x6
+ 645 00be 04       		.byte	0x4
+ 646 00bf C3000000 		.4byte	0xc3
+ 647 00c3 03       		.uleb128 0x3
+ 648 00c4 01       		.byte	0x1
+ 649 00c5 08       		.byte	0x8
+ 650 00c6 F9090000 		.4byte	.LASF17
+ 651 00ca 02       		.uleb128 0x2
+ 652 00cb BB0A0000 		.4byte	.LASF18
+ 653 00cf 03       		.byte	0x3
+ 654 00d0 14       		.byte	0x14
+ 655 00d1 25000000 		.4byte	0x25
+ 656 00d5 02       		.uleb128 0x2
+ 657 00d6 A90B0000 		.4byte	.LASF19
+ 658 00da 03       		.byte	0x3
+ 659 00db 18       		.byte	0x18
+ 660 00dc 37000000 		.4byte	0x37
+ 661 00e0 02       		.uleb128 0x2
+ 662 00e1 24020000 		.4byte	.LASF20
+ 663 00e5 03       		.byte	0x3
+ 664 00e6 20       		.byte	0x20
+ 665 00e7 49000000 		.4byte	0x49
+ 666 00eb 02       		.uleb128 0x2
+ 667 00ec 96030000 		.4byte	.LASF21
+ 668 00f0 03       		.byte	0x3
+ 669 00f1 24       		.byte	0x24
+ 670 00f2 5B000000 		.4byte	0x5b
+ 671 00f6 02       		.uleb128 0x2
+ 672 00f7 9C080000 		.4byte	.LASF22
+ 673 00fb 03       		.byte	0x3
+ 674 00fc 2C       		.byte	0x2c
+ 675 00fd 6D000000 		.4byte	0x6d
+ 676 0101 02       		.uleb128 0x2
+ 677 0102 BD0D0000 		.4byte	.LASF23
+ 678 0106 03       		.byte	0x3
+ 679 0107 30       		.byte	0x30
+ 680 0108 7F000000 		.4byte	0x7f
+ 681 010c 07       		.uleb128 0x7
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 22
+
+
+ 682 010d 01010000 		.4byte	0x101
+ 683 0111 08       		.uleb128 0x8
+ 684 0112 B8       		.byte	0xb8
+ 685 0113 04       		.byte	0x4
+ 686 0114 34       		.byte	0x34
+ 687 0115 22050000 		.4byte	0x522
+ 688 0119 09       		.uleb128 0x9
+ 689 011a 40010000 		.4byte	.LASF24
+ 690 011e 04       		.byte	0x4
+ 691 011f 37       		.byte	0x37
+ 692 0120 01010000 		.4byte	0x101
+ 693 0124 00       		.byte	0
+ 694 0125 09       		.uleb128 0x9
+ 695 0126 21040000 		.4byte	.LASF25
+ 696 012a 04       		.byte	0x4
+ 697 012b 38       		.byte	0x38
+ 698 012c 01010000 		.4byte	0x101
+ 699 0130 04       		.byte	0x4
+ 700 0131 09       		.uleb128 0x9
+ 701 0132 2C040000 		.4byte	.LASF26
+ 702 0136 04       		.byte	0x4
+ 703 0137 39       		.byte	0x39
+ 704 0138 01010000 		.4byte	0x101
+ 705 013c 08       		.byte	0x8
+ 706 013d 09       		.uleb128 0x9
+ 707 013e 85080000 		.4byte	.LASF27
+ 708 0142 04       		.byte	0x4
+ 709 0143 3A       		.byte	0x3a
+ 710 0144 01010000 		.4byte	0x101
+ 711 0148 0C       		.byte	0xc
+ 712 0149 09       		.uleb128 0x9
+ 713 014a 050B0000 		.4byte	.LASF28
+ 714 014e 04       		.byte	0x4
+ 715 014f 3B       		.byte	0x3b
+ 716 0150 01010000 		.4byte	0x101
+ 717 0154 10       		.byte	0x10
+ 718 0155 09       		.uleb128 0x9
+ 719 0156 13030000 		.4byte	.LASF29
+ 720 015a 04       		.byte	0x4
+ 721 015b 3C       		.byte	0x3c
+ 722 015c 01010000 		.4byte	0x101
+ 723 0160 14       		.byte	0x14
+ 724 0161 09       		.uleb128 0x9
+ 725 0162 DF0A0000 		.4byte	.LASF30
+ 726 0166 04       		.byte	0x4
+ 727 0167 3D       		.byte	0x3d
+ 728 0168 01010000 		.4byte	0x101
+ 729 016c 18       		.byte	0x18
+ 730 016d 09       		.uleb128 0x9
+ 731 016e 9C000000 		.4byte	.LASF31
+ 732 0172 04       		.byte	0x4
+ 733 0173 3E       		.byte	0x3e
+ 734 0174 01010000 		.4byte	0x101
+ 735 0178 1C       		.byte	0x1c
+ 736 0179 09       		.uleb128 0x9
+ 737 017a AE0C0000 		.4byte	.LASF32
+ 738 017e 04       		.byte	0x4
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 23
+
+
+ 739 017f 3F       		.byte	0x3f
+ 740 0180 01010000 		.4byte	0x101
+ 741 0184 20       		.byte	0x20
+ 742 0185 09       		.uleb128 0x9
+ 743 0186 97060000 		.4byte	.LASF33
+ 744 018a 04       		.byte	0x4
+ 745 018b 40       		.byte	0x40
+ 746 018c 01010000 		.4byte	0x101
+ 747 0190 24       		.byte	0x24
+ 748 0191 09       		.uleb128 0x9
+ 749 0192 B00D0000 		.4byte	.LASF34
+ 750 0196 04       		.byte	0x4
+ 751 0197 43       		.byte	0x43
+ 752 0198 D5000000 		.4byte	0xd5
+ 753 019c 28       		.byte	0x28
+ 754 019d 09       		.uleb128 0x9
+ 755 019e 7F000000 		.4byte	.LASF35
+ 756 01a2 04       		.byte	0x4
+ 757 01a3 44       		.byte	0x44
+ 758 01a4 D5000000 		.4byte	0xd5
+ 759 01a8 29       		.byte	0x29
+ 760 01a9 09       		.uleb128 0x9
+ 761 01aa 410A0000 		.4byte	.LASF36
+ 762 01ae 04       		.byte	0x4
+ 763 01af 45       		.byte	0x45
+ 764 01b0 D5000000 		.4byte	0xd5
+ 765 01b4 2A       		.byte	0x2a
+ 766 01b5 09       		.uleb128 0x9
+ 767 01b6 8D070000 		.4byte	.LASF37
+ 768 01ba 04       		.byte	0x4
+ 769 01bb 46       		.byte	0x46
+ 770 01bc D5000000 		.4byte	0xd5
+ 771 01c0 2B       		.byte	0x2b
+ 772 01c1 09       		.uleb128 0x9
+ 773 01c2 99050000 		.4byte	.LASF38
+ 774 01c6 04       		.byte	0x4
+ 775 01c7 47       		.byte	0x47
+ 776 01c8 D5000000 		.4byte	0xd5
+ 777 01cc 2C       		.byte	0x2c
+ 778 01cd 09       		.uleb128 0x9
+ 779 01ce 4B0A0000 		.4byte	.LASF39
+ 780 01d2 04       		.byte	0x4
+ 781 01d3 48       		.byte	0x48
+ 782 01d4 D5000000 		.4byte	0xd5
+ 783 01d8 2D       		.byte	0x2d
+ 784 01d9 09       		.uleb128 0x9
+ 785 01da D5020000 		.4byte	.LASF40
+ 786 01de 04       		.byte	0x4
+ 787 01df 49       		.byte	0x49
+ 788 01e0 D5000000 		.4byte	0xd5
+ 789 01e4 2E       		.byte	0x2e
+ 790 01e5 09       		.uleb128 0x9
+ 791 01e6 A2060000 		.4byte	.LASF41
+ 792 01ea 04       		.byte	0x4
+ 793 01eb 4A       		.byte	0x4a
+ 794 01ec D5000000 		.4byte	0xd5
+ 795 01f0 2F       		.byte	0x2f
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 24
+
+
+ 796 01f1 09       		.uleb128 0x9
+ 797 01f2 40070000 		.4byte	.LASF42
+ 798 01f6 04       		.byte	0x4
+ 799 01f7 4B       		.byte	0x4b
+ 800 01f8 D5000000 		.4byte	0xd5
+ 801 01fc 30       		.byte	0x30
+ 802 01fd 09       		.uleb128 0x9
+ 803 01fe 0E050000 		.4byte	.LASF43
+ 804 0202 04       		.byte	0x4
+ 805 0203 4E       		.byte	0x4e
+ 806 0204 D5000000 		.4byte	0xd5
+ 807 0208 31       		.byte	0x31
+ 808 0209 09       		.uleb128 0x9
+ 809 020a E3000000 		.4byte	.LASF44
+ 810 020e 04       		.byte	0x4
+ 811 020f 4F       		.byte	0x4f
+ 812 0210 D5000000 		.4byte	0xd5
+ 813 0214 32       		.byte	0x32
+ 814 0215 09       		.uleb128 0x9
+ 815 0216 24050000 		.4byte	.LASF45
+ 816 021a 04       		.byte	0x4
+ 817 021b 50       		.byte	0x50
+ 818 021c D5000000 		.4byte	0xd5
+ 819 0220 33       		.byte	0x33
+ 820 0221 09       		.uleb128 0x9
+ 821 0222 FB000000 		.4byte	.LASF46
+ 822 0226 04       		.byte	0x4
+ 823 0227 51       		.byte	0x51
+ 824 0228 D5000000 		.4byte	0xd5
+ 825 022c 34       		.byte	0x34
+ 826 022d 09       		.uleb128 0x9
+ 827 022e C20A0000 		.4byte	.LASF47
+ 828 0232 04       		.byte	0x4
+ 829 0233 52       		.byte	0x52
+ 830 0234 E0000000 		.4byte	0xe0
+ 831 0238 36       		.byte	0x36
+ 832 0239 09       		.uleb128 0x9
+ 833 023a 77090000 		.4byte	.LASF48
+ 834 023e 04       		.byte	0x4
+ 835 023f 53       		.byte	0x53
+ 836 0240 E0000000 		.4byte	0xe0
+ 837 0244 38       		.byte	0x38
+ 838 0245 09       		.uleb128 0x9
+ 839 0246 420B0000 		.4byte	.LASF49
+ 840 024a 04       		.byte	0x4
+ 841 024b 54       		.byte	0x54
+ 842 024c E0000000 		.4byte	0xe0
+ 843 0250 3A       		.byte	0x3a
+ 844 0251 09       		.uleb128 0x9
+ 845 0252 930C0000 		.4byte	.LASF50
+ 846 0256 04       		.byte	0x4
+ 847 0257 55       		.byte	0x55
+ 848 0258 D5000000 		.4byte	0xd5
+ 849 025c 3C       		.byte	0x3c
+ 850 025d 09       		.uleb128 0x9
+ 851 025e 12070000 		.4byte	.LASF51
+ 852 0262 04       		.byte	0x4
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 25
+
+
+ 853 0263 56       		.byte	0x56
+ 854 0264 D5000000 		.4byte	0xd5
+ 855 0268 3D       		.byte	0x3d
+ 856 0269 09       		.uleb128 0x9
+ 857 026a 140B0000 		.4byte	.LASF52
+ 858 026e 04       		.byte	0x4
+ 859 026f 57       		.byte	0x57
+ 860 0270 D5000000 		.4byte	0xd5
+ 861 0274 3E       		.byte	0x3e
+ 862 0275 09       		.uleb128 0x9
+ 863 0276 E3010000 		.4byte	.LASF53
+ 864 027a 04       		.byte	0x4
+ 865 027b 58       		.byte	0x58
+ 866 027c D5000000 		.4byte	0xd5
+ 867 0280 3F       		.byte	0x3f
+ 868 0281 09       		.uleb128 0x9
+ 869 0282 9B070000 		.4byte	.LASF54
+ 870 0286 04       		.byte	0x4
+ 871 0287 59       		.byte	0x59
+ 872 0288 D5000000 		.4byte	0xd5
+ 873 028c 40       		.byte	0x40
+ 874 028d 09       		.uleb128 0x9
+ 875 028e 40040000 		.4byte	.LASF55
+ 876 0292 04       		.byte	0x4
+ 877 0293 5A       		.byte	0x5a
+ 878 0294 D5000000 		.4byte	0xd5
+ 879 0298 41       		.byte	0x41
+ 880 0299 09       		.uleb128 0x9
+ 881 029a 34070000 		.4byte	.LASF56
+ 882 029e 04       		.byte	0x4
+ 883 029f 5B       		.byte	0x5b
+ 884 02a0 D5000000 		.4byte	0xd5
+ 885 02a4 42       		.byte	0x42
+ 886 02a5 09       		.uleb128 0x9
+ 887 02a6 6A070000 		.4byte	.LASF57
+ 888 02aa 04       		.byte	0x4
+ 889 02ab 5C       		.byte	0x5c
+ 890 02ac D5000000 		.4byte	0xd5
+ 891 02b0 43       		.byte	0x43
+ 892 02b1 09       		.uleb128 0x9
+ 893 02b2 85030000 		.4byte	.LASF58
+ 894 02b6 04       		.byte	0x4
+ 895 02b7 5D       		.byte	0x5d
+ 896 02b8 D5000000 		.4byte	0xd5
+ 897 02bc 44       		.byte	0x44
+ 898 02bd 09       		.uleb128 0x9
+ 899 02be 00000000 		.4byte	.LASF59
+ 900 02c2 04       		.byte	0x4
+ 901 02c3 5E       		.byte	0x5e
+ 902 02c4 01010000 		.4byte	0x101
+ 903 02c8 48       		.byte	0x48
+ 904 02c9 09       		.uleb128 0x9
+ 905 02ca 59030000 		.4byte	.LASF60
+ 906 02ce 04       		.byte	0x4
+ 907 02cf 5F       		.byte	0x5f
+ 908 02d0 01010000 		.4byte	0x101
+ 909 02d4 4C       		.byte	0x4c
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 26
+
+
+ 910 02d5 09       		.uleb128 0x9
+ 911 02d6 C60D0000 		.4byte	.LASF61
+ 912 02da 04       		.byte	0x4
+ 913 02db 60       		.byte	0x60
+ 914 02dc D5000000 		.4byte	0xd5
+ 915 02e0 50       		.byte	0x50
+ 916 02e1 09       		.uleb128 0x9
+ 917 02e2 FE010000 		.4byte	.LASF62
+ 918 02e6 04       		.byte	0x4
+ 919 02e7 61       		.byte	0x61
+ 920 02e8 D5000000 		.4byte	0xd5
+ 921 02ec 51       		.byte	0x51
+ 922 02ed 09       		.uleb128 0x9
+ 923 02ee 900B0000 		.4byte	.LASF63
+ 924 02f2 04       		.byte	0x4
+ 925 02f3 62       		.byte	0x62
+ 926 02f4 D5000000 		.4byte	0xd5
+ 927 02f8 52       		.byte	0x52
+ 928 02f9 09       		.uleb128 0x9
+ 929 02fa 900D0000 		.4byte	.LASF64
+ 930 02fe 04       		.byte	0x4
+ 931 02ff 63       		.byte	0x63
+ 932 0300 D5000000 		.4byte	0xd5
+ 933 0304 53       		.byte	0x53
+ 934 0305 09       		.uleb128 0x9
+ 935 0306 82090000 		.4byte	.LASF65
+ 936 030a 04       		.byte	0x4
+ 937 030b 64       		.byte	0x64
+ 938 030c D5000000 		.4byte	0xd5
+ 939 0310 54       		.byte	0x54
+ 940 0311 09       		.uleb128 0x9
+ 941 0312 10020000 		.4byte	.LASF66
+ 942 0316 04       		.byte	0x4
+ 943 0317 65       		.byte	0x65
+ 944 0318 D5000000 		.4byte	0xd5
+ 945 031c 55       		.byte	0x55
+ 946 031d 09       		.uleb128 0x9
+ 947 031e 64040000 		.4byte	.LASF67
+ 948 0322 04       		.byte	0x4
+ 949 0323 66       		.byte	0x66
+ 950 0324 D5000000 		.4byte	0xd5
+ 951 0328 56       		.byte	0x56
+ 952 0329 09       		.uleb128 0x9
+ 953 032a 3F050000 		.4byte	.LASF68
+ 954 032e 04       		.byte	0x4
+ 955 032f 67       		.byte	0x67
+ 956 0330 D5000000 		.4byte	0xd5
+ 957 0334 57       		.byte	0x57
+ 958 0335 09       		.uleb128 0x9
+ 959 0336 3A000000 		.4byte	.LASF69
+ 960 033a 04       		.byte	0x4
+ 961 033b 68       		.byte	0x68
+ 962 033c D5000000 		.4byte	0xd5
+ 963 0340 58       		.byte	0x58
+ 964 0341 09       		.uleb128 0x9
+ 965 0342 B2080000 		.4byte	.LASF70
+ 966 0346 04       		.byte	0x4
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 27
+
+
+ 967 0347 69       		.byte	0x69
+ 968 0348 D5000000 		.4byte	0xd5
+ 969 034c 59       		.byte	0x59
+ 970 034d 09       		.uleb128 0x9
+ 971 034e FB060000 		.4byte	.LASF71
+ 972 0352 04       		.byte	0x4
+ 973 0353 6E       		.byte	0x6e
+ 974 0354 EB000000 		.4byte	0xeb
+ 975 0358 5A       		.byte	0x5a
+ 976 0359 09       		.uleb128 0x9
+ 977 035a 920A0000 		.4byte	.LASF72
+ 978 035e 04       		.byte	0x4
+ 979 035f 6F       		.byte	0x6f
+ 980 0360 EB000000 		.4byte	0xeb
+ 981 0364 5C       		.byte	0x5c
+ 982 0365 09       		.uleb128 0x9
+ 983 0366 8D000000 		.4byte	.LASF73
+ 984 036a 04       		.byte	0x4
+ 985 036b 70       		.byte	0x70
+ 986 036c D5000000 		.4byte	0xd5
+ 987 0370 5E       		.byte	0x5e
+ 988 0371 09       		.uleb128 0x9
+ 989 0372 3D080000 		.4byte	.LASF74
+ 990 0376 04       		.byte	0x4
+ 991 0377 71       		.byte	0x71
+ 992 0378 D5000000 		.4byte	0xd5
+ 993 037c 5F       		.byte	0x5f
+ 994 037d 09       		.uleb128 0x9
+ 995 037e 4C070000 		.4byte	.LASF75
+ 996 0382 04       		.byte	0x4
+ 997 0383 72       		.byte	0x72
+ 998 0384 D5000000 		.4byte	0xd5
+ 999 0388 60       		.byte	0x60
+ 1000 0389 09       		.uleb128 0x9
+ 1001 038a 05080000 		.4byte	.LASF76
+ 1002 038e 04       		.byte	0x4
+ 1003 038f 73       		.byte	0x73
+ 1004 0390 01010000 		.4byte	0x101
+ 1005 0394 64       		.byte	0x64
+ 1006 0395 09       		.uleb128 0x9
+ 1007 0396 90010000 		.4byte	.LASF77
+ 1008 039a 04       		.byte	0x4
+ 1009 039b 76       		.byte	0x76
+ 1010 039c EB000000 		.4byte	0xeb
+ 1011 03a0 68       		.byte	0x68
+ 1012 03a1 09       		.uleb128 0x9
+ 1013 03a2 EC040000 		.4byte	.LASF78
+ 1014 03a6 04       		.byte	0x4
+ 1015 03a7 77       		.byte	0x77
+ 1016 03a8 EB000000 		.4byte	0xeb
+ 1017 03ac 6A       		.byte	0x6a
+ 1018 03ad 09       		.uleb128 0x9
+ 1019 03ae 61050000 		.4byte	.LASF79
+ 1020 03b2 04       		.byte	0x4
+ 1021 03b3 78       		.byte	0x78
+ 1022 03b4 EB000000 		.4byte	0xeb
+ 1023 03b8 6C       		.byte	0x6c
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 28
+
+
+ 1024 03b9 09       		.uleb128 0x9
+ 1025 03ba A4090000 		.4byte	.LASF80
+ 1026 03be 04       		.byte	0x4
+ 1027 03bf 79       		.byte	0x79
+ 1028 03c0 EB000000 		.4byte	0xeb
+ 1029 03c4 6E       		.byte	0x6e
+ 1030 03c5 09       		.uleb128 0x9
+ 1031 03c6 41090000 		.4byte	.LASF81
+ 1032 03ca 04       		.byte	0x4
+ 1033 03cb 7B       		.byte	0x7b
+ 1034 03cc D5000000 		.4byte	0xd5
+ 1035 03d0 70       		.byte	0x70
+ 1036 03d1 09       		.uleb128 0x9
+ 1037 03d2 79020000 		.4byte	.LASF82
+ 1038 03d6 04       		.byte	0x4
+ 1039 03d7 7C       		.byte	0x7c
+ 1040 03d8 D5000000 		.4byte	0xd5
+ 1041 03dc 71       		.byte	0x71
+ 1042 03dd 09       		.uleb128 0x9
+ 1043 03de 7A0D0000 		.4byte	.LASF83
+ 1044 03e2 04       		.byte	0x4
+ 1045 03e3 7D       		.byte	0x7d
+ 1046 03e4 D5000000 		.4byte	0xd5
+ 1047 03e8 72       		.byte	0x72
+ 1048 03e9 09       		.uleb128 0x9
+ 1049 03ea 1D070000 		.4byte	.LASF84
+ 1050 03ee 04       		.byte	0x4
+ 1051 03ef 7E       		.byte	0x7e
+ 1052 03f0 D5000000 		.4byte	0xd5
+ 1053 03f4 73       		.byte	0x73
+ 1054 03f5 09       		.uleb128 0x9
+ 1055 03f6 E8030000 		.4byte	.LASF85
+ 1056 03fa 04       		.byte	0x4
+ 1057 03fb 80       		.byte	0x80
+ 1058 03fc EB000000 		.4byte	0xeb
+ 1059 0400 74       		.byte	0x74
+ 1060 0401 09       		.uleb128 0x9
+ 1061 0402 1C0A0000 		.4byte	.LASF86
+ 1062 0406 04       		.byte	0x4
+ 1063 0407 81       		.byte	0x81
+ 1064 0408 EB000000 		.4byte	0xeb
+ 1065 040c 76       		.byte	0x76
+ 1066 040d 09       		.uleb128 0x9
+ 1067 040e A6030000 		.4byte	.LASF87
+ 1068 0412 04       		.byte	0x4
+ 1069 0413 82       		.byte	0x82
+ 1070 0414 EB000000 		.4byte	0xeb
+ 1071 0418 78       		.byte	0x78
+ 1072 0419 09       		.uleb128 0x9
+ 1073 041a DC080000 		.4byte	.LASF88
+ 1074 041e 04       		.byte	0x4
+ 1075 041f 83       		.byte	0x83
+ 1076 0420 EB000000 		.4byte	0xeb
+ 1077 0424 7A       		.byte	0x7a
+ 1078 0425 09       		.uleb128 0x9
+ 1079 0426 FE0B0000 		.4byte	.LASF89
+ 1080 042a 04       		.byte	0x4
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 29
+
+
+ 1081 042b 86       		.byte	0x86
+ 1082 042c D5000000 		.4byte	0xd5
+ 1083 0430 7C       		.byte	0x7c
+ 1084 0431 09       		.uleb128 0x9
+ 1085 0432 BC050000 		.4byte	.LASF90
+ 1086 0436 04       		.byte	0x4
+ 1087 0437 87       		.byte	0x87
+ 1088 0438 D5000000 		.4byte	0xd5
+ 1089 043c 7D       		.byte	0x7d
+ 1090 043d 09       		.uleb128 0x9
+ 1091 043e 4E000000 		.4byte	.LASF91
+ 1092 0442 04       		.byte	0x4
+ 1093 0443 88       		.byte	0x88
+ 1094 0444 D5000000 		.4byte	0xd5
+ 1095 0448 7E       		.byte	0x7e
+ 1096 0449 09       		.uleb128 0x9
+ 1097 044a FA030000 		.4byte	.LASF92
+ 1098 044e 04       		.byte	0x4
+ 1099 044f 89       		.byte	0x89
+ 1100 0450 D5000000 		.4byte	0xd5
+ 1101 0454 7F       		.byte	0x7f
+ 1102 0455 09       		.uleb128 0x9
+ 1103 0456 B6040000 		.4byte	.LASF93
+ 1104 045a 04       		.byte	0x4
+ 1105 045b 8A       		.byte	0x8a
+ 1106 045c D5000000 		.4byte	0xd5
+ 1107 0460 80       		.byte	0x80
+ 1108 0461 09       		.uleb128 0x9
+ 1109 0462 80060000 		.4byte	.LASF94
+ 1110 0466 04       		.byte	0x4
+ 1111 0467 8D       		.byte	0x8d
+ 1112 0468 01010000 		.4byte	0x101
+ 1113 046c 84       		.byte	0x84
+ 1114 046d 09       		.uleb128 0x9
+ 1115 046e 0C010000 		.4byte	.LASF95
+ 1116 0472 04       		.byte	0x4
+ 1117 0473 8E       		.byte	0x8e
+ 1118 0474 01010000 		.4byte	0x101
+ 1119 0478 88       		.byte	0x88
+ 1120 0479 09       		.uleb128 0x9
+ 1121 047a E90B0000 		.4byte	.LASF96
+ 1122 047e 04       		.byte	0x4
+ 1123 047f 8F       		.byte	0x8f
+ 1124 0480 01010000 		.4byte	0x101
+ 1125 0484 8C       		.byte	0x8c
+ 1126 0485 09       		.uleb128 0x9
+ 1127 0486 CA040000 		.4byte	.LASF97
+ 1128 048a 04       		.byte	0x4
+ 1129 048b 90       		.byte	0x90
+ 1130 048c 01010000 		.4byte	0x101
+ 1131 0490 90       		.byte	0x90
+ 1132 0491 09       		.uleb128 0x9
+ 1133 0492 97040000 		.4byte	.LASF98
+ 1134 0496 04       		.byte	0x4
+ 1135 0497 91       		.byte	0x91
+ 1136 0498 01010000 		.4byte	0x101
+ 1137 049c 94       		.byte	0x94
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 30
+
+
+ 1138 049d 09       		.uleb128 0x9
+ 1139 049e BF020000 		.4byte	.LASF99
+ 1140 04a2 04       		.byte	0x4
+ 1141 04a3 92       		.byte	0x92
+ 1142 04a4 01010000 		.4byte	0x101
+ 1143 04a8 98       		.byte	0x98
+ 1144 04a9 09       		.uleb128 0x9
+ 1145 04aa 7D0C0000 		.4byte	.LASF100
+ 1146 04ae 04       		.byte	0x4
+ 1147 04af 93       		.byte	0x93
+ 1148 04b0 01010000 		.4byte	0x101
+ 1149 04b4 9C       		.byte	0x9c
+ 1150 04b5 09       		.uleb128 0x9
+ 1151 04b6 A0010000 		.4byte	.LASF101
+ 1152 04ba 04       		.byte	0x4
+ 1153 04bb 94       		.byte	0x94
+ 1154 04bc 01010000 		.4byte	0x101
+ 1155 04c0 A0       		.byte	0xa0
+ 1156 04c1 09       		.uleb128 0x9
+ 1157 04c2 E0020000 		.4byte	.LASF102
+ 1158 04c6 04       		.byte	0x4
+ 1159 04c7 95       		.byte	0x95
+ 1160 04c8 EB000000 		.4byte	0xeb
+ 1161 04cc A4       		.byte	0xa4
+ 1162 04cd 09       		.uleb128 0x9
+ 1163 04ce 570B0000 		.4byte	.LASF103
+ 1164 04d2 04       		.byte	0x4
+ 1165 04d3 96       		.byte	0x96
+ 1166 04d4 EB000000 		.4byte	0xeb
+ 1167 04d8 A6       		.byte	0xa6
+ 1168 04d9 09       		.uleb128 0x9
+ 1169 04da 31080000 		.4byte	.LASF104
+ 1170 04de 04       		.byte	0x4
+ 1171 04df 97       		.byte	0x97
+ 1172 04e0 EB000000 		.4byte	0xeb
+ 1173 04e4 A8       		.byte	0xa8
+ 1174 04e5 09       		.uleb128 0x9
+ 1175 04e6 1F090000 		.4byte	.LASF105
+ 1176 04ea 04       		.byte	0x4
+ 1177 04eb 98       		.byte	0x98
+ 1178 04ec EB000000 		.4byte	0xeb
+ 1179 04f0 AA       		.byte	0xaa
+ 1180 04f1 09       		.uleb128 0x9
+ 1181 04f2 70050000 		.4byte	.LASF106
+ 1182 04f6 04       		.byte	0x4
+ 1183 04f7 99       		.byte	0x99
+ 1184 04f8 EB000000 		.4byte	0xeb
+ 1185 04fc AC       		.byte	0xac
+ 1186 04fd 09       		.uleb128 0x9
+ 1187 04fe 75070000 		.4byte	.LASF107
+ 1188 0502 04       		.byte	0x4
+ 1189 0503 9A       		.byte	0x9a
+ 1190 0504 EB000000 		.4byte	0xeb
+ 1191 0508 AE       		.byte	0xae
+ 1192 0509 09       		.uleb128 0x9
+ 1193 050a A50A0000 		.4byte	.LASF108
+ 1194 050e 04       		.byte	0x4
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 31
+
+
+ 1195 050f 9D       		.byte	0x9d
+ 1196 0510 EB000000 		.4byte	0xeb
+ 1197 0514 B0       		.byte	0xb0
+ 1198 0515 09       		.uleb128 0x9
+ 1199 0516 6B000000 		.4byte	.LASF109
+ 1200 051a 04       		.byte	0x4
+ 1201 051b 9E       		.byte	0x9e
+ 1202 051c 01010000 		.4byte	0x101
+ 1203 0520 B4       		.byte	0xb4
+ 1204 0521 00       		.byte	0
+ 1205 0522 02       		.uleb128 0x2
+ 1206 0523 FA050000 		.4byte	.LASF110
+ 1207 0527 04       		.byte	0x4
+ 1208 0528 9F       		.byte	0x9f
+ 1209 0529 11010000 		.4byte	0x111
+ 1210 052d 03       		.uleb128 0x3
+ 1211 052e 04       		.byte	0x4
+ 1212 052f 04       		.byte	0x4
+ 1213 0530 FF070000 		.4byte	.LASF111
+ 1214 0534 03       		.uleb128 0x3
+ 1215 0535 08       		.byte	0x8
+ 1216 0536 04       		.byte	0x4
+ 1217 0537 9F030000 		.4byte	.LASF112
+ 1218 053b 03       		.uleb128 0x3
+ 1219 053c 01       		.byte	0x1
+ 1220 053d 02       		.byte	0x2
+ 1221 053e 0E0B0000 		.4byte	.LASF113
+ 1222 0542 06       		.uleb128 0x6
+ 1223 0543 04       		.byte	0x4
+ 1224 0544 48050000 		.4byte	0x548
+ 1225 0548 0A       		.uleb128 0xa
+ 1226 0549 53050000 		.4byte	0x553
+ 1227 054d 0B       		.uleb128 0xb
+ 1228 054e 01010000 		.4byte	0x101
+ 1229 0552 00       		.byte	0
+ 1230 0553 06       		.uleb128 0x6
+ 1231 0554 04       		.byte	0x4
+ 1232 0555 D5000000 		.4byte	0xd5
+ 1233 0559 0C       		.uleb128 0xc
+ 1234 055a F5020000 		.4byte	.LASF114
+ 1235 055e 05       		.byte	0x5
+ 1236 055f F201     		.2byte	0x1f2
+ 1237 0561 42050000 		.4byte	0x542
+ 1238 0565 0D       		.uleb128 0xd
+ 1239 0566 62020000 		.4byte	.LASF125
+ 1240 056a 24       		.byte	0x24
+ 1241 056b 05       		.byte	0x5
+ 1242 056c 7402     		.2byte	0x274
+ 1243 056e E8050000 		.4byte	0x5e8
+ 1244 0572 0E       		.uleb128 0xe
+ 1245 0573 2D090000 		.4byte	.LASF115
+ 1246 0577 05       		.byte	0x5
+ 1247 0578 7702     		.2byte	0x277
+ 1248 057a 0C010000 		.4byte	0x10c
+ 1249 057e 00       		.byte	0
+ 1250 057f 0E       		.uleb128 0xe
+ 1251 0580 F00A0000 		.4byte	.LASF116
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 32
+
+
+ 1252 0584 05       		.byte	0x5
+ 1253 0585 7902     		.2byte	0x279
+ 1254 0587 B4000000 		.4byte	0xb4
+ 1255 058b 04       		.byte	0x4
+ 1256 058c 0E       		.uleb128 0xe
+ 1257 058d 22000000 		.4byte	.LASF117
+ 1258 0591 05       		.byte	0x5
+ 1259 0592 7A02     		.2byte	0x27a
+ 1260 0594 01010000 		.4byte	0x101
+ 1261 0598 08       		.byte	0x8
+ 1262 0599 0E       		.uleb128 0xe
+ 1263 059a 78040000 		.4byte	.LASF118
+ 1264 059e 05       		.byte	0x5
+ 1265 059f 7B02     		.2byte	0x27b
+ 1266 05a1 0C010000 		.4byte	0x10c
+ 1267 05a5 0C       		.byte	0xc
+ 1268 05a6 0E       		.uleb128 0xe
+ 1269 05a7 D4010000 		.4byte	.LASF119
+ 1270 05ab 05       		.byte	0x5
+ 1271 05ac 7D02     		.2byte	0x27d
+ 1272 05ae B4000000 		.4byte	0xb4
+ 1273 05b2 10       		.byte	0x10
+ 1274 05b3 0E       		.uleb128 0xe
+ 1275 05b4 AC040000 		.4byte	.LASF120
+ 1276 05b8 05       		.byte	0x5
+ 1277 05b9 7E02     		.2byte	0x27e
+ 1278 05bb 01010000 		.4byte	0x101
+ 1279 05bf 14       		.byte	0x14
+ 1280 05c0 0E       		.uleb128 0xe
+ 1281 05c1 E1050000 		.4byte	.LASF121
+ 1282 05c5 05       		.byte	0x5
+ 1283 05c6 7F02     		.2byte	0x27f
+ 1284 05c8 0C010000 		.4byte	0x10c
+ 1285 05cc 18       		.byte	0x18
+ 1286 05cd 0E       		.uleb128 0xe
+ 1287 05ce B3050000 		.4byte	.LASF122
+ 1288 05d2 05       		.byte	0x5
+ 1289 05d3 8502     		.2byte	0x285
+ 1290 05d5 59050000 		.4byte	0x559
+ 1291 05d9 1C       		.byte	0x1c
+ 1292 05da 0E       		.uleb128 0xe
+ 1293 05db E80A0000 		.4byte	.LASF123
+ 1294 05df 05       		.byte	0x5
+ 1295 05e0 8802     		.2byte	0x288
+ 1296 05e2 01010000 		.4byte	0x101
+ 1297 05e6 20       		.byte	0x20
+ 1298 05e7 00       		.byte	0
+ 1299 05e8 0C       		.uleb128 0xc
+ 1300 05e9 C3090000 		.4byte	.LASF124
+ 1301 05ed 05       		.byte	0x5
+ 1302 05ee 8B02     		.2byte	0x28b
+ 1303 05f0 65050000 		.4byte	0x565
+ 1304 05f4 0F       		.uleb128 0xf
+ 1305 05f5 AE060000 		.4byte	.LASF126
+ 1306 05f9 4C       		.byte	0x4c
+ 1307 05fa 06       		.byte	0x6
+ 1308 05fb 2F       		.byte	0x2f
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 33
+
+
+ 1309 05fc E5060000 		.4byte	0x6e5
+ 1310 0600 09       		.uleb128 0x9
+ 1311 0601 4A010000 		.4byte	.LASF127
+ 1312 0605 06       		.byte	0x6
+ 1313 0606 31       		.byte	0x31
+ 1314 0607 01010000 		.4byte	0x101
+ 1315 060b 00       		.byte	0
+ 1316 060c 09       		.uleb128 0x9
+ 1317 060d 81010000 		.4byte	.LASF128
+ 1318 0611 06       		.byte	0x6
+ 1319 0612 33       		.byte	0x33
+ 1320 0613 01010000 		.4byte	0x101
+ 1321 0617 04       		.byte	0x4
+ 1322 0618 09       		.uleb128 0x9
+ 1323 0619 12000000 		.4byte	.LASF129
+ 1324 061d 06       		.byte	0x6
+ 1325 061e 34       		.byte	0x34
+ 1326 061f 01010000 		.4byte	0x101
+ 1327 0623 08       		.byte	0x8
+ 1328 0624 09       		.uleb128 0x9
+ 1329 0625 23010000 		.4byte	.LASF130
+ 1330 0629 06       		.byte	0x6
+ 1331 062a 35       		.byte	0x35
+ 1332 062b 01010000 		.4byte	0x101
+ 1333 062f 0C       		.byte	0xc
+ 1334 0630 09       		.uleb128 0x9
+ 1335 0631 66090000 		.4byte	.LASF131
+ 1336 0635 06       		.byte	0x6
+ 1337 0636 37       		.byte	0x37
+ 1338 0637 01010000 		.4byte	0x101
+ 1339 063b 10       		.byte	0x10
+ 1340 063c 09       		.uleb128 0x9
+ 1341 063d DC090000 		.4byte	.LASF132
+ 1342 0641 06       		.byte	0x6
+ 1343 0642 38       		.byte	0x38
+ 1344 0643 01010000 		.4byte	0x101
+ 1345 0647 14       		.byte	0x14
+ 1346 0648 09       		.uleb128 0x9
+ 1347 0649 E5090000 		.4byte	.LASF133
+ 1348 064d 06       		.byte	0x6
+ 1349 064e 39       		.byte	0x39
+ 1350 064f 01010000 		.4byte	0x101
+ 1351 0653 18       		.byte	0x18
+ 1352 0654 09       		.uleb128 0x9
+ 1353 0655 F1080000 		.4byte	.LASF134
+ 1354 0659 06       		.byte	0x6
+ 1355 065a 3A       		.byte	0x3a
+ 1356 065b 3B050000 		.4byte	0x53b
+ 1357 065f 1C       		.byte	0x1c
+ 1358 0660 09       		.uleb128 0x9
+ 1359 0661 620A0000 		.4byte	.LASF135
+ 1360 0665 06       		.byte	0x6
+ 1361 0666 3C       		.byte	0x3c
+ 1362 0667 01010000 		.4byte	0x101
+ 1363 066b 20       		.byte	0x20
+ 1364 066c 09       		.uleb128 0x9
+ 1365 066d D7030000 		.4byte	.LASF136
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 34
+
+
+ 1366 0671 06       		.byte	0x6
+ 1367 0672 3D       		.byte	0x3d
+ 1368 0673 01010000 		.4byte	0x101
+ 1369 0677 24       		.byte	0x24
+ 1370 0678 09       		.uleb128 0x9
+ 1371 0679 5D010000 		.4byte	.LASF137
+ 1372 067d 06       		.byte	0x6
+ 1373 067e 3F       		.byte	0x3f
+ 1374 067f 01010000 		.4byte	0x101
+ 1375 0683 28       		.byte	0x28
+ 1376 0684 09       		.uleb128 0x9
+ 1377 0685 370C0000 		.4byte	.LASF138
+ 1378 0689 06       		.byte	0x6
+ 1379 068a 40       		.byte	0x40
+ 1380 068b 01010000 		.4byte	0x101
+ 1381 068f 2C       		.byte	0x2c
+ 1382 0690 09       		.uleb128 0x9
+ 1383 0691 730A0000 		.4byte	.LASF139
+ 1384 0695 06       		.byte	0x6
+ 1385 0696 42       		.byte	0x42
+ 1386 0697 01010000 		.4byte	0x101
+ 1387 069b 30       		.byte	0x30
+ 1388 069c 09       		.uleb128 0x9
+ 1389 069d 8D080000 		.4byte	.LASF140
+ 1390 06a1 06       		.byte	0x6
+ 1391 06a2 43       		.byte	0x43
+ 1392 06a3 01010000 		.4byte	0x101
+ 1393 06a7 34       		.byte	0x34
+ 1394 06a8 09       		.uleb128 0x9
+ 1395 06a9 E50D0000 		.4byte	.LASF141
+ 1396 06ad 06       		.byte	0x6
+ 1397 06ae 45       		.byte	0x45
+ 1398 06af 01010000 		.4byte	0x101
+ 1399 06b3 38       		.byte	0x38
+ 1400 06b4 09       		.uleb128 0x9
+ 1401 06b5 32010000 		.4byte	.LASF142
+ 1402 06b9 06       		.byte	0x6
+ 1403 06ba 46       		.byte	0x46
+ 1404 06bb 01010000 		.4byte	0x101
+ 1405 06bf 3C       		.byte	0x3c
+ 1406 06c0 09       		.uleb128 0x9
+ 1407 06c1 9B0A0000 		.4byte	.LASF143
+ 1408 06c5 06       		.byte	0x6
+ 1409 06c6 48       		.byte	0x48
+ 1410 06c7 01010000 		.4byte	0x101
+ 1411 06cb 40       		.byte	0x40
+ 1412 06cc 09       		.uleb128 0x9
+ 1413 06cd 71060000 		.4byte	.LASF144
+ 1414 06d1 06       		.byte	0x6
+ 1415 06d2 49       		.byte	0x49
+ 1416 06d3 01010000 		.4byte	0x101
+ 1417 06d7 44       		.byte	0x44
+ 1418 06d8 09       		.uleb128 0x9
+ 1419 06d9 EE090000 		.4byte	.LASF145
+ 1420 06dd 06       		.byte	0x6
+ 1421 06de 4B       		.byte	0x4b
+ 1422 06df 01010000 		.4byte	0x101
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 35
+
+
+ 1423 06e3 48       		.byte	0x48
+ 1424 06e4 00       		.byte	0
+ 1425 06e5 02       		.uleb128 0x2
+ 1426 06e6 44020000 		.4byte	.LASF146
+ 1427 06ea 06       		.byte	0x6
+ 1428 06eb 4C       		.byte	0x4c
+ 1429 06ec F4050000 		.4byte	0x5f4
+ 1430 06f0 0F       		.uleb128 0xf
+ 1431 06f1 1D030000 		.4byte	.LASF147
+ 1432 06f5 64       		.byte	0x64
+ 1433 06f6 07       		.byte	0x7
+ 1434 06f7 2F       		.byte	0x2f
+ 1435 06f8 29080000 		.4byte	0x829
+ 1436 06fc 09       		.uleb128 0x9
+ 1437 06fd F7070000 		.4byte	.LASF148
+ 1438 0701 07       		.byte	0x7
+ 1439 0702 31       		.byte	0x31
+ 1440 0703 01010000 		.4byte	0x101
+ 1441 0707 00       		.byte	0
+ 1442 0708 09       		.uleb128 0x9
+ 1443 0709 81010000 		.4byte	.LASF128
+ 1444 070d 07       		.byte	0x7
+ 1445 070e 33       		.byte	0x33
+ 1446 070f 01010000 		.4byte	0x101
+ 1447 0713 04       		.byte	0x4
+ 1448 0714 09       		.uleb128 0x9
+ 1449 0715 34090000 		.4byte	.LASF149
+ 1450 0719 07       		.byte	0x7
+ 1451 071a 34       		.byte	0x34
+ 1452 071b 01010000 		.4byte	0x101
+ 1453 071f 08       		.byte	0x8
+ 1454 0720 09       		.uleb128 0x9
+ 1455 0721 4E060000 		.4byte	.LASF150
+ 1456 0725 07       		.byte	0x7
+ 1457 0726 35       		.byte	0x35
+ 1458 0727 01010000 		.4byte	0x101
+ 1459 072b 0C       		.byte	0xc
+ 1460 072c 09       		.uleb128 0x9
+ 1461 072d 12000000 		.4byte	.LASF129
+ 1462 0731 07       		.byte	0x7
+ 1463 0732 36       		.byte	0x36
+ 1464 0733 01010000 		.4byte	0x101
+ 1465 0737 10       		.byte	0x10
+ 1466 0738 09       		.uleb128 0x9
+ 1467 0739 CF0A0000 		.4byte	.LASF151
+ 1468 073d 07       		.byte	0x7
+ 1469 073e 37       		.byte	0x37
+ 1470 073f 01010000 		.4byte	0x101
+ 1471 0743 14       		.byte	0x14
+ 1472 0744 09       		.uleb128 0x9
+ 1473 0745 D70A0000 		.4byte	.LASF152
+ 1474 0749 07       		.byte	0x7
+ 1475 074a 38       		.byte	0x38
+ 1476 074b 01010000 		.4byte	0x101
+ 1477 074f 18       		.byte	0x18
+ 1478 0750 09       		.uleb128 0x9
+ 1479 0751 55090000 		.4byte	.LASF153
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 36
+
+
+ 1480 0755 07       		.byte	0x7
+ 1481 0756 39       		.byte	0x39
+ 1482 0757 3B050000 		.4byte	0x53b
+ 1483 075b 1C       		.byte	0x1c
+ 1484 075c 09       		.uleb128 0x9
+ 1485 075d DC090000 		.4byte	.LASF132
+ 1486 0761 07       		.byte	0x7
+ 1487 0762 3A       		.byte	0x3a
+ 1488 0763 01010000 		.4byte	0x101
+ 1489 0767 20       		.byte	0x20
+ 1490 0768 09       		.uleb128 0x9
+ 1491 0769 E5090000 		.4byte	.LASF133
+ 1492 076d 07       		.byte	0x7
+ 1493 076e 3B       		.byte	0x3b
+ 1494 076f 01010000 		.4byte	0x101
+ 1495 0773 24       		.byte	0x24
+ 1496 0774 09       		.uleb128 0x9
+ 1497 0775 F1080000 		.4byte	.LASF134
+ 1498 0779 07       		.byte	0x7
+ 1499 077a 3C       		.byte	0x3c
+ 1500 077b 3B050000 		.4byte	0x53b
+ 1501 077f 28       		.byte	0x28
+ 1502 0780 09       		.uleb128 0x9
+ 1503 0781 620A0000 		.4byte	.LASF135
+ 1504 0785 07       		.byte	0x7
+ 1505 0786 3E       		.byte	0x3e
+ 1506 0787 01010000 		.4byte	0x101
+ 1507 078b 2C       		.byte	0x2c
+ 1508 078c 09       		.uleb128 0x9
+ 1509 078d 37060000 		.4byte	.LASF154
+ 1510 0791 07       		.byte	0x7
+ 1511 0792 3F       		.byte	0x3f
+ 1512 0793 01010000 		.4byte	0x101
+ 1513 0797 30       		.byte	0x30
+ 1514 0798 09       		.uleb128 0x9
+ 1515 0799 5D060000 		.4byte	.LASF155
+ 1516 079d 07       		.byte	0x7
+ 1517 079e 40       		.byte	0x40
+ 1518 079f 01010000 		.4byte	0x101
+ 1519 07a3 34       		.byte	0x34
+ 1520 07a4 09       		.uleb128 0x9
+ 1521 07a5 53080000 		.4byte	.LASF156
+ 1522 07a9 07       		.byte	0x7
+ 1523 07aa 41       		.byte	0x41
+ 1524 07ab 01010000 		.4byte	0x101
+ 1525 07af 38       		.byte	0x38
+ 1526 07b0 09       		.uleb128 0x9
+ 1527 07b1 53050000 		.4byte	.LASF157
+ 1528 07b5 07       		.byte	0x7
+ 1529 07b6 42       		.byte	0x42
+ 1530 07b7 01010000 		.4byte	0x101
+ 1531 07bb 3C       		.byte	0x3c
+ 1532 07bc 09       		.uleb128 0x9
+ 1533 07bd CA0B0000 		.4byte	.LASF158
+ 1534 07c1 07       		.byte	0x7
+ 1535 07c2 44       		.byte	0x44
+ 1536 07c3 01010000 		.4byte	0x101
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 37
+
+
+ 1537 07c7 40       		.byte	0x40
+ 1538 07c8 09       		.uleb128 0x9
+ 1539 07c9 370C0000 		.4byte	.LASF138
+ 1540 07cd 07       		.byte	0x7
+ 1541 07ce 45       		.byte	0x45
+ 1542 07cf 01010000 		.4byte	0x101
+ 1543 07d3 44       		.byte	0x44
+ 1544 07d4 09       		.uleb128 0x9
+ 1545 07d5 730A0000 		.4byte	.LASF139
+ 1546 07d9 07       		.byte	0x7
+ 1547 07da 47       		.byte	0x47
+ 1548 07db 01010000 		.4byte	0x101
+ 1549 07df 48       		.byte	0x48
+ 1550 07e0 09       		.uleb128 0x9
+ 1551 07e1 8D080000 		.4byte	.LASF140
+ 1552 07e5 07       		.byte	0x7
+ 1553 07e6 48       		.byte	0x48
+ 1554 07e7 01010000 		.4byte	0x101
+ 1555 07eb 4C       		.byte	0x4c
+ 1556 07ec 09       		.uleb128 0x9
+ 1557 07ed E50D0000 		.4byte	.LASF141
+ 1558 07f1 07       		.byte	0x7
+ 1559 07f2 4A       		.byte	0x4a
+ 1560 07f3 01010000 		.4byte	0x101
+ 1561 07f7 50       		.byte	0x50
+ 1562 07f8 09       		.uleb128 0x9
+ 1563 07f9 A5050000 		.4byte	.LASF159
+ 1564 07fd 07       		.byte	0x7
+ 1565 07fe 4B       		.byte	0x4b
+ 1566 07ff 01010000 		.4byte	0x101
+ 1567 0803 54       		.byte	0x54
+ 1568 0804 09       		.uleb128 0x9
+ 1569 0805 61000000 		.4byte	.LASF160
+ 1570 0809 07       		.byte	0x7
+ 1571 080a 4D       		.byte	0x4d
+ 1572 080b 01010000 		.4byte	0x101
+ 1573 080f 58       		.byte	0x58
+ 1574 0810 09       		.uleb128 0x9
+ 1575 0811 71060000 		.4byte	.LASF144
+ 1576 0815 07       		.byte	0x7
+ 1577 0816 4E       		.byte	0x4e
+ 1578 0817 01010000 		.4byte	0x101
+ 1579 081b 5C       		.byte	0x5c
+ 1580 081c 09       		.uleb128 0x9
+ 1581 081d EE090000 		.4byte	.LASF145
+ 1582 0821 07       		.byte	0x7
+ 1583 0822 50       		.byte	0x50
+ 1584 0823 01010000 		.4byte	0x101
+ 1585 0827 60       		.byte	0x60
+ 1586 0828 00       		.byte	0
+ 1587 0829 02       		.uleb128 0x2
+ 1588 082a 130C0000 		.4byte	.LASF161
+ 1589 082e 07       		.byte	0x7
+ 1590 082f 51       		.byte	0x51
+ 1591 0830 F0060000 		.4byte	0x6f0
+ 1592 0834 08       		.uleb128 0x8
+ 1593 0835 0C       		.byte	0xc
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 38
+
+
+ 1594 0836 08       		.byte	0x8
+ 1595 0837 3B       		.byte	0x3b
+ 1596 0838 9D080000 		.4byte	0x89d
+ 1597 083c 09       		.uleb128 0x9
+ 1598 083d DA010000 		.4byte	.LASF162
+ 1599 0841 08       		.byte	0x8
+ 1600 0842 3E       		.byte	0x3e
+ 1601 0843 53050000 		.4byte	0x553
+ 1602 0847 00       		.byte	0
+ 1603 0848 09       		.uleb128 0x9
+ 1604 0849 CA060000 		.4byte	.LASF163
+ 1605 084d 08       		.byte	0x8
+ 1606 084e 40       		.byte	0x40
+ 1607 084f D5000000 		.4byte	0xd5
+ 1608 0853 04       		.byte	0x4
+ 1609 0854 09       		.uleb128 0x9
+ 1610 0855 1A000000 		.4byte	.LASF164
+ 1611 0859 08       		.byte	0x8
+ 1612 085a 42       		.byte	0x42
+ 1613 085b D5000000 		.4byte	0xd5
+ 1614 085f 05       		.byte	0x5
+ 1615 0860 09       		.uleb128 0x9
+ 1616 0861 91040000 		.4byte	.LASF165
+ 1617 0865 08       		.byte	0x8
+ 1618 0866 44       		.byte	0x44
+ 1619 0867 D5000000 		.4byte	0xd5
+ 1620 086b 06       		.byte	0x6
+ 1621 086c 09       		.uleb128 0x9
+ 1622 086d 600C0000 		.4byte	.LASF166
+ 1623 0871 08       		.byte	0x8
+ 1624 0872 46       		.byte	0x46
+ 1625 0873 D5000000 		.4byte	0xd5
+ 1626 0877 07       		.byte	0x7
+ 1627 0878 09       		.uleb128 0x9
+ 1628 0879 0B0A0000 		.4byte	.LASF167
+ 1629 087d 08       		.byte	0x8
+ 1630 087e 48       		.byte	0x48
+ 1631 087f D5000000 		.4byte	0xd5
+ 1632 0883 08       		.byte	0x8
+ 1633 0884 09       		.uleb128 0x9
+ 1634 0885 7E050000 		.4byte	.LASF168
+ 1635 0889 08       		.byte	0x8
+ 1636 088a 4A       		.byte	0x4a
+ 1637 088b D5000000 		.4byte	0xd5
+ 1638 088f 09       		.byte	0x9
+ 1639 0890 09       		.uleb128 0x9
+ 1640 0891 6B060000 		.4byte	.LASF169
+ 1641 0895 08       		.byte	0x8
+ 1642 0896 4D       		.byte	0x4d
+ 1643 0897 3B050000 		.4byte	0x53b
+ 1644 089b 0A       		.byte	0xa
+ 1645 089c 00       		.byte	0
+ 1646 089d 02       		.uleb128 0x2
+ 1647 089e 30050000 		.4byte	.LASF170
+ 1648 08a2 08       		.byte	0x8
+ 1649 08a3 4E       		.byte	0x4e
+ 1650 08a4 34080000 		.4byte	0x834
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 39
+
+
+ 1651 08a8 02       		.uleb128 0x2
+ 1652 08a9 B6010000 		.4byte	.LASF171
+ 1653 08ad 09       		.byte	0x9
+ 1654 08ae 35       		.byte	0x35
+ 1655 08af 42000000 		.4byte	0x42
+ 1656 08b3 10       		.uleb128 0x10
+ 1657 08b4 01       		.byte	0x1
+ 1658 08b5 42000000 		.4byte	0x42
+ 1659 08b9 09       		.byte	0x9
+ 1660 08ba 39       		.byte	0x39
+ 1661 08bb E4080000 		.4byte	0x8e4
+ 1662 08bf 11       		.uleb128 0x11
+ 1663 08c0 EF010000 		.4byte	.LASF172
+ 1664 08c4 00       		.byte	0
+ 1665 08c5 11       		.uleb128 0x11
+ 1666 08c6 0E040000 		.4byte	.LASF173
+ 1667 08ca 01       		.byte	0x1
+ 1668 08cb 11       		.uleb128 0x11
+ 1669 08cc 5C080000 		.4byte	.LASF174
+ 1670 08d0 02       		.byte	0x2
+ 1671 08d1 11       		.uleb128 0x11
+ 1672 08d2 660C0000 		.4byte	.LASF175
+ 1673 08d6 03       		.byte	0x3
+ 1674 08d7 11       		.uleb128 0x11
+ 1675 08d8 690D0000 		.4byte	.LASF176
+ 1676 08dc 04       		.byte	0x4
+ 1677 08dd 11       		.uleb128 0x11
+ 1678 08de A5000000 		.4byte	.LASF177
+ 1679 08e2 05       		.byte	0x5
+ 1680 08e3 00       		.byte	0
+ 1681 08e4 10       		.uleb128 0x10
+ 1682 08e5 01       		.byte	0x1
+ 1683 08e6 42000000 		.4byte	0x42
+ 1684 08ea 09       		.byte	0x9
+ 1685 08eb 44       		.byte	0x44
+ 1686 08ec 09090000 		.4byte	0x909
+ 1687 08f0 11       		.uleb128 0x11
+ 1688 08f1 F60A0000 		.4byte	.LASF178
+ 1689 08f5 00       		.byte	0
+ 1690 08f6 11       		.uleb128 0x11
+ 1691 08f7 0A060000 		.4byte	.LASF179
+ 1692 08fb 01       		.byte	0x1
+ 1693 08fc 11       		.uleb128 0x11
+ 1694 08fd 19060000 		.4byte	.LASF180
+ 1695 0901 02       		.byte	0x2
+ 1696 0902 11       		.uleb128 0x11
+ 1697 0903 28060000 		.4byte	.LASF181
+ 1698 0907 03       		.byte	0x3
+ 1699 0908 00       		.byte	0
+ 1700 0909 02       		.uleb128 0x2
+ 1701 090a EA050000 		.4byte	.LASF182
+ 1702 090e 0A       		.byte	0xa
+ 1703 090f 69       		.byte	0x69
+ 1704 0910 A8080000 		.4byte	0x8a8
+ 1705 0914 10       		.uleb128 0x10
+ 1706 0915 01       		.byte	0x1
+ 1707 0916 42000000 		.4byte	0x42
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 40
+
+
+ 1708 091a 0A       		.byte	0xa
+ 1709 091b 6E       		.byte	0x6e
+ 1710 091c 33090000 		.4byte	0x933
+ 1711 0920 11       		.uleb128 0x11
+ 1712 0921 81040000 		.4byte	.LASF183
+ 1713 0925 00       		.byte	0
+ 1714 0926 11       		.uleb128 0x11
+ 1715 0927 50040000 		.4byte	.LASF184
+ 1716 092b 01       		.byte	0x1
+ 1717 092c 11       		.uleb128 0x11
+ 1718 092d CD050000 		.4byte	.LASF185
+ 1719 0931 02       		.byte	0x2
+ 1720 0932 00       		.byte	0
+ 1721 0933 02       		.uleb128 0x2
+ 1722 0934 16080000 		.4byte	.LASF186
+ 1723 0938 0A       		.byte	0xa
+ 1724 0939 72       		.byte	0x72
+ 1725 093a 14090000 		.4byte	0x914
+ 1726 093e 12       		.uleb128 0x12
+ 1727 093f 2C000000 		.4byte	.LASF189
+ 1728 0943 01       		.byte	0x1
+ 1729 0944 4F       		.byte	0x4f
+ 1730 0945 00000000 		.4byte	.LFB590
+ 1731 0949 10000000 		.4byte	.LFE590-.LFB590
+ 1732 094d 01       		.uleb128 0x1
+ 1733 094e 9C       		.byte	0x9c
+ 1734 094f 7C090000 		.4byte	0x97c
+ 1735 0953 13       		.uleb128 0x13
+ 1736 0954 C5030000 		.4byte	.LASF187
+ 1737 0958 01       		.byte	0x1
+ 1738 0959 4F       		.byte	0x4f
+ 1739 095a CA000000 		.4byte	0xca
+ 1740 095e 00000000 		.4byte	.LLST0
+ 1741 0962 14       		.uleb128 0x14
+ 1742 0963 08000000 		.4byte	.LVL1
+ 1743 0967 0F0D0000 		.4byte	0xd0f
+ 1744 096b 15       		.uleb128 0x15
+ 1745 096c 0E000000 		.4byte	.LVL2
+ 1746 0970 1A0D0000 		.4byte	0xd1a
+ 1747 0974 16       		.uleb128 0x16
+ 1748 0975 01       		.uleb128 0x1
+ 1749 0976 50       		.byte	0x50
+ 1750 0977 02       		.uleb128 0x2
+ 1751 0978 74       		.byte	0x74
+ 1752 0979 00       		.sleb128 0
+ 1753 097a 00       		.byte	0
+ 1754 097b 00       		.byte	0
+ 1755 097c 17       		.uleb128 0x17
+ 1756 097d D70D0000 		.4byte	.LASF230
+ 1757 0981 01       		.byte	0x1
+ 1758 0982 6B       		.byte	0x6b
+ 1759 0983 3B050000 		.4byte	0x53b
+ 1760 0987 00000000 		.4byte	.LFB591
+ 1761 098b 18000000 		.4byte	.LFE591-.LFB591
+ 1762 098f 01       		.uleb128 0x1
+ 1763 0990 9C       		.byte	0x9c
+ 1764 0991 C6090000 		.4byte	0x9c6
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 41
+
+
+ 1765 0995 13       		.uleb128 0x13
+ 1766 0996 2C020000 		.4byte	.LASF188
+ 1767 099a 01       		.byte	0x1
+ 1768 099b 6B       		.byte	0x6b
+ 1769 099c 3B050000 		.4byte	0x53b
+ 1770 09a0 21000000 		.4byte	.LLST1
+ 1771 09a4 18       		.uleb128 0x18
+ 1772 09a5 580A0000 		.4byte	.LASF201
+ 1773 09a9 01       		.byte	0x1
+ 1774 09aa 6E       		.byte	0x6e
+ 1775 09ab D5000000 		.4byte	0xd5
+ 1776 09af 5B000000 		.4byte	.LLST2
+ 1777 09b3 14       		.uleb128 0x14
+ 1778 09b4 08000000 		.4byte	.LVL5
+ 1779 09b8 250D0000 		.4byte	0xd25
+ 1780 09bc 14       		.uleb128 0x14
+ 1781 09bd 0E000000 		.4byte	.LVL7
+ 1782 09c1 300D0000 		.4byte	0xd30
+ 1783 09c5 00       		.byte	0
+ 1784 09c6 12       		.uleb128 0x12
+ 1785 09c7 A20D0000 		.4byte	.LASF190
+ 1786 09cb 01       		.byte	0x1
+ 1787 09cc A3       		.byte	0xa3
+ 1788 09cd 00000000 		.4byte	.LFB592
+ 1789 09d1 44000000 		.4byte	.LFE592-.LFB592
+ 1790 09d5 01       		.uleb128 0x1
+ 1791 09d6 9C       		.byte	0x9c
+ 1792 09d7 7E0A0000 		.4byte	0xa7e
+ 1793 09db 13       		.uleb128 0x13
+ 1794 09dc 92090000 		.4byte	.LASF191
+ 1795 09e0 01       		.byte	0x1
+ 1796 09e1 A3       		.byte	0xa3
+ 1797 09e2 3B050000 		.4byte	0x53b
+ 1798 09e6 9C000000 		.4byte	.LLST3
+ 1799 09ea 13       		.uleb128 0x13
+ 1800 09eb 220B0000 		.4byte	.LASF192
+ 1801 09ef 01       		.byte	0x1
+ 1802 09f0 A3       		.byte	0xa3
+ 1803 09f1 3B050000 		.4byte	0x53b
+ 1804 09f5 BD000000 		.4byte	.LLST4
+ 1805 09f9 19       		.uleb128 0x19
+ 1806 09fa 0E000000 		.4byte	.LVL13
+ 1807 09fe 7C090000 		.4byte	0x97c
+ 1808 0a02 0C0A0000 		.4byte	0xa0c
+ 1809 0a06 16       		.uleb128 0x16
+ 1810 0a07 01       		.uleb128 0x1
+ 1811 0a08 50       		.byte	0x50
+ 1812 0a09 01       		.uleb128 0x1
+ 1813 0a0a 31       		.byte	0x31
+ 1814 0a0b 00       		.byte	0
+ 1815 0a0c 19       		.uleb128 0x19
+ 1816 0a0d 18000000 		.4byte	.LVL14
+ 1817 0a11 3B0D0000 		.4byte	0xd3b
+ 1818 0a15 240A0000 		.4byte	0xa24
+ 1819 0a19 16       		.uleb128 0x16
+ 1820 0a1a 01       		.uleb128 0x1
+ 1821 0a1b 50       		.byte	0x50
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 42
+
+
+ 1822 0a1c 01       		.uleb128 0x1
+ 1823 0a1d 30       		.byte	0x30
+ 1824 0a1e 16       		.uleb128 0x16
+ 1825 0a1f 01       		.uleb128 0x1
+ 1826 0a20 51       		.byte	0x51
+ 1827 0a21 01       		.uleb128 0x1
+ 1828 0a22 33       		.byte	0x33
+ 1829 0a23 00       		.byte	0
+ 1830 0a24 19       		.uleb128 0x19
+ 1831 0a25 20000000 		.4byte	.LVL15
+ 1832 0a29 3B0D0000 		.4byte	0xd3b
+ 1833 0a2d 3C0A0000 		.4byte	0xa3c
+ 1834 0a31 16       		.uleb128 0x16
+ 1835 0a32 01       		.uleb128 0x1
+ 1836 0a33 50       		.byte	0x50
+ 1837 0a34 01       		.uleb128 0x1
+ 1838 0a35 30       		.byte	0x30
+ 1839 0a36 16       		.uleb128 0x16
+ 1840 0a37 01       		.uleb128 0x1
+ 1841 0a38 51       		.byte	0x51
+ 1842 0a39 01       		.uleb128 0x1
+ 1843 0a3a 33       		.byte	0x33
+ 1844 0a3b 00       		.byte	0
+ 1845 0a3c 19       		.uleb128 0x19
+ 1846 0a3d 2E000000 		.4byte	.LVL16
+ 1847 0a41 3B0D0000 		.4byte	0xd3b
+ 1848 0a45 550A0000 		.4byte	0xa55
+ 1849 0a49 16       		.uleb128 0x16
+ 1850 0a4a 01       		.uleb128 0x1
+ 1851 0a4b 50       		.byte	0x50
+ 1852 0a4c 02       		.uleb128 0x2
+ 1853 0a4d 74       		.byte	0x74
+ 1854 0a4e 00       		.sleb128 0
+ 1855 0a4f 16       		.uleb128 0x16
+ 1856 0a50 01       		.uleb128 0x1
+ 1857 0a51 51       		.byte	0x51
+ 1858 0a52 01       		.uleb128 0x1
+ 1859 0a53 33       		.byte	0x33
+ 1860 0a54 00       		.byte	0
+ 1861 0a55 19       		.uleb128 0x19
+ 1862 0a56 36000000 		.4byte	.LVL17
+ 1863 0a5a 3B0D0000 		.4byte	0xd3b
+ 1864 0a5e 6E0A0000 		.4byte	0xa6e
+ 1865 0a62 16       		.uleb128 0x16
+ 1866 0a63 01       		.uleb128 0x1
+ 1867 0a64 50       		.byte	0x50
+ 1868 0a65 02       		.uleb128 0x2
+ 1869 0a66 74       		.byte	0x74
+ 1870 0a67 00       		.sleb128 0
+ 1871 0a68 16       		.uleb128 0x16
+ 1872 0a69 01       		.uleb128 0x1
+ 1873 0a6a 51       		.byte	0x51
+ 1874 0a6b 01       		.uleb128 0x1
+ 1875 0a6c 33       		.byte	0x33
+ 1876 0a6d 00       		.byte	0
+ 1877 0a6e 15       		.uleb128 0x15
+ 1878 0a6f 3E000000 		.4byte	.LVL18
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 43
+
+
+ 1879 0a73 7C090000 		.4byte	0x97c
+ 1880 0a77 16       		.uleb128 0x16
+ 1881 0a78 01       		.uleb128 0x1
+ 1882 0a79 50       		.byte	0x50
+ 1883 0a7a 01       		.uleb128 0x1
+ 1884 0a7b 30       		.byte	0x30
+ 1885 0a7c 00       		.byte	0
+ 1886 0a7d 00       		.byte	0
+ 1887 0a7e 12       		.uleb128 0x12
+ 1888 0a7f 2F0A0000 		.4byte	.LASF193
+ 1889 0a83 01       		.byte	0x1
+ 1890 0a84 DF       		.byte	0xdf
+ 1891 0a85 00000000 		.4byte	.LFB593
+ 1892 0a89 54000000 		.4byte	.LFE593-.LFB593
+ 1893 0a8d 01       		.uleb128 0x1
+ 1894 0a8e 9C       		.byte	0x9c
+ 1895 0a8f 700B0000 		.4byte	0xb70
+ 1896 0a93 13       		.uleb128 0x13
+ 1897 0a94 67030000 		.4byte	.LASF194
+ 1898 0a98 01       		.byte	0x1
+ 1899 0a99 DF       		.byte	0xdf
+ 1900 0a9a 700B0000 		.4byte	0xb70
+ 1901 0a9e DE000000 		.4byte	.LLST5
+ 1902 0aa2 13       		.uleb128 0x13
+ 1903 0aa3 D3080000 		.4byte	.LASF195
+ 1904 0aa7 01       		.byte	0x1
+ 1905 0aa8 DF       		.byte	0xdf
+ 1906 0aa9 700B0000 		.4byte	0xb70
+ 1907 0aad FC000000 		.4byte	.LLST6
+ 1908 0ab1 13       		.uleb128 0x13
+ 1909 0ab2 19050000 		.4byte	.LASF196
+ 1910 0ab6 01       		.byte	0x1
+ 1911 0ab7 E0       		.byte	0xe0
+ 1912 0ab8 33090000 		.4byte	0x933
+ 1913 0abc 1A010000 		.4byte	.LLST7
+ 1914 0ac0 13       		.uleb128 0x13
+ 1915 0ac1 220B0000 		.4byte	.LASF192
+ 1916 0ac5 01       		.byte	0x1
+ 1917 0ac6 E0       		.byte	0xe0
+ 1918 0ac7 3B050000 		.4byte	0x53b
+ 1919 0acb 3B010000 		.4byte	.LLST8
+ 1920 0acf 19       		.uleb128 0x19
+ 1921 0ad0 12000000 		.4byte	.LVL21
+ 1922 0ad4 7C090000 		.4byte	0x97c
+ 1923 0ad8 E20A0000 		.4byte	0xae2
+ 1924 0adc 16       		.uleb128 0x16
+ 1925 0add 01       		.uleb128 0x1
+ 1926 0ade 50       		.byte	0x50
+ 1927 0adf 01       		.uleb128 0x1
+ 1928 0ae0 31       		.byte	0x31
+ 1929 0ae1 00       		.byte	0
+ 1930 0ae2 19       		.uleb128 0x19
+ 1931 0ae3 1C000000 		.4byte	.LVL22
+ 1932 0ae7 460D0000 		.4byte	0xd46
+ 1933 0aeb FC0A0000 		.4byte	0xafc
+ 1934 0aef 16       		.uleb128 0x16
+ 1935 0af0 01       		.uleb128 0x1
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 44
+
+
+ 1936 0af1 50       		.byte	0x50
+ 1937 0af2 02       		.uleb128 0x2
+ 1938 0af3 77       		.byte	0x77
+ 1939 0af4 00       		.sleb128 0
+ 1940 0af5 16       		.uleb128 0x16
+ 1941 0af6 01       		.uleb128 0x1
+ 1942 0af7 51       		.byte	0x51
+ 1943 0af8 02       		.uleb128 0x2
+ 1944 0af9 76       		.byte	0x76
+ 1945 0afa 00       		.sleb128 0
+ 1946 0afb 00       		.byte	0
+ 1947 0afc 19       		.uleb128 0x19
+ 1948 0afd 2E000000 		.4byte	.LVL23
+ 1949 0b01 3B0D0000 		.4byte	0xd3b
+ 1950 0b05 150B0000 		.4byte	0xb15
+ 1951 0b09 16       		.uleb128 0x16
+ 1952 0b0a 01       		.uleb128 0x1
+ 1953 0b0b 50       		.byte	0x50
+ 1954 0b0c 02       		.uleb128 0x2
+ 1955 0b0d 77       		.byte	0x77
+ 1956 0b0e 00       		.sleb128 0
+ 1957 0b0f 16       		.uleb128 0x16
+ 1958 0b10 01       		.uleb128 0x1
+ 1959 0b11 51       		.byte	0x51
+ 1960 0b12 01       		.uleb128 0x1
+ 1961 0b13 30       		.byte	0x30
+ 1962 0b14 00       		.byte	0
+ 1963 0b15 19       		.uleb128 0x19
+ 1964 0b16 3A000000 		.4byte	.LVL24
+ 1965 0b1a 3B0D0000 		.4byte	0xd3b
+ 1966 0b1e 2E0B0000 		.4byte	0xb2e
+ 1967 0b22 16       		.uleb128 0x16
+ 1968 0b23 01       		.uleb128 0x1
+ 1969 0b24 50       		.byte	0x50
+ 1970 0b25 02       		.uleb128 0x2
+ 1971 0b26 77       		.byte	0x77
+ 1972 0b27 00       		.sleb128 0
+ 1973 0b28 16       		.uleb128 0x16
+ 1974 0b29 01       		.uleb128 0x1
+ 1975 0b2a 51       		.byte	0x51
+ 1976 0b2b 01       		.uleb128 0x1
+ 1977 0b2c 31       		.byte	0x31
+ 1978 0b2d 00       		.byte	0
+ 1979 0b2e 19       		.uleb128 0x19
+ 1980 0b2f 42000000 		.4byte	.LVL25
+ 1981 0b33 3B0D0000 		.4byte	0xd3b
+ 1982 0b37 470B0000 		.4byte	0xb47
+ 1983 0b3b 16       		.uleb128 0x16
+ 1984 0b3c 01       		.uleb128 0x1
+ 1985 0b3d 50       		.byte	0x50
+ 1986 0b3e 02       		.uleb128 0x2
+ 1987 0b3f 76       		.byte	0x76
+ 1988 0b40 00       		.sleb128 0
+ 1989 0b41 16       		.uleb128 0x16
+ 1990 0b42 01       		.uleb128 0x1
+ 1991 0b43 51       		.byte	0x51
+ 1992 0b44 01       		.uleb128 0x1
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 45
+
+
+ 1993 0b45 32       		.byte	0x32
+ 1994 0b46 00       		.byte	0
+ 1995 0b47 19       		.uleb128 0x19
+ 1996 0b48 4A000000 		.4byte	.LVL26
+ 1997 0b4c 3B0D0000 		.4byte	0xd3b
+ 1998 0b50 600B0000 		.4byte	0xb60
+ 1999 0b54 16       		.uleb128 0x16
+ 2000 0b55 01       		.uleb128 0x1
+ 2001 0b56 50       		.byte	0x50
+ 2002 0b57 02       		.uleb128 0x2
+ 2003 0b58 76       		.byte	0x76
+ 2004 0b59 00       		.sleb128 0
+ 2005 0b5a 16       		.uleb128 0x16
+ 2006 0b5b 01       		.uleb128 0x1
+ 2007 0b5c 51       		.byte	0x51
+ 2008 0b5d 01       		.uleb128 0x1
+ 2009 0b5e 33       		.byte	0x33
+ 2010 0b5f 00       		.byte	0
+ 2011 0b60 15       		.uleb128 0x15
+ 2012 0b61 52000000 		.4byte	.LVL27
+ 2013 0b65 7C090000 		.4byte	0x97c
+ 2014 0b69 16       		.uleb128 0x16
+ 2015 0b6a 01       		.uleb128 0x1
+ 2016 0b6b 50       		.byte	0x50
+ 2017 0b6c 01       		.uleb128 0x1
+ 2018 0b6d 30       		.byte	0x30
+ 2019 0b6e 00       		.byte	0
+ 2020 0b6f 00       		.byte	0
+ 2021 0b70 06       		.uleb128 0x6
+ 2022 0b71 04       		.byte	0x4
+ 2023 0b72 09090000 		.4byte	0x909
+ 2024 0b76 1A       		.uleb128 0x1a
+ 2025 0b77 35030000 		.4byte	.LASF197
+ 2026 0b7b 01       		.byte	0x1
+ 2027 0b7c 2C01     		.2byte	0x12c
+ 2028 0b7e 00000000 		.4byte	.LFB594
+ 2029 0b82 30000000 		.4byte	.LFE594-.LFB594
+ 2030 0b86 01       		.uleb128 0x1
+ 2031 0b87 9C       		.byte	0x9c
+ 2032 0b88 F60B0000 		.4byte	0xbf6
+ 2033 0b8c 1B       		.uleb128 0x1b
+ 2034 0b8d 51010000 		.4byte	.LASF198
+ 2035 0b91 01       		.byte	0x1
+ 2036 0b92 2C01     		.2byte	0x12c
+ 2037 0b94 700B0000 		.4byte	0xb70
+ 2038 0b98 5C010000 		.4byte	.LLST9
+ 2039 0b9c 1B       		.uleb128 0x1b
+ 2040 0b9d D1030000 		.4byte	.LASF199
+ 2041 0ba1 01       		.byte	0x1
+ 2042 0ba2 2C01     		.2byte	0x12c
+ 2043 0ba4 700B0000 		.4byte	0xb70
+ 2044 0ba8 7A010000 		.4byte	.LLST10
+ 2045 0bac 1B       		.uleb128 0x1b
+ 2046 0bad D2060000 		.4byte	.LASF200
+ 2047 0bb1 01       		.byte	0x1
+ 2048 0bb2 2D01     		.2byte	0x12d
+ 2049 0bb4 53050000 		.4byte	0x553
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 46
+
+
+ 2050 0bb8 98010000 		.4byte	.LLST11
+ 2051 0bbc 1C       		.uleb128 0x1c
+ 2052 0bbd E1060000 		.4byte	.LASF202
+ 2053 0bc1 01       		.byte	0x1
+ 2054 0bc2 3001     		.2byte	0x130
+ 2055 0bc4 EB000000 		.4byte	0xeb
+ 2056 0bc8 B6010000 		.4byte	.LLST12
+ 2057 0bcc 1C       		.uleb128 0x1c
+ 2058 0bcd 6C0B0000 		.4byte	.LASF203
+ 2059 0bd1 01       		.byte	0x1
+ 2060 0bd2 3301     		.2byte	0x133
+ 2061 0bd4 EB000000 		.4byte	0xeb
+ 2062 0bd8 D4010000 		.4byte	.LLST13
+ 2063 0bdc 1C       		.uleb128 0x1c
+ 2064 0bdd D8000000 		.4byte	.LASF204
+ 2065 0be1 01       		.byte	0x1
+ 2066 0be2 3601     		.2byte	0x136
+ 2067 0be4 EB000000 		.4byte	0xeb
+ 2068 0be8 01020000 		.4byte	.LLST14
+ 2069 0bec 14       		.uleb128 0x14
+ 2070 0bed 24000000 		.4byte	.LVL34
+ 2071 0bf1 510D0000 		.4byte	0xd51
+ 2072 0bf5 00       		.byte	0
+ 2073 0bf6 1A       		.uleb128 0x1a
+ 2074 0bf7 BE000000 		.4byte	.LASF205
+ 2075 0bfb 01       		.byte	0x1
+ 2076 0bfc 6C01     		.2byte	0x16c
+ 2077 0bfe 00000000 		.4byte	.LFB595
+ 2078 0c02 18010000 		.4byte	.LFE595-.LFB595
+ 2079 0c06 01       		.uleb128 0x1
+ 2080 0c07 9C       		.byte	0x9c
+ 2081 0c08 B70C0000 		.4byte	0xcb7
+ 2082 0c0c 1D       		.uleb128 0x1d
+ 2083 0c0d 51010000 		.4byte	.LASF198
+ 2084 0c11 01       		.byte	0x1
+ 2085 0c12 6C01     		.2byte	0x16c
+ 2086 0c14 700B0000 		.4byte	0xb70
+ 2087 0c18 01       		.uleb128 0x1
+ 2088 0c19 50       		.byte	0x50
+ 2089 0c1a 1B       		.uleb128 0x1b
+ 2090 0c1b 9D090000 		.4byte	.LASF206
+ 2091 0c1f 01       		.byte	0x1
+ 2092 0c20 6C01     		.2byte	0x16c
+ 2093 0c22 BD000000 		.4byte	0xbd
+ 2094 0c26 14020000 		.4byte	.LLST15
+ 2095 0c2a 1D       		.uleb128 0x1d
+ 2096 0c2b 90050000 		.4byte	.LASF207
+ 2097 0c2f 01       		.byte	0x1
+ 2098 0c30 6D01     		.2byte	0x16d
+ 2099 0c32 B70C0000 		.4byte	0xcb7
+ 2100 0c36 01       		.uleb128 0x1
+ 2101 0c37 52       		.byte	0x52
+ 2102 0c38 1D       		.uleb128 0x1d
+ 2103 0c39 B30A0000 		.4byte	.LASF208
+ 2104 0c3d 01       		.byte	0x1
+ 2105 0c3e 6D01     		.2byte	0x16d
+ 2106 0c40 53050000 		.4byte	0x553
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 47
+
+
+ 2107 0c44 01       		.uleb128 0x1
+ 2108 0c45 53       		.byte	0x53
+ 2109 0c46 1C       		.uleb128 0x1c
+ 2110 0c47 84050000 		.4byte	.LASF209
+ 2111 0c4b 01       		.byte	0x1
+ 2112 0c4c 7001     		.2byte	0x170
+ 2113 0c4e BD000000 		.4byte	0xbd
+ 2114 0c52 35020000 		.4byte	.LLST16
+ 2115 0c56 1C       		.uleb128 0x1c
+ 2116 0c57 E9070000 		.4byte	.LASF210
+ 2117 0c5b 01       		.byte	0x1
+ 2118 0c5c 7401     		.2byte	0x174
+ 2119 0c5e EB000000 		.4byte	0xeb
+ 2120 0c62 53020000 		.4byte	.LLST17
+ 2121 0c66 1C       		.uleb128 0x1c
+ 2122 0c67 FE090000 		.4byte	.LASF211
+ 2123 0c6b 01       		.byte	0x1
+ 2124 0c6c 7601     		.2byte	0x176
+ 2125 0c6e EB000000 		.4byte	0xeb
+ 2126 0c72 66020000 		.4byte	.LLST18
+ 2127 0c76 1C       		.uleb128 0x1c
+ 2128 0c77 BB030000 		.4byte	.LASF212
+ 2129 0c7b 01       		.byte	0x1
+ 2130 0c7c 7A01     		.2byte	0x17a
+ 2131 0c7e EB000000 		.4byte	0xeb
+ 2132 0c82 79020000 		.4byte	.LLST19
+ 2133 0c86 1C       		.uleb128 0x1c
+ 2134 0c87 A00B0000 		.4byte	.LASF213
+ 2135 0c8b 01       		.byte	0x1
+ 2136 0c8c 7C01     		.2byte	0x17c
+ 2137 0c8e EB000000 		.4byte	0xeb
+ 2138 0c92 97020000 		.4byte	.LLST20
+ 2139 0c96 1C       		.uleb128 0x1c
+ 2140 0c97 FE040000 		.4byte	.LASF214
+ 2141 0c9b 01       		.byte	0x1
+ 2142 0c9c 7F01     		.2byte	0x17f
+ 2143 0c9e D5000000 		.4byte	0xd5
+ 2144 0ca2 E9020000 		.4byte	.LLST21
+ 2145 0ca6 1C       		.uleb128 0x1c
+ 2146 0ca7 B1090000 		.4byte	.LASF215
+ 2147 0cab 01       		.byte	0x1
+ 2148 0cac 8101     		.2byte	0x181
+ 2149 0cae D5000000 		.4byte	0xd5
+ 2150 0cb2 34030000 		.4byte	.LLST22
+ 2151 0cb6 00       		.byte	0
+ 2152 0cb7 06       		.uleb128 0x6
+ 2153 0cb8 04       		.byte	0x4
+ 2154 0cb9 9D080000 		.4byte	0x89d
+ 2155 0cbd 1E       		.uleb128 0x1e
+ 2156 0cbe C6080000 		.4byte	.LASF216
+ 2157 0cc2 0B       		.byte	0xb
+ 2158 0cc3 F907     		.2byte	0x7f9
+ 2159 0cc5 C90C0000 		.4byte	0xcc9
+ 2160 0cc9 07       		.uleb128 0x7
+ 2161 0cca F6000000 		.4byte	0xf6
+ 2162 0cce 1F       		.uleb128 0x1f
+ 2163 0ccf 27080000 		.4byte	.LASF217
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 48
+
+
+ 2164 0cd3 04       		.byte	0x4
+ 2165 0cd4 A7       		.byte	0xa7
+ 2166 0cd5 D90C0000 		.4byte	0xcd9
+ 2167 0cd9 06       		.uleb128 0x6
+ 2168 0cda 04       		.byte	0x4
+ 2169 0cdb DF0C0000 		.4byte	0xcdf
+ 2170 0cdf 20       		.uleb128 0x20
+ 2171 0ce0 22050000 		.4byte	0x522
+ 2172 0ce4 1F       		.uleb128 0x1f
+ 2173 0ce5 2D0B0000 		.4byte	.LASF218
+ 2174 0ce9 0C       		.byte	0xc
+ 2175 0cea 5E       		.byte	0x5e
+ 2176 0ceb E8050000 		.4byte	0x5e8
+ 2177 0cef 1F       		.uleb128 0x1f
+ 2178 0cf0 D40B0000 		.4byte	.LASF219
+ 2179 0cf4 0D       		.byte	0xd
+ 2180 0cf5 1F       		.byte	0x1f
+ 2181 0cf6 FA0C0000 		.4byte	0xcfa
+ 2182 0cfa 20       		.uleb128 0x20
+ 2183 0cfb E5060000 		.4byte	0x6e5
+ 2184 0cff 1F       		.uleb128 0x1f
+ 2185 0d00 71030000 		.4byte	.LASF220
+ 2186 0d04 0E       		.byte	0xe
+ 2187 0d05 1F       		.byte	0x1f
+ 2188 0d06 0A0D0000 		.4byte	0xd0a
+ 2189 0d0a 20       		.uleb128 0x20
+ 2190 0d0b 29080000 		.4byte	0x829
+ 2191 0d0f 21       		.uleb128 0x21
+ 2192 0d10 5D070000 		.4byte	.LASF221
+ 2193 0d14 5D070000 		.4byte	.LASF221
+ 2194 0d18 09       		.byte	0x9
+ 2195 0d19 4D       		.byte	0x4d
+ 2196 0d1a 21       		.uleb128 0x21
+ 2197 0d1b 7A0B0000 		.4byte	.LASF222
+ 2198 0d1f 7A0B0000 		.4byte	.LASF222
+ 2199 0d23 09       		.byte	0x9
+ 2200 0d24 52       		.byte	0x52
+ 2201 0d25 21       		.uleb128 0x21
+ 2202 0d26 6D080000 		.4byte	.LASF223
+ 2203 0d2a 6D080000 		.4byte	.LASF223
+ 2204 0d2e 09       		.byte	0x9
+ 2205 0d2f 4E       		.byte	0x4e
+ 2206 0d30 21       		.uleb128 0x21
+ 2207 0d31 470C0000 		.4byte	.LASF224
+ 2208 0d35 470C0000 		.4byte	.LASF224
+ 2209 0d39 09       		.byte	0x9
+ 2210 0d3a 4F       		.byte	0x4f
+ 2211 0d3b 21       		.uleb128 0x21
+ 2212 0d3c B10B0000 		.4byte	.LASF225
+ 2213 0d40 B10B0000 		.4byte	.LASF225
+ 2214 0d44 09       		.byte	0x9
+ 2215 0d45 55       		.byte	0x55
+ 2216 0d46 21       		.uleb128 0x21
+ 2217 0d47 03090000 		.4byte	.LASF226
+ 2218 0d4b 03090000 		.4byte	.LASF226
+ 2219 0d4f 09       		.byte	0x9
+ 2220 0d50 56       		.byte	0x56
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 49
+
+
+ 2221 0d51 22       		.uleb128 0x22
+ 2222 0d52 7E030000 		.4byte	.LASF231
+ 2223 0d56 7E030000 		.4byte	.LASF231
+ 2224 0d5a 00       		.byte	0
+ 2225              		.section	.debug_abbrev,"",%progbits
+ 2226              	.Ldebug_abbrev0:
+ 2227 0000 01       		.uleb128 0x1
+ 2228 0001 11       		.uleb128 0x11
+ 2229 0002 01       		.byte	0x1
+ 2230 0003 25       		.uleb128 0x25
+ 2231 0004 0E       		.uleb128 0xe
+ 2232 0005 13       		.uleb128 0x13
+ 2233 0006 0B       		.uleb128 0xb
+ 2234 0007 03       		.uleb128 0x3
+ 2235 0008 0E       		.uleb128 0xe
+ 2236 0009 1B       		.uleb128 0x1b
+ 2237 000a 0E       		.uleb128 0xe
+ 2238 000b 55       		.uleb128 0x55
+ 2239 000c 17       		.uleb128 0x17
+ 2240 000d 11       		.uleb128 0x11
+ 2241 000e 01       		.uleb128 0x1
+ 2242 000f 10       		.uleb128 0x10
+ 2243 0010 17       		.uleb128 0x17
+ 2244 0011 00       		.byte	0
+ 2245 0012 00       		.byte	0
+ 2246 0013 02       		.uleb128 0x2
+ 2247 0014 16       		.uleb128 0x16
+ 2248 0015 00       		.byte	0
+ 2249 0016 03       		.uleb128 0x3
+ 2250 0017 0E       		.uleb128 0xe
+ 2251 0018 3A       		.uleb128 0x3a
+ 2252 0019 0B       		.uleb128 0xb
+ 2253 001a 3B       		.uleb128 0x3b
+ 2254 001b 0B       		.uleb128 0xb
+ 2255 001c 49       		.uleb128 0x49
+ 2256 001d 13       		.uleb128 0x13
+ 2257 001e 00       		.byte	0
+ 2258 001f 00       		.byte	0
+ 2259 0020 03       		.uleb128 0x3
+ 2260 0021 24       		.uleb128 0x24
+ 2261 0022 00       		.byte	0
+ 2262 0023 0B       		.uleb128 0xb
+ 2263 0024 0B       		.uleb128 0xb
+ 2264 0025 3E       		.uleb128 0x3e
+ 2265 0026 0B       		.uleb128 0xb
+ 2266 0027 03       		.uleb128 0x3
+ 2267 0028 0E       		.uleb128 0xe
+ 2268 0029 00       		.byte	0
+ 2269 002a 00       		.byte	0
+ 2270 002b 04       		.uleb128 0x4
+ 2271 002c 24       		.uleb128 0x24
+ 2272 002d 00       		.byte	0
+ 2273 002e 0B       		.uleb128 0xb
+ 2274 002f 0B       		.uleb128 0xb
+ 2275 0030 3E       		.uleb128 0x3e
+ 2276 0031 0B       		.uleb128 0xb
+ 2277 0032 03       		.uleb128 0x3
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 50
+
+
+ 2278 0033 08       		.uleb128 0x8
+ 2279 0034 00       		.byte	0
+ 2280 0035 00       		.byte	0
+ 2281 0036 05       		.uleb128 0x5
+ 2282 0037 0F       		.uleb128 0xf
+ 2283 0038 00       		.byte	0
+ 2284 0039 0B       		.uleb128 0xb
+ 2285 003a 0B       		.uleb128 0xb
+ 2286 003b 00       		.byte	0
+ 2287 003c 00       		.byte	0
+ 2288 003d 06       		.uleb128 0x6
+ 2289 003e 0F       		.uleb128 0xf
+ 2290 003f 00       		.byte	0
+ 2291 0040 0B       		.uleb128 0xb
+ 2292 0041 0B       		.uleb128 0xb
+ 2293 0042 49       		.uleb128 0x49
+ 2294 0043 13       		.uleb128 0x13
+ 2295 0044 00       		.byte	0
+ 2296 0045 00       		.byte	0
+ 2297 0046 07       		.uleb128 0x7
+ 2298 0047 35       		.uleb128 0x35
+ 2299 0048 00       		.byte	0
+ 2300 0049 49       		.uleb128 0x49
+ 2301 004a 13       		.uleb128 0x13
+ 2302 004b 00       		.byte	0
+ 2303 004c 00       		.byte	0
+ 2304 004d 08       		.uleb128 0x8
+ 2305 004e 13       		.uleb128 0x13
+ 2306 004f 01       		.byte	0x1
+ 2307 0050 0B       		.uleb128 0xb
+ 2308 0051 0B       		.uleb128 0xb
+ 2309 0052 3A       		.uleb128 0x3a
+ 2310 0053 0B       		.uleb128 0xb
+ 2311 0054 3B       		.uleb128 0x3b
+ 2312 0055 0B       		.uleb128 0xb
+ 2313 0056 01       		.uleb128 0x1
+ 2314 0057 13       		.uleb128 0x13
+ 2315 0058 00       		.byte	0
+ 2316 0059 00       		.byte	0
+ 2317 005a 09       		.uleb128 0x9
+ 2318 005b 0D       		.uleb128 0xd
+ 2319 005c 00       		.byte	0
+ 2320 005d 03       		.uleb128 0x3
+ 2321 005e 0E       		.uleb128 0xe
+ 2322 005f 3A       		.uleb128 0x3a
+ 2323 0060 0B       		.uleb128 0xb
+ 2324 0061 3B       		.uleb128 0x3b
+ 2325 0062 0B       		.uleb128 0xb
+ 2326 0063 49       		.uleb128 0x49
+ 2327 0064 13       		.uleb128 0x13
+ 2328 0065 38       		.uleb128 0x38
+ 2329 0066 0B       		.uleb128 0xb
+ 2330 0067 00       		.byte	0
+ 2331 0068 00       		.byte	0
+ 2332 0069 0A       		.uleb128 0xa
+ 2333 006a 15       		.uleb128 0x15
+ 2334 006b 01       		.byte	0x1
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 51
+
+
+ 2335 006c 27       		.uleb128 0x27
+ 2336 006d 19       		.uleb128 0x19
+ 2337 006e 01       		.uleb128 0x1
+ 2338 006f 13       		.uleb128 0x13
+ 2339 0070 00       		.byte	0
+ 2340 0071 00       		.byte	0
+ 2341 0072 0B       		.uleb128 0xb
+ 2342 0073 05       		.uleb128 0x5
+ 2343 0074 00       		.byte	0
+ 2344 0075 49       		.uleb128 0x49
+ 2345 0076 13       		.uleb128 0x13
+ 2346 0077 00       		.byte	0
+ 2347 0078 00       		.byte	0
+ 2348 0079 0C       		.uleb128 0xc
+ 2349 007a 16       		.uleb128 0x16
+ 2350 007b 00       		.byte	0
+ 2351 007c 03       		.uleb128 0x3
+ 2352 007d 0E       		.uleb128 0xe
+ 2353 007e 3A       		.uleb128 0x3a
+ 2354 007f 0B       		.uleb128 0xb
+ 2355 0080 3B       		.uleb128 0x3b
+ 2356 0081 05       		.uleb128 0x5
+ 2357 0082 49       		.uleb128 0x49
+ 2358 0083 13       		.uleb128 0x13
+ 2359 0084 00       		.byte	0
+ 2360 0085 00       		.byte	0
+ 2361 0086 0D       		.uleb128 0xd
+ 2362 0087 13       		.uleb128 0x13
+ 2363 0088 01       		.byte	0x1
+ 2364 0089 03       		.uleb128 0x3
+ 2365 008a 0E       		.uleb128 0xe
+ 2366 008b 0B       		.uleb128 0xb
+ 2367 008c 0B       		.uleb128 0xb
+ 2368 008d 3A       		.uleb128 0x3a
+ 2369 008e 0B       		.uleb128 0xb
+ 2370 008f 3B       		.uleb128 0x3b
+ 2371 0090 05       		.uleb128 0x5
+ 2372 0091 01       		.uleb128 0x1
+ 2373 0092 13       		.uleb128 0x13
+ 2374 0093 00       		.byte	0
+ 2375 0094 00       		.byte	0
+ 2376 0095 0E       		.uleb128 0xe
+ 2377 0096 0D       		.uleb128 0xd
+ 2378 0097 00       		.byte	0
+ 2379 0098 03       		.uleb128 0x3
+ 2380 0099 0E       		.uleb128 0xe
+ 2381 009a 3A       		.uleb128 0x3a
+ 2382 009b 0B       		.uleb128 0xb
+ 2383 009c 3B       		.uleb128 0x3b
+ 2384 009d 05       		.uleb128 0x5
+ 2385 009e 49       		.uleb128 0x49
+ 2386 009f 13       		.uleb128 0x13
+ 2387 00a0 38       		.uleb128 0x38
+ 2388 00a1 0B       		.uleb128 0xb
+ 2389 00a2 00       		.byte	0
+ 2390 00a3 00       		.byte	0
+ 2391 00a4 0F       		.uleb128 0xf
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 52
+
+
+ 2392 00a5 13       		.uleb128 0x13
+ 2393 00a6 01       		.byte	0x1
+ 2394 00a7 03       		.uleb128 0x3
+ 2395 00a8 0E       		.uleb128 0xe
+ 2396 00a9 0B       		.uleb128 0xb
+ 2397 00aa 0B       		.uleb128 0xb
+ 2398 00ab 3A       		.uleb128 0x3a
+ 2399 00ac 0B       		.uleb128 0xb
+ 2400 00ad 3B       		.uleb128 0x3b
+ 2401 00ae 0B       		.uleb128 0xb
+ 2402 00af 01       		.uleb128 0x1
+ 2403 00b0 13       		.uleb128 0x13
+ 2404 00b1 00       		.byte	0
+ 2405 00b2 00       		.byte	0
+ 2406 00b3 10       		.uleb128 0x10
+ 2407 00b4 04       		.uleb128 0x4
+ 2408 00b5 01       		.byte	0x1
+ 2409 00b6 0B       		.uleb128 0xb
+ 2410 00b7 0B       		.uleb128 0xb
+ 2411 00b8 49       		.uleb128 0x49
+ 2412 00b9 13       		.uleb128 0x13
+ 2413 00ba 3A       		.uleb128 0x3a
+ 2414 00bb 0B       		.uleb128 0xb
+ 2415 00bc 3B       		.uleb128 0x3b
+ 2416 00bd 0B       		.uleb128 0xb
+ 2417 00be 01       		.uleb128 0x1
+ 2418 00bf 13       		.uleb128 0x13
+ 2419 00c0 00       		.byte	0
+ 2420 00c1 00       		.byte	0
+ 2421 00c2 11       		.uleb128 0x11
+ 2422 00c3 28       		.uleb128 0x28
+ 2423 00c4 00       		.byte	0
+ 2424 00c5 03       		.uleb128 0x3
+ 2425 00c6 0E       		.uleb128 0xe
+ 2426 00c7 1C       		.uleb128 0x1c
+ 2427 00c8 0B       		.uleb128 0xb
+ 2428 00c9 00       		.byte	0
+ 2429 00ca 00       		.byte	0
+ 2430 00cb 12       		.uleb128 0x12
+ 2431 00cc 2E       		.uleb128 0x2e
+ 2432 00cd 01       		.byte	0x1
+ 2433 00ce 3F       		.uleb128 0x3f
+ 2434 00cf 19       		.uleb128 0x19
+ 2435 00d0 03       		.uleb128 0x3
+ 2436 00d1 0E       		.uleb128 0xe
+ 2437 00d2 3A       		.uleb128 0x3a
+ 2438 00d3 0B       		.uleb128 0xb
+ 2439 00d4 3B       		.uleb128 0x3b
+ 2440 00d5 0B       		.uleb128 0xb
+ 2441 00d6 27       		.uleb128 0x27
+ 2442 00d7 19       		.uleb128 0x19
+ 2443 00d8 11       		.uleb128 0x11
+ 2444 00d9 01       		.uleb128 0x1
+ 2445 00da 12       		.uleb128 0x12
+ 2446 00db 06       		.uleb128 0x6
+ 2447 00dc 40       		.uleb128 0x40
+ 2448 00dd 18       		.uleb128 0x18
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 53
+
+
+ 2449 00de 9742     		.uleb128 0x2117
+ 2450 00e0 19       		.uleb128 0x19
+ 2451 00e1 01       		.uleb128 0x1
+ 2452 00e2 13       		.uleb128 0x13
+ 2453 00e3 00       		.byte	0
+ 2454 00e4 00       		.byte	0
+ 2455 00e5 13       		.uleb128 0x13
+ 2456 00e6 05       		.uleb128 0x5
+ 2457 00e7 00       		.byte	0
+ 2458 00e8 03       		.uleb128 0x3
+ 2459 00e9 0E       		.uleb128 0xe
+ 2460 00ea 3A       		.uleb128 0x3a
+ 2461 00eb 0B       		.uleb128 0xb
+ 2462 00ec 3B       		.uleb128 0x3b
+ 2463 00ed 0B       		.uleb128 0xb
+ 2464 00ee 49       		.uleb128 0x49
+ 2465 00ef 13       		.uleb128 0x13
+ 2466 00f0 02       		.uleb128 0x2
+ 2467 00f1 17       		.uleb128 0x17
+ 2468 00f2 00       		.byte	0
+ 2469 00f3 00       		.byte	0
+ 2470 00f4 14       		.uleb128 0x14
+ 2471 00f5 898201   		.uleb128 0x4109
+ 2472 00f8 00       		.byte	0
+ 2473 00f9 11       		.uleb128 0x11
+ 2474 00fa 01       		.uleb128 0x1
+ 2475 00fb 31       		.uleb128 0x31
+ 2476 00fc 13       		.uleb128 0x13
+ 2477 00fd 00       		.byte	0
+ 2478 00fe 00       		.byte	0
+ 2479 00ff 15       		.uleb128 0x15
+ 2480 0100 898201   		.uleb128 0x4109
+ 2481 0103 01       		.byte	0x1
+ 2482 0104 11       		.uleb128 0x11
+ 2483 0105 01       		.uleb128 0x1
+ 2484 0106 31       		.uleb128 0x31
+ 2485 0107 13       		.uleb128 0x13
+ 2486 0108 00       		.byte	0
+ 2487 0109 00       		.byte	0
+ 2488 010a 16       		.uleb128 0x16
+ 2489 010b 8A8201   		.uleb128 0x410a
+ 2490 010e 00       		.byte	0
+ 2491 010f 02       		.uleb128 0x2
+ 2492 0110 18       		.uleb128 0x18
+ 2493 0111 9142     		.uleb128 0x2111
+ 2494 0113 18       		.uleb128 0x18
+ 2495 0114 00       		.byte	0
+ 2496 0115 00       		.byte	0
+ 2497 0116 17       		.uleb128 0x17
+ 2498 0117 2E       		.uleb128 0x2e
+ 2499 0118 01       		.byte	0x1
+ 2500 0119 3F       		.uleb128 0x3f
+ 2501 011a 19       		.uleb128 0x19
+ 2502 011b 03       		.uleb128 0x3
+ 2503 011c 0E       		.uleb128 0xe
+ 2504 011d 3A       		.uleb128 0x3a
+ 2505 011e 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 54
+
+
+ 2506 011f 3B       		.uleb128 0x3b
+ 2507 0120 0B       		.uleb128 0xb
+ 2508 0121 27       		.uleb128 0x27
+ 2509 0122 19       		.uleb128 0x19
+ 2510 0123 49       		.uleb128 0x49
+ 2511 0124 13       		.uleb128 0x13
+ 2512 0125 11       		.uleb128 0x11
+ 2513 0126 01       		.uleb128 0x1
+ 2514 0127 12       		.uleb128 0x12
+ 2515 0128 06       		.uleb128 0x6
+ 2516 0129 40       		.uleb128 0x40
+ 2517 012a 18       		.uleb128 0x18
+ 2518 012b 9742     		.uleb128 0x2117
+ 2519 012d 19       		.uleb128 0x19
+ 2520 012e 01       		.uleb128 0x1
+ 2521 012f 13       		.uleb128 0x13
+ 2522 0130 00       		.byte	0
+ 2523 0131 00       		.byte	0
+ 2524 0132 18       		.uleb128 0x18
+ 2525 0133 34       		.uleb128 0x34
+ 2526 0134 00       		.byte	0
+ 2527 0135 03       		.uleb128 0x3
+ 2528 0136 0E       		.uleb128 0xe
+ 2529 0137 3A       		.uleb128 0x3a
+ 2530 0138 0B       		.uleb128 0xb
+ 2531 0139 3B       		.uleb128 0x3b
+ 2532 013a 0B       		.uleb128 0xb
+ 2533 013b 49       		.uleb128 0x49
+ 2534 013c 13       		.uleb128 0x13
+ 2535 013d 02       		.uleb128 0x2
+ 2536 013e 17       		.uleb128 0x17
+ 2537 013f 00       		.byte	0
+ 2538 0140 00       		.byte	0
+ 2539 0141 19       		.uleb128 0x19
+ 2540 0142 898201   		.uleb128 0x4109
+ 2541 0145 01       		.byte	0x1
+ 2542 0146 11       		.uleb128 0x11
+ 2543 0147 01       		.uleb128 0x1
+ 2544 0148 31       		.uleb128 0x31
+ 2545 0149 13       		.uleb128 0x13
+ 2546 014a 01       		.uleb128 0x1
+ 2547 014b 13       		.uleb128 0x13
+ 2548 014c 00       		.byte	0
+ 2549 014d 00       		.byte	0
+ 2550 014e 1A       		.uleb128 0x1a
+ 2551 014f 2E       		.uleb128 0x2e
+ 2552 0150 01       		.byte	0x1
+ 2553 0151 3F       		.uleb128 0x3f
+ 2554 0152 19       		.uleb128 0x19
+ 2555 0153 03       		.uleb128 0x3
+ 2556 0154 0E       		.uleb128 0xe
+ 2557 0155 3A       		.uleb128 0x3a
+ 2558 0156 0B       		.uleb128 0xb
+ 2559 0157 3B       		.uleb128 0x3b
+ 2560 0158 05       		.uleb128 0x5
+ 2561 0159 27       		.uleb128 0x27
+ 2562 015a 19       		.uleb128 0x19
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 55
+
+
+ 2563 015b 11       		.uleb128 0x11
+ 2564 015c 01       		.uleb128 0x1
+ 2565 015d 12       		.uleb128 0x12
+ 2566 015e 06       		.uleb128 0x6
+ 2567 015f 40       		.uleb128 0x40
+ 2568 0160 18       		.uleb128 0x18
+ 2569 0161 9742     		.uleb128 0x2117
+ 2570 0163 19       		.uleb128 0x19
+ 2571 0164 01       		.uleb128 0x1
+ 2572 0165 13       		.uleb128 0x13
+ 2573 0166 00       		.byte	0
+ 2574 0167 00       		.byte	0
+ 2575 0168 1B       		.uleb128 0x1b
+ 2576 0169 05       		.uleb128 0x5
+ 2577 016a 00       		.byte	0
+ 2578 016b 03       		.uleb128 0x3
+ 2579 016c 0E       		.uleb128 0xe
+ 2580 016d 3A       		.uleb128 0x3a
+ 2581 016e 0B       		.uleb128 0xb
+ 2582 016f 3B       		.uleb128 0x3b
+ 2583 0170 05       		.uleb128 0x5
+ 2584 0171 49       		.uleb128 0x49
+ 2585 0172 13       		.uleb128 0x13
+ 2586 0173 02       		.uleb128 0x2
+ 2587 0174 17       		.uleb128 0x17
+ 2588 0175 00       		.byte	0
+ 2589 0176 00       		.byte	0
+ 2590 0177 1C       		.uleb128 0x1c
+ 2591 0178 34       		.uleb128 0x34
+ 2592 0179 00       		.byte	0
+ 2593 017a 03       		.uleb128 0x3
+ 2594 017b 0E       		.uleb128 0xe
+ 2595 017c 3A       		.uleb128 0x3a
+ 2596 017d 0B       		.uleb128 0xb
+ 2597 017e 3B       		.uleb128 0x3b
+ 2598 017f 05       		.uleb128 0x5
+ 2599 0180 49       		.uleb128 0x49
+ 2600 0181 13       		.uleb128 0x13
+ 2601 0182 02       		.uleb128 0x2
+ 2602 0183 17       		.uleb128 0x17
+ 2603 0184 00       		.byte	0
+ 2604 0185 00       		.byte	0
+ 2605 0186 1D       		.uleb128 0x1d
+ 2606 0187 05       		.uleb128 0x5
+ 2607 0188 00       		.byte	0
+ 2608 0189 03       		.uleb128 0x3
+ 2609 018a 0E       		.uleb128 0xe
+ 2610 018b 3A       		.uleb128 0x3a
+ 2611 018c 0B       		.uleb128 0xb
+ 2612 018d 3B       		.uleb128 0x3b
+ 2613 018e 05       		.uleb128 0x5
+ 2614 018f 49       		.uleb128 0x49
+ 2615 0190 13       		.uleb128 0x13
+ 2616 0191 02       		.uleb128 0x2
+ 2617 0192 18       		.uleb128 0x18
+ 2618 0193 00       		.byte	0
+ 2619 0194 00       		.byte	0
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 56
+
+
+ 2620 0195 1E       		.uleb128 0x1e
+ 2621 0196 34       		.uleb128 0x34
+ 2622 0197 00       		.byte	0
+ 2623 0198 03       		.uleb128 0x3
+ 2624 0199 0E       		.uleb128 0xe
+ 2625 019a 3A       		.uleb128 0x3a
+ 2626 019b 0B       		.uleb128 0xb
+ 2627 019c 3B       		.uleb128 0x3b
+ 2628 019d 05       		.uleb128 0x5
+ 2629 019e 49       		.uleb128 0x49
+ 2630 019f 13       		.uleb128 0x13
+ 2631 01a0 3F       		.uleb128 0x3f
+ 2632 01a1 19       		.uleb128 0x19
+ 2633 01a2 3C       		.uleb128 0x3c
+ 2634 01a3 19       		.uleb128 0x19
+ 2635 01a4 00       		.byte	0
+ 2636 01a5 00       		.byte	0
+ 2637 01a6 1F       		.uleb128 0x1f
+ 2638 01a7 34       		.uleb128 0x34
+ 2639 01a8 00       		.byte	0
+ 2640 01a9 03       		.uleb128 0x3
+ 2641 01aa 0E       		.uleb128 0xe
+ 2642 01ab 3A       		.uleb128 0x3a
+ 2643 01ac 0B       		.uleb128 0xb
+ 2644 01ad 3B       		.uleb128 0x3b
+ 2645 01ae 0B       		.uleb128 0xb
+ 2646 01af 49       		.uleb128 0x49
+ 2647 01b0 13       		.uleb128 0x13
+ 2648 01b1 3F       		.uleb128 0x3f
+ 2649 01b2 19       		.uleb128 0x19
+ 2650 01b3 3C       		.uleb128 0x3c
+ 2651 01b4 19       		.uleb128 0x19
+ 2652 01b5 00       		.byte	0
+ 2653 01b6 00       		.byte	0
+ 2654 01b7 20       		.uleb128 0x20
+ 2655 01b8 26       		.uleb128 0x26
+ 2656 01b9 00       		.byte	0
+ 2657 01ba 49       		.uleb128 0x49
+ 2658 01bb 13       		.uleb128 0x13
+ 2659 01bc 00       		.byte	0
+ 2660 01bd 00       		.byte	0
+ 2661 01be 21       		.uleb128 0x21
+ 2662 01bf 2E       		.uleb128 0x2e
+ 2663 01c0 00       		.byte	0
+ 2664 01c1 3F       		.uleb128 0x3f
+ 2665 01c2 19       		.uleb128 0x19
+ 2666 01c3 3C       		.uleb128 0x3c
+ 2667 01c4 19       		.uleb128 0x19
+ 2668 01c5 6E       		.uleb128 0x6e
+ 2669 01c6 0E       		.uleb128 0xe
+ 2670 01c7 03       		.uleb128 0x3
+ 2671 01c8 0E       		.uleb128 0xe
+ 2672 01c9 3A       		.uleb128 0x3a
+ 2673 01ca 0B       		.uleb128 0xb
+ 2674 01cb 3B       		.uleb128 0x3b
+ 2675 01cc 0B       		.uleb128 0xb
+ 2676 01cd 00       		.byte	0
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 57
+
+
+ 2677 01ce 00       		.byte	0
+ 2678 01cf 22       		.uleb128 0x22
+ 2679 01d0 2E       		.uleb128 0x2e
+ 2680 01d1 00       		.byte	0
+ 2681 01d2 3F       		.uleb128 0x3f
+ 2682 01d3 19       		.uleb128 0x19
+ 2683 01d4 3C       		.uleb128 0x3c
+ 2684 01d5 19       		.uleb128 0x19
+ 2685 01d6 6E       		.uleb128 0x6e
+ 2686 01d7 0E       		.uleb128 0xe
+ 2687 01d8 03       		.uleb128 0x3
+ 2688 01d9 0E       		.uleb128 0xe
+ 2689 01da 00       		.byte	0
+ 2690 01db 00       		.byte	0
+ 2691 01dc 00       		.byte	0
+ 2692              		.section	.debug_loc,"",%progbits
+ 2693              	.Ldebug_loc0:
+ 2694              	.LLST0:
+ 2695 0000 00000000 		.4byte	.LVL0
+ 2696 0004 07000000 		.4byte	.LVL1-1
+ 2697 0008 0100     		.2byte	0x1
+ 2698 000a 50       		.byte	0x50
+ 2699 000b 07000000 		.4byte	.LVL1-1
+ 2700 000f 10000000 		.4byte	.LFE590
+ 2701 0013 0400     		.2byte	0x4
+ 2702 0015 F3       		.byte	0xf3
+ 2703 0016 01       		.uleb128 0x1
+ 2704 0017 50       		.byte	0x50
+ 2705 0018 9F       		.byte	0x9f
+ 2706 0019 00000000 		.4byte	0
+ 2707 001d 00000000 		.4byte	0
+ 2708              	.LLST1:
+ 2709 0021 00000000 		.4byte	.LVL3
+ 2710 0025 07000000 		.4byte	.LVL5-1
+ 2711 0029 0100     		.2byte	0x1
+ 2712 002b 50       		.byte	0x50
+ 2713 002c 07000000 		.4byte	.LVL5-1
+ 2714 0030 0A000000 		.4byte	.LVL6
+ 2715 0034 0400     		.2byte	0x4
+ 2716 0036 F3       		.byte	0xf3
+ 2717 0037 01       		.uleb128 0x1
+ 2718 0038 50       		.byte	0x50
+ 2719 0039 9F       		.byte	0x9f
+ 2720 003a 0A000000 		.4byte	.LVL6
+ 2721 003e 0D000000 		.4byte	.LVL7-1
+ 2722 0042 0100     		.2byte	0x1
+ 2723 0044 50       		.byte	0x50
+ 2724 0045 0D000000 		.4byte	.LVL7-1
+ 2725 0049 18000000 		.4byte	.LFE591
+ 2726 004d 0400     		.2byte	0x4
+ 2727 004f F3       		.byte	0xf3
+ 2728 0050 01       		.uleb128 0x1
+ 2729 0051 50       		.byte	0x50
+ 2730 0052 9F       		.byte	0x9f
+ 2731 0053 00000000 		.4byte	0
+ 2732 0057 00000000 		.4byte	0
+ 2733              	.LLST2:
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 58
+
+
+ 2734 005b 02000000 		.4byte	.LVL4
+ 2735 005f 08000000 		.4byte	.LVL5
+ 2736 0063 0200     		.2byte	0x2
+ 2737 0065 30       		.byte	0x30
+ 2738 0066 9F       		.byte	0x9f
+ 2739 0067 08000000 		.4byte	.LVL5
+ 2740 006b 0A000000 		.4byte	.LVL6
+ 2741 006f 0100     		.2byte	0x1
+ 2742 0071 50       		.byte	0x50
+ 2743 0072 0A000000 		.4byte	.LVL6
+ 2744 0076 0E000000 		.4byte	.LVL7
+ 2745 007a 0200     		.2byte	0x2
+ 2746 007c 30       		.byte	0x30
+ 2747 007d 9F       		.byte	0x9f
+ 2748 007e 0E000000 		.4byte	.LVL7
+ 2749 0082 12000000 		.4byte	.LVL8
+ 2750 0086 0100     		.2byte	0x1
+ 2751 0088 50       		.byte	0x50
+ 2752 0089 14000000 		.4byte	.LVL9
+ 2753 008d 18000000 		.4byte	.LFE591
+ 2754 0091 0100     		.2byte	0x1
+ 2755 0093 50       		.byte	0x50
+ 2756 0094 00000000 		.4byte	0
+ 2757 0098 00000000 		.4byte	0
+ 2758              	.LLST3:
+ 2759 009c 00000000 		.4byte	.LVL11
+ 2760 00a0 0A000000 		.4byte	.LVL12
+ 2761 00a4 0100     		.2byte	0x1
+ 2762 00a6 50       		.byte	0x50
+ 2763 00a7 0A000000 		.4byte	.LVL12
+ 2764 00ab 44000000 		.4byte	.LFE592
+ 2765 00af 0400     		.2byte	0x4
+ 2766 00b1 F3       		.byte	0xf3
+ 2767 00b2 01       		.uleb128 0x1
+ 2768 00b3 50       		.byte	0x50
+ 2769 00b4 9F       		.byte	0x9f
+ 2770 00b5 00000000 		.4byte	0
+ 2771 00b9 00000000 		.4byte	0
+ 2772              	.LLST4:
+ 2773 00bd 00000000 		.4byte	.LVL11
+ 2774 00c1 0D000000 		.4byte	.LVL13-1
+ 2775 00c5 0100     		.2byte	0x1
+ 2776 00c7 51       		.byte	0x51
+ 2777 00c8 0D000000 		.4byte	.LVL13-1
+ 2778 00cc 44000000 		.4byte	.LFE592
+ 2779 00d0 0400     		.2byte	0x4
+ 2780 00d2 F3       		.byte	0xf3
+ 2781 00d3 01       		.uleb128 0x1
+ 2782 00d4 51       		.byte	0x51
+ 2783 00d5 9F       		.byte	0x9f
+ 2784 00d6 00000000 		.4byte	0
+ 2785 00da 00000000 		.4byte	0
+ 2786              	.LLST5:
+ 2787 00de 00000000 		.4byte	.LVL19
+ 2788 00e2 0E000000 		.4byte	.LVL20
+ 2789 00e6 0100     		.2byte	0x1
+ 2790 00e8 50       		.byte	0x50
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 59
+
+
+ 2791 00e9 0E000000 		.4byte	.LVL20
+ 2792 00ed 54000000 		.4byte	.LFE593
+ 2793 00f1 0100     		.2byte	0x1
+ 2794 00f3 57       		.byte	0x57
+ 2795 00f4 00000000 		.4byte	0
+ 2796 00f8 00000000 		.4byte	0
+ 2797              	.LLST6:
+ 2798 00fc 00000000 		.4byte	.LVL19
+ 2799 0100 11000000 		.4byte	.LVL21-1
+ 2800 0104 0100     		.2byte	0x1
+ 2801 0106 51       		.byte	0x51
+ 2802 0107 11000000 		.4byte	.LVL21-1
+ 2803 010b 54000000 		.4byte	.LFE593
+ 2804 010f 0100     		.2byte	0x1
+ 2805 0111 56       		.byte	0x56
+ 2806 0112 00000000 		.4byte	0
+ 2807 0116 00000000 		.4byte	0
+ 2808              	.LLST7:
+ 2809 011a 00000000 		.4byte	.LVL19
+ 2810 011e 11000000 		.4byte	.LVL21-1
+ 2811 0122 0100     		.2byte	0x1
+ 2812 0124 52       		.byte	0x52
+ 2813 0125 11000000 		.4byte	.LVL21-1
+ 2814 0129 54000000 		.4byte	.LFE593
+ 2815 012d 0400     		.2byte	0x4
+ 2816 012f F3       		.byte	0xf3
+ 2817 0130 01       		.uleb128 0x1
+ 2818 0131 52       		.byte	0x52
+ 2819 0132 9F       		.byte	0x9f
+ 2820 0133 00000000 		.4byte	0
+ 2821 0137 00000000 		.4byte	0
+ 2822              	.LLST8:
+ 2823 013b 00000000 		.4byte	.LVL19
+ 2824 013f 11000000 		.4byte	.LVL21-1
+ 2825 0143 0100     		.2byte	0x1
+ 2826 0145 53       		.byte	0x53
+ 2827 0146 11000000 		.4byte	.LVL21-1
+ 2828 014a 54000000 		.4byte	.LFE593
+ 2829 014e 0400     		.2byte	0x4
+ 2830 0150 F3       		.byte	0xf3
+ 2831 0151 01       		.uleb128 0x1
+ 2832 0152 53       		.byte	0x53
+ 2833 0153 9F       		.byte	0x9f
+ 2834 0154 00000000 		.4byte	0
+ 2835 0158 00000000 		.4byte	0
+ 2836              	.LLST9:
+ 2837 015c 00000000 		.4byte	.LVL28
+ 2838 0160 0C000000 		.4byte	.LVL30
+ 2839 0164 0100     		.2byte	0x1
+ 2840 0166 50       		.byte	0x50
+ 2841 0167 0C000000 		.4byte	.LVL30
+ 2842 016b 30000000 		.4byte	.LFE594
+ 2843 016f 0100     		.2byte	0x1
+ 2844 0171 57       		.byte	0x57
+ 2845 0172 00000000 		.4byte	0
+ 2846 0176 00000000 		.4byte	0
+ 2847              	.LLST10:
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 60
+
+
+ 2848 017a 00000000 		.4byte	.LVL28
+ 2849 017e 0C000000 		.4byte	.LVL30
+ 2850 0182 0100     		.2byte	0x1
+ 2851 0184 51       		.byte	0x51
+ 2852 0185 0C000000 		.4byte	.LVL30
+ 2853 0189 30000000 		.4byte	.LFE594
+ 2854 018d 0100     		.2byte	0x1
+ 2855 018f 56       		.byte	0x56
+ 2856 0190 00000000 		.4byte	0
+ 2857 0194 00000000 		.4byte	0
+ 2858              	.LLST11:
+ 2859 0198 00000000 		.4byte	.LVL28
+ 2860 019c 0C000000 		.4byte	.LVL30
+ 2861 01a0 0100     		.2byte	0x1
+ 2862 01a2 52       		.byte	0x52
+ 2863 01a3 0C000000 		.4byte	.LVL30
+ 2864 01a7 30000000 		.4byte	.LFE594
+ 2865 01ab 0100     		.2byte	0x1
+ 2866 01ad 55       		.byte	0x55
+ 2867 01ae 00000000 		.4byte	0
+ 2868 01b2 00000000 		.4byte	0
+ 2869              	.LLST12:
+ 2870 01b6 0A000000 		.4byte	.LVL29
+ 2871 01ba 26000000 		.4byte	.LVL35
+ 2872 01be 0100     		.2byte	0x1
+ 2873 01c0 54       		.byte	0x54
+ 2874 01c1 28000000 		.4byte	.LVL36
+ 2875 01c5 30000000 		.4byte	.LFE594
+ 2876 01c9 0100     		.2byte	0x1
+ 2877 01cb 54       		.byte	0x54
+ 2878 01cc 00000000 		.4byte	0
+ 2879 01d0 00000000 		.4byte	0
+ 2880              	.LLST13:
+ 2881 01d4 16000000 		.4byte	.LVL31
+ 2882 01d8 20000000 		.4byte	.LVL33
+ 2883 01dc 0100     		.2byte	0x1
+ 2884 01de 50       		.byte	0x50
+ 2885 01df 20000000 		.4byte	.LVL33
+ 2886 01e3 23000000 		.4byte	.LVL34-1
+ 2887 01e7 1000     		.2byte	0x10
+ 2888 01e9 74       		.byte	0x74
+ 2889 01ea 00       		.sleb128 0
+ 2890 01eb 35       		.byte	0x35
+ 2891 01ec 24       		.byte	0x24
+ 2892 01ed 75       		.byte	0x75
+ 2893 01ee 00       		.sleb128 0
+ 2894 01ef 94       		.byte	0x94
+ 2895 01f0 01       		.byte	0x1
+ 2896 01f1 08       		.byte	0x8
+ 2897 01f2 FF       		.byte	0xff
+ 2898 01f3 1A       		.byte	0x1a
+ 2899 01f4 22       		.byte	0x22
+ 2900 01f5 74       		.byte	0x74
+ 2901 01f6 00       		.sleb128 0
+ 2902 01f7 22       		.byte	0x22
+ 2903 01f8 9F       		.byte	0x9f
+ 2904 01f9 00000000 		.4byte	0
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 61
+
+
+ 2905 01fd 00000000 		.4byte	0
+ 2906              	.LLST14:
+ 2907 0201 1A000000 		.4byte	.LVL32
+ 2908 0205 23000000 		.4byte	.LVL34-1
+ 2909 0209 0100     		.2byte	0x1
+ 2910 020b 52       		.byte	0x52
+ 2911 020c 00000000 		.4byte	0
+ 2912 0210 00000000 		.4byte	0
+ 2913              	.LLST15:
+ 2914 0214 00000000 		.4byte	.LVL37
+ 2915 0218 08000000 		.4byte	.LVL39
+ 2916 021c 0100     		.2byte	0x1
+ 2917 021e 51       		.byte	0x51
+ 2918 021f 08000000 		.4byte	.LVL39
+ 2919 0223 18010000 		.4byte	.LFE595
+ 2920 0227 0400     		.2byte	0x4
+ 2921 0229 F3       		.byte	0xf3
+ 2922 022a 01       		.uleb128 0x1
+ 2923 022b 51       		.byte	0x51
+ 2924 022c 9F       		.byte	0x9f
+ 2925 022d 00000000 		.4byte	0
+ 2926 0231 00000000 		.4byte	0
+ 2927              	.LLST16:
+ 2928 0235 06000000 		.4byte	.LVL38
+ 2929 0239 08000000 		.4byte	.LVL39
+ 2930 023d 0100     		.2byte	0x1
+ 2931 023f 51       		.byte	0x51
+ 2932 0240 08000000 		.4byte	.LVL39
+ 2933 0244 18010000 		.4byte	.LFE595
+ 2934 0248 0100     		.2byte	0x1
+ 2935 024a 5A       		.byte	0x5a
+ 2936 024b 00000000 		.4byte	0
+ 2937 024f 00000000 		.4byte	0
+ 2938              	.LLST17:
+ 2939 0253 36000000 		.4byte	.LVL40
+ 2940 0257 E6000000 		.4byte	.LVL64
+ 2941 025b 0100     		.2byte	0x1
+ 2942 025d 57       		.byte	0x57
+ 2943 025e 00000000 		.4byte	0
+ 2944 0262 00000000 		.4byte	0
+ 2945              	.LLST18:
+ 2946 0266 4E000000 		.4byte	.LVL41
+ 2947 026a A4000000 		.4byte	.LVL54
+ 2948 026e 0100     		.2byte	0x1
+ 2949 0270 5C       		.byte	0x5c
+ 2950 0271 00000000 		.4byte	0
+ 2951 0275 00000000 		.4byte	0
+ 2952              	.LLST19:
+ 2953 0279 66000000 		.4byte	.LVL43
+ 2954 027d 8A000000 		.4byte	.LVL50
+ 2955 0281 0100     		.2byte	0x1
+ 2956 0283 55       		.byte	0x55
+ 2957 0284 AE000000 		.4byte	.LVL55
+ 2958 0288 D0000000 		.4byte	.LVL58
+ 2959 028c 0100     		.2byte	0x1
+ 2960 028e 54       		.byte	0x54
+ 2961 028f 00000000 		.4byte	0
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 62
+
+
+ 2962 0293 00000000 		.4byte	0
+ 2963              	.LLST20:
+ 2964 0297 6E000000 		.4byte	.LVL44
+ 2965 029b 76000000 		.4byte	.LVL45
+ 2966 029f 0100     		.2byte	0x1
+ 2967 02a1 54       		.byte	0x54
+ 2968 02a2 76000000 		.4byte	.LVL45
+ 2969 02a6 7C000000 		.4byte	.LVL46
+ 2970 02aa 1000     		.2byte	0x10
+ 2971 02ac 7E       		.byte	0x7e
+ 2972 02ad 00       		.sleb128 0
+ 2973 02ae 0A       		.byte	0xa
+ 2974 02af FFFF     		.2byte	0xffff
+ 2975 02b1 1A       		.byte	0x1a
+ 2976 02b2 79       		.byte	0x79
+ 2977 02b3 00       		.sleb128 0
+ 2978 02b4 1E       		.byte	0x1e
+ 2979 02b5 78       		.byte	0x78
+ 2980 02b6 00       		.sleb128 0
+ 2981 02b7 22       		.byte	0x22
+ 2982 02b8 7C       		.byte	0x7c
+ 2983 02b9 00       		.sleb128 0
+ 2984 02ba 22       		.byte	0x22
+ 2985 02bb 9F       		.byte	0x9f
+ 2986 02bc 7C000000 		.4byte	.LVL46
+ 2987 02c0 82000000 		.4byte	.LVL47
+ 2988 02c4 0100     		.2byte	0x1
+ 2989 02c6 54       		.byte	0x54
+ 2990 02c7 82000000 		.4byte	.LVL47
+ 2991 02cb 8A000000 		.4byte	.LVL50
+ 2992 02cf 1000     		.2byte	0x10
+ 2993 02d1 7E       		.byte	0x7e
+ 2994 02d2 00       		.sleb128 0
+ 2995 02d3 0A       		.byte	0xa
+ 2996 02d4 FFFF     		.2byte	0xffff
+ 2997 02d6 1A       		.byte	0x1a
+ 2998 02d7 79       		.byte	0x79
+ 2999 02d8 00       		.sleb128 0
+ 3000 02d9 1E       		.byte	0x1e
+ 3001 02da 78       		.byte	0x78
+ 3002 02db 00       		.sleb128 0
+ 3003 02dc 22       		.byte	0x22
+ 3004 02dd 7C       		.byte	0x7c
+ 3005 02de 00       		.sleb128 0
+ 3006 02df 22       		.byte	0x22
+ 3007 02e0 9F       		.byte	0x9f
+ 3008 02e1 00000000 		.4byte	0
+ 3009 02e5 00000000 		.4byte	0
+ 3010              	.LLST21:
+ 3011 02e9 4E000000 		.4byte	.LVL41
+ 3012 02ed 54000000 		.4byte	.LVL42
+ 3013 02f1 0200     		.2byte	0x2
+ 3014 02f3 30       		.byte	0x30
+ 3015 02f4 9F       		.byte	0x9f
+ 3016 02f5 54000000 		.4byte	.LVL42
+ 3017 02f9 98000000 		.4byte	.LVL52
+ 3018 02fd 0100     		.2byte	0x1
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 63
+
+
+ 3019 02ff 5E       		.byte	0x5e
+ 3020 0300 9C000000 		.4byte	.LVL53
+ 3021 0304 A4000000 		.4byte	.LVL54
+ 3022 0308 0100     		.2byte	0x1
+ 3023 030a 5E       		.byte	0x5e
+ 3024 030b A4000000 		.4byte	.LVL54
+ 3025 030f DA000000 		.4byte	.LVL60
+ 3026 0313 0100     		.2byte	0x1
+ 3027 0315 56       		.byte	0x56
+ 3028 0316 DC000000 		.4byte	.LVL61
+ 3029 031a DE000000 		.4byte	.LVL62
+ 3030 031e 0100     		.2byte	0x1
+ 3031 0320 56       		.byte	0x56
+ 3032 0321 E0000000 		.4byte	.LVL63
+ 3033 0325 E6000000 		.4byte	.LVL64
+ 3034 0329 0100     		.2byte	0x1
+ 3035 032b 56       		.byte	0x56
+ 3036 032c 00000000 		.4byte	0
+ 3037 0330 00000000 		.4byte	0
+ 3038              	.LLST22:
+ 3039 0334 54000000 		.4byte	.LVL42
+ 3040 0338 86000000 		.4byte	.LVL48
+ 3041 033c 0100     		.2byte	0x1
+ 3042 033e 56       		.byte	0x56
+ 3043 033f 88000000 		.4byte	.LVL49
+ 3044 0343 8A000000 		.4byte	.LVL50
+ 3045 0347 0100     		.2byte	0x1
+ 3046 0349 56       		.byte	0x56
+ 3047 034a 8C000000 		.4byte	.LVL51
+ 3048 034e 9C000000 		.4byte	.LVL53
+ 3049 0352 0100     		.2byte	0x1
+ 3050 0354 56       		.byte	0x56
+ 3051 0355 A4000000 		.4byte	.LVL54
+ 3052 0359 CC000000 		.4byte	.LVL56
+ 3053 035d 0100     		.2byte	0x1
+ 3054 035f 55       		.byte	0x55
+ 3055 0360 CE000000 		.4byte	.LVL57
+ 3056 0364 D0000000 		.4byte	.LVL58
+ 3057 0368 0100     		.2byte	0x1
+ 3058 036a 55       		.byte	0x55
+ 3059 036b D2000000 		.4byte	.LVL59
+ 3060 036f DE000000 		.4byte	.LVL62
+ 3061 0373 0100     		.2byte	0x1
+ 3062 0375 55       		.byte	0x55
+ 3063 0376 00000000 		.4byte	0
+ 3064 037a 00000000 		.4byte	0
+ 3065              		.section	.debug_aranges,"",%progbits
+ 3066 0000 44000000 		.4byte	0x44
+ 3067 0004 0200     		.2byte	0x2
+ 3068 0006 00000000 		.4byte	.Ldebug_info0
+ 3069 000a 04       		.byte	0x4
+ 3070 000b 00       		.byte	0
+ 3071 000c 0000     		.2byte	0
+ 3072 000e 0000     		.2byte	0
+ 3073 0010 00000000 		.4byte	.LFB590
+ 3074 0014 10000000 		.4byte	.LFE590-.LFB590
+ 3075 0018 00000000 		.4byte	.LFB591
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 64
+
+
+ 3076 001c 18000000 		.4byte	.LFE591-.LFB591
+ 3077 0020 00000000 		.4byte	.LFB592
+ 3078 0024 44000000 		.4byte	.LFE592-.LFB592
+ 3079 0028 00000000 		.4byte	.LFB593
+ 3080 002c 54000000 		.4byte	.LFE593-.LFB593
+ 3081 0030 00000000 		.4byte	.LFB594
+ 3082 0034 30000000 		.4byte	.LFE594-.LFB594
+ 3083 0038 00000000 		.4byte	.LFB595
+ 3084 003c 18010000 		.4byte	.LFE595-.LFB595
+ 3085 0040 00000000 		.4byte	0
+ 3086 0044 00000000 		.4byte	0
+ 3087              		.section	.debug_ranges,"",%progbits
+ 3088              	.Ldebug_ranges0:
+ 3089 0000 00000000 		.4byte	.LFB590
+ 3090 0004 10000000 		.4byte	.LFE590
+ 3091 0008 00000000 		.4byte	.LFB591
+ 3092 000c 18000000 		.4byte	.LFE591
+ 3093 0010 00000000 		.4byte	.LFB592
+ 3094 0014 44000000 		.4byte	.LFE592
+ 3095 0018 00000000 		.4byte	.LFB593
+ 3096 001c 54000000 		.4byte	.LFE593
+ 3097 0020 00000000 		.4byte	.LFB594
+ 3098 0024 30000000 		.4byte	.LFE594
+ 3099 0028 00000000 		.4byte	.LFB595
+ 3100 002c 18010000 		.4byte	.LFE595
+ 3101 0030 00000000 		.4byte	0
+ 3102 0034 00000000 		.4byte	0
+ 3103              		.section	.debug_line,"",%progbits
+ 3104              	.Ldebug_line0:
+ 3105 0000 EF030000 		.section	.debug_str,"MS",%progbits,1
+ 3105      0200F002 
+ 3105      00000201 
+ 3105      FB0E0D00 
+ 3105      01010101 
+ 3106              	.LASF59:
+ 3107 0000 70726F74 		.ascii	"protBusMasterMask\000"
+ 3107      4275734D 
+ 3107      61737465 
+ 3107      724D6173 
+ 3107      6B00
+ 3108              	.LASF129:
+ 3109 0012 72756E4D 		.ascii	"runMode\000"
+ 3109      6F646500 
+ 3110              	.LASF164:
+ 3111 001a 794F6666 		.ascii	"yOffset\000"
+ 3111      73657400 
+ 3112              	.LASF117:
+ 3113 0022 72784275 		.ascii	"rxBufSize\000"
+ 3113      6653697A 
+ 3113      6500
+ 3114              	.LASF189:
+ 3115 002c 43795F45 		.ascii	"Cy_EINK_Start\000"
+ 3115      494E4B5F 
+ 3115      53746172 
+ 3115      7400
+ 3116              	.LASF69:
+ 3117 003a 666C6173 		.ascii	"flashCtlMainWs3Freq\000"
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 65
+
+
+ 3117      6843746C 
+ 3117      4D61696E 
+ 3117      57733346 
+ 3117      72657100 
+ 3118              	.LASF91:
+ 3119 004e 6770696F 		.ascii	"gpioPrtCfgInOffset\000"
+ 3119      50727443 
+ 3119      6667496E 
+ 3119      4F666673 
+ 3119      657400
+ 3120              	.LASF160:
+ 3121 0061 6B696C6C 		.ascii	"killInput\000"
+ 3121      496E7075 
+ 3121      7400
+ 3122              	.LASF109:
+ 3123 006b 6970634C 		.ascii	"ipcLockStatusOffset\000"
+ 3123      6F636B53 
+ 3123      74617475 
+ 3123      734F6666 
+ 3123      73657400 
+ 3124              	.LASF35:
+ 3125 007f 63727970 		.ascii	"cryptoVersion\000"
+ 3125      746F5665 
+ 3125      7273696F 
+ 3125      6E00
+ 3126              	.LASF73:
+ 3127 008d 64774368 		.ascii	"dwChCtlPrioPos\000"
+ 3127      43746C50 
+ 3127      72696F50 
+ 3127      6F7300
+ 3128              	.LASF31:
+ 3129 009c 70617373 		.ascii	"passBase\000"
+ 3129      42617365 
+ 3129      00
+ 3130              	.LASF177:
+ 3131 00a5 50565F45 		.ascii	"PV_EINK_ERROR_CHARGEPUMP\000"
+ 3131      494E4B5F 
+ 3131      4552524F 
+ 3131      525F4348 
+ 3131      41524745 
+ 3132              	.LASF205:
+ 3133 00be 43795F45 		.ascii	"Cy_EINK_TextToFrameBuffer\000"
+ 3133      494E4B5F 
+ 3133      54657874 
+ 3133      546F4672 
+ 3133      616D6542 
+ 3134              	.LASF204:
+ 3135 00d8 6C696E65 		.ascii	"lineLength\000"
+ 3135      4C656E67 
+ 3135      746800
+ 3136              	.LASF44:
+ 3137 00e3 63707573 		.ascii	"cpussIpcIrqNr\000"
+ 3137      73497063 
+ 3137      4972714E 
+ 3137      7200
+ 3138              	.LASF1:
+ 3139 00f1 5F5F7569 		.ascii	"__uint8_t\000"
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 66
+
+
+ 3139      6E74385F 
+ 3139      7400
+ 3140              	.LASF46:
+ 3141 00fb 63707573 		.ascii	"cpussFlashPaSize\000"
+ 3141      73466C61 
+ 3141      73685061 
+ 3141      53697A65 
+ 3141      00
+ 3142              	.LASF95:
+ 3143 010c 63707573 		.ascii	"cpussCm4ClockCtlOffset\000"
+ 3143      73436D34 
+ 3143      436C6F63 
+ 3143      6B43746C 
+ 3143      4F666673 
+ 3144              	.LASF130:
+ 3145 0123 636F756E 		.ascii	"countDirection\000"
+ 3145      74446972 
+ 3145      65637469 
+ 3145      6F6E00
+ 3146              	.LASF142:
+ 3147 0132 73746F70 		.ascii	"stopInputMode\000"
+ 3147      496E7075 
+ 3147      744D6F64 
+ 3147      6500
+ 3148              	.LASF24:
+ 3149 0140 63707573 		.ascii	"cpussBase\000"
+ 3149      73426173 
+ 3149      6500
+ 3150              	.LASF127:
+ 3151 014a 70657269 		.ascii	"period\000"
+ 3151      6F6400
+ 3152              	.LASF198:
+ 3153 0151 6672616D 		.ascii	"frameBuffer\000"
+ 3153      65427566 
+ 3153      66657200 
+ 3154              	.LASF137:
+ 3155 015d 63617074 		.ascii	"captureInput\000"
+ 3155      75726549 
+ 3155      6E707574 
+ 3155      00
+ 3156              	.LASF13:
+ 3157 016a 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 3157      206C6F6E 
+ 3157      6720756E 
+ 3157      7369676E 
+ 3157      65642069 
+ 3158              	.LASF128:
+ 3159 0181 636C6F63 		.ascii	"clockPrescaler\000"
+ 3159      6B507265 
+ 3159      7363616C 
+ 3159      657200
+ 3160              	.LASF77:
+ 3161 0190 70657269 		.ascii	"periTrCmdOffset\000"
+ 3161      5472436D 
+ 3161      644F6666 
+ 3161      73657400 
+ 3162              	.LASF101:
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 67
+
+
+ 3163 01a0 63707573 		.ascii	"cpussSysTickCtlOffset\000"
+ 3163      73537973 
+ 3163      5469636B 
+ 3163      43746C4F 
+ 3163      66667365 
+ 3164              	.LASF171:
+ 3165 01b6 70765F65 		.ascii	"pv_eink_frame_data_t\000"
+ 3165      696E6B5F 
+ 3165      6672616D 
+ 3165      655F6461 
+ 3165      74615F74 
+ 3166              	.LASF0:
+ 3167 01cb 5F5F696E 		.ascii	"__int8_t\000"
+ 3167      74385F74 
+ 3167      00
+ 3168              	.LASF119:
+ 3169 01d4 74784275 		.ascii	"txBuf\000"
+ 3169      6600
+ 3170              	.LASF162:
+ 3171 01da 666F6E74 		.ascii	"fontData\000"
+ 3171      44617461 
+ 3171      00
+ 3172              	.LASF53:
+ 3173 01e3 70657269 		.ascii	"periClockNr\000"
+ 3173      436C6F63 
+ 3173      6B4E7200 
+ 3174              	.LASF172:
+ 3175 01ef 50565F45 		.ascii	"PV_EINK_RES_OK\000"
+ 3175      494E4B5F 
+ 3175      5245535F 
+ 3175      4F4B00
+ 3176              	.LASF62:
+ 3177 01fe 666C6173 		.ascii	"flashPipeRequired\000"
+ 3177      68506970 
+ 3177      65526571 
+ 3177      75697265 
+ 3177      6400
+ 3178              	.LASF66:
+ 3179 0210 666C6173 		.ascii	"flashCtlMainWs0Freq\000"
+ 3179      6843746C 
+ 3179      4D61696E 
+ 3179      57733046 
+ 3179      72657100 
+ 3180              	.LASF20:
+ 3181 0224 696E7431 		.ascii	"int16_t\000"
+ 3181      365F7400 
+ 3182              	.LASF188:
+ 3183 022c 706F7765 		.ascii	"powerCtrl\000"
+ 3183      72437472 
+ 3183      6C00
+ 3184              	.LASF12:
+ 3185 0236 6C6F6E67 		.ascii	"long long int\000"
+ 3185      206C6F6E 
+ 3185      6720696E 
+ 3185      7400
+ 3186              	.LASF146:
+ 3187 0244 63795F73 		.ascii	"cy_stc_tcpwm_counter_config_t\000"
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 68
+
+
+ 3187      74635F74 
+ 3187      6370776D 
+ 3187      5F636F75 
+ 3187      6E746572 
+ 3188              	.LASF125:
+ 3189 0262 63795F73 		.ascii	"cy_stc_scb_spi_context\000"
+ 3189      74635F73 
+ 3189      63625F73 
+ 3189      70695F63 
+ 3189      6F6E7465 
+ 3190              	.LASF82:
+ 3191 0279 70657269 		.ascii	"periDivCmdTypeSelPos\000"
+ 3191      44697643 
+ 3191      6D645479 
+ 3191      70655365 
+ 3191      6C506F73 
+ 3192              	.LASF11:
+ 3193 028e 6C6F6E67 		.ascii	"long unsigned int\000"
+ 3193      20756E73 
+ 3193      69676E65 
+ 3193      6420696E 
+ 3193      7400
+ 3194              	.LASF228:
+ 3195 02a0 65496E6B 		.ascii	"eInk Library\\cy_eink_library.c\000"
+ 3195      204C6962 
+ 3195      72617279 
+ 3195      5C63795F 
+ 3195      65696E6B 
+ 3196              	.LASF99:
+ 3197 02bf 63707573 		.ascii	"cpussTrimRamCtlOffset\000"
+ 3197      73547269 
+ 3197      6D52616D 
+ 3197      43746C4F 
+ 3197      66667365 
+ 3198              	.LASF40:
+ 3199 02d5 69706356 		.ascii	"ipcVersion\000"
+ 3199      65727369 
+ 3199      6F6E00
+ 3200              	.LASF102:
+ 3201 02e0 63707573 		.ascii	"cpussCm0NmiCtlOffset\000"
+ 3201      73436D30 
+ 3201      4E6D6943 
+ 3201      746C4F66 
+ 3201      66736574 
+ 3202              	.LASF114:
+ 3203 02f5 63795F63 		.ascii	"cy_cb_scb_spi_handle_events_t\000"
+ 3203      625F7363 
+ 3203      625F7370 
+ 3203      695F6861 
+ 3203      6E646C65 
+ 3204              	.LASF29:
+ 3205 0313 6873696F 		.ascii	"hsiomBase\000"
+ 3205      6D426173 
+ 3205      6500
+ 3206              	.LASF147:
+ 3207 031d 63795F73 		.ascii	"cy_stc_tcpwm_pwm_config\000"
+ 3207      74635F74 
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 69
+
+
+ 3207      6370776D 
+ 3207      5F70776D 
+ 3207      5F636F6E 
+ 3208              	.LASF197:
+ 3209 0335 43795F45 		.ascii	"Cy_EINK_ImageToFrameBuffer\000"
+ 3209      494E4B5F 
+ 3209      496D6167 
+ 3209      65546F46 
+ 3209      72616D65 
+ 3210              	.LASF9:
+ 3211 0350 6C6F6E67 		.ascii	"long int\000"
+ 3211      20696E74 
+ 3211      00
+ 3212              	.LASF60:
+ 3213 0359 63727970 		.ascii	"cryptoMemSize\000"
+ 3213      746F4D65 
+ 3213      6D53697A 
+ 3213      6500
+ 3214              	.LASF194:
+ 3215 0367 70726576 		.ascii	"prevFrame\000"
+ 3215      4672616D 
+ 3215      6500
+ 3216              	.LASF220:
+ 3217 0371 50574D5F 		.ascii	"PWM_1_config\000"
+ 3217      315F636F 
+ 3217      6E666967 
+ 3217      00
+ 3218              	.LASF231:
+ 3219 037e 6D656D63 		.ascii	"memcpy\000"
+ 3219      707900
+ 3220              	.LASF58:
+ 3221 0385 73797350 		.ascii	"sysPmSimoPresent\000"
+ 3221      6D53696D 
+ 3221      6F507265 
+ 3221      73656E74 
+ 3221      00
+ 3222              	.LASF21:
+ 3223 0396 75696E74 		.ascii	"uint16_t\000"
+ 3223      31365F74 
+ 3223      00
+ 3224              	.LASF112:
+ 3225 039f 646F7562 		.ascii	"double\000"
+ 3225      6C6500
+ 3226              	.LASF87:
+ 3227 03a6 70657269 		.ascii	"periDiv16_5CtlOffset\000"
+ 3227      44697631 
+ 3227      365F3543 
+ 3227      746C4F66 
+ 3227      66736574 
+ 3228              	.LASF212:
+ 3229 03bb 6672616D 		.ascii	"frameByte\000"
+ 3229      65427974 
+ 3229      6500
+ 3230              	.LASF187:
+ 3231 03c5 74656D70 		.ascii	"temperature\000"
+ 3231      65726174 
+ 3231      75726500 
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 70
+
+
+ 3232              	.LASF199:
+ 3233 03d1 696D6167 		.ascii	"image\000"
+ 3233      6500
+ 3234              	.LASF136:
+ 3235 03d7 63617074 		.ascii	"captureInputMode\000"
+ 3235      75726549 
+ 3235      6E707574 
+ 3235      4D6F6465 
+ 3235      00
+ 3236              	.LASF85:
+ 3237 03e8 70657269 		.ascii	"periDiv8CtlOffset\000"
+ 3237      44697638 
+ 3237      43746C4F 
+ 3237      66667365 
+ 3237      7400
+ 3238              	.LASF92:
+ 3239 03fa 6770696F 		.ascii	"gpioPrtCfgOutOffset\000"
+ 3239      50727443 
+ 3239      66674F75 
+ 3239      744F6666 
+ 3239      73657400 
+ 3240              	.LASF173:
+ 3241 040e 50565F45 		.ascii	"PV_EINK_ERROR_BUSY\000"
+ 3241      494E4B5F 
+ 3241      4552524F 
+ 3241      525F4255 
+ 3241      535900
+ 3242              	.LASF25:
+ 3243 0421 666C6173 		.ascii	"flashcBase\000"
+ 3243      68634261 
+ 3243      736500
+ 3244              	.LASF26:
+ 3245 042c 70657269 		.ascii	"periBase\000"
+ 3245      42617365 
+ 3245      00
+ 3246              	.LASF10:
+ 3247 0435 5F5F7569 		.ascii	"__uint32_t\000"
+ 3247      6E743332 
+ 3247      5F7400
+ 3248              	.LASF55:
+ 3249 0440 70617373 		.ascii	"passSarChannels\000"
+ 3249      53617243 
+ 3249      68616E6E 
+ 3249      656C7300 
+ 3250              	.LASF184:
+ 3251 0450 43595F45 		.ascii	"CY_EINK_FULL_4STAGE\000"
+ 3251      494E4B5F 
+ 3251      46554C4C 
+ 3251      5F345354 
+ 3251      41474500 
+ 3252              	.LASF67:
+ 3253 0464 666C6173 		.ascii	"flashCtlMainWs1Freq\000"
+ 3253      6843746C 
+ 3253      4D61696E 
+ 3253      57733146 
+ 3253      72657100 
+ 3254              	.LASF118:
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 71
+
+
+ 3255 0478 72784275 		.ascii	"rxBufIdx\000"
+ 3255      66496478 
+ 3255      00
+ 3256              	.LASF183:
+ 3257 0481 43595F45 		.ascii	"CY_EINK_PARTIAL\000"
+ 3257      494E4B5F 
+ 3257      50415254 
+ 3257      49414C00 
+ 3258              	.LASF165:
+ 3259 0491 7853697A 		.ascii	"xSize\000"
+ 3259      6500
+ 3260              	.LASF98:
+ 3261 0497 63707573 		.ascii	"cpussCm4PwrCtlOffset\000"
+ 3261      73436D34 
+ 3261      50777243 
+ 3261      746C4F66 
+ 3261      66736574 
+ 3262              	.LASF120:
+ 3263 04ac 74784275 		.ascii	"txBufSize\000"
+ 3263      6653697A 
+ 3263      6500
+ 3264              	.LASF93:
+ 3265 04b6 6770696F 		.ascii	"gpioPrtCfgSioOffset\000"
+ 3265      50727443 
+ 3265      66675369 
+ 3265      6F4F6666 
+ 3265      73657400 
+ 3266              	.LASF97:
+ 3267 04ca 63707573 		.ascii	"cpussCm0StatusOffset\000"
+ 3267      73436D30 
+ 3267      53746174 
+ 3267      75734F66 
+ 3267      66736574 
+ 3268              	.LASF14:
+ 3269 04df 756E7369 		.ascii	"unsigned int\000"
+ 3269      676E6564 
+ 3269      20696E74 
+ 3269      00
+ 3270              	.LASF78:
+ 3271 04ec 70657269 		.ascii	"periTrCmdGrSelMsk\000"
+ 3271      5472436D 
+ 3271      64477253 
+ 3271      656C4D73 
+ 3271      6B00
+ 3272              	.LASF214:
+ 3273 04fe 76657274 		.ascii	"verticalCounter\000"
+ 3273      6963616C 
+ 3273      436F756E 
+ 3273      74657200 
+ 3274              	.LASF43:
+ 3275 050e 63707573 		.ascii	"cpussIpcNr\000"
+ 3275      73497063 
+ 3275      4E7200
+ 3276              	.LASF196:
+ 3277 0519 75706461 		.ascii	"updateType\000"
+ 3277      74655479 
+ 3277      706500
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 72
+
+
+ 3278              	.LASF45:
+ 3279 0524 63707573 		.ascii	"cpussDwChNr\000"
+ 3279      73447743 
+ 3279      684E7200 
+ 3280              	.LASF170:
+ 3281 0530 63795F65 		.ascii	"cy_eink_font_t\000"
+ 3281      696E6B5F 
+ 3281      666F6E74 
+ 3281      5F7400
+ 3282              	.LASF68:
+ 3283 053f 666C6173 		.ascii	"flashCtlMainWs2Freq\000"
+ 3283      6843746C 
+ 3283      4D61696E 
+ 3283      57733246 
+ 3283      72657100 
+ 3284              	.LASF157:
+ 3285 0553 73776170 		.ascii	"swapInputMode\000"
+ 3285      496E7075 
+ 3285      744D6F64 
+ 3285      6500
+ 3286              	.LASF79:
+ 3287 0561 70657269 		.ascii	"periTrGrOffset\000"
+ 3287      54724772 
+ 3287      4F666673 
+ 3287      657400
+ 3288              	.LASF106:
+ 3289 0570 63707573 		.ascii	"cpussRam1Ctl0\000"
+ 3289      7352616D 
+ 3289      3143746C 
+ 3289      3000
+ 3290              	.LASF168:
+ 3291 057e 79537061 		.ascii	"ySpan\000"
+ 3291      6E00
+ 3292              	.LASF209:
+ 3293 0584 63757272 		.ascii	"currentChar\000"
+ 3293      656E7443 
+ 3293      68617200 
+ 3294              	.LASF207:
+ 3295 0590 666F6E74 		.ascii	"fontInfo\000"
+ 3295      496E666F 
+ 3295      00
+ 3296              	.LASF38:
+ 3297 0599 6770696F 		.ascii	"gpioVersion\000"
+ 3297      56657273 
+ 3297      696F6E00 
+ 3298              	.LASF159:
+ 3299 05a5 6B696C6C 		.ascii	"killInputMode\000"
+ 3299      496E7075 
+ 3299      744D6F64 
+ 3299      6500
+ 3300              	.LASF122:
+ 3301 05b3 63624576 		.ascii	"cbEvents\000"
+ 3301      656E7473 
+ 3301      00
+ 3302              	.LASF90:
+ 3303 05bc 6770696F 		.ascii	"gpioPrtCfgOffset\000"
+ 3303      50727443 
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 73
+
+
+ 3303      66674F66 
+ 3303      66736574 
+ 3303      00
+ 3304              	.LASF185:
+ 3305 05cd 43595F45 		.ascii	"CY_EINK_FULL_2STAGE\000"
+ 3305      494E4B5F 
+ 3305      46554C4C 
+ 3305      5F325354 
+ 3305      41474500 
+ 3306              	.LASF121:
+ 3307 05e1 74784275 		.ascii	"txBufIdx\000"
+ 3307      66496478 
+ 3307      00
+ 3308              	.LASF182:
+ 3309 05ea 63795F65 		.ascii	"cy_eink_frame_t\000"
+ 3309      696E6B5F 
+ 3309      6672616D 
+ 3309      655F7400 
+ 3310              	.LASF110:
+ 3311 05fa 63795F73 		.ascii	"cy_stc_device_t\000"
+ 3311      74635F64 
+ 3311      65766963 
+ 3311      655F7400 
+ 3312              	.LASF179:
+ 3313 060a 50565F45 		.ascii	"PV_EINK_STAGE2\000"
+ 3313      494E4B5F 
+ 3313      53544147 
+ 3313      453200
+ 3314              	.LASF180:
+ 3315 0619 50565F45 		.ascii	"PV_EINK_STAGE3\000"
+ 3315      494E4B5F 
+ 3315      53544147 
+ 3315      453300
+ 3316              	.LASF181:
+ 3317 0628 50565F45 		.ascii	"PV_EINK_STAGE4\000"
+ 3317      494E4B5F 
+ 3317      53544147 
+ 3317      453400
+ 3318              	.LASF154:
+ 3319 0637 696E7665 		.ascii	"invertPWMOut\000"
+ 3319      72745057 
+ 3319      4D4F7574 
+ 3319      00
+ 3320              	.LASF8:
+ 3321 0644 5F5F696E 		.ascii	"__int32_t\000"
+ 3321      7433325F 
+ 3321      7400
+ 3322              	.LASF150:
+ 3323 064e 64656164 		.ascii	"deadTimeClocks\000"
+ 3323      54696D65 
+ 3323      436C6F63 
+ 3323      6B7300
+ 3324              	.LASF155:
+ 3325 065d 696E7665 		.ascii	"invertPWMOutN\000"
+ 3325      72745057 
+ 3325      4D4F7574 
+ 3325      4E00
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 74
+
+
+ 3326              	.LASF169:
+ 3327 066b 636F6C6F 		.ascii	"color\000"
+ 3327      7200
+ 3328              	.LASF144:
+ 3329 0671 636F756E 		.ascii	"countInputMode\000"
+ 3329      74496E70 
+ 3329      75744D6F 
+ 3329      646500
+ 3330              	.LASF94:
+ 3331 0680 63707573 		.ascii	"cpussCm0ClockCtlOffset\000"
+ 3331      73436D30 
+ 3331      436C6F63 
+ 3331      6B43746C 
+ 3331      4F666673 
+ 3332              	.LASF33:
+ 3333 0697 63727970 		.ascii	"cryptoBase\000"
+ 3333      746F4261 
+ 3333      736500
+ 3334              	.LASF41:
+ 3335 06a2 70657269 		.ascii	"periVersion\000"
+ 3335      56657273 
+ 3335      696F6E00 
+ 3336              	.LASF126:
+ 3337 06ae 63795F73 		.ascii	"cy_stc_tcpwm_counter_config\000"
+ 3337      74635F74 
+ 3337      6370776D 
+ 3337      5F636F75 
+ 3337      6E746572 
+ 3338              	.LASF163:
+ 3339 06ca 784F6666 		.ascii	"xOffset\000"
+ 3339      73657400 
+ 3340              	.LASF200:
+ 3341 06d2 696D6743 		.ascii	"imgCoordinates\000"
+ 3341      6F6F7264 
+ 3341      696E6174 
+ 3341      657300
+ 3342              	.LASF202:
+ 3343 06e1 70697865 		.ascii	"pixelLineCounter\000"
+ 3343      6C4C696E 
+ 3343      65436F75 
+ 3343      6E746572 
+ 3343      00
+ 3344              	.LASF16:
+ 3345 06f2 73697A65 		.ascii	"sizetype\000"
+ 3345      74797065 
+ 3345      00
+ 3346              	.LASF71:
+ 3347 06fb 64774368 		.ascii	"dwChOffset\000"
+ 3347      4F666673 
+ 3347      657400
+ 3348              	.LASF15:
+ 3349 0706 6C6F6E67 		.ascii	"long double\000"
+ 3349      20646F75 
+ 3349      626C6500 
+ 3350              	.LASF51:
+ 3351 0712 73727373 		.ascii	"srssNumPll\000"
+ 3351      4E756D50 
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 75
+
+
+ 3351      6C6C00
+ 3352              	.LASF84:
+ 3353 071d 70657269 		.ascii	"periDivCmdPaTypeSelPos\000"
+ 3353      44697643 
+ 3353      6D645061 
+ 3353      54797065 
+ 3353      53656C50 
+ 3354              	.LASF56:
+ 3355 0734 65704D6F 		.ascii	"epMonitorNr\000"
+ 3355      6E69746F 
+ 3355      724E7200 
+ 3356              	.LASF42:
+ 3357 0740 70726F74 		.ascii	"protVersion\000"
+ 3357      56657273 
+ 3357      696F6E00 
+ 3358              	.LASF75:
+ 3359 074c 64775374 		.ascii	"dwStatusChIdxPos\000"
+ 3359      61747573 
+ 3359      43684964 
+ 3359      78506F73 
+ 3359      00
+ 3360              	.LASF221:
+ 3361 075d 50765F45 		.ascii	"Pv_EINK_Init\000"
+ 3361      494E4B5F 
+ 3361      496E6974 
+ 3361      00
+ 3362              	.LASF57:
+ 3363 076a 75646250 		.ascii	"udbPresent\000"
+ 3363      72657365 
+ 3363      6E7400
+ 3364              	.LASF107:
+ 3365 0775 63707573 		.ascii	"cpussRam2Ctl0\000"
+ 3365      7352616D 
+ 3365      3243746C 
+ 3365      3000
+ 3366              	.LASF5:
+ 3367 0783 73686F72 		.ascii	"short int\000"
+ 3367      7420696E 
+ 3367      7400
+ 3368              	.LASF37:
+ 3369 078d 666C6173 		.ascii	"flashcVersion\000"
+ 3369      68635665 
+ 3369      7273696F 
+ 3369      6E00
+ 3370              	.LASF54:
+ 3371 079b 736D6966 		.ascii	"smifDeviceNr\000"
+ 3371      44657669 
+ 3371      63654E72 
+ 3371      00
+ 3372              	.LASF229:
+ 3373 07a8 433A5C55 		.ascii	"C:\\Users\\Nancy\\Documents\\Myriane\\Laboratoire3\\"
+ 3373      73657273 
+ 3373      5C4E616E 
+ 3373      63795C44 
+ 3373      6F63756D 
+ 3374 07d6 4C61626F 		.ascii	"Laboratoire3.cydsn\000"
+ 3374      7261746F 
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 76
+
+
+ 3374      69726533 
+ 3374      2E637964 
+ 3374      736E00
+ 3375              	.LASF210:
+ 3376 07e9 7072696E 		.ascii	"printLocation\000"
+ 3376      744C6F63 
+ 3376      6174696F 
+ 3376      6E00
+ 3377              	.LASF148:
+ 3378 07f7 70776D4D 		.ascii	"pwmMode\000"
+ 3378      6F646500 
+ 3379              	.LASF111:
+ 3380 07ff 666C6F61 		.ascii	"float\000"
+ 3380      7400
+ 3381              	.LASF76:
+ 3382 0805 64775374 		.ascii	"dwStatusChIdxMsk\000"
+ 3382      61747573 
+ 3382      43684964 
+ 3382      784D736B 
+ 3382      00
+ 3383              	.LASF186:
+ 3384 0816 63795F65 		.ascii	"cy_eink_update_t\000"
+ 3384      696E6B5F 
+ 3384      75706461 
+ 3384      74655F74 
+ 3384      00
+ 3385              	.LASF217:
+ 3386 0827 63795F64 		.ascii	"cy_device\000"
+ 3386      65766963 
+ 3386      6500
+ 3387              	.LASF104:
+ 3388 0831 63707573 		.ascii	"cpussRomCtl\000"
+ 3388      73526F6D 
+ 3388      43746C00 
+ 3389              	.LASF74:
+ 3390 083d 64774368 		.ascii	"dwChCtlPreemptablePos\000"
+ 3390      43746C50 
+ 3390      7265656D 
+ 3390      70746162 
+ 3390      6C65506F 
+ 3391              	.LASF156:
+ 3392 0853 6B696C6C 		.ascii	"killMode\000"
+ 3392      4D6F6465 
+ 3392      00
+ 3393              	.LASF174:
+ 3394 085c 50565F45 		.ascii	"PV_EINK_ERROR_ID\000"
+ 3394      494E4B5F 
+ 3394      4552524F 
+ 3394      525F4944 
+ 3394      00
+ 3395              	.LASF223:
+ 3396 086d 50765F45 		.ascii	"Pv_EINK_HardwarePowerOn\000"
+ 3396      494E4B5F 
+ 3396      48617264 
+ 3396      77617265 
+ 3396      506F7765 
+ 3397              	.LASF27:
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 77
+
+
+ 3398 0885 75646242 		.ascii	"udbBase\000"
+ 3398      61736500 
+ 3399              	.LASF140:
+ 3400 088d 73746172 		.ascii	"startInputMode\000"
+ 3400      74496E70 
+ 3400      75744D6F 
+ 3400      646500
+ 3401              	.LASF22:
+ 3402 089c 696E7433 		.ascii	"int32_t\000"
+ 3402      325F7400 
+ 3403              	.LASF3:
+ 3404 08a4 756E7369 		.ascii	"unsigned char\000"
+ 3404      676E6564 
+ 3404      20636861 
+ 3404      7200
+ 3405              	.LASF70:
+ 3406 08b2 666C6173 		.ascii	"flashCtlMainWs4Freq\000"
+ 3406      6843746C 
+ 3406      4D61696E 
+ 3406      57733446 
+ 3406      72657100 
+ 3407              	.LASF216:
+ 3408 08c6 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 3408      52784275 
+ 3408      66666572 
+ 3408      00
+ 3409              	.LASF195:
+ 3410 08d3 6E657746 		.ascii	"newFrame\000"
+ 3410      72616D65 
+ 3410      00
+ 3411              	.LASF88:
+ 3412 08dc 70657269 		.ascii	"periDiv24_5CtlOffset\000"
+ 3412      44697632 
+ 3412      345F3543 
+ 3412      746C4F66 
+ 3412      66736574 
+ 3413              	.LASF134:
+ 3414 08f1 656E6162 		.ascii	"enableCompareSwap\000"
+ 3414      6C65436F 
+ 3414      6D706172 
+ 3414      65537761 
+ 3414      7000
+ 3415              	.LASF226:
+ 3416 0903 50765F45 		.ascii	"Pv_EINK_PartialStageHandler\000"
+ 3416      494E4B5F 
+ 3416      50617274 
+ 3416      69616C53 
+ 3416      74616765 
+ 3417              	.LASF105:
+ 3418 091f 63707573 		.ascii	"cpussRam0Ctl0\000"
+ 3418      7352616D 
+ 3418      3043746C 
+ 3418      3000
+ 3419              	.LASF115:
+ 3420 092d 73746174 		.ascii	"status\000"
+ 3420      757300
+ 3421              	.LASF149:
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 78
+
+
+ 3422 0934 70776D41 		.ascii	"pwmAlignment\000"
+ 3422      6C69676E 
+ 3422      6D656E74 
+ 3422      00
+ 3423              	.LASF81:
+ 3424 0941 70657269 		.ascii	"periDivCmdDivSelMsk\000"
+ 3424      44697643 
+ 3424      6D644469 
+ 3424      7653656C 
+ 3424      4D736B00 
+ 3425              	.LASF153:
+ 3426 0955 656E6162 		.ascii	"enablePeriodSwap\000"
+ 3426      6C655065 
+ 3426      72696F64 
+ 3426      53776170 
+ 3426      00
+ 3427              	.LASF131:
+ 3428 0966 636F6D70 		.ascii	"compareOrCapture\000"
+ 3428      6172654F 
+ 3428      72436170 
+ 3428      74757265 
+ 3428      00
+ 3429              	.LASF48:
+ 3430 0977 63707573 		.ascii	"cpussFmIrq\000"
+ 3430      73466D49 
+ 3430      727100
+ 3431              	.LASF65:
+ 3432 0982 666C6173 		.ascii	"flashEraseDelay\000"
+ 3432      68457261 
+ 3432      73654465 
+ 3432      6C617900 
+ 3433              	.LASF191:
+ 3434 0992 6261636B 		.ascii	"background\000"
+ 3434      67726F75 
+ 3434      6E6400
+ 3435              	.LASF206:
+ 3436 099d 73747269 		.ascii	"string\000"
+ 3436      6E6700
+ 3437              	.LASF80:
+ 3438 09a4 70657269 		.ascii	"periTrGrSize\000"
+ 3438      54724772 
+ 3438      53697A65 
+ 3438      00
+ 3439              	.LASF215:
+ 3440 09b1 686F7269 		.ascii	"horizontalCounter\000"
+ 3440      7A6F6E74 
+ 3440      616C436F 
+ 3440      756E7465 
+ 3440      7200
+ 3441              	.LASF124:
+ 3442 09c3 63795F73 		.ascii	"cy_stc_scb_spi_context_t\000"
+ 3442      74635F73 
+ 3442      63625F73 
+ 3442      70695F63 
+ 3442      6F6E7465 
+ 3443              	.LASF132:
+ 3444 09dc 636F6D70 		.ascii	"compare0\000"
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 79
+
+
+ 3444      61726530 
+ 3444      00
+ 3445              	.LASF133:
+ 3446 09e5 636F6D70 		.ascii	"compare1\000"
+ 3446      61726531 
+ 3446      00
+ 3447              	.LASF145:
+ 3448 09ee 636F756E 		.ascii	"countInput\000"
+ 3448      74496E70 
+ 3448      757400
+ 3449              	.LASF17:
+ 3450 09f9 63686172 		.ascii	"char\000"
+ 3450      00
+ 3451              	.LASF211:
+ 3452 09fe 63686172 		.ascii	"charLocation\000"
+ 3452      4C6F6361 
+ 3452      74696F6E 
+ 3452      00
+ 3453              	.LASF167:
+ 3454 0a0b 78537061 		.ascii	"xSpan\000"
+ 3454      6E00
+ 3455              	.LASF6:
+ 3456 0a11 5F5F7569 		.ascii	"__uint16_t\000"
+ 3456      6E743136 
+ 3456      5F7400
+ 3457              	.LASF86:
+ 3458 0a1c 70657269 		.ascii	"periDiv16CtlOffset\000"
+ 3458      44697631 
+ 3458      3643746C 
+ 3458      4F666673 
+ 3458      657400
+ 3459              	.LASF193:
+ 3460 0a2f 43795F45 		.ascii	"Cy_EINK_ShowFrame\000"
+ 3460      494E4B5F 
+ 3460      53686F77 
+ 3460      4672616D 
+ 3460      6500
+ 3461              	.LASF36:
+ 3462 0a41 64775665 		.ascii	"dwVersion\000"
+ 3462      7273696F 
+ 3462      6E00
+ 3463              	.LASF39:
+ 3464 0a4b 6873696F 		.ascii	"hsiomVersion\000"
+ 3464      6D566572 
+ 3464      73696F6E 
+ 3464      00
+ 3465              	.LASF201:
+ 3466 0a58 70777253 		.ascii	"pwrStatus\000"
+ 3466      74617475 
+ 3466      7300
+ 3467              	.LASF135:
+ 3468 0a62 696E7465 		.ascii	"interruptSources\000"
+ 3468      72727570 
+ 3468      74536F75 
+ 3468      72636573 
+ 3468      00
+ 3469              	.LASF139:
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 80
+
+
+ 3470 0a73 72656C6F 		.ascii	"reloadInput\000"
+ 3470      6164496E 
+ 3470      70757400 
+ 3471              	.LASF7:
+ 3472 0a7f 73686F72 		.ascii	"short unsigned int\000"
+ 3472      7420756E 
+ 3472      7369676E 
+ 3472      65642069 
+ 3472      6E7400
+ 3473              	.LASF72:
+ 3474 0a92 64774368 		.ascii	"dwChSize\000"
+ 3474      53697A65 
+ 3474      00
+ 3475              	.LASF143:
+ 3476 0a9b 73746F70 		.ascii	"stopInput\000"
+ 3476      496E7075 
+ 3476      7400
+ 3477              	.LASF108:
+ 3478 0aa5 69706353 		.ascii	"ipcStructSize\000"
+ 3478      74727563 
+ 3478      7453697A 
+ 3478      6500
+ 3479              	.LASF208:
+ 3480 0ab3 666F6E74 		.ascii	"fontCor\000"
+ 3480      436F7200 
+ 3481              	.LASF18:
+ 3482 0abb 696E7438 		.ascii	"int8_t\000"
+ 3482      5F7400
+ 3483              	.LASF47:
+ 3484 0ac2 63707573 		.ascii	"cpussIpc0Irq\000"
+ 3484      73497063 
+ 3484      30497271 
+ 3484      00
+ 3485              	.LASF151:
+ 3486 0acf 70657269 		.ascii	"period0\000"
+ 3486      6F643000 
+ 3487              	.LASF152:
+ 3488 0ad7 70657269 		.ascii	"period1\000"
+ 3488      6F643100 
+ 3489              	.LASF30:
+ 3490 0adf 6770696F 		.ascii	"gpioBase\000"
+ 3490      42617365 
+ 3490      00
+ 3491              	.LASF123:
+ 3492 0ae8 696E6974 		.ascii	"initKey\000"
+ 3492      4B657900 
+ 3493              	.LASF116:
+ 3494 0af0 72784275 		.ascii	"rxBuf\000"
+ 3494      6600
+ 3495              	.LASF178:
+ 3496 0af6 50565F45 		.ascii	"PV_EINK_STAGE1\000"
+ 3496      494E4B5F 
+ 3496      53544147 
+ 3496      453100
+ 3497              	.LASF28:
+ 3498 0b05 70726F74 		.ascii	"protBase\000"
+ 3498      42617365 
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 81
+
+
+ 3498      00
+ 3499              	.LASF113:
+ 3500 0b0e 5F426F6F 		.ascii	"_Bool\000"
+ 3500      6C00
+ 3501              	.LASF52:
+ 3502 0b14 73727373 		.ascii	"srssNumHfroot\000"
+ 3502      4E756D48 
+ 3502      66726F6F 
+ 3502      7400
+ 3503              	.LASF192:
+ 3504 0b22 706F7765 		.ascii	"powerCycle\000"
+ 3504      72437963 
+ 3504      6C6500
+ 3505              	.LASF218:
+ 3506 0b2d 43595F45 		.ascii	"CY_EINK_SPIM_context\000"
+ 3506      494E4B5F 
+ 3506      5350494D 
+ 3506      5F636F6E 
+ 3506      74657874 
+ 3507              	.LASF49:
+ 3508 0b42 63707573 		.ascii	"cpussNotConnectedIrq\000"
+ 3508      734E6F74 
+ 3508      436F6E6E 
+ 3508      65637465 
+ 3508      64497271 
+ 3509              	.LASF103:
+ 3510 0b57 63707573 		.ascii	"cpussCm4NmiCtlOffset\000"
+ 3510      73436D34 
+ 3510      4E6D6943 
+ 3510      746C4F66 
+ 3510      66736574 
+ 3511              	.LASF203:
+ 3512 0b6c 73746172 		.ascii	"startLocation\000"
+ 3512      744C6F63 
+ 3512      6174696F 
+ 3512      6E00
+ 3513              	.LASF222:
+ 3514 0b7a 50765F45 		.ascii	"Pv_EINK_SetTempFactor\000"
+ 3514      494E4B5F 
+ 3514      53657454 
+ 3514      656D7046 
+ 3514      6163746F 
+ 3515              	.LASF63:
+ 3516 0b90 666C6173 		.ascii	"flashWriteDelay\000"
+ 3516      68577269 
+ 3516      74654465 
+ 3516      6C617900 
+ 3517              	.LASF213:
+ 3518 0ba0 666F6E74 		.ascii	"fontByte\000"
+ 3518      42797465 
+ 3518      00
+ 3519              	.LASF19:
+ 3520 0ba9 75696E74 		.ascii	"uint8_t\000"
+ 3520      385F7400 
+ 3521              	.LASF225:
+ 3522 0bb1 50765F45 		.ascii	"Pv_EINK_FullStageHandler\000"
+ 3522      494E4B5F 
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 82
+
+
+ 3522      46756C6C 
+ 3522      53746167 
+ 3522      6548616E 
+ 3523              	.LASF158:
+ 3524 0bca 73776170 		.ascii	"swapInput\000"
+ 3524      496E7075 
+ 3524      7400
+ 3525              	.LASF219:
+ 3526 0bd4 43595F45 		.ascii	"CY_EINK_Timer_config\000"
+ 3526      494E4B5F 
+ 3526      54696D65 
+ 3526      725F636F 
+ 3526      6E666967 
+ 3527              	.LASF96:
+ 3528 0be9 63707573 		.ascii	"cpussCm4StatusOffset\000"
+ 3528      73436D34 
+ 3528      53746174 
+ 3528      75734F66 
+ 3528      66736574 
+ 3529              	.LASF89:
+ 3530 0bfe 6770696F 		.ascii	"gpioPrtIntrCfgOffset\000"
+ 3530      50727449 
+ 3530      6E747243 
+ 3530      66674F66 
+ 3530      66736574 
+ 3531              	.LASF161:
+ 3532 0c13 63795F73 		.ascii	"cy_stc_tcpwm_pwm_config_t\000"
+ 3532      74635F74 
+ 3532      6370776D 
+ 3532      5F70776D 
+ 3532      5F636F6E 
+ 3533              	.LASF4:
+ 3534 0c2d 5F5F696E 		.ascii	"__int16_t\000"
+ 3534      7431365F 
+ 3534      7400
+ 3535              	.LASF138:
+ 3536 0c37 72656C6F 		.ascii	"reloadInputMode\000"
+ 3536      6164496E 
+ 3536      7075744D 
+ 3536      6F646500 
+ 3537              	.LASF224:
+ 3538 0c47 50765F45 		.ascii	"Pv_EINK_HardwarePowerOff\000"
+ 3538      494E4B5F 
+ 3538      48617264 
+ 3538      77617265 
+ 3538      506F7765 
+ 3539              	.LASF166:
+ 3540 0c60 7953697A 		.ascii	"ySize\000"
+ 3540      6500
+ 3541              	.LASF175:
+ 3542 0c66 50565F45 		.ascii	"PV_EINK_ERROR_BREAKAGE\000"
+ 3542      494E4B5F 
+ 3542      4552524F 
+ 3542      525F4252 
+ 3542      45414B41 
+ 3543              	.LASF100:
+ 3544 0c7d 63707573 		.ascii	"cpussTrimRomCtlOffset\000"
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 83
+
+
+ 3544      73547269 
+ 3544      6D526F6D 
+ 3544      43746C4F 
+ 3544      66667365 
+ 3545              	.LASF50:
+ 3546 0c93 73727373 		.ascii	"srssNumClkpath\000"
+ 3546      4E756D43 
+ 3546      6C6B7061 
+ 3546      746800
+ 3547              	.LASF2:
+ 3548 0ca2 7369676E 		.ascii	"signed char\000"
+ 3548      65642063 
+ 3548      68617200 
+ 3549              	.LASF32:
+ 3550 0cae 69706342 		.ascii	"ipcBase\000"
+ 3550      61736500 
+ 3551              	.LASF227:
+ 3552 0cb6 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 3552      43313120 
+ 3552      352E342E 
+ 3552      31203230 
+ 3552      31363036 
+ 3553 0ce9 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m4 -mfloat-abi=s"
+ 3553      20726576 
+ 3553      6973696F 
+ 3553      6E203233 
+ 3553      37373135 
+ 3554 0d1c 6F667466 		.ascii	"oftfp -mfpu=fpv4-sp-d16 -mthumb -g -Og -ffunction-s"
+ 3554      70202D6D 
+ 3554      6670753D 
+ 3554      66707634 
+ 3554      2D73702D 
+ 3555 0d4f 65637469 		.ascii	"ections -ffat-lto-objects\000"
+ 3555      6F6E7320 
+ 3555      2D666661 
+ 3555      742D6C74 
+ 3555      6F2D6F62 
+ 3556              	.LASF176:
+ 3557 0d69 50565F45 		.ascii	"PV_EINK_ERROR_DC\000"
+ 3557      494E4B5F 
+ 3557      4552524F 
+ 3557      525F4443 
+ 3557      00
+ 3558              	.LASF83:
+ 3559 0d7a 70657269 		.ascii	"periDivCmdPaDivSelPos\000"
+ 3559      44697643 
+ 3559      6D645061 
+ 3559      44697653 
+ 3559      656C506F 
+ 3560              	.LASF64:
+ 3561 0d90 666C6173 		.ascii	"flashProgramDelay\000"
+ 3561      6850726F 
+ 3561      6772616D 
+ 3561      44656C61 
+ 3561      7900
+ 3562              	.LASF190:
+ 3563 0da2 43795F45 		.ascii	"Cy_EINK_Clear\000"
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccYOzVgJ.s 			page 84
+
+
+ 3563      494E4B5F 
+ 3563      436C6561 
+ 3563      7200
+ 3564              	.LASF34:
+ 3565 0db0 63707573 		.ascii	"cpussVersion\000"
+ 3565      73566572 
+ 3565      73696F6E 
+ 3565      00
+ 3566              	.LASF23:
+ 3567 0dbd 75696E74 		.ascii	"uint32_t\000"
+ 3567      33325F74 
+ 3567      00
+ 3568              	.LASF61:
+ 3569 0dc6 666C6173 		.ascii	"flashRwwRequired\000"
+ 3569      68527777 
+ 3569      52657175 
+ 3569      69726564 
+ 3569      00
+ 3570              	.LASF230:
+ 3571 0dd7 43795F45 		.ascii	"Cy_EINK_Power\000"
+ 3571      494E4B5F 
+ 3571      506F7765 
+ 3571      7200
+ 3572              	.LASF141:
+ 3573 0de5 73746172 		.ascii	"startInput\000"
+ 3573      74496E70 
+ 3573      757400
+ 3574              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
