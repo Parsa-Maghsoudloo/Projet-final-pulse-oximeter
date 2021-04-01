@@ -38,10 +38,10 @@
         .intrPriority = CY_EINK_SPIM_SCB_IRQ__INTC_CORTEXM4_PRIORITY
     };
 
-    /* almost_full */
-    const cy_stc_sysint_t almost_full_cfg = {
-        .intrSrc = (IRQn_Type)almost_full__INTC_NUMBER,
-        .intrPriority = almost_full__INTC_CORTEXM4_PRIORITY
+    /* traitement_isr */
+    const cy_stc_sysint_t traitement_isr_cfg = {
+        .intrSrc = (IRQn_Type)traitement_isr__INTC_NUMBER,
+        .intrPriority = traitement_isr__INTC_CORTEXM4_PRIORITY
     };
 
 #endif /* ((__CORTEX_M == 4) && (CY_CORE_ID == 0)) */

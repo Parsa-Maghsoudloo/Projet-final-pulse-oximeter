@@ -1,8 +1,6 @@
-D:\Documents\GBM2100\Projet\Laboratoire3\Laboratoire3.cydsn\Laboratoire3.cyprj|d1c013e9-4082-4f4a-91dd-09e2188b608f
-D:\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|420b2db2-f0d4-4ffd-bc85-3eb1070bdc75
-D:\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|7098b8ce-5278-42bb-a310-d5bd59957a98
-D:\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|b2bf35dd-7d85-4c6e-81f5-4b6f38a0520f
-D:\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|e8139bbf-8ece-44fa-997c-d350232f37e7
-D:\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|5d34557c-8b66-4a4f-840a-9aff85f71d80
-D:\PSoC Creator\4.4\PSoC Creator\dev\psoc6\PSoC6AnalogDevice\PSoC6AnalogDevice.cydsn\PSoC6AnalogDevice.cyprj|8b2771c7-a8db-401b-83c9-e4d423c35933
-D:\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|777e0f65-9031-448c-b7f2-83a24ebec541
+D:\Documents\GBM2100\Projet\Laboratoire3\Comm_SpO2.cydsn\Comm_SpO2.cyprj|e202f8b5-60dc-4d85-8573-fb607b8826a0
+D:\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|84e6515f-c21f-4b54-8138-245588bdf168
+D:\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|4628fe21-e86b-4c19-a348-fce082859253
+D:\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|2f700f44-dbca-46e4-9c3f-0a42b199984f
+D:\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|eac5dd1b-8a5f-402b-8eb6-3539bb7ed657
+D:\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|ee04d755-1e04-4e8c-b0c4-91a862ab517b

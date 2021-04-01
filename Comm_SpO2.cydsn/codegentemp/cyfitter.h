@@ -42,6 +42,12 @@
 #define UART_SCBCLK__DIV_NUM 2
 #define UART_SCBCLK__DIV_TYPE CY_SYSCLK_DIV_8_BIT
 
+/* Timer */
+#define Timer_TCPWM__CNT_HW TCPWM0_CNT1
+#define Timer_TCPWM__CNT_IDX 1u
+#define Timer_TCPWM__HW TCPWM0
+#define Timer_TCPWM__IDX 0u
+
 /* Clock_2 */
 #define Clock_2__DIV_IDX 28
 #define Clock_2__DIV_NUM 0
@@ -129,7 +135,7 @@
 #define CY_CPUSS_SWJ_SWDIO_TMS_PORT GPIO_PRT6
 #define CY_CPUSS_SWJ_SWDIO_TMS_SLEWRATE CY_GPIO_SLEW_FAST
 #define CY_CPUSS_SWJ_SWDIO_TMS_THRESHOLD_LEVEL CY_GPIO_VTRIP_CMOS
-#define CY_PROJECT_NAME "Laboratoire3"
+#define CY_PROJECT_NAME "Comm_SpO2"
 #define CY_VERSION "PSoC Creator  4.4"
 #define CYDEV_CHIP_DIE_LEOPARD 1u
 #define CYDEV_CHIP_DIE_PSOC4A 26u

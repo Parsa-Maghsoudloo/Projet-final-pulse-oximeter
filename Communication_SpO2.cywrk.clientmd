@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Communication_SpO2\Comm_SpO2">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
 <v>Communication_SpO2</v>
 <v>Communication_SpO2\Comm_SpO2</v>
@@ -60,6 +60,8 @@
 <v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)\eInk Library\pervasive_eink_hardware_driver.c</v>
 <v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)\eInk Library\pervasive_eink_hardware_driver.h</v>
 <v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)\Header Files</v>
+<v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)\Header Files\affichage.h</v>
+<v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)\Header Files\capteur_MAX.h</v>
 <v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)\Header Files\debug.h</v>
 <v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)\Header Files\FreeRTOSConfig.h</v>
 <v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)\Images</v>
@@ -85,58 +87,14 @@
 <v>Communication_SpO2\Comm_SpO2\Shared Files\system_psoc6.h</v>
 <v>Communication_SpO2\Comm_SpO2\Generated_Source</v>
 <v>Communication_SpO2\Comm_SpO2\Generated_Source\PSoC6</v>
+<v>Communication_SpO2\Comm_SpO2\Generated_Source\PSoC6\pdl</v>
+<v>Communication_SpO2\Comm_SpO2\Generated_Source\PSoC6\pdl\drivers</v>
+<v>Communication_SpO2\Comm_SpO2\Generated_Source\PSoC6\pdl\drivers\peripheral</v>
+<v>Communication_SpO2\Comm_SpO2\Generated_Source\PSoC6\pdl\drivers\peripheral\scb</v>
+<v>Communication_SpO2\Comm_SpO2\Generated_Source\PSoC6\I2C</v>
 <v>Communication_SpO2\CE223727_EmWin_EInk_Display.pdf</v>
 </ExpandedNodeIds>
-<VisibleNodeIds>
-<v>Communication_SpO2</v>
-<v>Communication_SpO2\Comm_SpO2</v>
-<v>Communication_SpO2\Comm_SpO2\TopDesign</v>
-<v>Communication_SpO2\Comm_SpO2\Comm_SpO2.cydwr</v>
-<v>Communication_SpO2\Comm_SpO2\Comm_SpO2.cydwr\Pins</v>
-<v>Communication_SpO2\Comm_SpO2\Comm_SpO2.cydwr\Analog</v>
-<v>Communication_SpO2\Comm_SpO2\Comm_SpO2.cydwr\DMA</v>
-<v>Communication_SpO2\Comm_SpO2\Comm_SpO2.cydwr\Clocks</v>
-<v>Communication_SpO2\Comm_SpO2\Comm_SpO2.cydwr\Interrupts</v>
-<v>Communication_SpO2\Comm_SpO2\Comm_SpO2.cydwr\System</v>
-<v>Communication_SpO2\Comm_SpO2\Comm_SpO2.cydwr\Directives</v>
-<v>Communication_SpO2\Comm_SpO2\CM0p (Core 0)</v>
-<v>Communication_SpO2\Comm_SpO2\CM0p (Core 0)\ARM GCC Generic</v>
-<v>Communication_SpO2\Comm_SpO2\CM0p (Core 0)\ARM GCC Generic\cy8c6xx7_cm0plus.ld</v>
-<v>Communication_SpO2\Comm_SpO2\CM0p (Core 0)\ARM IAR Generic</v>
-<v>Communication_SpO2\Comm_SpO2\CM0p (Core 0)\ARM IAR Generic\cy8c6xx7_cm0plus.icf</v>
-<v>Communication_SpO2\Comm_SpO2\CM0p (Core 0)\ARM MDK Generic</v>
-<v>Communication_SpO2\Comm_SpO2\CM0p (Core 0)\ARM MDK Generic\cy8c6xx7_cm0plus.scat</v>
-<v>Communication_SpO2\Comm_SpO2\CM0p (Core 0)\Header Files</v>
-<v>Communication_SpO2\Comm_SpO2\CM0p (Core 0)\Source Files</v>
-<v>Communication_SpO2\Comm_SpO2\CM0p (Core 0)\Source Files\ARM GCC Generic</v>
-<v>Communication_SpO2\Comm_SpO2\CM0p (Core 0)\Source Files\ARM GCC Generic\startup_psoc6_01_cm0plus.S</v>
-<v>Communication_SpO2\Comm_SpO2\CM0p (Core 0)\Source Files\ARM IAR Generic</v>
-<v>Communication_SpO2\Comm_SpO2\CM0p (Core 0)\Source Files\ARM IAR Generic\startup_psoc6_01_cm0plus.s</v>
-<v>Communication_SpO2\Comm_SpO2\CM0p (Core 0)\Source Files\ARM MDK Generic</v>
-<v>Communication_SpO2\Comm_SpO2\CM0p (Core 0)\Source Files\ARM MDK Generic\startup_psoc6_01_cm0plus.s</v>
-<v>Communication_SpO2\Comm_SpO2\CM0p (Core 0)\Source Files\main_cm0p.c</v>
-<v>Communication_SpO2\Comm_SpO2\CM0p (Core 0)\Source Files\system_psoc6_cm0plus.c</v>
-<v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)</v>
-<v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)\ARM GCC Generic</v>
-<v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)\ARM GCC Generic\cy8c6xx7_cm4_dual.ld</v>
-<v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)\ARM IAR Generic</v>
-<v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)\ARM IAR Generic\cy8c6xx7_cm4_dual.icf</v>
-<v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)\ARM MDK Generic</v>
-<v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)\ARM MDK Generic\cy8c6xx7_cm4_dual.scat</v>
-<v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)\eInk Library</v>
-<v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)\eInk Library\cy_eink_fonts.h</v>
-<v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)\eInk Library\cy_eink_library.c</v>
-<v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)\eInk Library\cy_eink_library.h</v>
-<v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)\eInk Library\cy_eink_psoc_interface.c</v>
-<v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)\eInk Library\cy_eink_psoc_interface.h</v>
-<v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)\eInk Library\pervasive_eink_configuration.h</v>
-<v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)\eInk Library\pervasive_eink_hardware_driver.c</v>
-<v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)\eInk Library\pervasive_eink_hardware_driver.h</v>
-<v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)\Header Files</v>
-<v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)\Header Files\debug.h</v>
-<v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)\Header Files\FreeRTOSConfig.h</v>
-<v>Communication_SpO2\Comm_SpO2\CM4 (Core 1)\Images</v>
-</VisibleNodeIds>
+<VisibleNodeIds />
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
@@ -145,12 +103,7 @@
 <v>Communication_SpO2\Comm_SpO2\TopDesign</v>
 <v>Communication_SpO2\Comm_SpO2\TopDesign\TopDesign.cysch</v>
 </ExpandedNodeIds>
-<VisibleNodeIds>
-<v>Communication_SpO2</v>
-<v>Communication_SpO2\Comm_SpO2</v>
-<v>Communication_SpO2\Comm_SpO2\TopDesign</v>
-<v>Communication_SpO2\Comm_SpO2\TopDesign\TopDesign.cysch</v>
-</VisibleNodeIds>
+<VisibleNodeIds />
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
@@ -195,11 +148,14 @@
 <v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\GUI_X.lst</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\GUIConf.lst</v>
+<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\I2C.lst</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\LCDConf.lst</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\main_cm0p.lst</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\startup_psoc6_01_cm0plus.lst</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\Status_SW2.lst</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\system_psoc6_cm0plus.lst</v>
+<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\Timer.lst</v>
+<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\UART.lst</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Comm_SpO2.elf</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Comm_SpO2.hex</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Comm_SpO2.map</v>
@@ -207,6 +163,9 @@
 <v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files</v>
+<v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\affichage.lst</v>
+<v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\capteur_MAX.lst</v>
+<v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\croutine.lst</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_ble_clk.lst</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_device.lst</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\cy_efuse.lst</v>
@@ -242,14 +201,25 @@
 <v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\cyfitter_sysint_cfg.lst</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\Cypress Logo Full Color_PNG_1bpp.lst</v>
+<v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\event_groups.lst</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\GUI_X.lst</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\GUIConf.lst</v>
+<v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\heap_1.lst</v>
+<v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\I2C.lst</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\LCDConf.lst</v>
+<v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\list.lst</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\main_cm4.lst</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\pervasive_eink_hardware_driver.lst</v>
+<v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\port.lst</v>
+<v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\queue.lst</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\startup_psoc6_01_cm4.lst</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\Status_SW2.lst</v>
+<v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\stream_buffer.lst</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\system_psoc6_cm4.lst</v>
+<v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\tasks.lst</v>
+<v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\Timer.lst</v>
+<v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\timers.lst</v>
+<v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Listing Files\UART.lst</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Comm_SpO2.elf</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Comm_SpO2.hex</v>
 <v>Communication_SpO2\Comm_SpO2\CortexM4\ARM_GCC_541\Debug\Comm_SpO2.map</v>
@@ -257,56 +227,7 @@
 <v>Communication_SpO2\Comm_SpO2\Comm_SpO2.rpt</v>
 <v>Communication_SpO2\Comm_SpO2\Comm_SpO2_timing.html</v>
 </ExpandedNodeIds>
-<VisibleNodeIds>
-<v>Communication_SpO2</v>
-<v>Communication_SpO2\Comm_SpO2</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_clk.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_device.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_efuse.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\CY_EINK_SPIM.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\CY_EINK_Timer.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_flash.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_gpio.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ipc_drv.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ipc_pipe.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ipc_sema.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_lvd.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_profile.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_prot.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_common.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_ezi2c.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_i2c.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_spi.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_uart.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_sysanalog.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_sysclk.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_sysint.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_syslib.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_syslib_gcc.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_syspm.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_systick.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_tcpwm_counter.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_tcpwm_pwm.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_tcpwm_quaddec.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_trigmux.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_wdt.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cyfitter_sysint_cfg.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\GUI_X.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\GUIConf.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\LCDConf.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\main_cm0p.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\startup_psoc6_01_cm0plus.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\Status_SW2.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Listing Files\system_psoc6_cm0plus.lst</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Comm_SpO2.elf</v>
-<v>Communication_SpO2\Comm_SpO2\CortexM0p\ARM_GCC_541\Debug\Comm_SpO2.hex</v>
-</VisibleNodeIds>
+<VisibleNodeIds />
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
 <TreeKeysV2>
@@ -321,7 +242,6 @@
 <v>Communication_SpO2\Comm_SpO2\PSoC 63 Family Datasheet</v>
 <v>Communication_SpO2\Comm_SpO2\Peripheral Driver Library</v>
 <v>Communication_SpO2\Comm_SpO2\System Reference Guides</v>
-<v>Communication_SpO2\Comm_SpO2\cy_gsref_v2_10.pdf</v>
 <v>Communication_SpO2\Comm_SpO2\CyStatusReg_v1_90.pdf</v>
 <v>Communication_SpO2\Comm_SpO2\GPIO_PDL_v1_0</v>
 <v>Communication_SpO2\Comm_SpO2\GPIO_PDL_v1_0\GPIO_PDL_v1_0.pdf</v>
@@ -330,30 +250,11 @@
 <v>Communication_SpO2\Comm_SpO2\SCB_UART_PDL_v2_0.pdf</v>
 <v>Communication_SpO2\Comm_SpO2\SysClk_PDL_v1_0</v>
 <v>Communication_SpO2\Comm_SpO2\SysClk_PDL_v1_0\SysClk_PDL_v1_0.pdf</v>
-<v>Communication_SpO2\Comm_SpO2\SysInt_PDL_v1_0</v>
-<v>Communication_SpO2\Comm_SpO2\SysInt_PDL_v1_0\SysInt_PDL_v1_0.pdf</v>
-<v>Communication_SpO2\Comm_SpO2\TCPWM_Counter_PDL_v1_0.pdf</v>
+<v>Communication_SpO2\Comm_SpO2\SysInt_PDL_v1_0.pdf</v>
+<v>Communication_SpO2\Comm_SpO2\TCPWM_Counter_PDL_v1_0</v>
+<v>Communication_SpO2\Comm_SpO2\TCPWM_Counter_PDL_v1_0\TCPWM_Counter_PDL_v1_0.pdf</v>
 </ExpandedNodeIds>
-<VisibleNodeIds>
-<v>Communication_SpO2</v>
-<v>Communication_SpO2\Comm_SpO2</v>
-<v>Communication_SpO2\Comm_SpO2\PSoC 6 Architecture TRM</v>
-<v>Communication_SpO2\Comm_SpO2\PSoC 63 Family Datasheet</v>
-<v>Communication_SpO2\Comm_SpO2\Peripheral Driver Library</v>
-<v>Communication_SpO2\Comm_SpO2\System Reference Guides</v>
-<v>Communication_SpO2\Comm_SpO2\cy_gsref_v2_10.pdf</v>
-<v>Communication_SpO2\Comm_SpO2\CyStatusReg_v1_90.pdf</v>
-<v>Communication_SpO2\Comm_SpO2\GPIO_PDL_v1_0</v>
-<v>Communication_SpO2\Comm_SpO2\GPIO_PDL_v1_0\GPIO_PDL_v1_0.pdf</v>
-<v>Communication_SpO2\Comm_SpO2\SCB_I2C_PDL_v2_0.pdf</v>
-<v>Communication_SpO2\Comm_SpO2\SCB_SPI_PDL_v2_0.pdf</v>
-<v>Communication_SpO2\Comm_SpO2\SCB_UART_PDL_v2_0.pdf</v>
-<v>Communication_SpO2\Comm_SpO2\SysClk_PDL_v1_0</v>
-<v>Communication_SpO2\Comm_SpO2\SysClk_PDL_v1_0\SysClk_PDL_v1_0.pdf</v>
-<v>Communication_SpO2\Comm_SpO2\SysInt_PDL_v1_0</v>
-<v>Communication_SpO2\Comm_SpO2\SysInt_PDL_v1_0\SysInt_PDL_v1_0.pdf</v>
-<v>Communication_SpO2\Comm_SpO2\TCPWM_Counter_PDL_v1_0.pdf</v>
-</VisibleNodeIds>
+<VisibleNodeIds />
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
 </CyGuid_1b906a0f-a7b6-4e4d-a428-82f98b53cb35>
@@ -367,9 +268,18 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\Laboratoire3.cydsn\main_cm4.c" />
-<name v=".\Laboratoire3.cydsn\Laboratoire3.cydwr" />
-<name v=".\Laboratoire3.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\Comm_SpO2.cydsn\main_cm4.c" />
+<name v=".\Comm_SpO2.cydsn\affichage.h" />
+<name v=".\Comm_SpO2.cydsn\capteur_MAX.h" />
+<name v=".\Comm_SpO2.cydsn\affichage.c" />
+<name v=".\Comm_SpO2.cydsn\capteur_MAX.c" />
+<name v=".\Comm_SpO2.cydsn\Generated_Source\PSoC6\project.h" />
+<name v=".\Comm_SpO2.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\Comm_SpO2.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\syslib\cy_syslib.c" />
+<name v=".\Comm_SpO2.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\scb\cy_scb_i2c.c" />
+<name v=".\Comm_SpO2.cydsn\Comm_SpO2.cydwr" />
+<name v=".\Comm_SpO2.cydsn\Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\tasks.c" />
+<name v=".\Comm_SpO2.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm\cy_tcpwm.h" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -377,7 +287,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1439, 699" SelectedTabbedMdiWindow="e2a1d04b-1482-48f6-891b-972b3473d938"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="92f29279-ccda-4a1f-85a5-b48366110d13" /><DocumentWindow Key="D:\Documents\GBM2100\Projet\Laboratoire3\Laboratoire3.cydsn\main_cm4.c" Guid="2fb91e98-64c2-4b82-bd5c-5641f43b617f" /><DocumentWindow Key="D:\Documents\GBM2100\Projet\Laboratoire3\Laboratoire3.cydsn\Laboratoire3.cydwr" Guid="e5231054-1762-4b98-8525-b6d459caea83" /><DocumentWindow Key="D:\Documents\GBM2100\Projet\Laboratoire3\Laboratoire3.cydsn\TopDesign\TopDesign.cysch" Guid="e2a1d04b-1482-48f6-891b-972b3473d938" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1439, 699" SelectedTabbedMdiWindow="808b6d14-8703-4e74-9bc9-8caf3c4360a9"><DocumentWindow Key="D:\Documents\GBM2100\Projet\Laboratoire3\Comm_SpO2.cydsn\main_cm4.c" Guid="808b6d14-8703-4e74-9bc9-8caf3c4360a9" /><DocumentWindow Key="D:\Documents\GBM2100\Projet\Laboratoire3\Comm_SpO2.cydsn\affichage.h" Guid="85b88a3b-be92-477b-bb02-309ec2378232" /><DocumentWindow Key="D:\Documents\GBM2100\Projet\Laboratoire3\Comm_SpO2.cydsn\capteur_MAX.h" Guid="5b7b4033-c25e-4841-89a4-6007f2172609" /><DocumentWindow Key="D:\Documents\GBM2100\Projet\Laboratoire3\Comm_SpO2.cydsn\affichage.c" Guid="4dfc7250-29bb-48f6-a71c-a3d79691899e" /><DocumentWindow Key="D:\Documents\GBM2100\Projet\Laboratoire3\Comm_SpO2.cydsn\capteur_MAX.c" Guid="011a48db-d542-4c70-bdb2-ad278c91f78a" /><DocumentWindow Key="D:\Documents\GBM2100\Projet\Laboratoire3\Comm_SpO2.cydsn\Generated_Source\PSoC6\project.h" Guid="5839542a-377c-44e0-8d39-ceaf304ebb6a" /><DocumentWindow Key="D:\Documents\GBM2100\Projet\Laboratoire3\Comm_SpO2.cydsn\TopDesign\TopDesign.cysch" Guid="a97d71b5-1860-47b4-bb8b-ce15f3bc6bb0" /><DocumentWindow Key="D:\Documents\GBM2100\Projet\Laboratoire3\Comm_SpO2.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\syslib\cy_syslib.c" Guid="29668976-851c-4404-b06f-be5d1c9157fd" /><DocumentWindow Key="D:\Documents\GBM2100\Projet\Laboratoire3\Comm_SpO2.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\scb\cy_scb_i2c.c" Guid="b6c1b725-37c7-4f09-aad8-2628aeda42c0" /><DocumentWindow Key="D:\Documents\GBM2100\Projet\Laboratoire3\Comm_SpO2.cydsn\Comm_SpO2.cydwr" Guid="58abc766-2316-4a19-a59f-d81252a4ba57" /><DocumentWindow Key="D:\Documents\GBM2100\Projet\Laboratoire3\Comm_SpO2.cydsn\Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\tasks.c" Guid="ad82555c-4c86-4579-b1aa-154b3fedb1b1" /><DocumentWindow Key="D:\Documents\GBM2100\Projet\Laboratoire3\Comm_SpO2.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\tcpwm\cy_tcpwm.h" Guid="d57a3b3f-d314-4a5b-a7e9-7e61de443b56" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="92f29279-ccda-4a1f-85a5-b48366110d13" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

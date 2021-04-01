@@ -26,14 +26,6 @@
 #define I2C_SCB_IRQ_INTC_CORTEXM4_PRIORITY 7u
 #define I2C_SCB_IRQ_INTC_NUMBER 43u
 
-/* almost_full */
-#define almost_full__INTC_CORTEXM4_ASSIGNED 1
-#define almost_full__INTC_CORTEXM4_PRIORITY 7u
-#define almost_full__INTC_NUMBER 122u
-#define almost_full_INTC_CORTEXM4_ASSIGNED 1
-#define almost_full_INTC_CORTEXM4_PRIORITY 7u
-#define almost_full_INTC_NUMBER 122u
-
 /* UART_SCB_IRQ */
 #define UART_SCB_IRQ__INTC_CORTEXM4_ASSIGNED 1
 #define UART_SCB_IRQ__INTC_CORTEXM4_PRIORITY 7u
@@ -41,6 +33,14 @@
 #define UART_SCB_IRQ_INTC_CORTEXM4_ASSIGNED 1
 #define UART_SCB_IRQ_INTC_CORTEXM4_PRIORITY 7u
 #define UART_SCB_IRQ_INTC_NUMBER 46u
+
+/* traitement_isr */
+#define traitement_isr__INTC_CORTEXM4_ASSIGNED 1
+#define traitement_isr__INTC_CORTEXM4_PRIORITY 7u
+#define traitement_isr__INTC_NUMBER 91u
+#define traitement_isr_INTC_CORTEXM4_ASSIGNED 1
+#define traitement_isr_INTC_CORTEXM4_PRIORITY 7u
+#define traitement_isr_INTC_NUMBER 91u
 
 /* CY_EINK_SPIM_SCB_IRQ */
 #define CY_EINK_SPIM_SCB_IRQ__INTC_CORTEXM4_ASSIGNED 1

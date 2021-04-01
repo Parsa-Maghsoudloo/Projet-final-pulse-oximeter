@@ -30,8 +30,8 @@
     #define CY_EINK_SPIM_SCB_IRQ__INTC_ASSIGNED 1u
     extern const cy_stc_sysint_t CY_EINK_SPIM_SCB_IRQ_cfg;
 
-    #define almost_full__INTC_ASSIGNED 1u
-    extern const cy_stc_sysint_t almost_full_cfg;
+    #define traitement_isr__INTC_ASSIGNED 1u
+    extern const cy_stc_sysint_t traitement_isr_cfg;
 
 #endif /* ((__CORTEX_M == 4) && (CY_CORE_ID == 0)) */
 

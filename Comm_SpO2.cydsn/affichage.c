@@ -18,12 +18,15 @@
 #include "FreeRTOS.h"
 #include "task.h"
 #include "queue.h"
+#include "semphr.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include "affichage.h"
 
 
 
-void affichage_UART(uint8_t valeur){
+
+void affichage_UART(uint32_t valeur){
 
     char int_to_str[33];
     itoa(valeur, int_to_str, 10);

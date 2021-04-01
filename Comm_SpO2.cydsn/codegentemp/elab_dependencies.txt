@@ -1,4 +1,4 @@
-D:\Documents\GBM2100\Projet\Laboratoire3\Laboratoire3.cydsn\TopDesign\TopDesign.cysch
+D:\Documents\GBM2100\Projet\Laboratoire3\Comm_SpO2.cydsn\TopDesign\TopDesign.cysch
 D:\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\SCB_SPI_PDL_v2_0\SCB_SPI_PDL_v2_0.cysym
 D:\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\SCB_SPI_PDL_v2_0\SCB_SPI_PDL_v2_0.cystate
 D:\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\SCB_SPI_PDL_v2_0\SCB_SPI_PDL_v2_0.pdf
@@ -144,4 +144,4 @@ D:\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibr
 D:\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\SCB_UART_PDL_v2_0\Custom\Controls\cydynamicdatacontrol.designer.cs
 D:\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\SCB_UART_PDL_v2_0\Custom\Resources.resx
 D:\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\SCB_UART_PDL_v2_0\Custom\Controls\cydynamicdatacontrol.resx
-D:\Documents\GBM2100\Projet\Laboratoire3\Laboratoire3.cydsn\Laboratoire3.cydwr
+D:\Documents\GBM2100\Projet\Laboratoire3\Comm_SpO2.cydsn\Comm_SpO2.cydwr
