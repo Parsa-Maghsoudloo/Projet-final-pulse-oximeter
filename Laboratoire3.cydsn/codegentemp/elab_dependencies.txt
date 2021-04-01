@@ -1,4 +1,4 @@
-C:\Users\Nancy\Documents\Myriane\Laboratoire3\Laboratoire3.cydsn\TopDesign\TopDesign.cysch
+C:\Users\Nancy\Documents\Projet-final-pulse-oximeter\Laboratoire3.cydsn\TopDesign\TopDesign.cysch
 C:\Users\Nancy\Documents\Myriane\Autres\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\SCB_SPI_PDL_v2_0\SCB_SPI_PDL_v2_0.cysym
 C:\Users\Nancy\Documents\Myriane\Autres\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\SCB_SPI_PDL_v2_0\SCB_SPI_PDL_v2_0.cystate
 C:\Users\Nancy\Documents\Myriane\Autres\PSoC Creator\4.4\PSoC Creator\psoc\content\CyComponentLibrary\CyComponentLibrary.cylib\SCB_SPI_PDL_v2_0\SCB_SPI_PDL_v2_0.pdf
@@ -198,4 +198,4 @@ C:\Users\Nancy\Documents\Myriane\Autres\PSoC Creator\4.4\PSoC Creator\psoc\conte
 C:\Users\Nancy\Documents\Myriane\Autres\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_mxs40_csd_v1_0\cy_mxs40_csd_v1_0.cysym
 C:\Users\Nancy\Documents\Myriane\Autres\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_mxs40_csd_v1_0\Custom\cycustomizer.cs
 C:\Users\Nancy\Documents\Myriane\Autres\PSoC Creator\4.4\PSoC Creator\psoc\content\CyPrimitives\cyprimitives.cylib\cy_mxs40_csd_v1_0\PSoC6\cy_mxs40_csd_v1_0.cyprimitive
-C:\Users\Nancy\Documents\Myriane\Laboratoire3\Laboratoire3.cydsn\Laboratoire3.cydwr
+C:\Users\Nancy\Documents\Projet-final-pulse-oximeter\Laboratoire3.cydsn\Laboratoire3.cydwr

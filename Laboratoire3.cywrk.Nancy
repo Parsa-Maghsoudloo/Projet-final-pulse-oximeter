@@ -118,7 +118,6 @@
 <v>Laboratoire3\Laboratoire3\Generated_Source</v>
 <v>Laboratoire3\Laboratoire3\Generated_Source\PSoC6</v>
 <v>Laboratoire3\Laboratoire3\Generated_Source\PSoC6\pdl</v>
-<v>Laboratoire3\Laboratoire3\Generated_Source\PSoC6\CapSense</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -273,34 +272,6 @@
 <VisibleNodeIds>
 <v>Laboratoire3</v>
 <v>Laboratoire3\Laboratoire3</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p\ARM_GCC_541</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p\ARM_GCC_541\Debug</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p\ARM_GCC_541\Debug\Listing Files</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p\ARM_GCC_541\Debug\Listing Files\CapSense_Centroid_LL.lst</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p\ARM_GCC_541\Debug\Listing Files\CapSense_Control.lst</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p\ARM_GCC_541\Debug\Listing Files\CapSense_Filter.lst</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p\ARM_GCC_541\Debug\Listing Files\CapSense_INT.lst</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p\ARM_GCC_541\Debug\Listing Files\CapSense_Processing.lst</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p\ARM_GCC_541\Debug\Listing Files\CapSense_Sensing.lst</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p\ARM_GCC_541\Debug\Listing Files\CapSense_SensingCSD_LL.lst</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p\ARM_GCC_541\Debug\Listing Files\CapSense_SensingCSX_LL.lst</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p\ARM_GCC_541\Debug\Listing Files\CapSense_Structure.lst</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p\ARM_GCC_541\Debug\Listing Files\CapSense_Tuner.lst</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ble_clk.lst</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_device.lst</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_efuse.lst</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p\ARM_GCC_541\Debug\Listing Files\CY_EINK_SPIM.lst</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p\ARM_GCC_541\Debug\Listing Files\CY_EINK_Timer.lst</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_flash.lst</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_gpio.lst</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ipc_drv.lst</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ipc_pipe.lst</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_ipc_sema.lst</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_lvd.lst</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_profile.lst</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_prot.lst</v>
-<v>Laboratoire3\Laboratoire3\CortexM0p\ARM_GCC_541\Debug\Listing Files\cy_scb_common.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>

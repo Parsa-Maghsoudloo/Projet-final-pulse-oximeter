@@ -1,6 +1,6 @@
-C:\Users\Nancy\Documents\Myriane\Laboratoire3\Laboratoire3.cydsn\Laboratoire3.cyprj|8a1871e2-1aea-4822-9630-eb334a198efc
-C:\Users\Nancy\Documents\Myriane\Autres\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|c64abc37-da00-4581-97d7-57864307f39f
-C:\Users\Nancy\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|bf72411b-8059-43c0-8599-5668f7455222
-C:\Users\Nancy\Documents\Myriane\Autres\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|8f6e2bef-0237-4b3a-a951-f8e07aa5bd14
-C:\Users\Nancy\Documents\Myriane\Autres\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|b1650efa-55fa-4a7b-af82-1fa1d1a9ecd6
-C:\Users\Nancy\Documents\Myriane\Autres\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|4912d774-9d3b-4f38-a3bb-01c91c106391
+C:\Users\Nancy\Documents\Projet-final-pulse-oximeter\Laboratoire3.cydsn\Laboratoire3.cyprj|c5eb6476-4111-4643-ae66-ebfc87266c55
+C:\Users\Nancy\Documents\Myriane\Autres\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|beceba82-09a8-4fe4-a017-51262573cbba
+C:\Users\Nancy\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|2e9a35e4-3843-4c00-9f6c-039e92be7c0f
+C:\Users\Nancy\Documents\Myriane\Autres\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|989d4d6f-e253-4aff-be49-893973d676b2
+C:\Users\Nancy\Documents\Myriane\Autres\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|5ce07848-85c2-463c-8d5a-8dc4303b0638
+C:\Users\Nancy\Documents\Myriane\Autres\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|a504f9f9-8ac9-4c88-8a53-0474d651fd7f

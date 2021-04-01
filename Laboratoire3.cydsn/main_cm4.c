@@ -58,81 +58,21 @@
 #include "queue.h"
 #include "activationMenu.h"
 
-//
-//volatile int option =0;
-//volatile int* currentOption;
-//volatile uint16_t bouton0=0;
-//volatile uint16_t bouton1=0;
-//volatile uint16_t sliderPos=0;
-//
-//typedef enum
-//{
-//    BUTTON0_TOUCHED     = 0x00u,
-//    BUTTON1_TOUCHED     = 0x01u,  
-//    SLIDER_FLICK_LEFT   = 0x02u,
-//    SLIDER_FLICK_RIGHT  = 0x03u,
-//    NO_TOUCH            = 0x04u
-//    
-//}   touch_data_t; 
-//QueueHandle_t touchDataQ;
-
-
-//
-//void capSense_task(void)
-//{
-//    touch_data_t previousTouchData = NO_TOUCH; 
-//    touch_data_t currentTouchData;
-//    uint32_t     sliderGesture;
-//    uint32_t     gestureTimestamp = 0;
-//    for(;;)
-//    {
-//        CapSense_ProcessAllWidgets();
-//        
-//        currentTouchData  = NO_TOUCH;
-//           
-//        if(CapSense_IsWidgetActive(CapSense_BUTTON0_WDGT_ID)){
-//           if(previousTouchData != BUTTON0_TOUCHED)
-//                {
-//                    currentTouchData = BUTTON0_TOUCHED;
-//                }
-//        }
-//        
-//        if(CapSense_IsWidgetActive(CapSense_BUTTON1_WDGT_ID)){
-//           if(previousTouchData != BUTTON1_TOUCHED)
-//                {
-//                    currentTouchData = BUTTON1_TOUCHED;
-//                }
-//        }
-//        CapSense_UpdateAllBaselines();
-//        CapSense_ScanAllWidgets();
-//        if(currentTouchData != NO_TOUCH)
-//            {
-//                previousTouchData = currentTouchData;
-//                /* Send the processed touch data */
-//                xQueueOverwrite(touchDataQ, &currentTouchData);
-//            }
-//    }
-//}
-
 
 
 int main(void) {
     
     initialisation();
     
-//
-//    CapSense_Start();
-//    CapSense_ScanAllWidgets();
-    
-//      xTaskCreate(waitForSW2Press, "Appuie Bouton", 400, NULL, 2,NULL);
+
       
       xTaskCreate(activerMenu, "ActiverMenu", configMINIMAL_STACK_SIZE, NULL, 1, 0);
       xTaskCreate(afficherMenu, "AfficherMenu", 400, NULL, 1, 0);
       xTaskCreate(afficherEcranPrincipal, "AfficherEcran", 400, NULL, 1, 0);
-//      xTaskCreate((void*)capSense_task, "Bouton", 400, NULL, 1, 0);
+      xTaskCreate((void*)capSense_task, "Bouton", 400, NULL, 1, 0);
     
       vTaskStartScheduler();
-//    while(CapSense_IsBusy());
+
     
     for(;;)
     {          

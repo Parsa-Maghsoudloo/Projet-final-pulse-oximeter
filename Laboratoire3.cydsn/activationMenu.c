@@ -29,11 +29,19 @@ volatile bool menuActif=false;
 volatile bool oldMenuActif =false;
 volatile bool menuUpdate = false;
 volatile bool entreeProgramme = true;
-volatile uint8_t hauteurCercle;
+volatile uint8_t hauteurCercle=17;
+volatile uint8_t options=0;
+volatile const uint8_t NBOPTIONS =5;
+
+// Variable capSense:
+volatile uint16_t bouton0=0;
+volatile uint16_t bouton1=0;
+volatile uint8_t currentBouton0=7;
+volatile uint8_t currentBouton1=7;
+volatile uint8_t currentOption=50;
 
 void initialisation (void) {
      bouton_semph = xSemaphoreCreateBinary();
-     hauteurCercle = 17;
     
     __enable_irq();
     
@@ -112,7 +120,7 @@ void afficherMenu()
         GUI_Clear();
         oldMenuActif = menuActif;
         }
-       
+        GUI_Clear();
         GUI_SetFont(GUI_FONT_8_1);
         GUI_SetTextAlign(GUI_TA_LEFT);
         GUI_DispStringAt("Obtenir les informations", 50, 15);
@@ -165,6 +173,54 @@ void afficherInfo()
    GUI_SetTextAlign(GUI_TA_LEFT);
    GUI_DispStringAt("Info", 60,hauteur);
 
+}
+
+void deplacerCurseur(void) {
+  
+    if (currentBouton0 != bouton0) {
+        currentBouton0 = bouton0;
+        currentOption ++;
+        menuUpdate =true;
+    }
+    if (currentBouton1 != bouton1) {
+        currentBouton1 = bouton1;
+        currentOption--;
+        menuUpdate =true;   
+    }
+    
+    options = currentOption % NBOPTIONS  ;
+    hauteurCercle = (17 + options*35) ;
+    
+ }
+
+void capSense_task(void)
+{
+    for(;;)
+    {
+        if (nbSW2 ==0) {
+            CapSense_Start();
+            CapSense_ScanAllWidgets();
+        }
+        if (menuActif == true && !CapSense_IsBusy()) {
+//        if (!CapSense_IsBusy()) {
+        CapSense_ProcessAllWidgets();
+           
+        if(CapSense_IsWidgetActive(CapSense_BUTTON0_WDGT_ID)){
+           bouton0++;
+        }
+        
+        if(CapSense_IsWidgetActive(CapSense_BUTTON1_WDGT_ID)){
+          bouton1++;
+        }
+        
+        CapSense_UpdateAllBaselines();
+        CapSense_ScanAllWidgets();
+        deplacerCurseur();
+        
+        }
+        vTaskDelay(pdMS_TO_TICKS(200));
+        
+    }
 }
 
 /* [] END OF FILE */

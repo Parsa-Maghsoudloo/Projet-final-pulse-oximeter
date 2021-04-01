@@ -28,6 +28,8 @@ void ClearScreen(void);
 void afficherMenu();
 void afficherEcranPrincipal();
 void afficherInfo();
+void deplacerCurseur(void);
+void capSense_task(void);
 
 
 /* [] END OF FILE */

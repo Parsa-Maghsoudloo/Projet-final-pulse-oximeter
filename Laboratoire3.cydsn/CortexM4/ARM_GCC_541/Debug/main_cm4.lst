@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 1
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 1
   27:main_cm4.c    **** * 
   28:main_cm4.c    **** * If no EULA applies, Cypress hereby grants you a personal, non-exclusive, 
   29:main_cm4.c    **** * non-transferable license to copy, modify, and compile the Software source 
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 2
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 2
 
 
   30:main_cm4.c    **** * code solely for use in connection with Cypress’s integrated circuit products. 
@@ -92,69 +92,10 @@ ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 1
   58:main_cm4.c    **** #include "queue.h"
   59:main_cm4.c    **** #include "activationMenu.h"
   60:main_cm4.c    **** 
-  61:main_cm4.c    **** //
-  62:main_cm4.c    **** //volatile int option =0;
-  63:main_cm4.c    **** //volatile int* currentOption;
-  64:main_cm4.c    **** //volatile uint16_t bouton0=0;
-  65:main_cm4.c    **** //volatile uint16_t bouton1=0;
-  66:main_cm4.c    **** //volatile uint16_t sliderPos=0;
-  67:main_cm4.c    **** //
-  68:main_cm4.c    **** //typedef enum
-  69:main_cm4.c    **** //{
-  70:main_cm4.c    **** //    BUTTON0_TOUCHED     = 0x00u,
-  71:main_cm4.c    **** //    BUTTON1_TOUCHED     = 0x01u,  
-  72:main_cm4.c    **** //    SLIDER_FLICK_LEFT   = 0x02u,
-  73:main_cm4.c    **** //    SLIDER_FLICK_RIGHT  = 0x03u,
-  74:main_cm4.c    **** //    NO_TOUCH            = 0x04u
-  75:main_cm4.c    **** //    
-  76:main_cm4.c    **** //}   touch_data_t; 
-  77:main_cm4.c    **** //QueueHandle_t touchDataQ;
-  78:main_cm4.c    **** 
-  79:main_cm4.c    **** 
-  80:main_cm4.c    **** //
-  81:main_cm4.c    **** //void capSense_task(void)
-  82:main_cm4.c    **** //{
-  83:main_cm4.c    **** //    touch_data_t previousTouchData = NO_TOUCH; 
-  84:main_cm4.c    **** //    touch_data_t currentTouchData;
-  85:main_cm4.c    **** //    uint32_t     sliderGesture;
-  86:main_cm4.c    **** //    uint32_t     gestureTimestamp = 0;
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 3
-
-
-  87:main_cm4.c    **** //    for(;;)
-  88:main_cm4.c    **** //    {
-  89:main_cm4.c    **** //        CapSense_ProcessAllWidgets();
-  90:main_cm4.c    **** //        
-  91:main_cm4.c    **** //        currentTouchData  = NO_TOUCH;
-  92:main_cm4.c    **** //           
-  93:main_cm4.c    **** //        if(CapSense_IsWidgetActive(CapSense_BUTTON0_WDGT_ID)){
-  94:main_cm4.c    **** //           if(previousTouchData != BUTTON0_TOUCHED)
-  95:main_cm4.c    **** //                {
-  96:main_cm4.c    **** //                    currentTouchData = BUTTON0_TOUCHED;
-  97:main_cm4.c    **** //                }
-  98:main_cm4.c    **** //        }
-  99:main_cm4.c    **** //        
- 100:main_cm4.c    **** //        if(CapSense_IsWidgetActive(CapSense_BUTTON1_WDGT_ID)){
- 101:main_cm4.c    **** //           if(previousTouchData != BUTTON1_TOUCHED)
- 102:main_cm4.c    **** //                {
- 103:main_cm4.c    **** //                    currentTouchData = BUTTON1_TOUCHED;
- 104:main_cm4.c    **** //                }
- 105:main_cm4.c    **** //        }
- 106:main_cm4.c    **** //        CapSense_UpdateAllBaselines();
- 107:main_cm4.c    **** //        CapSense_ScanAllWidgets();
- 108:main_cm4.c    **** //        if(currentTouchData != NO_TOUCH)
- 109:main_cm4.c    **** //            {
- 110:main_cm4.c    **** //                previousTouchData = currentTouchData;
- 111:main_cm4.c    **** //                /* Send the processed touch data */
- 112:main_cm4.c    **** //                xQueueOverwrite(touchDataQ, &currentTouchData);
- 113:main_cm4.c    **** //            }
- 114:main_cm4.c    **** //    }
- 115:main_cm4.c    **** //}
- 116:main_cm4.c    **** 
- 117:main_cm4.c    **** 
- 118:main_cm4.c    **** 
- 119:main_cm4.c    **** int main(void) {
-  29              		.loc 1 119 0
+  61:main_cm4.c    **** 
+  62:main_cm4.c    **** 
+  63:main_cm4.c    **** int main(void) {
+  29              		.loc 1 63 0
   30              		.cfi_startproc
   31              		@ Volatile: function does not return.
   32              		@ args = 0, pretend = 0, frame = 0
@@ -164,2627 +105,2678 @@ ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 1
   36              		.cfi_offset 14, -4
   37 0002 83B0     		sub	sp, sp, #12
   38              		.cfi_def_cfa_offset 16
- 120:main_cm4.c    ****     
- 121:main_cm4.c    ****     initialisation();
-  39              		.loc 1 121 0
+  64:main_cm4.c    ****     
+  65:main_cm4.c    ****     initialisation();
+  39              		.loc 1 65 0
   40 0004 FFF7FEFF 		bl	initialisation
   41              	.LVL0:
- 122:main_cm4.c    ****     
- 123:main_cm4.c    **** //
- 124:main_cm4.c    **** //    CapSense_Start();
- 125:main_cm4.c    **** //    CapSense_ScanAllWidgets();
- 126:main_cm4.c    ****     
- 127:main_cm4.c    **** //      xTaskCreate(waitForSW2Press, "Appuie Bouton", 400, NULL, 2,NULL);
- 128:main_cm4.c    ****       
- 129:main_cm4.c    ****       xTaskCreate(activerMenu, "ActiverMenu", configMINIMAL_STACK_SIZE, NULL, 1, 0);
-  42              		.loc 1 129 0
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 4
-
-
+  66:main_cm4.c    ****     
+  67:main_cm4.c    **** 
+  68:main_cm4.c    ****       
+  69:main_cm4.c    ****       xTaskCreate(activerMenu, "ActiverMenu", configMINIMAL_STACK_SIZE, NULL, 1, 0);
+  42              		.loc 1 69 0
   43 0008 0024     		movs	r4, #0
   44 000a 0194     		str	r4, [sp, #4]
   45 000c 0125     		movs	r5, #1
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 3
+
+
   46 000e 0095     		str	r5, [sp]
   47 0010 2346     		mov	r3, r4
   48 0012 8022     		movs	r2, #128
-  49 0014 0C49     		ldr	r1, .L4
-  50 0016 0D48     		ldr	r0, .L4+4
+  49 0014 1049     		ldr	r1, .L4
+  50 0016 1148     		ldr	r0, .L4+4
   51 0018 FFF7FEFF 		bl	xTaskCreate
   52              	.LVL1:
- 130:main_cm4.c    ****       xTaskCreate(afficherMenu, "AfficherMenu", 400, NULL, 1, 0);
-  53              		.loc 1 130 0
+  70:main_cm4.c    ****       xTaskCreate(afficherMenu, "AfficherMenu", 400, NULL, 1, 0);
+  53              		.loc 1 70 0
   54 001c 0194     		str	r4, [sp, #4]
   55 001e 0095     		str	r5, [sp]
   56 0020 2346     		mov	r3, r4
   57 0022 4FF4C872 		mov	r2, #400
-  58 0026 0A49     		ldr	r1, .L4+8
-  59 0028 0A48     		ldr	r0, .L4+12
+  58 0026 0E49     		ldr	r1, .L4+8
+  59 0028 0E48     		ldr	r0, .L4+12
   60 002a FFF7FEFF 		bl	xTaskCreate
   61              	.LVL2:
- 131:main_cm4.c    ****       xTaskCreate(afficherEcranPrincipal, "AfficherEcran", 400, NULL, 1, 0);
-  62              		.loc 1 131 0
+  71:main_cm4.c    ****       xTaskCreate(afficherEcranPrincipal, "AfficherEcran", 400, NULL, 1, 0);
+  62              		.loc 1 71 0
   63 002e 0194     		str	r4, [sp, #4]
   64 0030 0095     		str	r5, [sp]
   65 0032 2346     		mov	r3, r4
   66 0034 4FF4C872 		mov	r2, #400
-  67 0038 0749     		ldr	r1, .L4+16
-  68 003a 0848     		ldr	r0, .L4+20
+  67 0038 0B49     		ldr	r1, .L4+16
+  68 003a 0C48     		ldr	r0, .L4+20
   69 003c FFF7FEFF 		bl	xTaskCreate
   70              	.LVL3:
- 132:main_cm4.c    **** //      xTaskCreate((void*)capSense_task, "Bouton", 400, NULL, 1, 0);
- 133:main_cm4.c    ****     
- 134:main_cm4.c    ****       vTaskStartScheduler();
-  71              		.loc 1 134 0
-  72 0040 FFF7FEFF 		bl	vTaskStartScheduler
-  73              	.LVL4:
-  74              	.L2:
-  75 0044 FEE7     		b	.L2
-  76              	.L5:
-  77 0046 00BF     		.align	2
-  78              	.L4:
-  79 0048 00000000 		.word	.LC0
-  80 004c 00000000 		.word	activerMenu
-  81 0050 0C000000 		.word	.LC1
-  82 0054 00000000 		.word	afficherMenu
-  83 0058 1C000000 		.word	.LC2
-  84 005c 00000000 		.word	afficherEcranPrincipal
-  85              		.cfi_endproc
-  86              	.LFE594:
-  87              		.size	main, .-main
-  88              		.section	.rodata.str1.4,"aMS",%progbits,1
-  89              		.align	2
-  90              	.LC0:
-  91 0000 41637469 		.ascii	"ActiverMenu\000"
-  91      7665724D 
-  91      656E7500 
-  92              	.LC1:
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 5
-
-
-  93 000c 41666669 		.ascii	"AfficherMenu\000"
-  93      63686572 
-  93      4D656E75 
-  93      00
-  94 0019 000000   		.space	3
-  95              	.LC2:
-  96 001c 41666669 		.ascii	"AfficherEcran\000"
-  96      63686572 
-  96      45637261 
-  96      6E00
-  97              		.text
-  98              	.Letext0:
-  99              		.file 2 "c:\\users\\nancy\\documents\\myriane\\autres\\psoc creator\\4.4\\psoc creator\\import\\gn
- 100              		.file 3 "c:\\users\\nancy\\documents\\myriane\\autres\\psoc creator\\4.4\\psoc creator\\import\\gn
- 101              		.file 4 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/device/cy_device.h"
- 102              		.file 5 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/scb/cy_scb_spi.h"
- 103              		.file 6 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/tcpwm/cy_tcpwm_counter.h"
- 104              		.file 7 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/tcpwm/cy_tcpwm_pwm.h"
- 105              		.file 8 "Generated_Source\\PSoC6\\pdl\\cmsis/include/core_cm4.h"
- 106              		.file 9 "Generated_Source\\PSoC6/CY_EINK_SPIM.h"
- 107              		.file 10 "Generated_Source\\PSoC6/CY_EINK_Timer.h"
- 108              		.file 11 "Generated_Source\\PSoC6/PWM_1.h"
- 109              		.file 12 "activationMenu.h"
- 110              		.file 13 "Generated_Source\\PSoC6\\pdl\\rtos/FreeRTOS/10.0.1/Source/include/task.h"
- 111              		.section	.debug_info,"",%progbits
- 112              	.Ldebug_info0:
- 113 0000 45090000 		.4byte	0x945
- 114 0004 0400     		.2byte	0x4
- 115 0006 00000000 		.4byte	.Ldebug_abbrev0
- 116 000a 04       		.byte	0x4
- 117 000b 01       		.uleb128 0x1
- 118 000c C0050000 		.4byte	.LASF168
- 119 0010 0C       		.byte	0xc
- 120 0011 4B0A0000 		.4byte	.LASF169
- 121 0015 54080000 		.4byte	.LASF170
- 122 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 123 001d 00000000 		.4byte	0
- 124 0021 00000000 		.4byte	.Ldebug_line0
- 125 0025 02       		.uleb128 0x2
- 126 0026 02       		.byte	0x2
- 127 0027 05       		.byte	0x5
- 128 0028 A6040000 		.4byte	.LASF0
- 129 002c 02       		.uleb128 0x2
- 130 002d 01       		.byte	0x1
- 131 002e 06       		.byte	0x6
- 132 002f 200A0000 		.4byte	.LASF1
- 133 0033 03       		.uleb128 0x3
- 134 0034 AB000000 		.4byte	.LASF3
- 135 0038 02       		.byte	0x2
- 136 0039 1D       		.byte	0x1d
- 137 003a 3E000000 		.4byte	0x3e
- 138 003e 02       		.uleb128 0x2
- 139 003f 01       		.byte	0x1
- 140 0040 08       		.byte	0x8
- 141 0041 E6060000 		.4byte	.LASF2
- 142 0045 03       		.uleb128 0x3
- 143 0046 51030000 		.4byte	.LASF4
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 6
-
-
- 144 004a 02       		.byte	0x2
- 145 004b 29       		.byte	0x29
- 146 004c 25000000 		.4byte	0x25
- 147 0050 03       		.uleb128 0x3
- 148 0051 15080000 		.4byte	.LASF5
- 149 0055 02       		.byte	0x2
- 150 0056 2B       		.byte	0x2b
- 151 0057 5B000000 		.4byte	0x5b
- 152 005b 02       		.uleb128 0x2
- 153 005c 02       		.byte	0x2
- 154 005d 07       		.byte	0x7
- 155 005e C1080000 		.4byte	.LASF6
- 156 0062 03       		.uleb128 0x3
- 157 0063 33080000 		.4byte	.LASF7
- 158 0067 02       		.byte	0x2
- 159 0068 3F       		.byte	0x3f
- 160 0069 6D000000 		.4byte	0x6d
- 161 006d 02       		.uleb128 0x2
- 162 006e 04       		.byte	0x4
- 163 006f 05       		.byte	0x5
- 164 0070 72020000 		.4byte	.LASF8
- 165 0074 03       		.uleb128 0x3
- 166 0075 22030000 		.4byte	.LASF9
- 167 0079 02       		.byte	0x2
- 168 007a 41       		.byte	0x41
- 169 007b 7F000000 		.4byte	0x7f
- 170 007f 02       		.uleb128 0x2
- 171 0080 04       		.byte	0x4
- 172 0081 07       		.byte	0x7
- 173 0082 E1030000 		.4byte	.LASF10
- 174 0086 02       		.uleb128 0x2
- 175 0087 08       		.byte	0x8
- 176 0088 05       		.byte	0x5
- 177 0089 A4010000 		.4byte	.LASF11
- 178 008d 02       		.uleb128 0x2
- 179 008e 08       		.byte	0x8
- 180 008f 07       		.byte	0x7
- 181 0090 24010000 		.4byte	.LASF12
- 182 0094 04       		.uleb128 0x4
- 183 0095 04       		.byte	0x4
- 184 0096 05       		.byte	0x5
- 185 0097 696E7400 		.ascii	"int\000"
- 186 009b 02       		.uleb128 0x2
- 187 009c 04       		.byte	0x4
- 188 009d 07       		.byte	0x7
- 189 009e C2030000 		.4byte	.LASF13
- 190 00a2 03       		.uleb128 0x3
- 191 00a3 80090000 		.4byte	.LASF14
- 192 00a7 03       		.byte	0x3
- 193 00a8 18       		.byte	0x18
- 194 00a9 33000000 		.4byte	0x33
- 195 00ad 03       		.uleb128 0x3
- 196 00ae 9C010000 		.4byte	.LASF15
- 197 00b2 03       		.byte	0x3
- 198 00b3 20       		.byte	0x20
- 199 00b4 45000000 		.4byte	0x45
- 200 00b8 03       		.uleb128 0x3
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 7
-
-
- 201 00b9 B0020000 		.4byte	.LASF16
- 202 00bd 03       		.byte	0x3
- 203 00be 24       		.byte	0x24
- 204 00bf 50000000 		.4byte	0x50
- 205 00c3 03       		.uleb128 0x3
- 206 00c4 DE060000 		.4byte	.LASF17
- 207 00c8 03       		.byte	0x3
- 208 00c9 2C       		.byte	0x2c
- 209 00ca 62000000 		.4byte	0x62
- 210 00ce 03       		.uleb128 0x3
- 211 00cf 29090000 		.4byte	.LASF18
- 212 00d3 03       		.byte	0x3
- 213 00d4 30       		.byte	0x30
- 214 00d5 74000000 		.4byte	0x74
- 215 00d9 02       		.uleb128 0x2
- 216 00da 04       		.byte	0x4
- 217 00db 07       		.byte	0x7
- 218 00dc 2E050000 		.4byte	.LASF19
- 219 00e0 05       		.uleb128 0x5
- 220 00e1 CE000000 		.4byte	0xce
- 221 00e5 02       		.uleb128 0x2
- 222 00e6 08       		.byte	0x8
- 223 00e7 04       		.byte	0x4
- 224 00e8 42050000 		.4byte	.LASF20
- 225 00ec 06       		.uleb128 0x6
- 226 00ed B8       		.byte	0xb8
- 227 00ee 04       		.byte	0x4
- 228 00ef 34       		.byte	0x34
- 229 00f0 FD040000 		.4byte	0x4fd
- 230 00f4 07       		.uleb128 0x7
- 231 00f5 FA000000 		.4byte	.LASF21
- 232 00f9 04       		.byte	0x4
- 233 00fa 37       		.byte	0x37
- 234 00fb CE000000 		.4byte	0xce
- 235 00ff 00       		.byte	0
- 236 0100 07       		.uleb128 0x7
- 237 0101 17030000 		.4byte	.LASF22
- 238 0105 04       		.byte	0x4
- 239 0106 38       		.byte	0x38
- 240 0107 CE000000 		.4byte	0xce
- 241 010b 04       		.byte	0x4
- 242 010c 07       		.uleb128 0x7
- 243 010d 96020000 		.4byte	.LASF23
- 244 0111 04       		.byte	0x4
- 245 0112 39       		.byte	0x39
- 246 0113 CE000000 		.4byte	0xce
- 247 0117 08       		.byte	0x8
- 248 0118 07       		.uleb128 0x7
- 249 0119 C7060000 		.4byte	.LASF24
- 250 011d 04       		.byte	0x4
- 251 011e 3A       		.byte	0x3a
- 252 011f CE000000 		.4byte	0xce
- 253 0123 0C       		.byte	0xc
- 254 0124 07       		.uleb128 0x7
- 255 0125 CC040000 		.4byte	.LASF25
- 256 0129 04       		.byte	0x4
- 257 012a 3B       		.byte	0x3b
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 8
-
-
- 258 012b CE000000 		.4byte	0xce
- 259 012f 10       		.byte	0x10
- 260 0130 07       		.uleb128 0x7
- 261 0131 50020000 		.4byte	.LASF26
- 262 0135 04       		.byte	0x4
- 263 0136 3C       		.byte	0x3c
- 264 0137 CE000000 		.4byte	0xce
- 265 013b 14       		.byte	0x14
- 266 013c 07       		.uleb128 0x7
- 267 013d 12090000 		.4byte	.LASF27
- 268 0141 04       		.byte	0x4
- 269 0142 3D       		.byte	0x3d
- 270 0143 CE000000 		.4byte	0xce
- 271 0147 18       		.byte	0x18
- 272 0148 07       		.uleb128 0x7
- 273 0149 86000000 		.4byte	.LASF28
- 274 014d 04       		.byte	0x4
- 275 014e 3E       		.byte	0x3e
- 276 014f CE000000 		.4byte	0xce
- 277 0153 1C       		.byte	0x1c
- 278 0154 07       		.uleb128 0x7
- 279 0155 2C0A0000 		.4byte	.LASF29
- 280 0159 04       		.byte	0x4
- 281 015a 3F       		.byte	0x3f
- 282 015b CE000000 		.4byte	0xce
- 283 015f 20       		.byte	0x20
- 284 0160 07       		.uleb128 0x7
- 285 0161 FB040000 		.4byte	.LASF30
- 286 0165 04       		.byte	0x4
- 287 0166 40       		.byte	0x40
- 288 0167 CE000000 		.4byte	0xce
- 289 016b 24       		.byte	0x24
- 290 016c 07       		.uleb128 0x7
- 291 016d 560A0000 		.4byte	.LASF31
- 292 0171 04       		.byte	0x4
- 293 0172 43       		.byte	0x43
- 294 0173 A2000000 		.4byte	0xa2
- 295 0177 28       		.byte	0x28
- 296 0178 07       		.uleb128 0x7
- 297 0179 69000000 		.4byte	.LASF32
- 298 017d 04       		.byte	0x4
- 299 017e 44       		.byte	0x44
- 300 017f A2000000 		.4byte	0xa2
- 301 0183 29       		.byte	0x29
- 302 0184 07       		.uleb128 0x7
- 303 0185 3D080000 		.4byte	.LASF33
- 304 0189 04       		.byte	0x4
- 305 018a 45       		.byte	0x45
- 306 018b A2000000 		.4byte	0xa2
- 307 018f 2A       		.byte	0x2a
- 308 0190 07       		.uleb128 0x7
- 309 0191 A5050000 		.4byte	.LASF34
- 310 0195 04       		.byte	0x4
- 311 0196 46       		.byte	0x46
- 312 0197 A2000000 		.4byte	0xa2
- 313 019b 2B       		.byte	0x2b
- 314 019c 07       		.uleb128 0x7
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 9
-
-
- 315 019d 71040000 		.4byte	.LASF35
- 316 01a1 04       		.byte	0x4
- 317 01a2 47       		.byte	0x47
- 318 01a3 A2000000 		.4byte	0xa2
- 319 01a7 2C       		.byte	0x2c
- 320 01a8 07       		.uleb128 0x7
- 321 01a9 47080000 		.4byte	.LASF36
- 322 01ad 04       		.byte	0x4
- 323 01ae 48       		.byte	0x48
- 324 01af A2000000 		.4byte	0xa2
- 325 01b3 2D       		.byte	0x2d
- 326 01b4 07       		.uleb128 0x7
- 327 01b5 12020000 		.4byte	.LASF37
- 328 01b9 04       		.byte	0x4
- 329 01ba 49       		.byte	0x49
- 330 01bb A2000000 		.4byte	0xa2
- 331 01bf 2E       		.byte	0x2e
- 332 01c0 07       		.uleb128 0x7
- 333 01c1 06050000 		.4byte	.LASF38
- 334 01c5 04       		.byte	0x4
- 335 01c6 4A       		.byte	0x4a
- 336 01c7 A2000000 		.4byte	0xa2
- 337 01cb 2F       		.byte	0x2f
- 338 01cc 07       		.uleb128 0x7
- 339 01cd 7D050000 		.4byte	.LASF39
- 340 01d1 04       		.byte	0x4
- 341 01d2 4B       		.byte	0x4b
- 342 01d3 A2000000 		.4byte	0xa2
- 343 01d7 30       		.byte	0x30
- 344 01d8 07       		.uleb128 0x7
- 345 01d9 F3030000 		.4byte	.LASF40
- 346 01dd 04       		.byte	0x4
- 347 01de 4E       		.byte	0x4e
- 348 01df A2000000 		.4byte	0xa2
- 349 01e3 31       		.byte	0x31
- 350 01e4 07       		.uleb128 0x7
- 351 01e5 9D000000 		.4byte	.LASF41
- 352 01e9 04       		.byte	0x4
- 353 01ea 4F       		.byte	0x4f
- 354 01eb A2000000 		.4byte	0xa2
- 355 01ef 32       		.byte	0x32
- 356 01f0 07       		.uleb128 0x7
- 357 01f1 FE030000 		.4byte	.LASF42
- 358 01f5 04       		.byte	0x4
- 359 01f6 50       		.byte	0x50
- 360 01f7 A2000000 		.4byte	0xa2
- 361 01fb 33       		.byte	0x33
- 362 01fc 07       		.uleb128 0x7
- 363 01fd B5000000 		.4byte	.LASF43
- 364 0201 04       		.byte	0x4
- 365 0202 51       		.byte	0x51
- 366 0203 A2000000 		.4byte	0xa2
- 367 0207 34       		.byte	0x34
- 368 0208 07       		.uleb128 0x7
- 369 0209 F5080000 		.4byte	.LASF44
- 370 020d 04       		.byte	0x4
- 371 020e 52       		.byte	0x52
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 10
-
-
- 372 020f AD000000 		.4byte	0xad
- 373 0213 36       		.byte	0x36
- 374 0214 07       		.uleb128 0x7
- 375 0215 B2070000 		.4byte	.LASF45
- 376 0219 04       		.byte	0x4
- 377 021a 53       		.byte	0x53
- 378 021b AD000000 		.4byte	0xad
- 379 021f 38       		.byte	0x38
- 380 0220 07       		.uleb128 0x7
- 381 0221 4D090000 		.4byte	.LASF46
- 382 0225 04       		.byte	0x4
- 383 0226 54       		.byte	0x54
- 384 0227 AD000000 		.4byte	0xad
- 385 022b 3A       		.byte	0x3a
- 386 022c 07       		.uleb128 0x7
- 387 022d 110A0000 		.4byte	.LASF47
- 388 0231 04       		.byte	0x4
- 389 0232 55       		.byte	0x55
- 390 0233 A2000000 		.4byte	0xa2
- 391 0237 3C       		.byte	0x3c
- 392 0238 07       		.uleb128 0x7
- 393 0239 D5020000 		.4byte	.LASF48
- 394 023d 04       		.byte	0x4
- 395 023e 56       		.byte	0x56
- 396 023f A2000000 		.4byte	0xa2
- 397 0243 3D       		.byte	0x3d
- 398 0244 07       		.uleb128 0x7
- 399 0245 94070000 		.4byte	.LASF49
- 400 0249 04       		.byte	0x4
- 401 024a 57       		.byte	0x57
- 402 024b A2000000 		.4byte	0xa2
- 403 024f 3E       		.byte	0x3e
- 404 0250 07       		.uleb128 0x7
- 405 0251 0B010000 		.4byte	.LASF50
- 406 0255 04       		.byte	0x4
- 407 0256 58       		.byte	0x58
- 408 0257 A2000000 		.4byte	0xa2
- 409 025b 3F       		.byte	0x3f
- 410 025c 07       		.uleb128 0x7
- 411 025d B3050000 		.4byte	.LASF51
- 412 0261 04       		.byte	0x4
- 413 0262 59       		.byte	0x59
- 414 0263 A2000000 		.4byte	0xa2
- 415 0267 40       		.byte	0x40
- 416 0268 07       		.uleb128 0x7
- 417 0269 2D030000 		.4byte	.LASF52
- 418 026d 04       		.byte	0x4
- 419 026e 5A       		.byte	0x5a
- 420 026f A2000000 		.4byte	0xa2
- 421 0273 41       		.byte	0x41
- 422 0274 07       		.uleb128 0x7
- 423 0275 71050000 		.4byte	.LASF53
- 424 0279 04       		.byte	0x4
- 425 027a 5B       		.byte	0x5b
- 426 027b A2000000 		.4byte	0xa2
- 427 027f 42       		.byte	0x42
- 428 0280 07       		.uleb128 0x7
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 11
-
-
- 429 0281 9A050000 		.4byte	.LASF54
- 430 0285 04       		.byte	0x4
- 431 0286 5C       		.byte	0x5c
- 432 0287 A2000000 		.4byte	0xa2
- 433 028b 43       		.byte	0x43
- 434 028c 07       		.uleb128 0x7
- 435 028d 9F020000 		.4byte	.LASF55
- 436 0291 04       		.byte	0x4
- 437 0292 5D       		.byte	0x5d
- 438 0293 A2000000 		.4byte	0xa2
- 439 0297 44       		.byte	0x44
- 440 0298 07       		.uleb128 0x7
- 441 0299 00000000 		.4byte	.LASF56
- 442 029d 04       		.byte	0x4
- 443 029e 5E       		.byte	0x5e
- 444 029f CE000000 		.4byte	0xce
- 445 02a3 48       		.byte	0x48
- 446 02a4 07       		.uleb128 0x7
- 447 02a5 7B020000 		.4byte	.LASF57
- 448 02a9 04       		.byte	0x4
- 449 02aa 5F       		.byte	0x5f
- 450 02ab CE000000 		.4byte	0xce
- 451 02af 4C       		.byte	0x4c
- 452 02b0 07       		.uleb128 0x7
- 453 02b1 630A0000 		.4byte	.LASF58
- 454 02b5 04       		.byte	0x4
- 455 02b6 60       		.byte	0x60
- 456 02b7 A2000000 		.4byte	0xa2
- 457 02bb 50       		.byte	0x50
- 458 02bc 07       		.uleb128 0x7
- 459 02bd 76010000 		.4byte	.LASF59
- 460 02c1 04       		.byte	0x4
- 461 02c2 61       		.byte	0x61
- 462 02c3 A2000000 		.4byte	0xa2
- 463 02c7 51       		.byte	0x51
- 464 02c8 07       		.uleb128 0x7
- 465 02c9 70090000 		.4byte	.LASF60
- 466 02cd 04       		.byte	0x4
- 467 02ce 62       		.byte	0x62
- 468 02cf A2000000 		.4byte	0xa2
- 469 02d3 52       		.byte	0x52
- 470 02d4 07       		.uleb128 0x7
- 471 02d5 390A0000 		.4byte	.LASF61
- 472 02d9 04       		.byte	0x4
- 473 02da 63       		.byte	0x63
- 474 02db A2000000 		.4byte	0xa2
- 475 02df 53       		.byte	0x53
- 476 02e0 07       		.uleb128 0x7
- 477 02e1 A2070000 		.4byte	.LASF62
- 478 02e5 04       		.byte	0x4
- 479 02e6 64       		.byte	0x64
- 480 02e7 A2000000 		.4byte	0xa2
- 481 02eb 54       		.byte	0x54
- 482 02ec 07       		.uleb128 0x7
- 483 02ed 88010000 		.4byte	.LASF63
- 484 02f1 04       		.byte	0x4
- 485 02f2 65       		.byte	0x65
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 12
-
-
- 486 02f3 A2000000 		.4byte	0xa2
- 487 02f7 55       		.byte	0x55
- 488 02f8 07       		.uleb128 0x7
- 489 02f9 01080000 		.4byte	.LASF64
- 490 02fd 04       		.byte	0x4
- 491 02fe 66       		.byte	0x66
- 492 02ff A2000000 		.4byte	0xa2
- 493 0303 56       		.byte	0x56
- 494 0304 07       		.uleb128 0x7
- 495 0305 0A040000 		.4byte	.LASF65
- 496 0309 04       		.byte	0x4
- 497 030a 67       		.byte	0x67
- 498 030b A2000000 		.4byte	0xa2
- 499 030f 57       		.byte	0x57
- 500 0310 07       		.uleb128 0x7
- 501 0311 24000000 		.4byte	.LASF66
- 502 0315 04       		.byte	0x4
- 503 0316 68       		.byte	0x68
- 504 0317 A2000000 		.4byte	0xa2
- 505 031b 58       		.byte	0x58
- 506 031c 07       		.uleb128 0x7
- 507 031d F4060000 		.4byte	.LASF67
- 508 0321 04       		.byte	0x4
- 509 0322 69       		.byte	0x69
- 510 0323 A2000000 		.4byte	0xa2
- 511 0327 59       		.byte	0x59
- 512 0328 07       		.uleb128 0x7
- 513 0329 37050000 		.4byte	.LASF68
- 514 032d 04       		.byte	0x4
- 515 032e 6E       		.byte	0x6e
- 516 032f B8000000 		.4byte	0xb8
- 517 0333 5A       		.byte	0x5a
- 518 0334 07       		.uleb128 0x7
- 519 0335 D4080000 		.4byte	.LASF69
- 520 0339 04       		.byte	0x4
- 521 033a 6F       		.byte	0x6f
- 522 033b B8000000 		.4byte	0xb8
- 523 033f 5C       		.byte	0x5c
- 524 0340 07       		.uleb128 0x7
- 525 0341 77000000 		.4byte	.LASF70
- 526 0345 04       		.byte	0x4
- 527 0346 70       		.byte	0x70
- 528 0347 A2000000 		.4byte	0xa2
- 529 034b 5E       		.byte	0x5e
- 530 034c 07       		.uleb128 0x7
- 531 034d A8060000 		.4byte	.LASF71
- 532 0351 04       		.byte	0x4
- 533 0352 71       		.byte	0x71
- 534 0353 A2000000 		.4byte	0xa2
- 535 0357 5F       		.byte	0x5f
- 536 0358 07       		.uleb128 0x7
- 537 0359 89050000 		.4byte	.LASF72
- 538 035d 04       		.byte	0x4
- 539 035e 72       		.byte	0x72
- 540 035f A2000000 		.4byte	0xa2
- 541 0363 60       		.byte	0x60
- 542 0364 07       		.uleb128 0x7
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 13
-
-
- 543 0365 81060000 		.4byte	.LASF73
- 544 0369 04       		.byte	0x4
- 545 036a 73       		.byte	0x73
- 546 036b CE000000 		.4byte	0xce
- 547 036f 64       		.byte	0x64
- 548 0370 07       		.uleb128 0x7
- 549 0371 4A010000 		.4byte	.LASF74
- 550 0375 04       		.byte	0x4
- 551 0376 76       		.byte	0x76
- 552 0377 B8000000 		.4byte	0xb8
- 553 037b 68       		.byte	0x68
- 554 037c 07       		.uleb128 0x7
- 555 037d CF030000 		.4byte	.LASF75
- 556 0381 04       		.byte	0x4
- 557 0382 77       		.byte	0x77
- 558 0383 B8000000 		.4byte	0xb8
- 559 0387 6A       		.byte	0x6a
- 560 0388 07       		.uleb128 0x7
- 561 0389 2C040000 		.4byte	.LASF76
- 562 038d 04       		.byte	0x4
- 563 038e 78       		.byte	0x78
- 564 038f B8000000 		.4byte	0xb8
- 565 0393 6C       		.byte	0x6c
- 566 0394 07       		.uleb128 0x7
- 567 0395 BD070000 		.4byte	.LASF77
- 568 0399 04       		.byte	0x4
- 569 039a 79       		.byte	0x79
- 570 039b B8000000 		.4byte	0xb8
- 571 039f 6E       		.byte	0x6e
- 572 03a0 07       		.uleb128 0x7
- 573 03a1 5E070000 		.4byte	.LASF78
- 574 03a5 04       		.byte	0x4
- 575 03a6 7B       		.byte	0x7b
- 576 03a7 A2000000 		.4byte	0xa2
- 577 03ab 70       		.byte	0x70
- 578 03ac 07       		.uleb128 0x7
- 579 03ad E7010000 		.4byte	.LASF79
- 580 03b1 04       		.byte	0x4
- 581 03b2 7C       		.byte	0x7c
- 582 03b3 A2000000 		.4byte	0xa2
- 583 03b7 71       		.byte	0x71
- 584 03b8 07       		.uleb128 0x7
- 585 03b9 64030000 		.4byte	.LASF80
- 586 03bd 04       		.byte	0x4
- 587 03be 7D       		.byte	0x7d
- 588 03bf A2000000 		.4byte	0xa2
- 589 03c3 72       		.byte	0x72
- 590 03c4 07       		.uleb128 0x7
- 591 03c5 5A050000 		.4byte	.LASF81
- 592 03c9 04       		.byte	0x4
- 593 03ca 7E       		.byte	0x7e
- 594 03cb A2000000 		.4byte	0xa2
- 595 03cf 73       		.byte	0x73
- 596 03d0 07       		.uleb128 0x7
- 597 03d1 F1020000 		.4byte	.LASF82
- 598 03d5 04       		.byte	0x4
- 599 03d6 80       		.byte	0x80
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 14
-
-
- 600 03d7 B8000000 		.4byte	0xb8
- 601 03db 74       		.byte	0x74
- 602 03dc 07       		.uleb128 0x7
- 603 03dd 20080000 		.4byte	.LASF83
- 604 03e1 04       		.byte	0x4
- 605 03e2 81       		.byte	0x81
- 606 03e3 B8000000 		.4byte	0xb8
- 607 03e7 76       		.byte	0x76
- 608 03e8 07       		.uleb128 0x7
- 609 03e9 C0020000 		.4byte	.LASF84
- 610 03ed 04       		.byte	0x4
- 611 03ee 82       		.byte	0x82
- 612 03ef B8000000 		.4byte	0xb8
- 613 03f3 78       		.byte	0x78
- 614 03f4 07       		.uleb128 0x7
- 615 03f5 15070000 		.4byte	.LASF85
- 616 03f9 04       		.byte	0x4
- 617 03fa 83       		.byte	0x83
- 618 03fb B8000000 		.4byte	0xb8
- 619 03ff 7A       		.byte	0x7a
- 620 0400 07       		.uleb128 0x7
- 621 0401 BC090000 		.4byte	.LASF86
- 622 0405 04       		.byte	0x4
- 623 0406 86       		.byte	0x86
- 624 0407 A2000000 		.4byte	0xa2
- 625 040b 7C       		.byte	0x7c
- 626 040c 07       		.uleb128 0x7
- 627 040d 60040000 		.4byte	.LASF87
- 628 0411 04       		.byte	0x4
- 629 0412 87       		.byte	0x87
- 630 0413 A2000000 		.4byte	0xa2
- 631 0417 7D       		.byte	0x7d
- 632 0418 07       		.uleb128 0x7
- 633 0419 38000000 		.4byte	.LASF88
- 634 041d 04       		.byte	0x4
- 635 041e 88       		.byte	0x88
- 636 041f A2000000 		.4byte	0xa2
- 637 0423 7E       		.byte	0x7e
- 638 0424 07       		.uleb128 0x7
- 639 0425 03030000 		.4byte	.LASF89
- 640 0429 04       		.byte	0x4
- 641 042a 89       		.byte	0x89
- 642 042b A2000000 		.4byte	0xa2
- 643 042f 7F       		.byte	0x7f
- 644 0430 07       		.uleb128 0x7
- 645 0431 99030000 		.4byte	.LASF90
- 646 0435 04       		.byte	0x4
- 647 0436 8A       		.byte	0x8a
- 648 0437 A2000000 		.4byte	0xa2
- 649 043b 80       		.byte	0x80
- 650 043c 07       		.uleb128 0x7
- 651 043d E4040000 		.4byte	.LASF91
- 652 0441 04       		.byte	0x4
- 653 0442 8D       		.byte	0x8d
- 654 0443 CE000000 		.4byte	0xce
- 655 0447 84       		.byte	0x84
- 656 0448 07       		.uleb128 0x7
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 15
-
-
- 657 0449 C6000000 		.4byte	.LASF92
- 658 044d 04       		.byte	0x4
- 659 044e 8E       		.byte	0x8e
- 660 044f CE000000 		.4byte	0xce
- 661 0453 88       		.byte	0x88
- 662 0454 07       		.uleb128 0x7
- 663 0455 A7090000 		.4byte	.LASF93
- 664 0459 04       		.byte	0x4
- 665 045a 8F       		.byte	0x8f
- 666 045b CE000000 		.4byte	0xce
- 667 045f 8C       		.byte	0x8c
- 668 0460 07       		.uleb128 0x7
- 669 0461 AD030000 		.4byte	.LASF94
- 670 0465 04       		.byte	0x4
- 671 0466 90       		.byte	0x90
- 672 0467 CE000000 		.4byte	0xce
- 673 046b 90       		.byte	0x90
- 674 046c 07       		.uleb128 0x7
- 675 046d 7A030000 		.4byte	.LASF95
- 676 0471 04       		.byte	0x4
- 677 0472 91       		.byte	0x91
- 678 0473 CE000000 		.4byte	0xce
- 679 0477 94       		.byte	0x94
- 680 0478 07       		.uleb128 0x7
- 681 0479 FC010000 		.4byte	.LASF96
- 682 047d 04       		.byte	0x4
- 683 047e 92       		.byte	0x92
- 684 047f CE000000 		.4byte	0xce
- 685 0483 98       		.byte	0x98
- 686 0484 07       		.uleb128 0x7
- 687 0485 FB090000 		.4byte	.LASF97
- 688 0489 04       		.byte	0x4
- 689 048a 93       		.byte	0x93
- 690 048b CE000000 		.4byte	0xce
- 691 048f 9C       		.byte	0x9c
- 692 0490 07       		.uleb128 0x7
- 693 0491 5A010000 		.4byte	.LASF98
- 694 0495 04       		.byte	0x4
- 695 0496 94       		.byte	0x94
- 696 0497 CE000000 		.4byte	0xce
- 697 049b A0       		.byte	0xa0
- 698 049c 07       		.uleb128 0x7
- 699 049d 1D020000 		.4byte	.LASF99
- 700 04a1 04       		.byte	0x4
- 701 04a2 95       		.byte	0x95
- 702 04a3 B8000000 		.4byte	0xb8
- 703 04a7 A4       		.byte	0xa4
- 704 04a8 07       		.uleb128 0x7
- 705 04a9 CA070000 		.4byte	.LASF100
- 706 04ad 04       		.byte	0x4
- 707 04ae 96       		.byte	0x96
- 708 04af B8000000 		.4byte	0xb8
- 709 04b3 A6       		.byte	0xa6
- 710 04b4 07       		.uleb128 0x7
- 711 04b5 9C060000 		.4byte	.LASF101
- 712 04b9 04       		.byte	0x4
- 713 04ba 97       		.byte	0x97
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 16
-
-
- 714 04bb B8000000 		.4byte	0xb8
- 715 04bf A8       		.byte	0xa8
- 716 04c0 07       		.uleb128 0x7
- 717 04c1 3C070000 		.4byte	.LASF102
- 718 04c5 04       		.byte	0x4
- 719 04c6 98       		.byte	0x98
- 720 04c7 B8000000 		.4byte	0xb8
- 721 04cb AA       		.byte	0xaa
- 722 04cc 07       		.uleb128 0x7
- 723 04cd 3B040000 		.4byte	.LASF103
- 724 04d1 04       		.byte	0x4
- 725 04d2 99       		.byte	0x99
- 726 04d3 B8000000 		.4byte	0xb8
- 727 04d7 AC       		.byte	0xac
- 728 04d8 07       		.uleb128 0x7
- 729 04d9 8F000000 		.4byte	.LASF104
- 730 04dd 04       		.byte	0x4
- 731 04de 9A       		.byte	0x9a
- 732 04df B8000000 		.4byte	0xb8
- 733 04e3 AE       		.byte	0xae
- 734 04e4 07       		.uleb128 0x7
- 735 04e5 E7080000 		.4byte	.LASF105
- 736 04e9 04       		.byte	0x4
- 737 04ea 9D       		.byte	0x9d
- 738 04eb B8000000 		.4byte	0xb8
- 739 04ef B0       		.byte	0xb0
- 740 04f0 07       		.uleb128 0x7
- 741 04f1 55000000 		.4byte	.LASF106
- 742 04f5 04       		.byte	0x4
- 743 04f6 9E       		.byte	0x9e
- 744 04f7 CE000000 		.4byte	0xce
- 745 04fb B4       		.byte	0xb4
- 746 04fc 00       		.byte	0
- 747 04fd 03       		.uleb128 0x3
- 748 04fe 7D040000 		.4byte	.LASF107
- 749 0502 04       		.byte	0x4
- 750 0503 9F       		.byte	0x9f
- 751 0504 EC000000 		.4byte	0xec
- 752 0508 02       		.uleb128 0x2
- 753 0509 01       		.byte	0x1
- 754 050a 08       		.byte	0x8
- 755 050b FC070000 		.4byte	.LASF108
- 756 050f 02       		.uleb128 0x2
- 757 0510 04       		.byte	0x4
- 758 0511 04       		.byte	0x4
- 759 0512 7B060000 		.4byte	.LASF109
- 760 0516 02       		.uleb128 0x2
- 761 0517 08       		.byte	0x8
- 762 0518 04       		.byte	0x4
- 763 0519 B9020000 		.4byte	.LASF110
- 764 051d 08       		.uleb128 0x8
- 765 051e 04       		.byte	0x4
- 766 051f 02       		.uleb128 0x2
- 767 0520 01       		.byte	0x1
- 768 0521 02       		.byte	0x2
- 769 0522 32090000 		.4byte	.LASF111
- 770 0526 09       		.uleb128 0x9
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 17
-
-
- 771 0527 04       		.byte	0x4
- 772 0528 2C050000 		.4byte	0x52c
- 773 052c 0A       		.uleb128 0xa
- 774 052d 37050000 		.4byte	0x537
- 775 0531 0B       		.uleb128 0xb
- 776 0532 CE000000 		.4byte	0xce
- 777 0536 00       		.byte	0
- 778 0537 0C       		.uleb128 0xc
- 779 0538 32020000 		.4byte	.LASF112
- 780 053c 05       		.byte	0x5
- 781 053d F201     		.2byte	0x1f2
- 782 053f 26050000 		.4byte	0x526
- 783 0543 0D       		.uleb128 0xd
- 784 0544 D0010000 		.4byte	.LASF123
- 785 0548 24       		.byte	0x24
- 786 0549 05       		.byte	0x5
- 787 054a 7402     		.2byte	0x274
- 788 054c C6050000 		.4byte	0x5c6
- 789 0550 0E       		.uleb128 0xe
- 790 0551 4A070000 		.4byte	.LASF113
- 791 0555 05       		.byte	0x5
- 792 0556 7702     		.2byte	0x277
- 793 0558 E0000000 		.4byte	0xe0
- 794 055c 00       		.byte	0
- 795 055d 0E       		.uleb128 0xe
- 796 055e 23090000 		.4byte	.LASF114
- 797 0562 05       		.byte	0x5
- 798 0563 7902     		.2byte	0x279
- 799 0565 1D050000 		.4byte	0x51d
- 800 0569 04       		.byte	0x4
- 801 056a 0E       		.uleb128 0xe
- 802 056b 1A000000 		.4byte	.LASF115
- 803 056f 05       		.byte	0x5
- 804 0570 7A02     		.2byte	0x27a
- 805 0572 CE000000 		.4byte	0xce
- 806 0576 08       		.byte	0x8
- 807 0577 0E       		.uleb128 0xe
- 808 0578 5B030000 		.4byte	.LASF116
- 809 057c 05       		.byte	0x5
- 810 057d 7B02     		.2byte	0x27b
- 811 057f E0000000 		.4byte	0xe0
- 812 0583 0C       		.byte	0xc
- 813 0584 0E       		.uleb128 0xe
- 814 0585 70010000 		.4byte	.LASF117
- 815 0589 05       		.byte	0x5
- 816 058a 7D02     		.2byte	0x27d
- 817 058c 1D050000 		.4byte	0x51d
- 818 0590 10       		.byte	0x10
- 819 0591 0E       		.uleb128 0xe
- 820 0592 8F030000 		.4byte	.LASF118
- 821 0596 05       		.byte	0x5
- 822 0597 7E02     		.2byte	0x27e
- 823 0599 CE000000 		.4byte	0xce
- 824 059d 14       		.byte	0x14
- 825 059e 0E       		.uleb128 0xe
- 826 059f 740A0000 		.4byte	.LASF119
- 827 05a3 05       		.byte	0x5
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 18
-
-
- 828 05a4 7F02     		.2byte	0x27f
- 829 05a6 E0000000 		.4byte	0xe0
- 830 05aa 18       		.byte	0x18
- 831 05ab 0E       		.uleb128 0xe
- 832 05ac 57040000 		.4byte	.LASF120
- 833 05b0 05       		.byte	0x5
- 834 05b1 8502     		.2byte	0x285
- 835 05b3 37050000 		.4byte	0x537
- 836 05b7 1C       		.byte	0x1c
- 837 05b8 0E       		.uleb128 0xe
- 838 05b9 1B090000 		.4byte	.LASF121
- 839 05bd 05       		.byte	0x5
- 840 05be 8802     		.2byte	0x288
- 841 05c0 CE000000 		.4byte	0xce
- 842 05c4 20       		.byte	0x20
- 843 05c5 00       		.byte	0
- 844 05c6 0C       		.uleb128 0xc
- 845 05c7 8D040000 		.4byte	.LASF122
- 846 05cb 05       		.byte	0x5
- 847 05cc 8B02     		.2byte	0x28b
- 848 05ce 43050000 		.4byte	0x543
- 849 05d2 0F       		.uleb128 0xf
- 850 05d3 12050000 		.4byte	.LASF124
- 851 05d7 4C       		.byte	0x4c
- 852 05d8 06       		.byte	0x6
- 853 05d9 2F       		.byte	0x2f
- 854 05da C3060000 		.4byte	0x6c3
- 855 05de 07       		.uleb128 0x7
- 856 05df 04010000 		.4byte	.LASF125
- 857 05e3 06       		.byte	0x6
- 858 05e4 31       		.byte	0x31
- 859 05e5 CE000000 		.4byte	0xce
- 860 05e9 00       		.byte	0
- 861 05ea 07       		.uleb128 0x7
- 862 05eb 3B010000 		.4byte	.LASF126
- 863 05ef 06       		.byte	0x6
- 864 05f0 33       		.byte	0x33
- 865 05f1 CE000000 		.4byte	0xce
- 866 05f5 04       		.byte	0x4
- 867 05f6 07       		.uleb128 0x7
- 868 05f7 12000000 		.4byte	.LASF127
- 869 05fb 06       		.byte	0x6
- 870 05fc 34       		.byte	0x34
- 871 05fd CE000000 		.4byte	0xce
- 872 0601 08       		.byte	0x8
- 873 0602 07       		.uleb128 0x7
- 874 0603 DD000000 		.4byte	.LASF128
- 875 0607 06       		.byte	0x6
- 876 0608 35       		.byte	0x35
- 877 0609 CE000000 		.4byte	0xce
- 878 060d 0C       		.byte	0xc
- 879 060e 07       		.uleb128 0x7
- 880 060f 83070000 		.4byte	.LASF129
- 881 0613 06       		.byte	0x6
- 882 0614 37       		.byte	0x37
- 883 0615 CE000000 		.4byte	0xce
- 884 0619 10       		.byte	0x10
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 19
-
-
- 885 061a 07       		.uleb128 0x7
- 886 061b DF070000 		.4byte	.LASF130
- 887 061f 06       		.byte	0x6
- 888 0620 38       		.byte	0x38
- 889 0621 CE000000 		.4byte	0xce
- 890 0625 14       		.byte	0x14
- 891 0626 07       		.uleb128 0x7
- 892 0627 E8070000 		.4byte	.LASF131
- 893 062b 06       		.byte	0x6
- 894 062c 39       		.byte	0x39
- 895 062d CE000000 		.4byte	0xce
- 896 0631 18       		.byte	0x18
- 897 0632 07       		.uleb128 0x7
- 898 0633 2A070000 		.4byte	.LASF132
- 899 0637 06       		.byte	0x6
- 900 0638 3A       		.byte	0x3a
- 901 0639 1F050000 		.4byte	0x51f
- 902 063d 1C       		.byte	0x1c
- 903 063e 07       		.uleb128 0x7
- 904 063f A4080000 		.4byte	.LASF133
- 905 0643 06       		.byte	0x6
- 906 0644 3C       		.byte	0x3c
- 907 0645 CE000000 		.4byte	0xce
- 908 0649 20       		.byte	0x20
- 909 064a 07       		.uleb128 0x7
- 910 064b E0020000 		.4byte	.LASF134
- 911 064f 06       		.byte	0x6
- 912 0650 3D       		.byte	0x3d
- 913 0651 CE000000 		.4byte	0xce
- 914 0655 24       		.byte	0x24
- 915 0656 07       		.uleb128 0x7
- 916 0657 17010000 		.4byte	.LASF135
- 917 065b 06       		.byte	0x6
- 918 065c 3F       		.byte	0x3f
- 919 065d CE000000 		.4byte	0xce
- 920 0661 28       		.byte	0x28
- 921 0662 07       		.uleb128 0x7
- 922 0663 EB090000 		.4byte	.LASF136
- 923 0667 06       		.byte	0x6
- 924 0668 40       		.byte	0x40
- 925 0669 CE000000 		.4byte	0xce
- 926 066d 2C       		.byte	0x2c
- 927 066e 07       		.uleb128 0x7
- 928 066f B5080000 		.4byte	.LASF137
- 929 0673 06       		.byte	0x6
- 930 0674 42       		.byte	0x42
- 931 0675 CE000000 		.4byte	0xce
- 932 0679 30       		.byte	0x30
- 933 067a 07       		.uleb128 0x7
- 934 067b CF060000 		.4byte	.LASF138
- 935 067f 06       		.byte	0x6
- 936 0680 43       		.byte	0x43
- 937 0681 CE000000 		.4byte	0xce
- 938 0685 34       		.byte	0x34
- 939 0686 07       		.uleb128 0x7
- 940 0687 7D0A0000 		.4byte	.LASF139
- 941 068b 06       		.byte	0x6
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 20
-
-
- 942 068c 45       		.byte	0x45
- 943 068d CE000000 		.4byte	0xce
- 944 0691 38       		.byte	0x38
- 945 0692 07       		.uleb128 0x7
- 946 0693 EC000000 		.4byte	.LASF140
- 947 0697 06       		.byte	0x6
- 948 0698 46       		.byte	0x46
- 949 0699 CE000000 		.4byte	0xce
- 950 069d 3C       		.byte	0x3c
- 951 069e 07       		.uleb128 0x7
- 952 069f DD080000 		.4byte	.LASF141
- 953 06a3 06       		.byte	0x6
- 954 06a4 48       		.byte	0x48
- 955 06a5 CE000000 		.4byte	0xce
- 956 06a9 40       		.byte	0x40
- 957 06aa 07       		.uleb128 0x7
- 958 06ab D5040000 		.4byte	.LASF142
- 959 06af 06       		.byte	0x6
- 960 06b0 49       		.byte	0x49
- 961 06b1 CE000000 		.4byte	0xce
- 962 06b5 44       		.byte	0x44
- 963 06b6 07       		.uleb128 0x7
- 964 06b7 F1070000 		.4byte	.LASF143
- 965 06bb 06       		.byte	0x6
- 966 06bc 4B       		.byte	0x4b
- 967 06bd CE000000 		.4byte	0xce
- 968 06c1 48       		.byte	0x48
- 969 06c2 00       		.byte	0
- 970 06c3 03       		.uleb128 0x3
- 971 06c4 B2010000 		.4byte	.LASF144
- 972 06c8 06       		.byte	0x6
- 973 06c9 4C       		.byte	0x4c
- 974 06ca D2050000 		.4byte	0x5d2
- 975 06ce 0F       		.uleb128 0xf
- 976 06cf 5A020000 		.4byte	.LASF145
- 977 06d3 64       		.byte	0x64
- 978 06d4 07       		.byte	0x7
- 979 06d5 2F       		.byte	0x2f
- 980 06d6 07080000 		.4byte	0x807
- 981 06da 07       		.uleb128 0x7
- 982 06db 73060000 		.4byte	.LASF146
- 983 06df 07       		.byte	0x7
- 984 06e0 31       		.byte	0x31
- 985 06e1 CE000000 		.4byte	0xce
- 986 06e5 00       		.byte	0
- 987 06e6 07       		.uleb128 0x7
- 988 06e7 3B010000 		.4byte	.LASF126
- 989 06eb 07       		.byte	0x7
- 990 06ec 33       		.byte	0x33
- 991 06ed CE000000 		.4byte	0xce
- 992 06f1 04       		.byte	0x4
- 993 06f2 07       		.uleb128 0x7
- 994 06f3 51070000 		.4byte	.LASF147
- 995 06f7 07       		.byte	0x7
- 996 06f8 34       		.byte	0x34
- 997 06f9 CE000000 		.4byte	0xce
- 998 06fd 08       		.byte	0x8
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 21
-
-
- 999 06fe 07       		.uleb128 0x7
- 1000 06ff BD040000 		.4byte	.LASF148
- 1001 0703 07       		.byte	0x7
- 1002 0704 35       		.byte	0x35
- 1003 0705 CE000000 		.4byte	0xce
- 1004 0709 0C       		.byte	0xc
- 1005 070a 07       		.uleb128 0x7
- 1006 070b 12000000 		.4byte	.LASF127
- 1007 070f 07       		.byte	0x7
- 1008 0710 36       		.byte	0x36
- 1009 0711 CE000000 		.4byte	0xce
- 1010 0715 10       		.byte	0x10
- 1011 0716 07       		.uleb128 0x7
- 1012 0717 02090000 		.4byte	.LASF149
- 1013 071b 07       		.byte	0x7
- 1014 071c 37       		.byte	0x37
- 1015 071d CE000000 		.4byte	0xce
- 1016 0721 14       		.byte	0x14
- 1017 0722 07       		.uleb128 0x7
- 1018 0723 0A090000 		.4byte	.LASF150
- 1019 0727 07       		.byte	0x7
- 1020 0728 38       		.byte	0x38
- 1021 0729 CE000000 		.4byte	0xce
- 1022 072d 18       		.byte	0x18
- 1023 072e 07       		.uleb128 0x7
- 1024 072f 72070000 		.4byte	.LASF151
- 1025 0733 07       		.byte	0x7
- 1026 0734 39       		.byte	0x39
- 1027 0735 1F050000 		.4byte	0x51f
- 1028 0739 1C       		.byte	0x1c
- 1029 073a 07       		.uleb128 0x7
- 1030 073b DF070000 		.4byte	.LASF130
- 1031 073f 07       		.byte	0x7
- 1032 0740 3A       		.byte	0x3a
- 1033 0741 CE000000 		.4byte	0xce
- 1034 0745 20       		.byte	0x20
- 1035 0746 07       		.uleb128 0x7
- 1036 0747 E8070000 		.4byte	.LASF131
- 1037 074b 07       		.byte	0x7
- 1038 074c 3B       		.byte	0x3b
- 1039 074d CE000000 		.4byte	0xce
- 1040 0751 24       		.byte	0x24
- 1041 0752 07       		.uleb128 0x7
- 1042 0753 2A070000 		.4byte	.LASF132
- 1043 0757 07       		.byte	0x7
- 1044 0758 3C       		.byte	0x3c
- 1045 0759 1F050000 		.4byte	0x51f
- 1046 075d 28       		.byte	0x28
- 1047 075e 07       		.uleb128 0x7
- 1048 075f A4080000 		.4byte	.LASF133
- 1049 0763 07       		.byte	0x7
- 1050 0764 3E       		.byte	0x3e
- 1051 0765 CE000000 		.4byte	0xce
- 1052 0769 2C       		.byte	0x2c
- 1053 076a 07       		.uleb128 0x7
- 1054 076b B0040000 		.4byte	.LASF152
- 1055 076f 07       		.byte	0x7
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 22
-
-
- 1056 0770 3F       		.byte	0x3f
- 1057 0771 CE000000 		.4byte	0xce
- 1058 0775 30       		.byte	0x30
- 1059 0776 07       		.uleb128 0x7
- 1060 0777 62090000 		.4byte	.LASF153
- 1061 077b 07       		.byte	0x7
- 1062 077c 40       		.byte	0x40
- 1063 077d CE000000 		.4byte	0xce
- 1064 0781 34       		.byte	0x34
- 1065 0782 07       		.uleb128 0x7
- 1066 0783 BE060000 		.4byte	.LASF154
- 1067 0787 07       		.byte	0x7
- 1068 0788 41       		.byte	0x41
- 1069 0789 CE000000 		.4byte	0xce
- 1070 078d 38       		.byte	0x38
- 1071 078e 07       		.uleb128 0x7
- 1072 078f 1E040000 		.4byte	.LASF155
- 1073 0793 07       		.byte	0x7
- 1074 0794 42       		.byte	0x42
- 1075 0795 CE000000 		.4byte	0xce
- 1076 0799 3C       		.byte	0x3c
- 1077 079a 07       		.uleb128 0x7
- 1078 079b 88090000 		.4byte	.LASF156
- 1079 079f 07       		.byte	0x7
- 1080 07a0 44       		.byte	0x44
- 1081 07a1 CE000000 		.4byte	0xce
- 1082 07a5 40       		.byte	0x40
- 1083 07a6 07       		.uleb128 0x7
- 1084 07a7 EB090000 		.4byte	.LASF136
- 1085 07ab 07       		.byte	0x7
- 1086 07ac 45       		.byte	0x45
- 1087 07ad CE000000 		.4byte	0xce
- 1088 07b1 44       		.byte	0x44
- 1089 07b2 07       		.uleb128 0x7
- 1090 07b3 B5080000 		.4byte	.LASF137
- 1091 07b7 07       		.byte	0x7
- 1092 07b8 47       		.byte	0x47
- 1093 07b9 CE000000 		.4byte	0xce
- 1094 07bd 48       		.byte	0x48
- 1095 07be 07       		.uleb128 0x7
- 1096 07bf CF060000 		.4byte	.LASF138
- 1097 07c3 07       		.byte	0x7
- 1098 07c4 48       		.byte	0x48
- 1099 07c5 CE000000 		.4byte	0xce
- 1100 07c9 4C       		.byte	0x4c
- 1101 07ca 07       		.uleb128 0x7
- 1102 07cb 7D0A0000 		.4byte	.LASF139
- 1103 07cf 07       		.byte	0x7
- 1104 07d0 4A       		.byte	0x4a
- 1105 07d1 CE000000 		.4byte	0xce
- 1106 07d5 50       		.byte	0x50
- 1107 07d6 07       		.uleb128 0x7
- 1108 07d7 49040000 		.4byte	.LASF157
- 1109 07db 07       		.byte	0x7
- 1110 07dc 4B       		.byte	0x4b
- 1111 07dd CE000000 		.4byte	0xce
- 1112 07e1 54       		.byte	0x54
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 23
-
-
- 1113 07e2 07       		.uleb128 0x7
- 1114 07e3 4B000000 		.4byte	.LASF158
- 1115 07e7 07       		.byte	0x7
- 1116 07e8 4D       		.byte	0x4d
- 1117 07e9 CE000000 		.4byte	0xce
- 1118 07ed 58       		.byte	0x58
- 1119 07ee 07       		.uleb128 0x7
- 1120 07ef D5040000 		.4byte	.LASF142
- 1121 07f3 07       		.byte	0x7
- 1122 07f4 4E       		.byte	0x4e
- 1123 07f5 CE000000 		.4byte	0xce
- 1124 07f9 5C       		.byte	0x5c
- 1125 07fa 07       		.uleb128 0x7
- 1126 07fb F1070000 		.4byte	.LASF143
- 1127 07ff 07       		.byte	0x7
- 1128 0800 50       		.byte	0x50
- 1129 0801 CE000000 		.4byte	0xce
- 1130 0805 60       		.byte	0x60
- 1131 0806 00       		.byte	0
- 1132 0807 03       		.uleb128 0x3
- 1133 0808 D1090000 		.4byte	.LASF159
- 1134 080c 07       		.byte	0x7
- 1135 080d 51       		.byte	0x51
- 1136 080e CE060000 		.4byte	0x6ce
- 1137 0812 10       		.uleb128 0x10
- 1138 0813 340A0000 		.4byte	.LASF171
- 1139 0817 01       		.byte	0x1
- 1140 0818 77       		.byte	0x77
- 1141 0819 94000000 		.4byte	0x94
- 1142 081d 00000000 		.4byte	.LFB594
- 1143 0821 60000000 		.4byte	.LFE594-.LFB594
- 1144 0825 01       		.uleb128 0x1
- 1145 0826 9C       		.byte	0x9c
- 1146 0827 D3080000 		.4byte	0x8d3
- 1147 082b 11       		.uleb128 0x11
- 1148 082c 08000000 		.4byte	.LVL0
- 1149 0830 25090000 		.4byte	0x925
- 1150 0834 12       		.uleb128 0x12
- 1151 0835 1C000000 		.4byte	.LVL1
- 1152 0839 30090000 		.4byte	0x930
- 1153 083d 65080000 		.4byte	0x865
- 1154 0841 13       		.uleb128 0x13
- 1155 0842 01       		.uleb128 0x1
- 1156 0843 51       		.byte	0x51
- 1157 0844 05       		.uleb128 0x5
- 1158 0845 03       		.byte	0x3
- 1159 0846 00000000 		.4byte	.LC0
- 1160 084a 13       		.uleb128 0x13
- 1161 084b 01       		.uleb128 0x1
- 1162 084c 52       		.byte	0x52
- 1163 084d 02       		.uleb128 0x2
- 1164 084e 08       		.byte	0x8
- 1165 084f 80       		.byte	0x80
- 1166 0850 13       		.uleb128 0x13
- 1167 0851 01       		.uleb128 0x1
- 1168 0852 53       		.byte	0x53
- 1169 0853 02       		.uleb128 0x2
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 24
-
-
- 1170 0854 74       		.byte	0x74
- 1171 0855 00       		.sleb128 0
- 1172 0856 13       		.uleb128 0x13
- 1173 0857 02       		.uleb128 0x2
- 1174 0858 7D       		.byte	0x7d
- 1175 0859 00       		.sleb128 0
- 1176 085a 02       		.uleb128 0x2
- 1177 085b 75       		.byte	0x75
- 1178 085c 00       		.sleb128 0
- 1179 085d 13       		.uleb128 0x13
- 1180 085e 02       		.uleb128 0x2
- 1181 085f 7D       		.byte	0x7d
- 1182 0860 04       		.sleb128 4
- 1183 0861 02       		.uleb128 0x2
- 1184 0862 74       		.byte	0x74
- 1185 0863 00       		.sleb128 0
- 1186 0864 00       		.byte	0
- 1187 0865 12       		.uleb128 0x12
- 1188 0866 2E000000 		.4byte	.LVL2
- 1189 086a 30090000 		.4byte	0x930
- 1190 086e 97080000 		.4byte	0x897
- 1191 0872 13       		.uleb128 0x13
- 1192 0873 01       		.uleb128 0x1
- 1193 0874 51       		.byte	0x51
- 1194 0875 05       		.uleb128 0x5
- 1195 0876 03       		.byte	0x3
- 1196 0877 0C000000 		.4byte	.LC1
- 1197 087b 13       		.uleb128 0x13
- 1198 087c 01       		.uleb128 0x1
- 1199 087d 52       		.byte	0x52
- 1200 087e 03       		.uleb128 0x3
- 1201 087f 0A       		.byte	0xa
- 1202 0880 9001     		.2byte	0x190
- 1203 0882 13       		.uleb128 0x13
- 1204 0883 01       		.uleb128 0x1
- 1205 0884 53       		.byte	0x53
- 1206 0885 02       		.uleb128 0x2
- 1207 0886 74       		.byte	0x74
- 1208 0887 00       		.sleb128 0
- 1209 0888 13       		.uleb128 0x13
- 1210 0889 02       		.uleb128 0x2
- 1211 088a 7D       		.byte	0x7d
- 1212 088b 00       		.sleb128 0
- 1213 088c 02       		.uleb128 0x2
- 1214 088d 75       		.byte	0x75
- 1215 088e 00       		.sleb128 0
- 1216 088f 13       		.uleb128 0x13
- 1217 0890 02       		.uleb128 0x2
- 1218 0891 7D       		.byte	0x7d
- 1219 0892 04       		.sleb128 4
- 1220 0893 02       		.uleb128 0x2
- 1221 0894 74       		.byte	0x74
- 1222 0895 00       		.sleb128 0
- 1223 0896 00       		.byte	0
- 1224 0897 12       		.uleb128 0x12
- 1225 0898 40000000 		.4byte	.LVL3
- 1226 089c 30090000 		.4byte	0x930
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 25
-
-
- 1227 08a0 C9080000 		.4byte	0x8c9
- 1228 08a4 13       		.uleb128 0x13
- 1229 08a5 01       		.uleb128 0x1
- 1230 08a6 51       		.byte	0x51
- 1231 08a7 05       		.uleb128 0x5
- 1232 08a8 03       		.byte	0x3
- 1233 08a9 1C000000 		.4byte	.LC2
- 1234 08ad 13       		.uleb128 0x13
- 1235 08ae 01       		.uleb128 0x1
- 1236 08af 52       		.byte	0x52
- 1237 08b0 03       		.uleb128 0x3
- 1238 08b1 0A       		.byte	0xa
- 1239 08b2 9001     		.2byte	0x190
- 1240 08b4 13       		.uleb128 0x13
- 1241 08b5 01       		.uleb128 0x1
- 1242 08b6 53       		.byte	0x53
- 1243 08b7 02       		.uleb128 0x2
- 1244 08b8 74       		.byte	0x74
- 1245 08b9 00       		.sleb128 0
- 1246 08ba 13       		.uleb128 0x13
- 1247 08bb 02       		.uleb128 0x2
- 1248 08bc 7D       		.byte	0x7d
- 1249 08bd 00       		.sleb128 0
- 1250 08be 02       		.uleb128 0x2
- 1251 08bf 75       		.byte	0x75
- 1252 08c0 00       		.sleb128 0
- 1253 08c1 13       		.uleb128 0x13
- 1254 08c2 02       		.uleb128 0x2
- 1255 08c3 7D       		.byte	0x7d
- 1256 08c4 04       		.sleb128 4
- 1257 08c5 02       		.uleb128 0x2
- 1258 08c6 74       		.byte	0x74
- 1259 08c7 00       		.sleb128 0
- 1260 08c8 00       		.byte	0
- 1261 08c9 11       		.uleb128 0x11
- 1262 08ca 44000000 		.4byte	.LVL4
- 1263 08ce 3C090000 		.4byte	0x93c
- 1264 08d2 00       		.byte	0
- 1265 08d3 14       		.uleb128 0x14
- 1266 08d4 08070000 		.4byte	.LASF160
- 1267 08d8 08       		.byte	0x8
- 1268 08d9 F907     		.2byte	0x7f9
- 1269 08db DF080000 		.4byte	0x8df
- 1270 08df 05       		.uleb128 0x5
- 1271 08e0 C3000000 		.4byte	0xc3
- 1272 08e4 15       		.uleb128 0x15
- 1273 08e5 92060000 		.4byte	.LASF161
- 1274 08e9 04       		.byte	0x4
- 1275 08ea A7       		.byte	0xa7
- 1276 08eb EF080000 		.4byte	0x8ef
- 1277 08ef 09       		.uleb128 0x9
- 1278 08f0 04       		.byte	0x4
- 1279 08f1 F5080000 		.4byte	0x8f5
- 1280 08f5 16       		.uleb128 0x16
- 1281 08f6 FD040000 		.4byte	0x4fd
- 1282 08fa 15       		.uleb128 0x15
- 1283 08fb 38090000 		.4byte	.LASF162
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 26
-
-
- 1284 08ff 09       		.byte	0x9
- 1285 0900 5E       		.byte	0x5e
- 1286 0901 C6050000 		.4byte	0x5c6
- 1287 0905 15       		.uleb128 0x15
- 1288 0906 92090000 		.4byte	.LASF163
- 1289 090a 0A       		.byte	0xa
- 1290 090b 1F       		.byte	0x1f
- 1291 090c 10090000 		.4byte	0x910
- 1292 0910 16       		.uleb128 0x16
- 1293 0911 C3060000 		.4byte	0x6c3
- 1294 0915 15       		.uleb128 0x15
- 1295 0916 89020000 		.4byte	.LASF164
- 1296 091a 0B       		.byte	0xb
- 1297 091b 1F       		.byte	0x1f
- 1298 091c 20090000 		.4byte	0x920
- 1299 0920 16       		.uleb128 0x16
- 1300 0921 07080000 		.4byte	0x807
- 1301 0925 17       		.uleb128 0x17
- 1302 0926 95080000 		.4byte	.LASF165
- 1303 092a 95080000 		.4byte	.LASF165
- 1304 092e 0C       		.byte	0xc
- 1305 092f 17       		.byte	0x17
- 1306 0930 18       		.uleb128 0x18
- 1307 0931 4E050000 		.4byte	.LASF166
- 1308 0935 4E050000 		.4byte	.LASF166
- 1309 0939 0D       		.byte	0xd
- 1310 093a 4101     		.2byte	0x141
- 1311 093c 18       		.uleb128 0x18
- 1312 093d 3D030000 		.4byte	.LASF167
- 1313 0941 3D030000 		.4byte	.LASF167
- 1314 0945 0D       		.byte	0xd
- 1315 0946 8E04     		.2byte	0x48e
- 1316 0948 00       		.byte	0
- 1317              		.section	.debug_abbrev,"",%progbits
- 1318              	.Ldebug_abbrev0:
- 1319 0000 01       		.uleb128 0x1
- 1320 0001 11       		.uleb128 0x11
- 1321 0002 01       		.byte	0x1
- 1322 0003 25       		.uleb128 0x25
- 1323 0004 0E       		.uleb128 0xe
- 1324 0005 13       		.uleb128 0x13
- 1325 0006 0B       		.uleb128 0xb
- 1326 0007 03       		.uleb128 0x3
- 1327 0008 0E       		.uleb128 0xe
- 1328 0009 1B       		.uleb128 0x1b
- 1329 000a 0E       		.uleb128 0xe
- 1330 000b 55       		.uleb128 0x55
- 1331 000c 17       		.uleb128 0x17
- 1332 000d 11       		.uleb128 0x11
- 1333 000e 01       		.uleb128 0x1
- 1334 000f 10       		.uleb128 0x10
- 1335 0010 17       		.uleb128 0x17
- 1336 0011 00       		.byte	0
- 1337 0012 00       		.byte	0
- 1338 0013 02       		.uleb128 0x2
- 1339 0014 24       		.uleb128 0x24
- 1340 0015 00       		.byte	0
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 27
-
-
- 1341 0016 0B       		.uleb128 0xb
- 1342 0017 0B       		.uleb128 0xb
- 1343 0018 3E       		.uleb128 0x3e
- 1344 0019 0B       		.uleb128 0xb
- 1345 001a 03       		.uleb128 0x3
- 1346 001b 0E       		.uleb128 0xe
- 1347 001c 00       		.byte	0
- 1348 001d 00       		.byte	0
- 1349 001e 03       		.uleb128 0x3
- 1350 001f 16       		.uleb128 0x16
- 1351 0020 00       		.byte	0
- 1352 0021 03       		.uleb128 0x3
- 1353 0022 0E       		.uleb128 0xe
- 1354 0023 3A       		.uleb128 0x3a
- 1355 0024 0B       		.uleb128 0xb
- 1356 0025 3B       		.uleb128 0x3b
- 1357 0026 0B       		.uleb128 0xb
- 1358 0027 49       		.uleb128 0x49
- 1359 0028 13       		.uleb128 0x13
- 1360 0029 00       		.byte	0
- 1361 002a 00       		.byte	0
- 1362 002b 04       		.uleb128 0x4
- 1363 002c 24       		.uleb128 0x24
- 1364 002d 00       		.byte	0
- 1365 002e 0B       		.uleb128 0xb
- 1366 002f 0B       		.uleb128 0xb
- 1367 0030 3E       		.uleb128 0x3e
- 1368 0031 0B       		.uleb128 0xb
- 1369 0032 03       		.uleb128 0x3
- 1370 0033 08       		.uleb128 0x8
- 1371 0034 00       		.byte	0
- 1372 0035 00       		.byte	0
- 1373 0036 05       		.uleb128 0x5
- 1374 0037 35       		.uleb128 0x35
- 1375 0038 00       		.byte	0
- 1376 0039 49       		.uleb128 0x49
- 1377 003a 13       		.uleb128 0x13
- 1378 003b 00       		.byte	0
- 1379 003c 00       		.byte	0
- 1380 003d 06       		.uleb128 0x6
- 1381 003e 13       		.uleb128 0x13
- 1382 003f 01       		.byte	0x1
- 1383 0040 0B       		.uleb128 0xb
- 1384 0041 0B       		.uleb128 0xb
- 1385 0042 3A       		.uleb128 0x3a
- 1386 0043 0B       		.uleb128 0xb
- 1387 0044 3B       		.uleb128 0x3b
- 1388 0045 0B       		.uleb128 0xb
- 1389 0046 01       		.uleb128 0x1
- 1390 0047 13       		.uleb128 0x13
- 1391 0048 00       		.byte	0
- 1392 0049 00       		.byte	0
- 1393 004a 07       		.uleb128 0x7
- 1394 004b 0D       		.uleb128 0xd
- 1395 004c 00       		.byte	0
- 1396 004d 03       		.uleb128 0x3
- 1397 004e 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 28
-
-
- 1398 004f 3A       		.uleb128 0x3a
- 1399 0050 0B       		.uleb128 0xb
- 1400 0051 3B       		.uleb128 0x3b
- 1401 0052 0B       		.uleb128 0xb
- 1402 0053 49       		.uleb128 0x49
- 1403 0054 13       		.uleb128 0x13
- 1404 0055 38       		.uleb128 0x38
- 1405 0056 0B       		.uleb128 0xb
- 1406 0057 00       		.byte	0
- 1407 0058 00       		.byte	0
- 1408 0059 08       		.uleb128 0x8
- 1409 005a 0F       		.uleb128 0xf
- 1410 005b 00       		.byte	0
- 1411 005c 0B       		.uleb128 0xb
- 1412 005d 0B       		.uleb128 0xb
- 1413 005e 00       		.byte	0
- 1414 005f 00       		.byte	0
- 1415 0060 09       		.uleb128 0x9
- 1416 0061 0F       		.uleb128 0xf
- 1417 0062 00       		.byte	0
- 1418 0063 0B       		.uleb128 0xb
- 1419 0064 0B       		.uleb128 0xb
- 1420 0065 49       		.uleb128 0x49
- 1421 0066 13       		.uleb128 0x13
- 1422 0067 00       		.byte	0
- 1423 0068 00       		.byte	0
- 1424 0069 0A       		.uleb128 0xa
- 1425 006a 15       		.uleb128 0x15
- 1426 006b 01       		.byte	0x1
- 1427 006c 27       		.uleb128 0x27
- 1428 006d 19       		.uleb128 0x19
- 1429 006e 01       		.uleb128 0x1
- 1430 006f 13       		.uleb128 0x13
- 1431 0070 00       		.byte	0
- 1432 0071 00       		.byte	0
- 1433 0072 0B       		.uleb128 0xb
- 1434 0073 05       		.uleb128 0x5
- 1435 0074 00       		.byte	0
- 1436 0075 49       		.uleb128 0x49
- 1437 0076 13       		.uleb128 0x13
- 1438 0077 00       		.byte	0
- 1439 0078 00       		.byte	0
- 1440 0079 0C       		.uleb128 0xc
- 1441 007a 16       		.uleb128 0x16
- 1442 007b 00       		.byte	0
- 1443 007c 03       		.uleb128 0x3
- 1444 007d 0E       		.uleb128 0xe
- 1445 007e 3A       		.uleb128 0x3a
- 1446 007f 0B       		.uleb128 0xb
- 1447 0080 3B       		.uleb128 0x3b
- 1448 0081 05       		.uleb128 0x5
- 1449 0082 49       		.uleb128 0x49
- 1450 0083 13       		.uleb128 0x13
- 1451 0084 00       		.byte	0
- 1452 0085 00       		.byte	0
- 1453 0086 0D       		.uleb128 0xd
- 1454 0087 13       		.uleb128 0x13
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 29
-
-
- 1455 0088 01       		.byte	0x1
- 1456 0089 03       		.uleb128 0x3
- 1457 008a 0E       		.uleb128 0xe
- 1458 008b 0B       		.uleb128 0xb
- 1459 008c 0B       		.uleb128 0xb
- 1460 008d 3A       		.uleb128 0x3a
- 1461 008e 0B       		.uleb128 0xb
- 1462 008f 3B       		.uleb128 0x3b
- 1463 0090 05       		.uleb128 0x5
- 1464 0091 01       		.uleb128 0x1
- 1465 0092 13       		.uleb128 0x13
- 1466 0093 00       		.byte	0
- 1467 0094 00       		.byte	0
- 1468 0095 0E       		.uleb128 0xe
- 1469 0096 0D       		.uleb128 0xd
- 1470 0097 00       		.byte	0
- 1471 0098 03       		.uleb128 0x3
- 1472 0099 0E       		.uleb128 0xe
- 1473 009a 3A       		.uleb128 0x3a
- 1474 009b 0B       		.uleb128 0xb
- 1475 009c 3B       		.uleb128 0x3b
- 1476 009d 05       		.uleb128 0x5
- 1477 009e 49       		.uleb128 0x49
- 1478 009f 13       		.uleb128 0x13
- 1479 00a0 38       		.uleb128 0x38
- 1480 00a1 0B       		.uleb128 0xb
- 1481 00a2 00       		.byte	0
- 1482 00a3 00       		.byte	0
- 1483 00a4 0F       		.uleb128 0xf
- 1484 00a5 13       		.uleb128 0x13
- 1485 00a6 01       		.byte	0x1
- 1486 00a7 03       		.uleb128 0x3
- 1487 00a8 0E       		.uleb128 0xe
- 1488 00a9 0B       		.uleb128 0xb
- 1489 00aa 0B       		.uleb128 0xb
- 1490 00ab 3A       		.uleb128 0x3a
- 1491 00ac 0B       		.uleb128 0xb
- 1492 00ad 3B       		.uleb128 0x3b
- 1493 00ae 0B       		.uleb128 0xb
- 1494 00af 01       		.uleb128 0x1
- 1495 00b0 13       		.uleb128 0x13
- 1496 00b1 00       		.byte	0
- 1497 00b2 00       		.byte	0
- 1498 00b3 10       		.uleb128 0x10
- 1499 00b4 2E       		.uleb128 0x2e
- 1500 00b5 01       		.byte	0x1
- 1501 00b6 3F       		.uleb128 0x3f
- 1502 00b7 19       		.uleb128 0x19
- 1503 00b8 03       		.uleb128 0x3
- 1504 00b9 0E       		.uleb128 0xe
- 1505 00ba 3A       		.uleb128 0x3a
- 1506 00bb 0B       		.uleb128 0xb
- 1507 00bc 3B       		.uleb128 0x3b
- 1508 00bd 0B       		.uleb128 0xb
- 1509 00be 27       		.uleb128 0x27
- 1510 00bf 19       		.uleb128 0x19
- 1511 00c0 49       		.uleb128 0x49
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 30
-
-
- 1512 00c1 13       		.uleb128 0x13
- 1513 00c2 8701     		.uleb128 0x87
- 1514 00c4 19       		.uleb128 0x19
- 1515 00c5 11       		.uleb128 0x11
- 1516 00c6 01       		.uleb128 0x1
- 1517 00c7 12       		.uleb128 0x12
- 1518 00c8 06       		.uleb128 0x6
- 1519 00c9 40       		.uleb128 0x40
- 1520 00ca 18       		.uleb128 0x18
- 1521 00cb 9742     		.uleb128 0x2117
- 1522 00cd 19       		.uleb128 0x19
- 1523 00ce 01       		.uleb128 0x1
- 1524 00cf 13       		.uleb128 0x13
- 1525 00d0 00       		.byte	0
- 1526 00d1 00       		.byte	0
- 1527 00d2 11       		.uleb128 0x11
- 1528 00d3 898201   		.uleb128 0x4109
- 1529 00d6 00       		.byte	0
- 1530 00d7 11       		.uleb128 0x11
- 1531 00d8 01       		.uleb128 0x1
- 1532 00d9 31       		.uleb128 0x31
- 1533 00da 13       		.uleb128 0x13
- 1534 00db 00       		.byte	0
- 1535 00dc 00       		.byte	0
- 1536 00dd 12       		.uleb128 0x12
- 1537 00de 898201   		.uleb128 0x4109
- 1538 00e1 01       		.byte	0x1
- 1539 00e2 11       		.uleb128 0x11
- 1540 00e3 01       		.uleb128 0x1
- 1541 00e4 31       		.uleb128 0x31
- 1542 00e5 13       		.uleb128 0x13
- 1543 00e6 01       		.uleb128 0x1
- 1544 00e7 13       		.uleb128 0x13
- 1545 00e8 00       		.byte	0
- 1546 00e9 00       		.byte	0
- 1547 00ea 13       		.uleb128 0x13
- 1548 00eb 8A8201   		.uleb128 0x410a
- 1549 00ee 00       		.byte	0
- 1550 00ef 02       		.uleb128 0x2
- 1551 00f0 18       		.uleb128 0x18
- 1552 00f1 9142     		.uleb128 0x2111
- 1553 00f3 18       		.uleb128 0x18
- 1554 00f4 00       		.byte	0
- 1555 00f5 00       		.byte	0
- 1556 00f6 14       		.uleb128 0x14
- 1557 00f7 34       		.uleb128 0x34
- 1558 00f8 00       		.byte	0
- 1559 00f9 03       		.uleb128 0x3
- 1560 00fa 0E       		.uleb128 0xe
- 1561 00fb 3A       		.uleb128 0x3a
- 1562 00fc 0B       		.uleb128 0xb
- 1563 00fd 3B       		.uleb128 0x3b
- 1564 00fe 05       		.uleb128 0x5
- 1565 00ff 49       		.uleb128 0x49
- 1566 0100 13       		.uleb128 0x13
- 1567 0101 3F       		.uleb128 0x3f
- 1568 0102 19       		.uleb128 0x19
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 31
-
-
- 1569 0103 3C       		.uleb128 0x3c
- 1570 0104 19       		.uleb128 0x19
- 1571 0105 00       		.byte	0
- 1572 0106 00       		.byte	0
- 1573 0107 15       		.uleb128 0x15
- 1574 0108 34       		.uleb128 0x34
- 1575 0109 00       		.byte	0
- 1576 010a 03       		.uleb128 0x3
- 1577 010b 0E       		.uleb128 0xe
- 1578 010c 3A       		.uleb128 0x3a
- 1579 010d 0B       		.uleb128 0xb
- 1580 010e 3B       		.uleb128 0x3b
- 1581 010f 0B       		.uleb128 0xb
- 1582 0110 49       		.uleb128 0x49
- 1583 0111 13       		.uleb128 0x13
- 1584 0112 3F       		.uleb128 0x3f
- 1585 0113 19       		.uleb128 0x19
- 1586 0114 3C       		.uleb128 0x3c
- 1587 0115 19       		.uleb128 0x19
- 1588 0116 00       		.byte	0
- 1589 0117 00       		.byte	0
- 1590 0118 16       		.uleb128 0x16
- 1591 0119 26       		.uleb128 0x26
- 1592 011a 00       		.byte	0
- 1593 011b 49       		.uleb128 0x49
- 1594 011c 13       		.uleb128 0x13
- 1595 011d 00       		.byte	0
- 1596 011e 00       		.byte	0
- 1597 011f 17       		.uleb128 0x17
- 1598 0120 2E       		.uleb128 0x2e
- 1599 0121 00       		.byte	0
- 1600 0122 3F       		.uleb128 0x3f
- 1601 0123 19       		.uleb128 0x19
- 1602 0124 3C       		.uleb128 0x3c
- 1603 0125 19       		.uleb128 0x19
- 1604 0126 6E       		.uleb128 0x6e
- 1605 0127 0E       		.uleb128 0xe
- 1606 0128 03       		.uleb128 0x3
- 1607 0129 0E       		.uleb128 0xe
- 1608 012a 3A       		.uleb128 0x3a
- 1609 012b 0B       		.uleb128 0xb
- 1610 012c 3B       		.uleb128 0x3b
- 1611 012d 0B       		.uleb128 0xb
- 1612 012e 00       		.byte	0
- 1613 012f 00       		.byte	0
- 1614 0130 18       		.uleb128 0x18
- 1615 0131 2E       		.uleb128 0x2e
- 1616 0132 00       		.byte	0
- 1617 0133 3F       		.uleb128 0x3f
- 1618 0134 19       		.uleb128 0x19
- 1619 0135 3C       		.uleb128 0x3c
- 1620 0136 19       		.uleb128 0x19
- 1621 0137 6E       		.uleb128 0x6e
- 1622 0138 0E       		.uleb128 0xe
- 1623 0139 03       		.uleb128 0x3
- 1624 013a 0E       		.uleb128 0xe
- 1625 013b 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 32
-
-
- 1626 013c 0B       		.uleb128 0xb
- 1627 013d 3B       		.uleb128 0x3b
- 1628 013e 05       		.uleb128 0x5
- 1629 013f 00       		.byte	0
- 1630 0140 00       		.byte	0
- 1631 0141 00       		.byte	0
- 1632              		.section	.debug_aranges,"",%progbits
- 1633 0000 1C000000 		.4byte	0x1c
- 1634 0004 0200     		.2byte	0x2
- 1635 0006 00000000 		.4byte	.Ldebug_info0
- 1636 000a 04       		.byte	0x4
- 1637 000b 00       		.byte	0
- 1638 000c 0000     		.2byte	0
- 1639 000e 0000     		.2byte	0
- 1640 0010 00000000 		.4byte	.LFB594
- 1641 0014 60000000 		.4byte	.LFE594-.LFB594
- 1642 0018 00000000 		.4byte	0
- 1643 001c 00000000 		.4byte	0
- 1644              		.section	.debug_ranges,"",%progbits
- 1645              	.Ldebug_ranges0:
- 1646 0000 00000000 		.4byte	.LFB594
- 1647 0004 60000000 		.4byte	.LFE594
- 1648 0008 00000000 		.4byte	0
- 1649 000c 00000000 		.4byte	0
- 1650              		.section	.debug_line,"",%progbits
- 1651              	.Ldebug_line0:
- 1652 0000 08030000 		.section	.debug_str,"MS",%progbits,1
- 1652      0200ED02 
- 1652      00000201 
- 1652      FB0E0D00 
- 1652      01010101 
- 1653              	.LASF56:
- 1654 0000 70726F74 		.ascii	"protBusMasterMask\000"
- 1654      4275734D 
- 1654      61737465 
- 1654      724D6173 
- 1654      6B00
- 1655              	.LASF127:
- 1656 0012 72756E4D 		.ascii	"runMode\000"
- 1656      6F646500 
- 1657              	.LASF115:
- 1658 001a 72784275 		.ascii	"rxBufSize\000"
- 1658      6653697A 
- 1658      6500
- 1659              	.LASF66:
- 1660 0024 666C6173 		.ascii	"flashCtlMainWs3Freq\000"
- 1660      6843746C 
- 1660      4D61696E 
- 1660      57733346 
- 1660      72657100 
- 1661              	.LASF88:
- 1662 0038 6770696F 		.ascii	"gpioPrtCfgInOffset\000"
- 1662      50727443 
- 1662      6667496E 
- 1662      4F666673 
- 1662      657400
- 1663              	.LASF158:
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 33
-
-
- 1664 004b 6B696C6C 		.ascii	"killInput\000"
- 1664      496E7075 
- 1664      7400
- 1665              	.LASF106:
- 1666 0055 6970634C 		.ascii	"ipcLockStatusOffset\000"
- 1666      6F636B53 
- 1666      74617475 
- 1666      734F6666 
- 1666      73657400 
- 1667              	.LASF32:
- 1668 0069 63727970 		.ascii	"cryptoVersion\000"
- 1668      746F5665 
- 1668      7273696F 
- 1668      6E00
- 1669              	.LASF70:
- 1670 0077 64774368 		.ascii	"dwChCtlPrioPos\000"
- 1670      43746C50 
- 1670      72696F50 
- 1670      6F7300
- 1671              	.LASF28:
- 1672 0086 70617373 		.ascii	"passBase\000"
- 1672      42617365 
- 1672      00
- 1673              	.LASF104:
- 1674 008f 63707573 		.ascii	"cpussRam2Ctl0\000"
- 1674      7352616D 
- 1674      3243746C 
- 1674      3000
- 1675              	.LASF41:
- 1676 009d 63707573 		.ascii	"cpussIpcIrqNr\000"
- 1676      73497063 
- 1676      4972714E 
- 1676      7200
- 1677              	.LASF3:
- 1678 00ab 5F5F7569 		.ascii	"__uint8_t\000"
- 1678      6E74385F 
- 1678      7400
- 1679              	.LASF43:
- 1680 00b5 63707573 		.ascii	"cpussFlashPaSize\000"
- 1680      73466C61 
- 1680      73685061 
- 1680      53697A65 
- 1680      00
- 1681              	.LASF92:
- 1682 00c6 63707573 		.ascii	"cpussCm4ClockCtlOffset\000"
- 1682      73436D34 
- 1682      436C6F63 
- 1682      6B43746C 
- 1682      4F666673 
- 1683              	.LASF128:
- 1684 00dd 636F756E 		.ascii	"countDirection\000"
- 1684      74446972 
- 1684      65637469 
- 1684      6F6E00
- 1685              	.LASF140:
- 1686 00ec 73746F70 		.ascii	"stopInputMode\000"
- 1686      496E7075 
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 34
-
-
- 1686      744D6F64 
- 1686      6500
- 1687              	.LASF21:
- 1688 00fa 63707573 		.ascii	"cpussBase\000"
- 1688      73426173 
- 1688      6500
- 1689              	.LASF125:
- 1690 0104 70657269 		.ascii	"period\000"
- 1690      6F6400
- 1691              	.LASF50:
- 1692 010b 70657269 		.ascii	"periClockNr\000"
- 1692      436C6F63 
- 1692      6B4E7200 
- 1693              	.LASF135:
- 1694 0117 63617074 		.ascii	"captureInput\000"
- 1694      75726549 
- 1694      6E707574 
- 1694      00
- 1695              	.LASF12:
- 1696 0124 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1696      206C6F6E 
- 1696      6720756E 
- 1696      7369676E 
- 1696      65642069 
- 1697              	.LASF126:
- 1698 013b 636C6F63 		.ascii	"clockPrescaler\000"
- 1698      6B507265 
- 1698      7363616C 
- 1698      657200
- 1699              	.LASF74:
- 1700 014a 70657269 		.ascii	"periTrCmdOffset\000"
- 1700      5472436D 
- 1700      644F6666 
- 1700      73657400 
- 1701              	.LASF98:
- 1702 015a 63707573 		.ascii	"cpussSysTickCtlOffset\000"
- 1702      73537973 
- 1702      5469636B 
- 1702      43746C4F 
- 1702      66667365 
- 1703              	.LASF117:
- 1704 0170 74784275 		.ascii	"txBuf\000"
- 1704      6600
- 1705              	.LASF59:
- 1706 0176 666C6173 		.ascii	"flashPipeRequired\000"
- 1706      68506970 
- 1706      65526571 
- 1706      75697265 
- 1706      6400
- 1707              	.LASF63:
- 1708 0188 666C6173 		.ascii	"flashCtlMainWs0Freq\000"
- 1708      6843746C 
- 1708      4D61696E 
- 1708      57733046 
- 1708      72657100 
- 1709              	.LASF15:
- 1710 019c 696E7431 		.ascii	"int16_t\000"
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 35
-
-
- 1710      365F7400 
- 1711              	.LASF11:
- 1712 01a4 6C6F6E67 		.ascii	"long long int\000"
- 1712      206C6F6E 
- 1712      6720696E 
- 1712      7400
- 1713              	.LASF144:
- 1714 01b2 63795F73 		.ascii	"cy_stc_tcpwm_counter_config_t\000"
- 1714      74635F74 
- 1714      6370776D 
- 1714      5F636F75 
- 1714      6E746572 
- 1715              	.LASF123:
- 1716 01d0 63795F73 		.ascii	"cy_stc_scb_spi_context\000"
- 1716      74635F73 
- 1716      63625F73 
- 1716      70695F63 
- 1716      6F6E7465 
- 1717              	.LASF79:
- 1718 01e7 70657269 		.ascii	"periDivCmdTypeSelPos\000"
- 1718      44697643 
- 1718      6D645479 
- 1718      70655365 
- 1718      6C506F73 
- 1719              	.LASF96:
- 1720 01fc 63707573 		.ascii	"cpussTrimRamCtlOffset\000"
- 1720      73547269 
- 1720      6D52616D 
- 1720      43746C4F 
- 1720      66667365 
- 1721              	.LASF37:
- 1722 0212 69706356 		.ascii	"ipcVersion\000"
- 1722      65727369 
- 1722      6F6E00
- 1723              	.LASF99:
- 1724 021d 63707573 		.ascii	"cpussCm0NmiCtlOffset\000"
- 1724      73436D30 
- 1724      4E6D6943 
- 1724      746C4F66 
- 1724      66736574 
- 1725              	.LASF112:
- 1726 0232 63795F63 		.ascii	"cy_cb_scb_spi_handle_events_t\000"
- 1726      625F7363 
- 1726      625F7370 
- 1726      695F6861 
- 1726      6E646C65 
- 1727              	.LASF26:
- 1728 0250 6873696F 		.ascii	"hsiomBase\000"
- 1728      6D426173 
- 1728      6500
- 1729              	.LASF145:
- 1730 025a 63795F73 		.ascii	"cy_stc_tcpwm_pwm_config\000"
- 1730      74635F74 
- 1730      6370776D 
- 1730      5F70776D 
- 1730      5F636F6E 
- 1731              	.LASF8:
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 36
-
-
- 1732 0272 6C6F6E67 		.ascii	"long int\000"
- 1732      20696E74 
- 1732      00
- 1733              	.LASF57:
- 1734 027b 63727970 		.ascii	"cryptoMemSize\000"
- 1734      746F4D65 
- 1734      6D53697A 
- 1734      6500
- 1735              	.LASF164:
- 1736 0289 50574D5F 		.ascii	"PWM_1_config\000"
- 1736      315F636F 
- 1736      6E666967 
- 1736      00
- 1737              	.LASF23:
- 1738 0296 70657269 		.ascii	"periBase\000"
- 1738      42617365 
- 1738      00
- 1739              	.LASF55:
- 1740 029f 73797350 		.ascii	"sysPmSimoPresent\000"
- 1740      6D53696D 
- 1740      6F507265 
- 1740      73656E74 
- 1740      00
- 1741              	.LASF16:
- 1742 02b0 75696E74 		.ascii	"uint16_t\000"
- 1742      31365F74 
- 1742      00
- 1743              	.LASF110:
- 1744 02b9 646F7562 		.ascii	"double\000"
- 1744      6C6500
- 1745              	.LASF84:
- 1746 02c0 70657269 		.ascii	"periDiv16_5CtlOffset\000"
- 1746      44697631 
- 1746      365F3543 
- 1746      746C4F66 
- 1746      66736574 
- 1747              	.LASF48:
- 1748 02d5 73727373 		.ascii	"srssNumPll\000"
- 1748      4E756D50 
- 1748      6C6C00
- 1749              	.LASF134:
- 1750 02e0 63617074 		.ascii	"captureInputMode\000"
- 1750      75726549 
- 1750      6E707574 
- 1750      4D6F6465 
- 1750      00
- 1751              	.LASF82:
- 1752 02f1 70657269 		.ascii	"periDiv8CtlOffset\000"
- 1752      44697638 
- 1752      43746C4F 
- 1752      66667365 
- 1752      7400
- 1753              	.LASF89:
- 1754 0303 6770696F 		.ascii	"gpioPrtCfgOutOffset\000"
- 1754      50727443 
- 1754      66674F75 
- 1754      744F6666 
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 37
-
-
- 1754      73657400 
- 1755              	.LASF22:
- 1756 0317 666C6173 		.ascii	"flashcBase\000"
- 1756      68634261 
- 1756      736500
- 1757              	.LASF9:
- 1758 0322 5F5F7569 		.ascii	"__uint32_t\000"
- 1758      6E743332 
- 1758      5F7400
- 1759              	.LASF52:
- 1760 032d 70617373 		.ascii	"passSarChannels\000"
- 1760      53617243 
- 1760      68616E6E 
- 1760      656C7300 
- 1761              	.LASF167:
- 1762 033d 76546173 		.ascii	"vTaskStartScheduler\000"
- 1762      6B537461 
- 1762      72745363 
- 1762      68656475 
- 1762      6C657200 
- 1763              	.LASF4:
- 1764 0351 5F5F696E 		.ascii	"__int16_t\000"
- 1764      7431365F 
- 1764      7400
- 1765              	.LASF116:
- 1766 035b 72784275 		.ascii	"rxBufIdx\000"
- 1766      66496478 
- 1766      00
- 1767              	.LASF80:
- 1768 0364 70657269 		.ascii	"periDivCmdPaDivSelPos\000"
- 1768      44697643 
- 1768      6D645061 
- 1768      44697653 
- 1768      656C506F 
- 1769              	.LASF95:
- 1770 037a 63707573 		.ascii	"cpussCm4PwrCtlOffset\000"
- 1770      73436D34 
- 1770      50777243 
- 1770      746C4F66 
- 1770      66736574 
- 1771              	.LASF118:
- 1772 038f 74784275 		.ascii	"txBufSize\000"
- 1772      6653697A 
- 1772      6500
- 1773              	.LASF90:
- 1774 0399 6770696F 		.ascii	"gpioPrtCfgSioOffset\000"
- 1774      50727443 
- 1774      66675369 
- 1774      6F4F6666 
- 1774      73657400 
- 1775              	.LASF94:
- 1776 03ad 63707573 		.ascii	"cpussCm0StatusOffset\000"
- 1776      73436D30 
- 1776      53746174 
- 1776      75734F66 
- 1776      66736574 
- 1777              	.LASF13:
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 38
-
-
- 1778 03c2 756E7369 		.ascii	"unsigned int\000"
- 1778      676E6564 
- 1778      20696E74 
- 1778      00
- 1779              	.LASF75:
- 1780 03cf 70657269 		.ascii	"periTrCmdGrSelMsk\000"
- 1780      5472436D 
- 1780      64477253 
- 1780      656C4D73 
- 1780      6B00
- 1781              	.LASF10:
- 1782 03e1 6C6F6E67 		.ascii	"long unsigned int\000"
- 1782      20756E73 
- 1782      69676E65 
- 1782      6420696E 
- 1782      7400
- 1783              	.LASF40:
- 1784 03f3 63707573 		.ascii	"cpussIpcNr\000"
- 1784      73497063 
- 1784      4E7200
- 1785              	.LASF42:
- 1786 03fe 63707573 		.ascii	"cpussDwChNr\000"
- 1786      73447743 
- 1786      684E7200 
- 1787              	.LASF65:
- 1788 040a 666C6173 		.ascii	"flashCtlMainWs2Freq\000"
- 1788      6843746C 
- 1788      4D61696E 
- 1788      57733246 
- 1788      72657100 
- 1789              	.LASF155:
- 1790 041e 73776170 		.ascii	"swapInputMode\000"
- 1790      496E7075 
- 1790      744D6F64 
- 1790      6500
- 1791              	.LASF76:
- 1792 042c 70657269 		.ascii	"periTrGrOffset\000"
- 1792      54724772 
- 1792      4F666673 
- 1792      657400
- 1793              	.LASF103:
- 1794 043b 63707573 		.ascii	"cpussRam1Ctl0\000"
- 1794      7352616D 
- 1794      3143746C 
- 1794      3000
- 1795              	.LASF157:
- 1796 0449 6B696C6C 		.ascii	"killInputMode\000"
- 1796      496E7075 
- 1796      744D6F64 
- 1796      6500
- 1797              	.LASF120:
- 1798 0457 63624576 		.ascii	"cbEvents\000"
- 1798      656E7473 
- 1798      00
- 1799              	.LASF87:
- 1800 0460 6770696F 		.ascii	"gpioPrtCfgOffset\000"
- 1800      50727443 
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 39
-
-
- 1800      66674F66 
- 1800      66736574 
- 1800      00
- 1801              	.LASF35:
- 1802 0471 6770696F 		.ascii	"gpioVersion\000"
- 1802      56657273 
- 1802      696F6E00 
- 1803              	.LASF107:
- 1804 047d 63795F73 		.ascii	"cy_stc_device_t\000"
- 1804      74635F64 
- 1804      65766963 
- 1804      655F7400 
- 1805              	.LASF122:
- 1806 048d 63795F73 		.ascii	"cy_stc_scb_spi_context_t\000"
- 1806      74635F73 
- 1806      63625F73 
- 1806      70695F63 
- 1806      6F6E7465 
- 1807              	.LASF0:
- 1808 04a6 73686F72 		.ascii	"short int\000"
- 1808      7420696E 
- 1808      7400
- 1809              	.LASF152:
- 1810 04b0 696E7665 		.ascii	"invertPWMOut\000"
- 1810      72745057 
- 1810      4D4F7574 
- 1810      00
- 1811              	.LASF148:
- 1812 04bd 64656164 		.ascii	"deadTimeClocks\000"
- 1812      54696D65 
- 1812      436C6F63 
- 1812      6B7300
- 1813              	.LASF25:
- 1814 04cc 70726F74 		.ascii	"protBase\000"
- 1814      42617365 
- 1814      00
- 1815              	.LASF142:
- 1816 04d5 636F756E 		.ascii	"countInputMode\000"
- 1816      74496E70 
- 1816      75744D6F 
- 1816      646500
- 1817              	.LASF91:
- 1818 04e4 63707573 		.ascii	"cpussCm0ClockCtlOffset\000"
- 1818      73436D30 
- 1818      436C6F63 
- 1818      6B43746C 
- 1818      4F666673 
- 1819              	.LASF30:
- 1820 04fb 63727970 		.ascii	"cryptoBase\000"
- 1820      746F4261 
- 1820      736500
- 1821              	.LASF38:
- 1822 0506 70657269 		.ascii	"periVersion\000"
- 1822      56657273 
- 1822      696F6E00 
- 1823              	.LASF124:
- 1824 0512 63795F73 		.ascii	"cy_stc_tcpwm_counter_config\000"
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 40
-
-
- 1824      74635F74 
- 1824      6370776D 
- 1824      5F636F75 
- 1824      6E746572 
- 1825              	.LASF19:
- 1826 052e 73697A65 		.ascii	"sizetype\000"
- 1826      74797065 
- 1826      00
- 1827              	.LASF68:
- 1828 0537 64774368 		.ascii	"dwChOffset\000"
- 1828      4F666673 
- 1828      657400
- 1829              	.LASF20:
- 1830 0542 6C6F6E67 		.ascii	"long double\000"
- 1830      20646F75 
- 1830      626C6500 
- 1831              	.LASF166:
- 1832 054e 78546173 		.ascii	"xTaskCreate\000"
- 1832      6B437265 
- 1832      61746500 
- 1833              	.LASF81:
- 1834 055a 70657269 		.ascii	"periDivCmdPaTypeSelPos\000"
- 1834      44697643 
- 1834      6D645061 
- 1834      54797065 
- 1834      53656C50 
- 1835              	.LASF53:
- 1836 0571 65704D6F 		.ascii	"epMonitorNr\000"
- 1836      6E69746F 
- 1836      724E7200 
- 1837              	.LASF39:
- 1838 057d 70726F74 		.ascii	"protVersion\000"
- 1838      56657273 
- 1838      696F6E00 
- 1839              	.LASF72:
- 1840 0589 64775374 		.ascii	"dwStatusChIdxPos\000"
- 1840      61747573 
- 1840      43684964 
- 1840      78506F73 
- 1840      00
- 1841              	.LASF54:
- 1842 059a 75646250 		.ascii	"udbPresent\000"
- 1842      72657365 
- 1842      6E7400
- 1843              	.LASF34:
- 1844 05a5 666C6173 		.ascii	"flashcVersion\000"
- 1844      68635665 
- 1844      7273696F 
- 1844      6E00
- 1845              	.LASF51:
- 1846 05b3 736D6966 		.ascii	"smifDeviceNr\000"
- 1846      44657669 
- 1846      63654E72 
- 1846      00
- 1847              	.LASF168:
- 1848 05c0 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 1848      43313120 
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 41
-
-
- 1848      352E342E 
- 1848      31203230 
- 1848      31363036 
- 1849 05f3 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m4 -mfloat-abi=s"
- 1849      20726576 
- 1849      6973696F 
- 1849      6E203233 
- 1849      37373135 
- 1850 0626 6F667466 		.ascii	"oftfp -mfpu=fpv4-sp-d16 -mthumb -g -Og -ffunction-s"
- 1850      70202D6D 
- 1850      6670753D 
- 1850      66707634 
- 1850      2D73702D 
- 1851 0659 65637469 		.ascii	"ections -ffat-lto-objects\000"
- 1851      6F6E7320 
- 1851      2D666661 
- 1851      742D6C74 
- 1851      6F2D6F62 
- 1852              	.LASF146:
- 1853 0673 70776D4D 		.ascii	"pwmMode\000"
- 1853      6F646500 
- 1854              	.LASF109:
- 1855 067b 666C6F61 		.ascii	"float\000"
- 1855      7400
- 1856              	.LASF73:
- 1857 0681 64775374 		.ascii	"dwStatusChIdxMsk\000"
- 1857      61747573 
- 1857      43684964 
- 1857      784D736B 
- 1857      00
- 1858              	.LASF161:
- 1859 0692 63795F64 		.ascii	"cy_device\000"
- 1859      65766963 
- 1859      6500
- 1860              	.LASF101:
- 1861 069c 63707573 		.ascii	"cpussRomCtl\000"
- 1861      73526F6D 
- 1861      43746C00 
- 1862              	.LASF71:
- 1863 06a8 64774368 		.ascii	"dwChCtlPreemptablePos\000"
- 1863      43746C50 
- 1863      7265656D 
- 1863      70746162 
- 1863      6C65506F 
- 1864              	.LASF154:
- 1865 06be 6B696C6C 		.ascii	"killMode\000"
- 1865      4D6F6465 
+  72:main_cm4.c    ****       xTaskCreate((void*)capSense_task, "Bouton", 400, NULL, 1, 0);
+  71              		.loc 1 72 0
+  72 0040 0194     		str	r4, [sp, #4]
+  73 0042 0095     		str	r5, [sp]
+  74 0044 2346     		mov	r3, r4
+  75 0046 4FF4C872 		mov	r2, #400
+  76 004a 0949     		ldr	r1, .L4+24
+  77 004c 0948     		ldr	r0, .L4+28
+  78 004e FFF7FEFF 		bl	xTaskCreate
+  79              	.LVL4:
+  73:main_cm4.c    ****     
+  74:main_cm4.c    ****       vTaskStartScheduler();
+  80              		.loc 1 74 0
+  81 0052 FFF7FEFF 		bl	vTaskStartScheduler
+  82              	.LVL5:
+  83              	.L2:
+  84 0056 FEE7     		b	.L2
+  85              	.L5:
+  86              		.align	2
+  87              	.L4:
+  88 0058 00000000 		.word	.LC0
+  89 005c 00000000 		.word	activerMenu
+  90 0060 0C000000 		.word	.LC1
+  91 0064 00000000 		.word	afficherMenu
+  92 0068 1C000000 		.word	.LC2
+  93 006c 00000000 		.word	afficherEcranPrincipal
+  94 0070 2C000000 		.word	.LC3
+  95 0074 00000000 		.word	capSense_task
+  96              		.cfi_endproc
+  97              	.LFE594:
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 4
+
+
+  98              		.size	main, .-main
+  99              		.section	.rodata.str1.4,"aMS",%progbits,1
+ 100              		.align	2
+ 101              	.LC0:
+ 102 0000 41637469 		.ascii	"ActiverMenu\000"
+ 102      7665724D 
+ 102      656E7500 
+ 103              	.LC1:
+ 104 000c 41666669 		.ascii	"AfficherMenu\000"
+ 104      63686572 
+ 104      4D656E75 
+ 104      00
+ 105 0019 000000   		.space	3
+ 106              	.LC2:
+ 107 001c 41666669 		.ascii	"AfficherEcran\000"
+ 107      63686572 
+ 107      45637261 
+ 107      6E00
+ 108 002a 0000     		.space	2
+ 109              	.LC3:
+ 110 002c 426F7574 		.ascii	"Bouton\000"
+ 110      6F6E00
+ 111              		.text
+ 112              	.Letext0:
+ 113              		.file 2 "c:\\users\\nancy\\documents\\myriane\\autres\\psoc creator\\4.4\\psoc creator\\import\\gn
+ 114              		.file 3 "c:\\users\\nancy\\documents\\myriane\\autres\\psoc creator\\4.4\\psoc creator\\import\\gn
+ 115              		.file 4 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/device/cy_device.h"
+ 116              		.file 5 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/scb/cy_scb_spi.h"
+ 117              		.file 6 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/tcpwm/cy_tcpwm_counter.h"
+ 118              		.file 7 "Generated_Source\\PSoC6\\pdl\\drivers/peripheral/tcpwm/cy_tcpwm_pwm.h"
+ 119              		.file 8 "Generated_Source\\PSoC6\\pdl\\cmsis/include/core_cm4.h"
+ 120              		.file 9 "Generated_Source\\PSoC6/CY_EINK_SPIM.h"
+ 121              		.file 10 "Generated_Source\\PSoC6/CY_EINK_Timer.h"
+ 122              		.file 11 "Generated_Source\\PSoC6/PWM_1.h"
+ 123              		.file 12 "activationMenu.h"
+ 124              		.file 13 "Generated_Source\\PSoC6\\pdl\\rtos/FreeRTOS/10.0.1/Source/include/task.h"
+ 125              		.section	.debug_info,"",%progbits
+ 126              	.Ldebug_info0:
+ 127 0000 77090000 		.4byte	0x977
+ 128 0004 0400     		.2byte	0x4
+ 129 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 130 000a 04       		.byte	0x4
+ 131 000b 01       		.uleb128 0x1
+ 132 000c C0050000 		.4byte	.LASF168
+ 133 0010 0C       		.byte	0xc
+ 134 0011 520A0000 		.4byte	.LASF169
+ 135 0015 F7080000 		.4byte	.LASF170
+ 136 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 137 001d 00000000 		.4byte	0
+ 138 0021 00000000 		.4byte	.Ldebug_line0
+ 139 0025 02       		.uleb128 0x2
+ 140 0026 02       		.byte	0x2
+ 141 0027 05       		.byte	0x5
+ 142 0028 A6040000 		.4byte	.LASF0
+ 143 002c 02       		.uleb128 0x2
+ 144 002d 01       		.byte	0x1
+ 145 002e 06       		.byte	0x6
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 5
+
+
+ 146 002f 270A0000 		.4byte	.LASF1
+ 147 0033 03       		.uleb128 0x3
+ 148 0034 AB000000 		.4byte	.LASF3
+ 149 0038 02       		.byte	0x2
+ 150 0039 1D       		.byte	0x1d
+ 151 003a 3E000000 		.4byte	0x3e
+ 152 003e 02       		.uleb128 0x2
+ 153 003f 01       		.byte	0x1
+ 154 0040 08       		.byte	0x8
+ 155 0041 E6060000 		.4byte	.LASF2
+ 156 0045 03       		.uleb128 0x3
+ 157 0046 51030000 		.4byte	.LASF4
+ 158 004a 02       		.byte	0x2
+ 159 004b 29       		.byte	0x29
+ 160 004c 25000000 		.4byte	0x25
+ 161 0050 03       		.uleb128 0x3
+ 162 0051 15080000 		.4byte	.LASF5
+ 163 0055 02       		.byte	0x2
+ 164 0056 2B       		.byte	0x2b
+ 165 0057 5B000000 		.4byte	0x5b
+ 166 005b 02       		.uleb128 0x2
+ 167 005c 02       		.byte	0x2
+ 168 005d 07       		.byte	0x7
+ 169 005e 80080000 		.4byte	.LASF6
+ 170 0062 03       		.uleb128 0x3
+ 171 0063 33080000 		.4byte	.LASF7
+ 172 0067 02       		.byte	0x2
+ 173 0068 3F       		.byte	0x3f
+ 174 0069 6D000000 		.4byte	0x6d
+ 175 006d 02       		.uleb128 0x2
+ 176 006e 04       		.byte	0x4
+ 177 006f 05       		.byte	0x5
+ 178 0070 72020000 		.4byte	.LASF8
+ 179 0074 03       		.uleb128 0x3
+ 180 0075 22030000 		.4byte	.LASF9
+ 181 0079 02       		.byte	0x2
+ 182 007a 41       		.byte	0x41
+ 183 007b 7F000000 		.4byte	0x7f
+ 184 007f 02       		.uleb128 0x2
+ 185 0080 04       		.byte	0x4
+ 186 0081 07       		.byte	0x7
+ 187 0082 E1030000 		.4byte	.LASF10
+ 188 0086 02       		.uleb128 0x2
+ 189 0087 08       		.byte	0x8
+ 190 0088 05       		.byte	0x5
+ 191 0089 A4010000 		.4byte	.LASF11
+ 192 008d 02       		.uleb128 0x2
+ 193 008e 08       		.byte	0x8
+ 194 008f 07       		.byte	0x7
+ 195 0090 24010000 		.4byte	.LASF12
+ 196 0094 04       		.uleb128 0x4
+ 197 0095 04       		.byte	0x4
+ 198 0096 05       		.byte	0x5
+ 199 0097 696E7400 		.ascii	"int\000"
+ 200 009b 02       		.uleb128 0x2
+ 201 009c 04       		.byte	0x4
+ 202 009d 07       		.byte	0x7
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 6
+
+
+ 203 009e C2030000 		.4byte	.LASF13
+ 204 00a2 03       		.uleb128 0x3
+ 205 00a3 87090000 		.4byte	.LASF14
+ 206 00a7 03       		.byte	0x3
+ 207 00a8 18       		.byte	0x18
+ 208 00a9 33000000 		.4byte	0x33
+ 209 00ad 03       		.uleb128 0x3
+ 210 00ae 9C010000 		.4byte	.LASF15
+ 211 00b2 03       		.byte	0x3
+ 212 00b3 20       		.byte	0x20
+ 213 00b4 45000000 		.4byte	0x45
+ 214 00b8 03       		.uleb128 0x3
+ 215 00b9 B0020000 		.4byte	.LASF16
+ 216 00bd 03       		.byte	0x3
+ 217 00be 24       		.byte	0x24
+ 218 00bf 50000000 		.4byte	0x50
+ 219 00c3 03       		.uleb128 0x3
+ 220 00c4 DE060000 		.4byte	.LASF17
+ 221 00c8 03       		.byte	0x3
+ 222 00c9 2C       		.byte	0x2c
+ 223 00ca 62000000 		.4byte	0x62
+ 224 00ce 03       		.uleb128 0x3
+ 225 00cf E8080000 		.4byte	.LASF18
+ 226 00d3 03       		.byte	0x3
+ 227 00d4 30       		.byte	0x30
+ 228 00d5 74000000 		.4byte	0x74
+ 229 00d9 02       		.uleb128 0x2
+ 230 00da 04       		.byte	0x4
+ 231 00db 07       		.byte	0x7
+ 232 00dc 2E050000 		.4byte	.LASF19
+ 233 00e0 05       		.uleb128 0x5
+ 234 00e1 CE000000 		.4byte	0xce
+ 235 00e5 02       		.uleb128 0x2
+ 236 00e6 08       		.byte	0x8
+ 237 00e7 04       		.byte	0x4
+ 238 00e8 42050000 		.4byte	.LASF20
+ 239 00ec 06       		.uleb128 0x6
+ 240 00ed B8       		.byte	0xb8
+ 241 00ee 04       		.byte	0x4
+ 242 00ef 34       		.byte	0x34
+ 243 00f0 FD040000 		.4byte	0x4fd
+ 244 00f4 07       		.uleb128 0x7
+ 245 00f5 FA000000 		.4byte	.LASF21
+ 246 00f9 04       		.byte	0x4
+ 247 00fa 37       		.byte	0x37
+ 248 00fb CE000000 		.4byte	0xce
+ 249 00ff 00       		.byte	0
+ 250 0100 07       		.uleb128 0x7
+ 251 0101 17030000 		.4byte	.LASF22
+ 252 0105 04       		.byte	0x4
+ 253 0106 38       		.byte	0x38
+ 254 0107 CE000000 		.4byte	0xce
+ 255 010b 04       		.byte	0x4
+ 256 010c 07       		.uleb128 0x7
+ 257 010d 96020000 		.4byte	.LASF23
+ 258 0111 04       		.byte	0x4
+ 259 0112 39       		.byte	0x39
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 7
+
+
+ 260 0113 CE000000 		.4byte	0xce
+ 261 0117 08       		.byte	0x8
+ 262 0118 07       		.uleb128 0x7
+ 263 0119 C7060000 		.4byte	.LASF24
+ 264 011d 04       		.byte	0x4
+ 265 011e 3A       		.byte	0x3a
+ 266 011f CE000000 		.4byte	0xce
+ 267 0123 0C       		.byte	0xc
+ 268 0124 07       		.uleb128 0x7
+ 269 0125 CC040000 		.4byte	.LASF25
+ 270 0129 04       		.byte	0x4
+ 271 012a 3B       		.byte	0x3b
+ 272 012b CE000000 		.4byte	0xce
+ 273 012f 10       		.byte	0x10
+ 274 0130 07       		.uleb128 0x7
+ 275 0131 50020000 		.4byte	.LASF26
+ 276 0135 04       		.byte	0x4
+ 277 0136 3C       		.byte	0x3c
+ 278 0137 CE000000 		.4byte	0xce
+ 279 013b 14       		.byte	0x14
+ 280 013c 07       		.uleb128 0x7
+ 281 013d D1080000 		.4byte	.LASF27
+ 282 0141 04       		.byte	0x4
+ 283 0142 3D       		.byte	0x3d
+ 284 0143 CE000000 		.4byte	0xce
+ 285 0147 18       		.byte	0x18
+ 286 0148 07       		.uleb128 0x7
+ 287 0149 86000000 		.4byte	.LASF28
+ 288 014d 04       		.byte	0x4
+ 289 014e 3E       		.byte	0x3e
+ 290 014f CE000000 		.4byte	0xce
+ 291 0153 1C       		.byte	0x1c
+ 292 0154 07       		.uleb128 0x7
+ 293 0155 330A0000 		.4byte	.LASF29
+ 294 0159 04       		.byte	0x4
+ 295 015a 3F       		.byte	0x3f
+ 296 015b CE000000 		.4byte	0xce
+ 297 015f 20       		.byte	0x20
+ 298 0160 07       		.uleb128 0x7
+ 299 0161 FB040000 		.4byte	.LASF30
+ 300 0165 04       		.byte	0x4
+ 301 0166 40       		.byte	0x40
+ 302 0167 CE000000 		.4byte	0xce
+ 303 016b 24       		.byte	0x24
+ 304 016c 07       		.uleb128 0x7
+ 305 016d 5D0A0000 		.4byte	.LASF31
+ 306 0171 04       		.byte	0x4
+ 307 0172 43       		.byte	0x43
+ 308 0173 A2000000 		.4byte	0xa2
+ 309 0177 28       		.byte	0x28
+ 310 0178 07       		.uleb128 0x7
+ 311 0179 69000000 		.4byte	.LASF32
+ 312 017d 04       		.byte	0x4
+ 313 017e 44       		.byte	0x44
+ 314 017f A2000000 		.4byte	0xa2
+ 315 0183 29       		.byte	0x29
+ 316 0184 07       		.uleb128 0x7
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 8
+
+
+ 317 0185 3D080000 		.4byte	.LASF33
+ 318 0189 04       		.byte	0x4
+ 319 018a 45       		.byte	0x45
+ 320 018b A2000000 		.4byte	0xa2
+ 321 018f 2A       		.byte	0x2a
+ 322 0190 07       		.uleb128 0x7
+ 323 0191 A5050000 		.4byte	.LASF34
+ 324 0195 04       		.byte	0x4
+ 325 0196 46       		.byte	0x46
+ 326 0197 A2000000 		.4byte	0xa2
+ 327 019b 2B       		.byte	0x2b
+ 328 019c 07       		.uleb128 0x7
+ 329 019d 71040000 		.4byte	.LASF35
+ 330 01a1 04       		.byte	0x4
+ 331 01a2 47       		.byte	0x47
+ 332 01a3 A2000000 		.4byte	0xa2
+ 333 01a7 2C       		.byte	0x2c
+ 334 01a8 07       		.uleb128 0x7
+ 335 01a9 47080000 		.4byte	.LASF36
+ 336 01ad 04       		.byte	0x4
+ 337 01ae 48       		.byte	0x48
+ 338 01af A2000000 		.4byte	0xa2
+ 339 01b3 2D       		.byte	0x2d
+ 340 01b4 07       		.uleb128 0x7
+ 341 01b5 12020000 		.4byte	.LASF37
+ 342 01b9 04       		.byte	0x4
+ 343 01ba 49       		.byte	0x49
+ 344 01bb A2000000 		.4byte	0xa2
+ 345 01bf 2E       		.byte	0x2e
+ 346 01c0 07       		.uleb128 0x7
+ 347 01c1 06050000 		.4byte	.LASF38
+ 348 01c5 04       		.byte	0x4
+ 349 01c6 4A       		.byte	0x4a
+ 350 01c7 A2000000 		.4byte	0xa2
+ 351 01cb 2F       		.byte	0x2f
+ 352 01cc 07       		.uleb128 0x7
+ 353 01cd 7D050000 		.4byte	.LASF39
+ 354 01d1 04       		.byte	0x4
+ 355 01d2 4B       		.byte	0x4b
+ 356 01d3 A2000000 		.4byte	0xa2
+ 357 01d7 30       		.byte	0x30
+ 358 01d8 07       		.uleb128 0x7
+ 359 01d9 F3030000 		.4byte	.LASF40
+ 360 01dd 04       		.byte	0x4
+ 361 01de 4E       		.byte	0x4e
+ 362 01df A2000000 		.4byte	0xa2
+ 363 01e3 31       		.byte	0x31
+ 364 01e4 07       		.uleb128 0x7
+ 365 01e5 9D000000 		.4byte	.LASF41
+ 366 01e9 04       		.byte	0x4
+ 367 01ea 4F       		.byte	0x4f
+ 368 01eb A2000000 		.4byte	0xa2
+ 369 01ef 32       		.byte	0x32
+ 370 01f0 07       		.uleb128 0x7
+ 371 01f1 FE030000 		.4byte	.LASF42
+ 372 01f5 04       		.byte	0x4
+ 373 01f6 50       		.byte	0x50
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 9
+
+
+ 374 01f7 A2000000 		.4byte	0xa2
+ 375 01fb 33       		.byte	0x33
+ 376 01fc 07       		.uleb128 0x7
+ 377 01fd B5000000 		.4byte	.LASF43
+ 378 0201 04       		.byte	0x4
+ 379 0202 51       		.byte	0x51
+ 380 0203 A2000000 		.4byte	0xa2
+ 381 0207 34       		.byte	0x34
+ 382 0208 07       		.uleb128 0x7
+ 383 0209 B4080000 		.4byte	.LASF44
+ 384 020d 04       		.byte	0x4
+ 385 020e 52       		.byte	0x52
+ 386 020f AD000000 		.4byte	0xad
+ 387 0213 36       		.byte	0x36
+ 388 0214 07       		.uleb128 0x7
+ 389 0215 B2070000 		.4byte	.LASF45
+ 390 0219 04       		.byte	0x4
+ 391 021a 53       		.byte	0x53
+ 392 021b AD000000 		.4byte	0xad
+ 393 021f 38       		.byte	0x38
+ 394 0220 07       		.uleb128 0x7
+ 395 0221 54090000 		.4byte	.LASF46
+ 396 0225 04       		.byte	0x4
+ 397 0226 54       		.byte	0x54
+ 398 0227 AD000000 		.4byte	0xad
+ 399 022b 3A       		.byte	0x3a
+ 400 022c 07       		.uleb128 0x7
+ 401 022d 180A0000 		.4byte	.LASF47
+ 402 0231 04       		.byte	0x4
+ 403 0232 55       		.byte	0x55
+ 404 0233 A2000000 		.4byte	0xa2
+ 405 0237 3C       		.byte	0x3c
+ 406 0238 07       		.uleb128 0x7
+ 407 0239 D5020000 		.4byte	.LASF48
+ 408 023d 04       		.byte	0x4
+ 409 023e 56       		.byte	0x56
+ 410 023f A2000000 		.4byte	0xa2
+ 411 0243 3D       		.byte	0x3d
+ 412 0244 07       		.uleb128 0x7
+ 413 0245 94070000 		.4byte	.LASF49
+ 414 0249 04       		.byte	0x4
+ 415 024a 57       		.byte	0x57
+ 416 024b A2000000 		.4byte	0xa2
+ 417 024f 3E       		.byte	0x3e
+ 418 0250 07       		.uleb128 0x7
+ 419 0251 0B010000 		.4byte	.LASF50
+ 420 0255 04       		.byte	0x4
+ 421 0256 58       		.byte	0x58
+ 422 0257 A2000000 		.4byte	0xa2
+ 423 025b 3F       		.byte	0x3f
+ 424 025c 07       		.uleb128 0x7
+ 425 025d B3050000 		.4byte	.LASF51
+ 426 0261 04       		.byte	0x4
+ 427 0262 59       		.byte	0x59
+ 428 0263 A2000000 		.4byte	0xa2
+ 429 0267 40       		.byte	0x40
+ 430 0268 07       		.uleb128 0x7
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 10
+
+
+ 431 0269 2D030000 		.4byte	.LASF52
+ 432 026d 04       		.byte	0x4
+ 433 026e 5A       		.byte	0x5a
+ 434 026f A2000000 		.4byte	0xa2
+ 435 0273 41       		.byte	0x41
+ 436 0274 07       		.uleb128 0x7
+ 437 0275 71050000 		.4byte	.LASF53
+ 438 0279 04       		.byte	0x4
+ 439 027a 5B       		.byte	0x5b
+ 440 027b A2000000 		.4byte	0xa2
+ 441 027f 42       		.byte	0x42
+ 442 0280 07       		.uleb128 0x7
+ 443 0281 9A050000 		.4byte	.LASF54
+ 444 0285 04       		.byte	0x4
+ 445 0286 5C       		.byte	0x5c
+ 446 0287 A2000000 		.4byte	0xa2
+ 447 028b 43       		.byte	0x43
+ 448 028c 07       		.uleb128 0x7
+ 449 028d 9F020000 		.4byte	.LASF55
+ 450 0291 04       		.byte	0x4
+ 451 0292 5D       		.byte	0x5d
+ 452 0293 A2000000 		.4byte	0xa2
+ 453 0297 44       		.byte	0x44
+ 454 0298 07       		.uleb128 0x7
+ 455 0299 00000000 		.4byte	.LASF56
+ 456 029d 04       		.byte	0x4
+ 457 029e 5E       		.byte	0x5e
+ 458 029f CE000000 		.4byte	0xce
+ 459 02a3 48       		.byte	0x48
+ 460 02a4 07       		.uleb128 0x7
+ 461 02a5 7B020000 		.4byte	.LASF57
+ 462 02a9 04       		.byte	0x4
+ 463 02aa 5F       		.byte	0x5f
+ 464 02ab CE000000 		.4byte	0xce
+ 465 02af 4C       		.byte	0x4c
+ 466 02b0 07       		.uleb128 0x7
+ 467 02b1 6A0A0000 		.4byte	.LASF58
+ 468 02b5 04       		.byte	0x4
+ 469 02b6 60       		.byte	0x60
+ 470 02b7 A2000000 		.4byte	0xa2
+ 471 02bb 50       		.byte	0x50
+ 472 02bc 07       		.uleb128 0x7
+ 473 02bd 76010000 		.4byte	.LASF59
+ 474 02c1 04       		.byte	0x4
+ 475 02c2 61       		.byte	0x61
+ 476 02c3 A2000000 		.4byte	0xa2
+ 477 02c7 51       		.byte	0x51
+ 478 02c8 07       		.uleb128 0x7
+ 479 02c9 77090000 		.4byte	.LASF60
+ 480 02cd 04       		.byte	0x4
+ 481 02ce 62       		.byte	0x62
+ 482 02cf A2000000 		.4byte	0xa2
+ 483 02d3 52       		.byte	0x52
+ 484 02d4 07       		.uleb128 0x7
+ 485 02d5 400A0000 		.4byte	.LASF61
+ 486 02d9 04       		.byte	0x4
+ 487 02da 63       		.byte	0x63
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 11
+
+
+ 488 02db A2000000 		.4byte	0xa2
+ 489 02df 53       		.byte	0x53
+ 490 02e0 07       		.uleb128 0x7
+ 491 02e1 A2070000 		.4byte	.LASF62
+ 492 02e5 04       		.byte	0x4
+ 493 02e6 64       		.byte	0x64
+ 494 02e7 A2000000 		.4byte	0xa2
+ 495 02eb 54       		.byte	0x54
+ 496 02ec 07       		.uleb128 0x7
+ 497 02ed 88010000 		.4byte	.LASF63
+ 498 02f1 04       		.byte	0x4
+ 499 02f2 65       		.byte	0x65
+ 500 02f3 A2000000 		.4byte	0xa2
+ 501 02f7 55       		.byte	0x55
+ 502 02f8 07       		.uleb128 0x7
+ 503 02f9 01080000 		.4byte	.LASF64
+ 504 02fd 04       		.byte	0x4
+ 505 02fe 66       		.byte	0x66
+ 506 02ff A2000000 		.4byte	0xa2
+ 507 0303 56       		.byte	0x56
+ 508 0304 07       		.uleb128 0x7
+ 509 0305 0A040000 		.4byte	.LASF65
+ 510 0309 04       		.byte	0x4
+ 511 030a 67       		.byte	0x67
+ 512 030b A2000000 		.4byte	0xa2
+ 513 030f 57       		.byte	0x57
+ 514 0310 07       		.uleb128 0x7
+ 515 0311 24000000 		.4byte	.LASF66
+ 516 0315 04       		.byte	0x4
+ 517 0316 68       		.byte	0x68
+ 518 0317 A2000000 		.4byte	0xa2
+ 519 031b 58       		.byte	0x58
+ 520 031c 07       		.uleb128 0x7
+ 521 031d F4060000 		.4byte	.LASF67
+ 522 0321 04       		.byte	0x4
+ 523 0322 69       		.byte	0x69
+ 524 0323 A2000000 		.4byte	0xa2
+ 525 0327 59       		.byte	0x59
+ 526 0328 07       		.uleb128 0x7
+ 527 0329 37050000 		.4byte	.LASF68
+ 528 032d 04       		.byte	0x4
+ 529 032e 6E       		.byte	0x6e
+ 530 032f B8000000 		.4byte	0xb8
+ 531 0333 5A       		.byte	0x5a
+ 532 0334 07       		.uleb128 0x7
+ 533 0335 93080000 		.4byte	.LASF69
+ 534 0339 04       		.byte	0x4
+ 535 033a 6F       		.byte	0x6f
+ 536 033b B8000000 		.4byte	0xb8
+ 537 033f 5C       		.byte	0x5c
+ 538 0340 07       		.uleb128 0x7
+ 539 0341 77000000 		.4byte	.LASF70
+ 540 0345 04       		.byte	0x4
+ 541 0346 70       		.byte	0x70
+ 542 0347 A2000000 		.4byte	0xa2
+ 543 034b 5E       		.byte	0x5e
+ 544 034c 07       		.uleb128 0x7
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 12
+
+
+ 545 034d A8060000 		.4byte	.LASF71
+ 546 0351 04       		.byte	0x4
+ 547 0352 71       		.byte	0x71
+ 548 0353 A2000000 		.4byte	0xa2
+ 549 0357 5F       		.byte	0x5f
+ 550 0358 07       		.uleb128 0x7
+ 551 0359 89050000 		.4byte	.LASF72
+ 552 035d 04       		.byte	0x4
+ 553 035e 72       		.byte	0x72
+ 554 035f A2000000 		.4byte	0xa2
+ 555 0363 60       		.byte	0x60
+ 556 0364 07       		.uleb128 0x7
+ 557 0365 81060000 		.4byte	.LASF73
+ 558 0369 04       		.byte	0x4
+ 559 036a 73       		.byte	0x73
+ 560 036b CE000000 		.4byte	0xce
+ 561 036f 64       		.byte	0x64
+ 562 0370 07       		.uleb128 0x7
+ 563 0371 4A010000 		.4byte	.LASF74
+ 564 0375 04       		.byte	0x4
+ 565 0376 76       		.byte	0x76
+ 566 0377 B8000000 		.4byte	0xb8
+ 567 037b 68       		.byte	0x68
+ 568 037c 07       		.uleb128 0x7
+ 569 037d CF030000 		.4byte	.LASF75
+ 570 0381 04       		.byte	0x4
+ 571 0382 77       		.byte	0x77
+ 572 0383 B8000000 		.4byte	0xb8
+ 573 0387 6A       		.byte	0x6a
+ 574 0388 07       		.uleb128 0x7
+ 575 0389 2C040000 		.4byte	.LASF76
+ 576 038d 04       		.byte	0x4
+ 577 038e 78       		.byte	0x78
+ 578 038f B8000000 		.4byte	0xb8
+ 579 0393 6C       		.byte	0x6c
+ 580 0394 07       		.uleb128 0x7
+ 581 0395 BD070000 		.4byte	.LASF77
+ 582 0399 04       		.byte	0x4
+ 583 039a 79       		.byte	0x79
+ 584 039b B8000000 		.4byte	0xb8
+ 585 039f 6E       		.byte	0x6e
+ 586 03a0 07       		.uleb128 0x7
+ 587 03a1 5E070000 		.4byte	.LASF78
+ 588 03a5 04       		.byte	0x4
+ 589 03a6 7B       		.byte	0x7b
+ 590 03a7 A2000000 		.4byte	0xa2
+ 591 03ab 70       		.byte	0x70
+ 592 03ac 07       		.uleb128 0x7
+ 593 03ad E7010000 		.4byte	.LASF79
+ 594 03b1 04       		.byte	0x4
+ 595 03b2 7C       		.byte	0x7c
+ 596 03b3 A2000000 		.4byte	0xa2
+ 597 03b7 71       		.byte	0x71
+ 598 03b8 07       		.uleb128 0x7
+ 599 03b9 64030000 		.4byte	.LASF80
+ 600 03bd 04       		.byte	0x4
+ 601 03be 7D       		.byte	0x7d
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 13
+
+
+ 602 03bf A2000000 		.4byte	0xa2
+ 603 03c3 72       		.byte	0x72
+ 604 03c4 07       		.uleb128 0x7
+ 605 03c5 5A050000 		.4byte	.LASF81
+ 606 03c9 04       		.byte	0x4
+ 607 03ca 7E       		.byte	0x7e
+ 608 03cb A2000000 		.4byte	0xa2
+ 609 03cf 73       		.byte	0x73
+ 610 03d0 07       		.uleb128 0x7
+ 611 03d1 F1020000 		.4byte	.LASF82
+ 612 03d5 04       		.byte	0x4
+ 613 03d6 80       		.byte	0x80
+ 614 03d7 B8000000 		.4byte	0xb8
+ 615 03db 74       		.byte	0x74
+ 616 03dc 07       		.uleb128 0x7
+ 617 03dd 20080000 		.4byte	.LASF83
+ 618 03e1 04       		.byte	0x4
+ 619 03e2 81       		.byte	0x81
+ 620 03e3 B8000000 		.4byte	0xb8
+ 621 03e7 76       		.byte	0x76
+ 622 03e8 07       		.uleb128 0x7
+ 623 03e9 C0020000 		.4byte	.LASF84
+ 624 03ed 04       		.byte	0x4
+ 625 03ee 82       		.byte	0x82
+ 626 03ef B8000000 		.4byte	0xb8
+ 627 03f3 78       		.byte	0x78
+ 628 03f4 07       		.uleb128 0x7
+ 629 03f5 15070000 		.4byte	.LASF85
+ 630 03f9 04       		.byte	0x4
+ 631 03fa 83       		.byte	0x83
+ 632 03fb B8000000 		.4byte	0xb8
+ 633 03ff 7A       		.byte	0x7a
+ 634 0400 07       		.uleb128 0x7
+ 635 0401 C3090000 		.4byte	.LASF86
+ 636 0405 04       		.byte	0x4
+ 637 0406 86       		.byte	0x86
+ 638 0407 A2000000 		.4byte	0xa2
+ 639 040b 7C       		.byte	0x7c
+ 640 040c 07       		.uleb128 0x7
+ 641 040d 60040000 		.4byte	.LASF87
+ 642 0411 04       		.byte	0x4
+ 643 0412 87       		.byte	0x87
+ 644 0413 A2000000 		.4byte	0xa2
+ 645 0417 7D       		.byte	0x7d
+ 646 0418 07       		.uleb128 0x7
+ 647 0419 38000000 		.4byte	.LASF88
+ 648 041d 04       		.byte	0x4
+ 649 041e 88       		.byte	0x88
+ 650 041f A2000000 		.4byte	0xa2
+ 651 0423 7E       		.byte	0x7e
+ 652 0424 07       		.uleb128 0x7
+ 653 0425 03030000 		.4byte	.LASF89
+ 654 0429 04       		.byte	0x4
+ 655 042a 89       		.byte	0x89
+ 656 042b A2000000 		.4byte	0xa2
+ 657 042f 7F       		.byte	0x7f
+ 658 0430 07       		.uleb128 0x7
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 14
+
+
+ 659 0431 99030000 		.4byte	.LASF90
+ 660 0435 04       		.byte	0x4
+ 661 0436 8A       		.byte	0x8a
+ 662 0437 A2000000 		.4byte	0xa2
+ 663 043b 80       		.byte	0x80
+ 664 043c 07       		.uleb128 0x7
+ 665 043d E4040000 		.4byte	.LASF91
+ 666 0441 04       		.byte	0x4
+ 667 0442 8D       		.byte	0x8d
+ 668 0443 CE000000 		.4byte	0xce
+ 669 0447 84       		.byte	0x84
+ 670 0448 07       		.uleb128 0x7
+ 671 0449 C6000000 		.4byte	.LASF92
+ 672 044d 04       		.byte	0x4
+ 673 044e 8E       		.byte	0x8e
+ 674 044f CE000000 		.4byte	0xce
+ 675 0453 88       		.byte	0x88
+ 676 0454 07       		.uleb128 0x7
+ 677 0455 AE090000 		.4byte	.LASF93
+ 678 0459 04       		.byte	0x4
+ 679 045a 8F       		.byte	0x8f
+ 680 045b CE000000 		.4byte	0xce
+ 681 045f 8C       		.byte	0x8c
+ 682 0460 07       		.uleb128 0x7
+ 683 0461 AD030000 		.4byte	.LASF94
+ 684 0465 04       		.byte	0x4
+ 685 0466 90       		.byte	0x90
+ 686 0467 CE000000 		.4byte	0xce
+ 687 046b 90       		.byte	0x90
+ 688 046c 07       		.uleb128 0x7
+ 689 046d 7A030000 		.4byte	.LASF95
+ 690 0471 04       		.byte	0x4
+ 691 0472 91       		.byte	0x91
+ 692 0473 CE000000 		.4byte	0xce
+ 693 0477 94       		.byte	0x94
+ 694 0478 07       		.uleb128 0x7
+ 695 0479 FC010000 		.4byte	.LASF96
+ 696 047d 04       		.byte	0x4
+ 697 047e 92       		.byte	0x92
+ 698 047f CE000000 		.4byte	0xce
+ 699 0483 98       		.byte	0x98
+ 700 0484 07       		.uleb128 0x7
+ 701 0485 020A0000 		.4byte	.LASF97
+ 702 0489 04       		.byte	0x4
+ 703 048a 93       		.byte	0x93
+ 704 048b CE000000 		.4byte	0xce
+ 705 048f 9C       		.byte	0x9c
+ 706 0490 07       		.uleb128 0x7
+ 707 0491 5A010000 		.4byte	.LASF98
+ 708 0495 04       		.byte	0x4
+ 709 0496 94       		.byte	0x94
+ 710 0497 CE000000 		.4byte	0xce
+ 711 049b A0       		.byte	0xa0
+ 712 049c 07       		.uleb128 0x7
+ 713 049d 1D020000 		.4byte	.LASF99
+ 714 04a1 04       		.byte	0x4
+ 715 04a2 95       		.byte	0x95
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 15
+
+
+ 716 04a3 B8000000 		.4byte	0xb8
+ 717 04a7 A4       		.byte	0xa4
+ 718 04a8 07       		.uleb128 0x7
+ 719 04a9 CA070000 		.4byte	.LASF100
+ 720 04ad 04       		.byte	0x4
+ 721 04ae 96       		.byte	0x96
+ 722 04af B8000000 		.4byte	0xb8
+ 723 04b3 A6       		.byte	0xa6
+ 724 04b4 07       		.uleb128 0x7
+ 725 04b5 9C060000 		.4byte	.LASF101
+ 726 04b9 04       		.byte	0x4
+ 727 04ba 97       		.byte	0x97
+ 728 04bb B8000000 		.4byte	0xb8
+ 729 04bf A8       		.byte	0xa8
+ 730 04c0 07       		.uleb128 0x7
+ 731 04c1 3C070000 		.4byte	.LASF102
+ 732 04c5 04       		.byte	0x4
+ 733 04c6 98       		.byte	0x98
+ 734 04c7 B8000000 		.4byte	0xb8
+ 735 04cb AA       		.byte	0xaa
+ 736 04cc 07       		.uleb128 0x7
+ 737 04cd 3B040000 		.4byte	.LASF103
+ 738 04d1 04       		.byte	0x4
+ 739 04d2 99       		.byte	0x99
+ 740 04d3 B8000000 		.4byte	0xb8
+ 741 04d7 AC       		.byte	0xac
+ 742 04d8 07       		.uleb128 0x7
+ 743 04d9 8F000000 		.4byte	.LASF104
+ 744 04dd 04       		.byte	0x4
+ 745 04de 9A       		.byte	0x9a
+ 746 04df B8000000 		.4byte	0xb8
+ 747 04e3 AE       		.byte	0xae
+ 748 04e4 07       		.uleb128 0x7
+ 749 04e5 A6080000 		.4byte	.LASF105
+ 750 04e9 04       		.byte	0x4
+ 751 04ea 9D       		.byte	0x9d
+ 752 04eb B8000000 		.4byte	0xb8
+ 753 04ef B0       		.byte	0xb0
+ 754 04f0 07       		.uleb128 0x7
+ 755 04f1 55000000 		.4byte	.LASF106
+ 756 04f5 04       		.byte	0x4
+ 757 04f6 9E       		.byte	0x9e
+ 758 04f7 CE000000 		.4byte	0xce
+ 759 04fb B4       		.byte	0xb4
+ 760 04fc 00       		.byte	0
+ 761 04fd 03       		.uleb128 0x3
+ 762 04fe 7D040000 		.4byte	.LASF107
+ 763 0502 04       		.byte	0x4
+ 764 0503 9F       		.byte	0x9f
+ 765 0504 EC000000 		.4byte	0xec
+ 766 0508 02       		.uleb128 0x2
+ 767 0509 01       		.byte	0x1
+ 768 050a 08       		.byte	0x8
+ 769 050b FC070000 		.4byte	.LASF108
+ 770 050f 02       		.uleb128 0x2
+ 771 0510 04       		.byte	0x4
+ 772 0511 04       		.byte	0x4
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 16
+
+
+ 773 0512 7B060000 		.4byte	.LASF109
+ 774 0516 02       		.uleb128 0x2
+ 775 0517 08       		.byte	0x8
+ 776 0518 04       		.byte	0x4
+ 777 0519 B9020000 		.4byte	.LASF110
+ 778 051d 08       		.uleb128 0x8
+ 779 051e 04       		.byte	0x4
+ 780 051f 02       		.uleb128 0x2
+ 781 0520 01       		.byte	0x1
+ 782 0521 02       		.byte	0x2
+ 783 0522 F1080000 		.4byte	.LASF111
+ 784 0526 09       		.uleb128 0x9
+ 785 0527 04       		.byte	0x4
+ 786 0528 2C050000 		.4byte	0x52c
+ 787 052c 0A       		.uleb128 0xa
+ 788 052d 37050000 		.4byte	0x537
+ 789 0531 0B       		.uleb128 0xb
+ 790 0532 CE000000 		.4byte	0xce
+ 791 0536 00       		.byte	0
+ 792 0537 0C       		.uleb128 0xc
+ 793 0538 32020000 		.4byte	.LASF112
+ 794 053c 05       		.byte	0x5
+ 795 053d F201     		.2byte	0x1f2
+ 796 053f 26050000 		.4byte	0x526
+ 797 0543 0D       		.uleb128 0xd
+ 798 0544 D0010000 		.4byte	.LASF123
+ 799 0548 24       		.byte	0x24
+ 800 0549 05       		.byte	0x5
+ 801 054a 7402     		.2byte	0x274
+ 802 054c C6050000 		.4byte	0x5c6
+ 803 0550 0E       		.uleb128 0xe
+ 804 0551 4A070000 		.4byte	.LASF113
+ 805 0555 05       		.byte	0x5
+ 806 0556 7702     		.2byte	0x277
+ 807 0558 E0000000 		.4byte	0xe0
+ 808 055c 00       		.byte	0
+ 809 055d 0E       		.uleb128 0xe
+ 810 055e E2080000 		.4byte	.LASF114
+ 811 0562 05       		.byte	0x5
+ 812 0563 7902     		.2byte	0x279
+ 813 0565 1D050000 		.4byte	0x51d
+ 814 0569 04       		.byte	0x4
+ 815 056a 0E       		.uleb128 0xe
+ 816 056b 1A000000 		.4byte	.LASF115
+ 817 056f 05       		.byte	0x5
+ 818 0570 7A02     		.2byte	0x27a
+ 819 0572 CE000000 		.4byte	0xce
+ 820 0576 08       		.byte	0x8
+ 821 0577 0E       		.uleb128 0xe
+ 822 0578 5B030000 		.4byte	.LASF116
+ 823 057c 05       		.byte	0x5
+ 824 057d 7B02     		.2byte	0x27b
+ 825 057f E0000000 		.4byte	0xe0
+ 826 0583 0C       		.byte	0xc
+ 827 0584 0E       		.uleb128 0xe
+ 828 0585 70010000 		.4byte	.LASF117
+ 829 0589 05       		.byte	0x5
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 17
+
+
+ 830 058a 7D02     		.2byte	0x27d
+ 831 058c 1D050000 		.4byte	0x51d
+ 832 0590 10       		.byte	0x10
+ 833 0591 0E       		.uleb128 0xe
+ 834 0592 8F030000 		.4byte	.LASF118
+ 835 0596 05       		.byte	0x5
+ 836 0597 7E02     		.2byte	0x27e
+ 837 0599 CE000000 		.4byte	0xce
+ 838 059d 14       		.byte	0x14
+ 839 059e 0E       		.uleb128 0xe
+ 840 059f 7B0A0000 		.4byte	.LASF119
+ 841 05a3 05       		.byte	0x5
+ 842 05a4 7F02     		.2byte	0x27f
+ 843 05a6 E0000000 		.4byte	0xe0
+ 844 05aa 18       		.byte	0x18
+ 845 05ab 0E       		.uleb128 0xe
+ 846 05ac 57040000 		.4byte	.LASF120
+ 847 05b0 05       		.byte	0x5
+ 848 05b1 8502     		.2byte	0x285
+ 849 05b3 37050000 		.4byte	0x537
+ 850 05b7 1C       		.byte	0x1c
+ 851 05b8 0E       		.uleb128 0xe
+ 852 05b9 DA080000 		.4byte	.LASF121
+ 853 05bd 05       		.byte	0x5
+ 854 05be 8802     		.2byte	0x288
+ 855 05c0 CE000000 		.4byte	0xce
+ 856 05c4 20       		.byte	0x20
+ 857 05c5 00       		.byte	0
+ 858 05c6 0C       		.uleb128 0xc
+ 859 05c7 8D040000 		.4byte	.LASF122
+ 860 05cb 05       		.byte	0x5
+ 861 05cc 8B02     		.2byte	0x28b
+ 862 05ce 43050000 		.4byte	0x543
+ 863 05d2 0F       		.uleb128 0xf
+ 864 05d3 12050000 		.4byte	.LASF124
+ 865 05d7 4C       		.byte	0x4c
+ 866 05d8 06       		.byte	0x6
+ 867 05d9 2F       		.byte	0x2f
+ 868 05da C3060000 		.4byte	0x6c3
+ 869 05de 07       		.uleb128 0x7
+ 870 05df 04010000 		.4byte	.LASF125
+ 871 05e3 06       		.byte	0x6
+ 872 05e4 31       		.byte	0x31
+ 873 05e5 CE000000 		.4byte	0xce
+ 874 05e9 00       		.byte	0
+ 875 05ea 07       		.uleb128 0x7
+ 876 05eb 3B010000 		.4byte	.LASF126
+ 877 05ef 06       		.byte	0x6
+ 878 05f0 33       		.byte	0x33
+ 879 05f1 CE000000 		.4byte	0xce
+ 880 05f5 04       		.byte	0x4
+ 881 05f6 07       		.uleb128 0x7
+ 882 05f7 12000000 		.4byte	.LASF127
+ 883 05fb 06       		.byte	0x6
+ 884 05fc 34       		.byte	0x34
+ 885 05fd CE000000 		.4byte	0xce
+ 886 0601 08       		.byte	0x8
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 18
+
+
+ 887 0602 07       		.uleb128 0x7
+ 888 0603 DD000000 		.4byte	.LASF128
+ 889 0607 06       		.byte	0x6
+ 890 0608 35       		.byte	0x35
+ 891 0609 CE000000 		.4byte	0xce
+ 892 060d 0C       		.byte	0xc
+ 893 060e 07       		.uleb128 0x7
+ 894 060f 83070000 		.4byte	.LASF129
+ 895 0613 06       		.byte	0x6
+ 896 0614 37       		.byte	0x37
+ 897 0615 CE000000 		.4byte	0xce
+ 898 0619 10       		.byte	0x10
+ 899 061a 07       		.uleb128 0x7
+ 900 061b DF070000 		.4byte	.LASF130
+ 901 061f 06       		.byte	0x6
+ 902 0620 38       		.byte	0x38
+ 903 0621 CE000000 		.4byte	0xce
+ 904 0625 14       		.byte	0x14
+ 905 0626 07       		.uleb128 0x7
+ 906 0627 E8070000 		.4byte	.LASF131
+ 907 062b 06       		.byte	0x6
+ 908 062c 39       		.byte	0x39
+ 909 062d CE000000 		.4byte	0xce
+ 910 0631 18       		.byte	0x18
+ 911 0632 07       		.uleb128 0x7
+ 912 0633 2A070000 		.4byte	.LASF132
+ 913 0637 06       		.byte	0x6
+ 914 0638 3A       		.byte	0x3a
+ 915 0639 1F050000 		.4byte	0x51f
+ 916 063d 1C       		.byte	0x1c
+ 917 063e 07       		.uleb128 0x7
+ 918 063f 63080000 		.4byte	.LASF133
+ 919 0643 06       		.byte	0x6
+ 920 0644 3C       		.byte	0x3c
+ 921 0645 CE000000 		.4byte	0xce
+ 922 0649 20       		.byte	0x20
+ 923 064a 07       		.uleb128 0x7
+ 924 064b E0020000 		.4byte	.LASF134
+ 925 064f 06       		.byte	0x6
+ 926 0650 3D       		.byte	0x3d
+ 927 0651 CE000000 		.4byte	0xce
+ 928 0655 24       		.byte	0x24
+ 929 0656 07       		.uleb128 0x7
+ 930 0657 17010000 		.4byte	.LASF135
+ 931 065b 06       		.byte	0x6
+ 932 065c 3F       		.byte	0x3f
+ 933 065d CE000000 		.4byte	0xce
+ 934 0661 28       		.byte	0x28
+ 935 0662 07       		.uleb128 0x7
+ 936 0663 F2090000 		.4byte	.LASF136
+ 937 0667 06       		.byte	0x6
+ 938 0668 40       		.byte	0x40
+ 939 0669 CE000000 		.4byte	0xce
+ 940 066d 2C       		.byte	0x2c
+ 941 066e 07       		.uleb128 0x7
+ 942 066f 74080000 		.4byte	.LASF137
+ 943 0673 06       		.byte	0x6
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 19
+
+
+ 944 0674 42       		.byte	0x42
+ 945 0675 CE000000 		.4byte	0xce
+ 946 0679 30       		.byte	0x30
+ 947 067a 07       		.uleb128 0x7
+ 948 067b CF060000 		.4byte	.LASF138
+ 949 067f 06       		.byte	0x6
+ 950 0680 43       		.byte	0x43
+ 951 0681 CE000000 		.4byte	0xce
+ 952 0685 34       		.byte	0x34
+ 953 0686 07       		.uleb128 0x7
+ 954 0687 840A0000 		.4byte	.LASF139
+ 955 068b 06       		.byte	0x6
+ 956 068c 45       		.byte	0x45
+ 957 068d CE000000 		.4byte	0xce
+ 958 0691 38       		.byte	0x38
+ 959 0692 07       		.uleb128 0x7
+ 960 0693 EC000000 		.4byte	.LASF140
+ 961 0697 06       		.byte	0x6
+ 962 0698 46       		.byte	0x46
+ 963 0699 CE000000 		.4byte	0xce
+ 964 069d 3C       		.byte	0x3c
+ 965 069e 07       		.uleb128 0x7
+ 966 069f 9C080000 		.4byte	.LASF141
+ 967 06a3 06       		.byte	0x6
+ 968 06a4 48       		.byte	0x48
+ 969 06a5 CE000000 		.4byte	0xce
+ 970 06a9 40       		.byte	0x40
+ 971 06aa 07       		.uleb128 0x7
+ 972 06ab D5040000 		.4byte	.LASF142
+ 973 06af 06       		.byte	0x6
+ 974 06b0 49       		.byte	0x49
+ 975 06b1 CE000000 		.4byte	0xce
+ 976 06b5 44       		.byte	0x44
+ 977 06b6 07       		.uleb128 0x7
+ 978 06b7 F1070000 		.4byte	.LASF143
+ 979 06bb 06       		.byte	0x6
+ 980 06bc 4B       		.byte	0x4b
+ 981 06bd CE000000 		.4byte	0xce
+ 982 06c1 48       		.byte	0x48
+ 983 06c2 00       		.byte	0
+ 984 06c3 03       		.uleb128 0x3
+ 985 06c4 B2010000 		.4byte	.LASF144
+ 986 06c8 06       		.byte	0x6
+ 987 06c9 4C       		.byte	0x4c
+ 988 06ca D2050000 		.4byte	0x5d2
+ 989 06ce 0F       		.uleb128 0xf
+ 990 06cf 5A020000 		.4byte	.LASF145
+ 991 06d3 64       		.byte	0x64
+ 992 06d4 07       		.byte	0x7
+ 993 06d5 2F       		.byte	0x2f
+ 994 06d6 07080000 		.4byte	0x807
+ 995 06da 07       		.uleb128 0x7
+ 996 06db 73060000 		.4byte	.LASF146
+ 997 06df 07       		.byte	0x7
+ 998 06e0 31       		.byte	0x31
+ 999 06e1 CE000000 		.4byte	0xce
+ 1000 06e5 00       		.byte	0
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 20
+
+
+ 1001 06e6 07       		.uleb128 0x7
+ 1002 06e7 3B010000 		.4byte	.LASF126
+ 1003 06eb 07       		.byte	0x7
+ 1004 06ec 33       		.byte	0x33
+ 1005 06ed CE000000 		.4byte	0xce
+ 1006 06f1 04       		.byte	0x4
+ 1007 06f2 07       		.uleb128 0x7
+ 1008 06f3 51070000 		.4byte	.LASF147
+ 1009 06f7 07       		.byte	0x7
+ 1010 06f8 34       		.byte	0x34
+ 1011 06f9 CE000000 		.4byte	0xce
+ 1012 06fd 08       		.byte	0x8
+ 1013 06fe 07       		.uleb128 0x7
+ 1014 06ff BD040000 		.4byte	.LASF148
+ 1015 0703 07       		.byte	0x7
+ 1016 0704 35       		.byte	0x35
+ 1017 0705 CE000000 		.4byte	0xce
+ 1018 0709 0C       		.byte	0xc
+ 1019 070a 07       		.uleb128 0x7
+ 1020 070b 12000000 		.4byte	.LASF127
+ 1021 070f 07       		.byte	0x7
+ 1022 0710 36       		.byte	0x36
+ 1023 0711 CE000000 		.4byte	0xce
+ 1024 0715 10       		.byte	0x10
+ 1025 0716 07       		.uleb128 0x7
+ 1026 0717 C1080000 		.4byte	.LASF149
+ 1027 071b 07       		.byte	0x7
+ 1028 071c 37       		.byte	0x37
+ 1029 071d CE000000 		.4byte	0xce
+ 1030 0721 14       		.byte	0x14
+ 1031 0722 07       		.uleb128 0x7
+ 1032 0723 C9080000 		.4byte	.LASF150
+ 1033 0727 07       		.byte	0x7
+ 1034 0728 38       		.byte	0x38
+ 1035 0729 CE000000 		.4byte	0xce
+ 1036 072d 18       		.byte	0x18
+ 1037 072e 07       		.uleb128 0x7
+ 1038 072f 72070000 		.4byte	.LASF151
+ 1039 0733 07       		.byte	0x7
+ 1040 0734 39       		.byte	0x39
+ 1041 0735 1F050000 		.4byte	0x51f
+ 1042 0739 1C       		.byte	0x1c
+ 1043 073a 07       		.uleb128 0x7
+ 1044 073b DF070000 		.4byte	.LASF130
+ 1045 073f 07       		.byte	0x7
+ 1046 0740 3A       		.byte	0x3a
+ 1047 0741 CE000000 		.4byte	0xce
+ 1048 0745 20       		.byte	0x20
+ 1049 0746 07       		.uleb128 0x7
+ 1050 0747 E8070000 		.4byte	.LASF131
+ 1051 074b 07       		.byte	0x7
+ 1052 074c 3B       		.byte	0x3b
+ 1053 074d CE000000 		.4byte	0xce
+ 1054 0751 24       		.byte	0x24
+ 1055 0752 07       		.uleb128 0x7
+ 1056 0753 2A070000 		.4byte	.LASF132
+ 1057 0757 07       		.byte	0x7
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 21
+
+
+ 1058 0758 3C       		.byte	0x3c
+ 1059 0759 1F050000 		.4byte	0x51f
+ 1060 075d 28       		.byte	0x28
+ 1061 075e 07       		.uleb128 0x7
+ 1062 075f 63080000 		.4byte	.LASF133
+ 1063 0763 07       		.byte	0x7
+ 1064 0764 3E       		.byte	0x3e
+ 1065 0765 CE000000 		.4byte	0xce
+ 1066 0769 2C       		.byte	0x2c
+ 1067 076a 07       		.uleb128 0x7
+ 1068 076b B0040000 		.4byte	.LASF152
+ 1069 076f 07       		.byte	0x7
+ 1070 0770 3F       		.byte	0x3f
+ 1071 0771 CE000000 		.4byte	0xce
+ 1072 0775 30       		.byte	0x30
+ 1073 0776 07       		.uleb128 0x7
+ 1074 0777 69090000 		.4byte	.LASF153
+ 1075 077b 07       		.byte	0x7
+ 1076 077c 40       		.byte	0x40
+ 1077 077d CE000000 		.4byte	0xce
+ 1078 0781 34       		.byte	0x34
+ 1079 0782 07       		.uleb128 0x7
+ 1080 0783 BE060000 		.4byte	.LASF154
+ 1081 0787 07       		.byte	0x7
+ 1082 0788 41       		.byte	0x41
+ 1083 0789 CE000000 		.4byte	0xce
+ 1084 078d 38       		.byte	0x38
+ 1085 078e 07       		.uleb128 0x7
+ 1086 078f 1E040000 		.4byte	.LASF155
+ 1087 0793 07       		.byte	0x7
+ 1088 0794 42       		.byte	0x42
+ 1089 0795 CE000000 		.4byte	0xce
+ 1090 0799 3C       		.byte	0x3c
+ 1091 079a 07       		.uleb128 0x7
+ 1092 079b 8F090000 		.4byte	.LASF156
+ 1093 079f 07       		.byte	0x7
+ 1094 07a0 44       		.byte	0x44
+ 1095 07a1 CE000000 		.4byte	0xce
+ 1096 07a5 40       		.byte	0x40
+ 1097 07a6 07       		.uleb128 0x7
+ 1098 07a7 F2090000 		.4byte	.LASF136
+ 1099 07ab 07       		.byte	0x7
+ 1100 07ac 45       		.byte	0x45
+ 1101 07ad CE000000 		.4byte	0xce
+ 1102 07b1 44       		.byte	0x44
+ 1103 07b2 07       		.uleb128 0x7
+ 1104 07b3 74080000 		.4byte	.LASF137
+ 1105 07b7 07       		.byte	0x7
+ 1106 07b8 47       		.byte	0x47
+ 1107 07b9 CE000000 		.4byte	0xce
+ 1108 07bd 48       		.byte	0x48
+ 1109 07be 07       		.uleb128 0x7
+ 1110 07bf CF060000 		.4byte	.LASF138
+ 1111 07c3 07       		.byte	0x7
+ 1112 07c4 48       		.byte	0x48
+ 1113 07c5 CE000000 		.4byte	0xce
+ 1114 07c9 4C       		.byte	0x4c
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 22
+
+
+ 1115 07ca 07       		.uleb128 0x7
+ 1116 07cb 840A0000 		.4byte	.LASF139
+ 1117 07cf 07       		.byte	0x7
+ 1118 07d0 4A       		.byte	0x4a
+ 1119 07d1 CE000000 		.4byte	0xce
+ 1120 07d5 50       		.byte	0x50
+ 1121 07d6 07       		.uleb128 0x7
+ 1122 07d7 49040000 		.4byte	.LASF157
+ 1123 07db 07       		.byte	0x7
+ 1124 07dc 4B       		.byte	0x4b
+ 1125 07dd CE000000 		.4byte	0xce
+ 1126 07e1 54       		.byte	0x54
+ 1127 07e2 07       		.uleb128 0x7
+ 1128 07e3 4B000000 		.4byte	.LASF158
+ 1129 07e7 07       		.byte	0x7
+ 1130 07e8 4D       		.byte	0x4d
+ 1131 07e9 CE000000 		.4byte	0xce
+ 1132 07ed 58       		.byte	0x58
+ 1133 07ee 07       		.uleb128 0x7
+ 1134 07ef D5040000 		.4byte	.LASF142
+ 1135 07f3 07       		.byte	0x7
+ 1136 07f4 4E       		.byte	0x4e
+ 1137 07f5 CE000000 		.4byte	0xce
+ 1138 07f9 5C       		.byte	0x5c
+ 1139 07fa 07       		.uleb128 0x7
+ 1140 07fb F1070000 		.4byte	.LASF143
+ 1141 07ff 07       		.byte	0x7
+ 1142 0800 50       		.byte	0x50
+ 1143 0801 CE000000 		.4byte	0xce
+ 1144 0805 60       		.byte	0x60
+ 1145 0806 00       		.byte	0
+ 1146 0807 03       		.uleb128 0x3
+ 1147 0808 D8090000 		.4byte	.LASF159
+ 1148 080c 07       		.byte	0x7
+ 1149 080d 51       		.byte	0x51
+ 1150 080e CE060000 		.4byte	0x6ce
+ 1151 0812 10       		.uleb128 0x10
+ 1152 0813 3B0A0000 		.4byte	.LASF171
+ 1153 0817 01       		.byte	0x1
+ 1154 0818 3F       		.byte	0x3f
+ 1155 0819 94000000 		.4byte	0x94
+ 1156 081d 00000000 		.4byte	.LFB594
+ 1157 0821 78000000 		.4byte	.LFE594-.LFB594
+ 1158 0825 01       		.uleb128 0x1
+ 1159 0826 9C       		.byte	0x9c
+ 1160 0827 05090000 		.4byte	0x905
+ 1161 082b 11       		.uleb128 0x11
+ 1162 082c 08000000 		.4byte	.LVL0
+ 1163 0830 57090000 		.4byte	0x957
+ 1164 0834 12       		.uleb128 0x12
+ 1165 0835 1C000000 		.4byte	.LVL1
+ 1166 0839 62090000 		.4byte	0x962
+ 1167 083d 65080000 		.4byte	0x865
+ 1168 0841 13       		.uleb128 0x13
+ 1169 0842 01       		.uleb128 0x1
+ 1170 0843 51       		.byte	0x51
+ 1171 0844 05       		.uleb128 0x5
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 23
+
+
+ 1172 0845 03       		.byte	0x3
+ 1173 0846 00000000 		.4byte	.LC0
+ 1174 084a 13       		.uleb128 0x13
+ 1175 084b 01       		.uleb128 0x1
+ 1176 084c 52       		.byte	0x52
+ 1177 084d 02       		.uleb128 0x2
+ 1178 084e 08       		.byte	0x8
+ 1179 084f 80       		.byte	0x80
+ 1180 0850 13       		.uleb128 0x13
+ 1181 0851 01       		.uleb128 0x1
+ 1182 0852 53       		.byte	0x53
+ 1183 0853 02       		.uleb128 0x2
+ 1184 0854 74       		.byte	0x74
+ 1185 0855 00       		.sleb128 0
+ 1186 0856 13       		.uleb128 0x13
+ 1187 0857 02       		.uleb128 0x2
+ 1188 0858 7D       		.byte	0x7d
+ 1189 0859 00       		.sleb128 0
+ 1190 085a 02       		.uleb128 0x2
+ 1191 085b 75       		.byte	0x75
+ 1192 085c 00       		.sleb128 0
+ 1193 085d 13       		.uleb128 0x13
+ 1194 085e 02       		.uleb128 0x2
+ 1195 085f 7D       		.byte	0x7d
+ 1196 0860 04       		.sleb128 4
+ 1197 0861 02       		.uleb128 0x2
+ 1198 0862 74       		.byte	0x74
+ 1199 0863 00       		.sleb128 0
+ 1200 0864 00       		.byte	0
+ 1201 0865 12       		.uleb128 0x12
+ 1202 0866 2E000000 		.4byte	.LVL2
+ 1203 086a 62090000 		.4byte	0x962
+ 1204 086e 97080000 		.4byte	0x897
+ 1205 0872 13       		.uleb128 0x13
+ 1206 0873 01       		.uleb128 0x1
+ 1207 0874 51       		.byte	0x51
+ 1208 0875 05       		.uleb128 0x5
+ 1209 0876 03       		.byte	0x3
+ 1210 0877 0C000000 		.4byte	.LC1
+ 1211 087b 13       		.uleb128 0x13
+ 1212 087c 01       		.uleb128 0x1
+ 1213 087d 52       		.byte	0x52
+ 1214 087e 03       		.uleb128 0x3
+ 1215 087f 0A       		.byte	0xa
+ 1216 0880 9001     		.2byte	0x190
+ 1217 0882 13       		.uleb128 0x13
+ 1218 0883 01       		.uleb128 0x1
+ 1219 0884 53       		.byte	0x53
+ 1220 0885 02       		.uleb128 0x2
+ 1221 0886 74       		.byte	0x74
+ 1222 0887 00       		.sleb128 0
+ 1223 0888 13       		.uleb128 0x13
+ 1224 0889 02       		.uleb128 0x2
+ 1225 088a 7D       		.byte	0x7d
+ 1226 088b 00       		.sleb128 0
+ 1227 088c 02       		.uleb128 0x2
+ 1228 088d 75       		.byte	0x75
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 24
+
+
+ 1229 088e 00       		.sleb128 0
+ 1230 088f 13       		.uleb128 0x13
+ 1231 0890 02       		.uleb128 0x2
+ 1232 0891 7D       		.byte	0x7d
+ 1233 0892 04       		.sleb128 4
+ 1234 0893 02       		.uleb128 0x2
+ 1235 0894 74       		.byte	0x74
+ 1236 0895 00       		.sleb128 0
+ 1237 0896 00       		.byte	0
+ 1238 0897 12       		.uleb128 0x12
+ 1239 0898 40000000 		.4byte	.LVL3
+ 1240 089c 62090000 		.4byte	0x962
+ 1241 08a0 C9080000 		.4byte	0x8c9
+ 1242 08a4 13       		.uleb128 0x13
+ 1243 08a5 01       		.uleb128 0x1
+ 1244 08a6 51       		.byte	0x51
+ 1245 08a7 05       		.uleb128 0x5
+ 1246 08a8 03       		.byte	0x3
+ 1247 08a9 1C000000 		.4byte	.LC2
+ 1248 08ad 13       		.uleb128 0x13
+ 1249 08ae 01       		.uleb128 0x1
+ 1250 08af 52       		.byte	0x52
+ 1251 08b0 03       		.uleb128 0x3
+ 1252 08b1 0A       		.byte	0xa
+ 1253 08b2 9001     		.2byte	0x190
+ 1254 08b4 13       		.uleb128 0x13
+ 1255 08b5 01       		.uleb128 0x1
+ 1256 08b6 53       		.byte	0x53
+ 1257 08b7 02       		.uleb128 0x2
+ 1258 08b8 74       		.byte	0x74
+ 1259 08b9 00       		.sleb128 0
+ 1260 08ba 13       		.uleb128 0x13
+ 1261 08bb 02       		.uleb128 0x2
+ 1262 08bc 7D       		.byte	0x7d
+ 1263 08bd 00       		.sleb128 0
+ 1264 08be 02       		.uleb128 0x2
+ 1265 08bf 75       		.byte	0x75
+ 1266 08c0 00       		.sleb128 0
+ 1267 08c1 13       		.uleb128 0x13
+ 1268 08c2 02       		.uleb128 0x2
+ 1269 08c3 7D       		.byte	0x7d
+ 1270 08c4 04       		.sleb128 4
+ 1271 08c5 02       		.uleb128 0x2
+ 1272 08c6 74       		.byte	0x74
+ 1273 08c7 00       		.sleb128 0
+ 1274 08c8 00       		.byte	0
+ 1275 08c9 12       		.uleb128 0x12
+ 1276 08ca 52000000 		.4byte	.LVL4
+ 1277 08ce 62090000 		.4byte	0x962
+ 1278 08d2 FB080000 		.4byte	0x8fb
+ 1279 08d6 13       		.uleb128 0x13
+ 1280 08d7 01       		.uleb128 0x1
+ 1281 08d8 51       		.byte	0x51
+ 1282 08d9 05       		.uleb128 0x5
+ 1283 08da 03       		.byte	0x3
+ 1284 08db 2C000000 		.4byte	.LC3
+ 1285 08df 13       		.uleb128 0x13
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 25
+
+
+ 1286 08e0 01       		.uleb128 0x1
+ 1287 08e1 52       		.byte	0x52
+ 1288 08e2 03       		.uleb128 0x3
+ 1289 08e3 0A       		.byte	0xa
+ 1290 08e4 9001     		.2byte	0x190
+ 1291 08e6 13       		.uleb128 0x13
+ 1292 08e7 01       		.uleb128 0x1
+ 1293 08e8 53       		.byte	0x53
+ 1294 08e9 02       		.uleb128 0x2
+ 1295 08ea 74       		.byte	0x74
+ 1296 08eb 00       		.sleb128 0
+ 1297 08ec 13       		.uleb128 0x13
+ 1298 08ed 02       		.uleb128 0x2
+ 1299 08ee 7D       		.byte	0x7d
+ 1300 08ef 00       		.sleb128 0
+ 1301 08f0 02       		.uleb128 0x2
+ 1302 08f1 75       		.byte	0x75
+ 1303 08f2 00       		.sleb128 0
+ 1304 08f3 13       		.uleb128 0x13
+ 1305 08f4 02       		.uleb128 0x2
+ 1306 08f5 7D       		.byte	0x7d
+ 1307 08f6 04       		.sleb128 4
+ 1308 08f7 02       		.uleb128 0x2
+ 1309 08f8 74       		.byte	0x74
+ 1310 08f9 00       		.sleb128 0
+ 1311 08fa 00       		.byte	0
+ 1312 08fb 11       		.uleb128 0x11
+ 1313 08fc 56000000 		.4byte	.LVL5
+ 1314 0900 6E090000 		.4byte	0x96e
+ 1315 0904 00       		.byte	0
+ 1316 0905 14       		.uleb128 0x14
+ 1317 0906 08070000 		.4byte	.LASF160
+ 1318 090a 08       		.byte	0x8
+ 1319 090b F907     		.2byte	0x7f9
+ 1320 090d 11090000 		.4byte	0x911
+ 1321 0911 05       		.uleb128 0x5
+ 1322 0912 C3000000 		.4byte	0xc3
+ 1323 0916 15       		.uleb128 0x15
+ 1324 0917 92060000 		.4byte	.LASF161
+ 1325 091b 04       		.byte	0x4
+ 1326 091c A7       		.byte	0xa7
+ 1327 091d 21090000 		.4byte	0x921
+ 1328 0921 09       		.uleb128 0x9
+ 1329 0922 04       		.byte	0x4
+ 1330 0923 27090000 		.4byte	0x927
+ 1331 0927 16       		.uleb128 0x16
+ 1332 0928 FD040000 		.4byte	0x4fd
+ 1333 092c 15       		.uleb128 0x15
+ 1334 092d 3F090000 		.4byte	.LASF162
+ 1335 0931 09       		.byte	0x9
+ 1336 0932 5E       		.byte	0x5e
+ 1337 0933 C6050000 		.4byte	0x5c6
+ 1338 0937 15       		.uleb128 0x15
+ 1339 0938 99090000 		.4byte	.LASF163
+ 1340 093c 0A       		.byte	0xa
+ 1341 093d 1F       		.byte	0x1f
+ 1342 093e 42090000 		.4byte	0x942
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 26
+
+
+ 1343 0942 16       		.uleb128 0x16
+ 1344 0943 C3060000 		.4byte	0x6c3
+ 1345 0947 15       		.uleb128 0x15
+ 1346 0948 89020000 		.4byte	.LASF164
+ 1347 094c 0B       		.byte	0xb
+ 1348 094d 1F       		.byte	0x1f
+ 1349 094e 52090000 		.4byte	0x952
+ 1350 0952 16       		.uleb128 0x16
+ 1351 0953 07080000 		.4byte	0x807
+ 1352 0957 17       		.uleb128 0x17
+ 1353 0958 54080000 		.4byte	.LASF165
+ 1354 095c 54080000 		.4byte	.LASF165
+ 1355 0960 0C       		.byte	0xc
+ 1356 0961 17       		.byte	0x17
+ 1357 0962 18       		.uleb128 0x18
+ 1358 0963 4E050000 		.4byte	.LASF166
+ 1359 0967 4E050000 		.4byte	.LASF166
+ 1360 096b 0D       		.byte	0xd
+ 1361 096c 4101     		.2byte	0x141
+ 1362 096e 18       		.uleb128 0x18
+ 1363 096f 3D030000 		.4byte	.LASF167
+ 1364 0973 3D030000 		.4byte	.LASF167
+ 1365 0977 0D       		.byte	0xd
+ 1366 0978 8E04     		.2byte	0x48e
+ 1367 097a 00       		.byte	0
+ 1368              		.section	.debug_abbrev,"",%progbits
+ 1369              	.Ldebug_abbrev0:
+ 1370 0000 01       		.uleb128 0x1
+ 1371 0001 11       		.uleb128 0x11
+ 1372 0002 01       		.byte	0x1
+ 1373 0003 25       		.uleb128 0x25
+ 1374 0004 0E       		.uleb128 0xe
+ 1375 0005 13       		.uleb128 0x13
+ 1376 0006 0B       		.uleb128 0xb
+ 1377 0007 03       		.uleb128 0x3
+ 1378 0008 0E       		.uleb128 0xe
+ 1379 0009 1B       		.uleb128 0x1b
+ 1380 000a 0E       		.uleb128 0xe
+ 1381 000b 55       		.uleb128 0x55
+ 1382 000c 17       		.uleb128 0x17
+ 1383 000d 11       		.uleb128 0x11
+ 1384 000e 01       		.uleb128 0x1
+ 1385 000f 10       		.uleb128 0x10
+ 1386 0010 17       		.uleb128 0x17
+ 1387 0011 00       		.byte	0
+ 1388 0012 00       		.byte	0
+ 1389 0013 02       		.uleb128 0x2
+ 1390 0014 24       		.uleb128 0x24
+ 1391 0015 00       		.byte	0
+ 1392 0016 0B       		.uleb128 0xb
+ 1393 0017 0B       		.uleb128 0xb
+ 1394 0018 3E       		.uleb128 0x3e
+ 1395 0019 0B       		.uleb128 0xb
+ 1396 001a 03       		.uleb128 0x3
+ 1397 001b 0E       		.uleb128 0xe
+ 1398 001c 00       		.byte	0
+ 1399 001d 00       		.byte	0
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 27
+
+
+ 1400 001e 03       		.uleb128 0x3
+ 1401 001f 16       		.uleb128 0x16
+ 1402 0020 00       		.byte	0
+ 1403 0021 03       		.uleb128 0x3
+ 1404 0022 0E       		.uleb128 0xe
+ 1405 0023 3A       		.uleb128 0x3a
+ 1406 0024 0B       		.uleb128 0xb
+ 1407 0025 3B       		.uleb128 0x3b
+ 1408 0026 0B       		.uleb128 0xb
+ 1409 0027 49       		.uleb128 0x49
+ 1410 0028 13       		.uleb128 0x13
+ 1411 0029 00       		.byte	0
+ 1412 002a 00       		.byte	0
+ 1413 002b 04       		.uleb128 0x4
+ 1414 002c 24       		.uleb128 0x24
+ 1415 002d 00       		.byte	0
+ 1416 002e 0B       		.uleb128 0xb
+ 1417 002f 0B       		.uleb128 0xb
+ 1418 0030 3E       		.uleb128 0x3e
+ 1419 0031 0B       		.uleb128 0xb
+ 1420 0032 03       		.uleb128 0x3
+ 1421 0033 08       		.uleb128 0x8
+ 1422 0034 00       		.byte	0
+ 1423 0035 00       		.byte	0
+ 1424 0036 05       		.uleb128 0x5
+ 1425 0037 35       		.uleb128 0x35
+ 1426 0038 00       		.byte	0
+ 1427 0039 49       		.uleb128 0x49
+ 1428 003a 13       		.uleb128 0x13
+ 1429 003b 00       		.byte	0
+ 1430 003c 00       		.byte	0
+ 1431 003d 06       		.uleb128 0x6
+ 1432 003e 13       		.uleb128 0x13
+ 1433 003f 01       		.byte	0x1
+ 1434 0040 0B       		.uleb128 0xb
+ 1435 0041 0B       		.uleb128 0xb
+ 1436 0042 3A       		.uleb128 0x3a
+ 1437 0043 0B       		.uleb128 0xb
+ 1438 0044 3B       		.uleb128 0x3b
+ 1439 0045 0B       		.uleb128 0xb
+ 1440 0046 01       		.uleb128 0x1
+ 1441 0047 13       		.uleb128 0x13
+ 1442 0048 00       		.byte	0
+ 1443 0049 00       		.byte	0
+ 1444 004a 07       		.uleb128 0x7
+ 1445 004b 0D       		.uleb128 0xd
+ 1446 004c 00       		.byte	0
+ 1447 004d 03       		.uleb128 0x3
+ 1448 004e 0E       		.uleb128 0xe
+ 1449 004f 3A       		.uleb128 0x3a
+ 1450 0050 0B       		.uleb128 0xb
+ 1451 0051 3B       		.uleb128 0x3b
+ 1452 0052 0B       		.uleb128 0xb
+ 1453 0053 49       		.uleb128 0x49
+ 1454 0054 13       		.uleb128 0x13
+ 1455 0055 38       		.uleb128 0x38
+ 1456 0056 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 28
+
+
+ 1457 0057 00       		.byte	0
+ 1458 0058 00       		.byte	0
+ 1459 0059 08       		.uleb128 0x8
+ 1460 005a 0F       		.uleb128 0xf
+ 1461 005b 00       		.byte	0
+ 1462 005c 0B       		.uleb128 0xb
+ 1463 005d 0B       		.uleb128 0xb
+ 1464 005e 00       		.byte	0
+ 1465 005f 00       		.byte	0
+ 1466 0060 09       		.uleb128 0x9
+ 1467 0061 0F       		.uleb128 0xf
+ 1468 0062 00       		.byte	0
+ 1469 0063 0B       		.uleb128 0xb
+ 1470 0064 0B       		.uleb128 0xb
+ 1471 0065 49       		.uleb128 0x49
+ 1472 0066 13       		.uleb128 0x13
+ 1473 0067 00       		.byte	0
+ 1474 0068 00       		.byte	0
+ 1475 0069 0A       		.uleb128 0xa
+ 1476 006a 15       		.uleb128 0x15
+ 1477 006b 01       		.byte	0x1
+ 1478 006c 27       		.uleb128 0x27
+ 1479 006d 19       		.uleb128 0x19
+ 1480 006e 01       		.uleb128 0x1
+ 1481 006f 13       		.uleb128 0x13
+ 1482 0070 00       		.byte	0
+ 1483 0071 00       		.byte	0
+ 1484 0072 0B       		.uleb128 0xb
+ 1485 0073 05       		.uleb128 0x5
+ 1486 0074 00       		.byte	0
+ 1487 0075 49       		.uleb128 0x49
+ 1488 0076 13       		.uleb128 0x13
+ 1489 0077 00       		.byte	0
+ 1490 0078 00       		.byte	0
+ 1491 0079 0C       		.uleb128 0xc
+ 1492 007a 16       		.uleb128 0x16
+ 1493 007b 00       		.byte	0
+ 1494 007c 03       		.uleb128 0x3
+ 1495 007d 0E       		.uleb128 0xe
+ 1496 007e 3A       		.uleb128 0x3a
+ 1497 007f 0B       		.uleb128 0xb
+ 1498 0080 3B       		.uleb128 0x3b
+ 1499 0081 05       		.uleb128 0x5
+ 1500 0082 49       		.uleb128 0x49
+ 1501 0083 13       		.uleb128 0x13
+ 1502 0084 00       		.byte	0
+ 1503 0085 00       		.byte	0
+ 1504 0086 0D       		.uleb128 0xd
+ 1505 0087 13       		.uleb128 0x13
+ 1506 0088 01       		.byte	0x1
+ 1507 0089 03       		.uleb128 0x3
+ 1508 008a 0E       		.uleb128 0xe
+ 1509 008b 0B       		.uleb128 0xb
+ 1510 008c 0B       		.uleb128 0xb
+ 1511 008d 3A       		.uleb128 0x3a
+ 1512 008e 0B       		.uleb128 0xb
+ 1513 008f 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 29
+
+
+ 1514 0090 05       		.uleb128 0x5
+ 1515 0091 01       		.uleb128 0x1
+ 1516 0092 13       		.uleb128 0x13
+ 1517 0093 00       		.byte	0
+ 1518 0094 00       		.byte	0
+ 1519 0095 0E       		.uleb128 0xe
+ 1520 0096 0D       		.uleb128 0xd
+ 1521 0097 00       		.byte	0
+ 1522 0098 03       		.uleb128 0x3
+ 1523 0099 0E       		.uleb128 0xe
+ 1524 009a 3A       		.uleb128 0x3a
+ 1525 009b 0B       		.uleb128 0xb
+ 1526 009c 3B       		.uleb128 0x3b
+ 1527 009d 05       		.uleb128 0x5
+ 1528 009e 49       		.uleb128 0x49
+ 1529 009f 13       		.uleb128 0x13
+ 1530 00a0 38       		.uleb128 0x38
+ 1531 00a1 0B       		.uleb128 0xb
+ 1532 00a2 00       		.byte	0
+ 1533 00a3 00       		.byte	0
+ 1534 00a4 0F       		.uleb128 0xf
+ 1535 00a5 13       		.uleb128 0x13
+ 1536 00a6 01       		.byte	0x1
+ 1537 00a7 03       		.uleb128 0x3
+ 1538 00a8 0E       		.uleb128 0xe
+ 1539 00a9 0B       		.uleb128 0xb
+ 1540 00aa 0B       		.uleb128 0xb
+ 1541 00ab 3A       		.uleb128 0x3a
+ 1542 00ac 0B       		.uleb128 0xb
+ 1543 00ad 3B       		.uleb128 0x3b
+ 1544 00ae 0B       		.uleb128 0xb
+ 1545 00af 01       		.uleb128 0x1
+ 1546 00b0 13       		.uleb128 0x13
+ 1547 00b1 00       		.byte	0
+ 1548 00b2 00       		.byte	0
+ 1549 00b3 10       		.uleb128 0x10
+ 1550 00b4 2E       		.uleb128 0x2e
+ 1551 00b5 01       		.byte	0x1
+ 1552 00b6 3F       		.uleb128 0x3f
+ 1553 00b7 19       		.uleb128 0x19
+ 1554 00b8 03       		.uleb128 0x3
+ 1555 00b9 0E       		.uleb128 0xe
+ 1556 00ba 3A       		.uleb128 0x3a
+ 1557 00bb 0B       		.uleb128 0xb
+ 1558 00bc 3B       		.uleb128 0x3b
+ 1559 00bd 0B       		.uleb128 0xb
+ 1560 00be 27       		.uleb128 0x27
+ 1561 00bf 19       		.uleb128 0x19
+ 1562 00c0 49       		.uleb128 0x49
+ 1563 00c1 13       		.uleb128 0x13
+ 1564 00c2 8701     		.uleb128 0x87
+ 1565 00c4 19       		.uleb128 0x19
+ 1566 00c5 11       		.uleb128 0x11
+ 1567 00c6 01       		.uleb128 0x1
+ 1568 00c7 12       		.uleb128 0x12
+ 1569 00c8 06       		.uleb128 0x6
+ 1570 00c9 40       		.uleb128 0x40
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 30
+
+
+ 1571 00ca 18       		.uleb128 0x18
+ 1572 00cb 9742     		.uleb128 0x2117
+ 1573 00cd 19       		.uleb128 0x19
+ 1574 00ce 01       		.uleb128 0x1
+ 1575 00cf 13       		.uleb128 0x13
+ 1576 00d0 00       		.byte	0
+ 1577 00d1 00       		.byte	0
+ 1578 00d2 11       		.uleb128 0x11
+ 1579 00d3 898201   		.uleb128 0x4109
+ 1580 00d6 00       		.byte	0
+ 1581 00d7 11       		.uleb128 0x11
+ 1582 00d8 01       		.uleb128 0x1
+ 1583 00d9 31       		.uleb128 0x31
+ 1584 00da 13       		.uleb128 0x13
+ 1585 00db 00       		.byte	0
+ 1586 00dc 00       		.byte	0
+ 1587 00dd 12       		.uleb128 0x12
+ 1588 00de 898201   		.uleb128 0x4109
+ 1589 00e1 01       		.byte	0x1
+ 1590 00e2 11       		.uleb128 0x11
+ 1591 00e3 01       		.uleb128 0x1
+ 1592 00e4 31       		.uleb128 0x31
+ 1593 00e5 13       		.uleb128 0x13
+ 1594 00e6 01       		.uleb128 0x1
+ 1595 00e7 13       		.uleb128 0x13
+ 1596 00e8 00       		.byte	0
+ 1597 00e9 00       		.byte	0
+ 1598 00ea 13       		.uleb128 0x13
+ 1599 00eb 8A8201   		.uleb128 0x410a
+ 1600 00ee 00       		.byte	0
+ 1601 00ef 02       		.uleb128 0x2
+ 1602 00f0 18       		.uleb128 0x18
+ 1603 00f1 9142     		.uleb128 0x2111
+ 1604 00f3 18       		.uleb128 0x18
+ 1605 00f4 00       		.byte	0
+ 1606 00f5 00       		.byte	0
+ 1607 00f6 14       		.uleb128 0x14
+ 1608 00f7 34       		.uleb128 0x34
+ 1609 00f8 00       		.byte	0
+ 1610 00f9 03       		.uleb128 0x3
+ 1611 00fa 0E       		.uleb128 0xe
+ 1612 00fb 3A       		.uleb128 0x3a
+ 1613 00fc 0B       		.uleb128 0xb
+ 1614 00fd 3B       		.uleb128 0x3b
+ 1615 00fe 05       		.uleb128 0x5
+ 1616 00ff 49       		.uleb128 0x49
+ 1617 0100 13       		.uleb128 0x13
+ 1618 0101 3F       		.uleb128 0x3f
+ 1619 0102 19       		.uleb128 0x19
+ 1620 0103 3C       		.uleb128 0x3c
+ 1621 0104 19       		.uleb128 0x19
+ 1622 0105 00       		.byte	0
+ 1623 0106 00       		.byte	0
+ 1624 0107 15       		.uleb128 0x15
+ 1625 0108 34       		.uleb128 0x34
+ 1626 0109 00       		.byte	0
+ 1627 010a 03       		.uleb128 0x3
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 31
+
+
+ 1628 010b 0E       		.uleb128 0xe
+ 1629 010c 3A       		.uleb128 0x3a
+ 1630 010d 0B       		.uleb128 0xb
+ 1631 010e 3B       		.uleb128 0x3b
+ 1632 010f 0B       		.uleb128 0xb
+ 1633 0110 49       		.uleb128 0x49
+ 1634 0111 13       		.uleb128 0x13
+ 1635 0112 3F       		.uleb128 0x3f
+ 1636 0113 19       		.uleb128 0x19
+ 1637 0114 3C       		.uleb128 0x3c
+ 1638 0115 19       		.uleb128 0x19
+ 1639 0116 00       		.byte	0
+ 1640 0117 00       		.byte	0
+ 1641 0118 16       		.uleb128 0x16
+ 1642 0119 26       		.uleb128 0x26
+ 1643 011a 00       		.byte	0
+ 1644 011b 49       		.uleb128 0x49
+ 1645 011c 13       		.uleb128 0x13
+ 1646 011d 00       		.byte	0
+ 1647 011e 00       		.byte	0
+ 1648 011f 17       		.uleb128 0x17
+ 1649 0120 2E       		.uleb128 0x2e
+ 1650 0121 00       		.byte	0
+ 1651 0122 3F       		.uleb128 0x3f
+ 1652 0123 19       		.uleb128 0x19
+ 1653 0124 3C       		.uleb128 0x3c
+ 1654 0125 19       		.uleb128 0x19
+ 1655 0126 6E       		.uleb128 0x6e
+ 1656 0127 0E       		.uleb128 0xe
+ 1657 0128 03       		.uleb128 0x3
+ 1658 0129 0E       		.uleb128 0xe
+ 1659 012a 3A       		.uleb128 0x3a
+ 1660 012b 0B       		.uleb128 0xb
+ 1661 012c 3B       		.uleb128 0x3b
+ 1662 012d 0B       		.uleb128 0xb
+ 1663 012e 00       		.byte	0
+ 1664 012f 00       		.byte	0
+ 1665 0130 18       		.uleb128 0x18
+ 1666 0131 2E       		.uleb128 0x2e
+ 1667 0132 00       		.byte	0
+ 1668 0133 3F       		.uleb128 0x3f
+ 1669 0134 19       		.uleb128 0x19
+ 1670 0135 3C       		.uleb128 0x3c
+ 1671 0136 19       		.uleb128 0x19
+ 1672 0137 6E       		.uleb128 0x6e
+ 1673 0138 0E       		.uleb128 0xe
+ 1674 0139 03       		.uleb128 0x3
+ 1675 013a 0E       		.uleb128 0xe
+ 1676 013b 3A       		.uleb128 0x3a
+ 1677 013c 0B       		.uleb128 0xb
+ 1678 013d 3B       		.uleb128 0x3b
+ 1679 013e 05       		.uleb128 0x5
+ 1680 013f 00       		.byte	0
+ 1681 0140 00       		.byte	0
+ 1682 0141 00       		.byte	0
+ 1683              		.section	.debug_aranges,"",%progbits
+ 1684 0000 1C000000 		.4byte	0x1c
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 32
+
+
+ 1685 0004 0200     		.2byte	0x2
+ 1686 0006 00000000 		.4byte	.Ldebug_info0
+ 1687 000a 04       		.byte	0x4
+ 1688 000b 00       		.byte	0
+ 1689 000c 0000     		.2byte	0
+ 1690 000e 0000     		.2byte	0
+ 1691 0010 00000000 		.4byte	.LFB594
+ 1692 0014 78000000 		.4byte	.LFE594-.LFB594
+ 1693 0018 00000000 		.4byte	0
+ 1694 001c 00000000 		.4byte	0
+ 1695              		.section	.debug_ranges,"",%progbits
+ 1696              	.Ldebug_ranges0:
+ 1697 0000 00000000 		.4byte	.LFB594
+ 1698 0004 78000000 		.4byte	.LFE594
+ 1699 0008 00000000 		.4byte	0
+ 1700 000c 00000000 		.4byte	0
+ 1701              		.section	.debug_line,"",%progbits
+ 1702              	.Ldebug_line0:
+ 1703 0000 08030000 		.section	.debug_str,"MS",%progbits,1
+ 1703      0200ED02 
+ 1703      00000201 
+ 1703      FB0E0D00 
+ 1703      01010101 
+ 1704              	.LASF56:
+ 1705 0000 70726F74 		.ascii	"protBusMasterMask\000"
+ 1705      4275734D 
+ 1705      61737465 
+ 1705      724D6173 
+ 1705      6B00
+ 1706              	.LASF127:
+ 1707 0012 72756E4D 		.ascii	"runMode\000"
+ 1707      6F646500 
+ 1708              	.LASF115:
+ 1709 001a 72784275 		.ascii	"rxBufSize\000"
+ 1709      6653697A 
+ 1709      6500
+ 1710              	.LASF66:
+ 1711 0024 666C6173 		.ascii	"flashCtlMainWs3Freq\000"
+ 1711      6843746C 
+ 1711      4D61696E 
+ 1711      57733346 
+ 1711      72657100 
+ 1712              	.LASF88:
+ 1713 0038 6770696F 		.ascii	"gpioPrtCfgInOffset\000"
+ 1713      50727443 
+ 1713      6667496E 
+ 1713      4F666673 
+ 1713      657400
+ 1714              	.LASF158:
+ 1715 004b 6B696C6C 		.ascii	"killInput\000"
+ 1715      496E7075 
+ 1715      7400
+ 1716              	.LASF106:
+ 1717 0055 6970634C 		.ascii	"ipcLockStatusOffset\000"
+ 1717      6F636B53 
+ 1717      74617475 
+ 1717      734F6666 
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 33
+
+
+ 1717      73657400 
+ 1718              	.LASF32:
+ 1719 0069 63727970 		.ascii	"cryptoVersion\000"
+ 1719      746F5665 
+ 1719      7273696F 
+ 1719      6E00
+ 1720              	.LASF70:
+ 1721 0077 64774368 		.ascii	"dwChCtlPrioPos\000"
+ 1721      43746C50 
+ 1721      72696F50 
+ 1721      6F7300
+ 1722              	.LASF28:
+ 1723 0086 70617373 		.ascii	"passBase\000"
+ 1723      42617365 
+ 1723      00
+ 1724              	.LASF104:
+ 1725 008f 63707573 		.ascii	"cpussRam2Ctl0\000"
+ 1725      7352616D 
+ 1725      3243746C 
+ 1725      3000
+ 1726              	.LASF41:
+ 1727 009d 63707573 		.ascii	"cpussIpcIrqNr\000"
+ 1727      73497063 
+ 1727      4972714E 
+ 1727      7200
+ 1728              	.LASF3:
+ 1729 00ab 5F5F7569 		.ascii	"__uint8_t\000"
+ 1729      6E74385F 
+ 1729      7400
+ 1730              	.LASF43:
+ 1731 00b5 63707573 		.ascii	"cpussFlashPaSize\000"
+ 1731      73466C61 
+ 1731      73685061 
+ 1731      53697A65 
+ 1731      00
+ 1732              	.LASF92:
+ 1733 00c6 63707573 		.ascii	"cpussCm4ClockCtlOffset\000"
+ 1733      73436D34 
+ 1733      436C6F63 
+ 1733      6B43746C 
+ 1733      4F666673 
+ 1734              	.LASF128:
+ 1735 00dd 636F756E 		.ascii	"countDirection\000"
+ 1735      74446972 
+ 1735      65637469 
+ 1735      6F6E00
+ 1736              	.LASF140:
+ 1737 00ec 73746F70 		.ascii	"stopInputMode\000"
+ 1737      496E7075 
+ 1737      744D6F64 
+ 1737      6500
+ 1738              	.LASF21:
+ 1739 00fa 63707573 		.ascii	"cpussBase\000"
+ 1739      73426173 
+ 1739      6500
+ 1740              	.LASF125:
+ 1741 0104 70657269 		.ascii	"period\000"
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 34
+
+
+ 1741      6F6400
+ 1742              	.LASF50:
+ 1743 010b 70657269 		.ascii	"periClockNr\000"
+ 1743      436C6F63 
+ 1743      6B4E7200 
+ 1744              	.LASF135:
+ 1745 0117 63617074 		.ascii	"captureInput\000"
+ 1745      75726549 
+ 1745      6E707574 
+ 1745      00
+ 1746              	.LASF12:
+ 1747 0124 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1747      206C6F6E 
+ 1747      6720756E 
+ 1747      7369676E 
+ 1747      65642069 
+ 1748              	.LASF126:
+ 1749 013b 636C6F63 		.ascii	"clockPrescaler\000"
+ 1749      6B507265 
+ 1749      7363616C 
+ 1749      657200
+ 1750              	.LASF74:
+ 1751 014a 70657269 		.ascii	"periTrCmdOffset\000"
+ 1751      5472436D 
+ 1751      644F6666 
+ 1751      73657400 
+ 1752              	.LASF98:
+ 1753 015a 63707573 		.ascii	"cpussSysTickCtlOffset\000"
+ 1753      73537973 
+ 1753      5469636B 
+ 1753      43746C4F 
+ 1753      66667365 
+ 1754              	.LASF117:
+ 1755 0170 74784275 		.ascii	"txBuf\000"
+ 1755      6600
+ 1756              	.LASF59:
+ 1757 0176 666C6173 		.ascii	"flashPipeRequired\000"
+ 1757      68506970 
+ 1757      65526571 
+ 1757      75697265 
+ 1757      6400
+ 1758              	.LASF63:
+ 1759 0188 666C6173 		.ascii	"flashCtlMainWs0Freq\000"
+ 1759      6843746C 
+ 1759      4D61696E 
+ 1759      57733046 
+ 1759      72657100 
+ 1760              	.LASF15:
+ 1761 019c 696E7431 		.ascii	"int16_t\000"
+ 1761      365F7400 
+ 1762              	.LASF11:
+ 1763 01a4 6C6F6E67 		.ascii	"long long int\000"
+ 1763      206C6F6E 
+ 1763      6720696E 
+ 1763      7400
+ 1764              	.LASF144:
+ 1765 01b2 63795F73 		.ascii	"cy_stc_tcpwm_counter_config_t\000"
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 35
+
+
+ 1765      74635F74 
+ 1765      6370776D 
+ 1765      5F636F75 
+ 1765      6E746572 
+ 1766              	.LASF123:
+ 1767 01d0 63795F73 		.ascii	"cy_stc_scb_spi_context\000"
+ 1767      74635F73 
+ 1767      63625F73 
+ 1767      70695F63 
+ 1767      6F6E7465 
+ 1768              	.LASF79:
+ 1769 01e7 70657269 		.ascii	"periDivCmdTypeSelPos\000"
+ 1769      44697643 
+ 1769      6D645479 
+ 1769      70655365 
+ 1769      6C506F73 
+ 1770              	.LASF96:
+ 1771 01fc 63707573 		.ascii	"cpussTrimRamCtlOffset\000"
+ 1771      73547269 
+ 1771      6D52616D 
+ 1771      43746C4F 
+ 1771      66667365 
+ 1772              	.LASF37:
+ 1773 0212 69706356 		.ascii	"ipcVersion\000"
+ 1773      65727369 
+ 1773      6F6E00
+ 1774              	.LASF99:
+ 1775 021d 63707573 		.ascii	"cpussCm0NmiCtlOffset\000"
+ 1775      73436D30 
+ 1775      4E6D6943 
+ 1775      746C4F66 
+ 1775      66736574 
+ 1776              	.LASF112:
+ 1777 0232 63795F63 		.ascii	"cy_cb_scb_spi_handle_events_t\000"
+ 1777      625F7363 
+ 1777      625F7370 
+ 1777      695F6861 
+ 1777      6E646C65 
+ 1778              	.LASF26:
+ 1779 0250 6873696F 		.ascii	"hsiomBase\000"
+ 1779      6D426173 
+ 1779      6500
+ 1780              	.LASF145:
+ 1781 025a 63795F73 		.ascii	"cy_stc_tcpwm_pwm_config\000"
+ 1781      74635F74 
+ 1781      6370776D 
+ 1781      5F70776D 
+ 1781      5F636F6E 
+ 1782              	.LASF8:
+ 1783 0272 6C6F6E67 		.ascii	"long int\000"
+ 1783      20696E74 
+ 1783      00
+ 1784              	.LASF57:
+ 1785 027b 63727970 		.ascii	"cryptoMemSize\000"
+ 1785      746F4D65 
+ 1785      6D53697A 
+ 1785      6500
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 36
+
+
+ 1786              	.LASF164:
+ 1787 0289 50574D5F 		.ascii	"PWM_1_config\000"
+ 1787      315F636F 
+ 1787      6E666967 
+ 1787      00
+ 1788              	.LASF23:
+ 1789 0296 70657269 		.ascii	"periBase\000"
+ 1789      42617365 
+ 1789      00
+ 1790              	.LASF55:
+ 1791 029f 73797350 		.ascii	"sysPmSimoPresent\000"
+ 1791      6D53696D 
+ 1791      6F507265 
+ 1791      73656E74 
+ 1791      00
+ 1792              	.LASF16:
+ 1793 02b0 75696E74 		.ascii	"uint16_t\000"
+ 1793      31365F74 
+ 1793      00
+ 1794              	.LASF110:
+ 1795 02b9 646F7562 		.ascii	"double\000"
+ 1795      6C6500
+ 1796              	.LASF84:
+ 1797 02c0 70657269 		.ascii	"periDiv16_5CtlOffset\000"
+ 1797      44697631 
+ 1797      365F3543 
+ 1797      746C4F66 
+ 1797      66736574 
+ 1798              	.LASF48:
+ 1799 02d5 73727373 		.ascii	"srssNumPll\000"
+ 1799      4E756D50 
+ 1799      6C6C00
+ 1800              	.LASF134:
+ 1801 02e0 63617074 		.ascii	"captureInputMode\000"
+ 1801      75726549 
+ 1801      6E707574 
+ 1801      4D6F6465 
+ 1801      00
+ 1802              	.LASF82:
+ 1803 02f1 70657269 		.ascii	"periDiv8CtlOffset\000"
+ 1803      44697638 
+ 1803      43746C4F 
+ 1803      66667365 
+ 1803      7400
+ 1804              	.LASF89:
+ 1805 0303 6770696F 		.ascii	"gpioPrtCfgOutOffset\000"
+ 1805      50727443 
+ 1805      66674F75 
+ 1805      744F6666 
+ 1805      73657400 
+ 1806              	.LASF22:
+ 1807 0317 666C6173 		.ascii	"flashcBase\000"
+ 1807      68634261 
+ 1807      736500
+ 1808              	.LASF9:
+ 1809 0322 5F5F7569 		.ascii	"__uint32_t\000"
+ 1809      6E743332 
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 37
+
+
+ 1809      5F7400
+ 1810              	.LASF52:
+ 1811 032d 70617373 		.ascii	"passSarChannels\000"
+ 1811      53617243 
+ 1811      68616E6E 
+ 1811      656C7300 
+ 1812              	.LASF167:
+ 1813 033d 76546173 		.ascii	"vTaskStartScheduler\000"
+ 1813      6B537461 
+ 1813      72745363 
+ 1813      68656475 
+ 1813      6C657200 
+ 1814              	.LASF4:
+ 1815 0351 5F5F696E 		.ascii	"__int16_t\000"
+ 1815      7431365F 
+ 1815      7400
+ 1816              	.LASF116:
+ 1817 035b 72784275 		.ascii	"rxBufIdx\000"
+ 1817      66496478 
+ 1817      00
+ 1818              	.LASF80:
+ 1819 0364 70657269 		.ascii	"periDivCmdPaDivSelPos\000"
+ 1819      44697643 
+ 1819      6D645061 
+ 1819      44697653 
+ 1819      656C506F 
+ 1820              	.LASF95:
+ 1821 037a 63707573 		.ascii	"cpussCm4PwrCtlOffset\000"
+ 1821      73436D34 
+ 1821      50777243 
+ 1821      746C4F66 
+ 1821      66736574 
+ 1822              	.LASF118:
+ 1823 038f 74784275 		.ascii	"txBufSize\000"
+ 1823      6653697A 
+ 1823      6500
+ 1824              	.LASF90:
+ 1825 0399 6770696F 		.ascii	"gpioPrtCfgSioOffset\000"
+ 1825      50727443 
+ 1825      66675369 
+ 1825      6F4F6666 
+ 1825      73657400 
+ 1826              	.LASF94:
+ 1827 03ad 63707573 		.ascii	"cpussCm0StatusOffset\000"
+ 1827      73436D30 
+ 1827      53746174 
+ 1827      75734F66 
+ 1827      66736574 
+ 1828              	.LASF13:
+ 1829 03c2 756E7369 		.ascii	"unsigned int\000"
+ 1829      676E6564 
+ 1829      20696E74 
+ 1829      00
+ 1830              	.LASF75:
+ 1831 03cf 70657269 		.ascii	"periTrCmdGrSelMsk\000"
+ 1831      5472436D 
+ 1831      64477253 
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 38
+
+
+ 1831      656C4D73 
+ 1831      6B00
+ 1832              	.LASF10:
+ 1833 03e1 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1833      20756E73 
+ 1833      69676E65 
+ 1833      6420696E 
+ 1833      7400
+ 1834              	.LASF40:
+ 1835 03f3 63707573 		.ascii	"cpussIpcNr\000"
+ 1835      73497063 
+ 1835      4E7200
+ 1836              	.LASF42:
+ 1837 03fe 63707573 		.ascii	"cpussDwChNr\000"
+ 1837      73447743 
+ 1837      684E7200 
+ 1838              	.LASF65:
+ 1839 040a 666C6173 		.ascii	"flashCtlMainWs2Freq\000"
+ 1839      6843746C 
+ 1839      4D61696E 
+ 1839      57733246 
+ 1839      72657100 
+ 1840              	.LASF155:
+ 1841 041e 73776170 		.ascii	"swapInputMode\000"
+ 1841      496E7075 
+ 1841      744D6F64 
+ 1841      6500
+ 1842              	.LASF76:
+ 1843 042c 70657269 		.ascii	"periTrGrOffset\000"
+ 1843      54724772 
+ 1843      4F666673 
+ 1843      657400
+ 1844              	.LASF103:
+ 1845 043b 63707573 		.ascii	"cpussRam1Ctl0\000"
+ 1845      7352616D 
+ 1845      3143746C 
+ 1845      3000
+ 1846              	.LASF157:
+ 1847 0449 6B696C6C 		.ascii	"killInputMode\000"
+ 1847      496E7075 
+ 1847      744D6F64 
+ 1847      6500
+ 1848              	.LASF120:
+ 1849 0457 63624576 		.ascii	"cbEvents\000"
+ 1849      656E7473 
+ 1849      00
+ 1850              	.LASF87:
+ 1851 0460 6770696F 		.ascii	"gpioPrtCfgOffset\000"
+ 1851      50727443 
+ 1851      66674F66 
+ 1851      66736574 
+ 1851      00
+ 1852              	.LASF35:
+ 1853 0471 6770696F 		.ascii	"gpioVersion\000"
+ 1853      56657273 
+ 1853      696F6E00 
+ 1854              	.LASF107:
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 39
+
+
+ 1855 047d 63795F73 		.ascii	"cy_stc_device_t\000"
+ 1855      74635F64 
+ 1855      65766963 
+ 1855      655F7400 
+ 1856              	.LASF122:
+ 1857 048d 63795F73 		.ascii	"cy_stc_scb_spi_context_t\000"
+ 1857      74635F73 
+ 1857      63625F73 
+ 1857      70695F63 
+ 1857      6F6E7465 
+ 1858              	.LASF0:
+ 1859 04a6 73686F72 		.ascii	"short int\000"
+ 1859      7420696E 
+ 1859      7400
+ 1860              	.LASF152:
+ 1861 04b0 696E7665 		.ascii	"invertPWMOut\000"
+ 1861      72745057 
+ 1861      4D4F7574 
+ 1861      00
+ 1862              	.LASF148:
+ 1863 04bd 64656164 		.ascii	"deadTimeClocks\000"
+ 1863      54696D65 
+ 1863      436C6F63 
+ 1863      6B7300
+ 1864              	.LASF25:
+ 1865 04cc 70726F74 		.ascii	"protBase\000"
+ 1865      42617365 
  1865      00
- 1866              	.LASF24:
- 1867 06c7 75646242 		.ascii	"udbBase\000"
- 1867      61736500 
- 1868              	.LASF138:
- 1869 06cf 73746172 		.ascii	"startInputMode\000"
- 1869      74496E70 
- 1869      75744D6F 
- 1869      646500
- 1870              	.LASF17:
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 42
-
-
- 1871 06de 696E7433 		.ascii	"int32_t\000"
- 1871      325F7400 
- 1872              	.LASF2:
- 1873 06e6 756E7369 		.ascii	"unsigned char\000"
- 1873      676E6564 
- 1873      20636861 
- 1873      7200
- 1874              	.LASF67:
- 1875 06f4 666C6173 		.ascii	"flashCtlMainWs4Freq\000"
- 1875      6843746C 
- 1875      4D61696E 
- 1875      57733446 
- 1875      72657100 
- 1876              	.LASF160:
- 1877 0708 49544D5F 		.ascii	"ITM_RxBuffer\000"
- 1877      52784275 
- 1877      66666572 
+ 1866              	.LASF142:
+ 1867 04d5 636F756E 		.ascii	"countInputMode\000"
+ 1867      74496E70 
+ 1867      75744D6F 
+ 1867      646500
+ 1868              	.LASF91:
+ 1869 04e4 63707573 		.ascii	"cpussCm0ClockCtlOffset\000"
+ 1869      73436D30 
+ 1869      436C6F63 
+ 1869      6B43746C 
+ 1869      4F666673 
+ 1870              	.LASF30:
+ 1871 04fb 63727970 		.ascii	"cryptoBase\000"
+ 1871      746F4261 
+ 1871      736500
+ 1872              	.LASF38:
+ 1873 0506 70657269 		.ascii	"periVersion\000"
+ 1873      56657273 
+ 1873      696F6E00 
+ 1874              	.LASF124:
+ 1875 0512 63795F73 		.ascii	"cy_stc_tcpwm_counter_config\000"
+ 1875      74635F74 
+ 1875      6370776D 
+ 1875      5F636F75 
+ 1875      6E746572 
+ 1876              	.LASF19:
+ 1877 052e 73697A65 		.ascii	"sizetype\000"
+ 1877      74797065 
  1877      00
- 1878              	.LASF85:
- 1879 0715 70657269 		.ascii	"periDiv24_5CtlOffset\000"
- 1879      44697632 
- 1879      345F3543 
- 1879      746C4F66 
- 1879      66736574 
- 1880              	.LASF132:
- 1881 072a 656E6162 		.ascii	"enableCompareSwap\000"
- 1881      6C65436F 
- 1881      6D706172 
- 1881      65537761 
- 1881      7000
- 1882              	.LASF102:
- 1883 073c 63707573 		.ascii	"cpussRam0Ctl0\000"
- 1883      7352616D 
- 1883      3043746C 
- 1883      3000
- 1884              	.LASF113:
- 1885 074a 73746174 		.ascii	"status\000"
- 1885      757300
- 1886              	.LASF147:
- 1887 0751 70776D41 		.ascii	"pwmAlignment\000"
- 1887      6C69676E 
- 1887      6D656E74 
- 1887      00
- 1888              	.LASF78:
- 1889 075e 70657269 		.ascii	"periDivCmdDivSelMsk\000"
- 1889      44697643 
- 1889      6D644469 
- 1889      7653656C 
- 1889      4D736B00 
- 1890              	.LASF151:
- 1891 0772 656E6162 		.ascii	"enablePeriodSwap\000"
- 1891      6C655065 
- 1891      72696F64 
- 1891      53776170 
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 40
+
+
+ 1878              	.LASF68:
+ 1879 0537 64774368 		.ascii	"dwChOffset\000"
+ 1879      4F666673 
+ 1879      657400
+ 1880              	.LASF20:
+ 1881 0542 6C6F6E67 		.ascii	"long double\000"
+ 1881      20646F75 
+ 1881      626C6500 
+ 1882              	.LASF166:
+ 1883 054e 78546173 		.ascii	"xTaskCreate\000"
+ 1883      6B437265 
+ 1883      61746500 
+ 1884              	.LASF81:
+ 1885 055a 70657269 		.ascii	"periDivCmdPaTypeSelPos\000"
+ 1885      44697643 
+ 1885      6D645061 
+ 1885      54797065 
+ 1885      53656C50 
+ 1886              	.LASF53:
+ 1887 0571 65704D6F 		.ascii	"epMonitorNr\000"
+ 1887      6E69746F 
+ 1887      724E7200 
+ 1888              	.LASF39:
+ 1889 057d 70726F74 		.ascii	"protVersion\000"
+ 1889      56657273 
+ 1889      696F6E00 
+ 1890              	.LASF72:
+ 1891 0589 64775374 		.ascii	"dwStatusChIdxPos\000"
+ 1891      61747573 
+ 1891      43684964 
+ 1891      78506F73 
  1891      00
- 1892              	.LASF129:
- 1893 0783 636F6D70 		.ascii	"compareOrCapture\000"
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 43
+ 1892              	.LASF54:
+ 1893 059a 75646250 		.ascii	"udbPresent\000"
+ 1893      72657365 
+ 1893      6E7400
+ 1894              	.LASF34:
+ 1895 05a5 666C6173 		.ascii	"flashcVersion\000"
+ 1895      68635665 
+ 1895      7273696F 
+ 1895      6E00
+ 1896              	.LASF51:
+ 1897 05b3 736D6966 		.ascii	"smifDeviceNr\000"
+ 1897      44657669 
+ 1897      63654E72 
+ 1897      00
+ 1898              	.LASF168:
+ 1899 05c0 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1899      43313120 
+ 1899      352E342E 
+ 1899      31203230 
+ 1899      31363036 
+ 1900 05f3 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m4 -mfloat-abi=s"
+ 1900      20726576 
+ 1900      6973696F 
+ 1900      6E203233 
+ 1900      37373135 
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 41
 
 
- 1893      6172654F 
- 1893      72436170 
- 1893      74757265 
- 1893      00
- 1894              	.LASF49:
- 1895 0794 73727373 		.ascii	"srssNumHfroot\000"
- 1895      4E756D48 
- 1895      66726F6F 
- 1895      7400
- 1896              	.LASF62:
- 1897 07a2 666C6173 		.ascii	"flashEraseDelay\000"
- 1897      68457261 
- 1897      73654465 
- 1897      6C617900 
- 1898              	.LASF45:
- 1899 07b2 63707573 		.ascii	"cpussFmIrq\000"
- 1899      73466D49 
- 1899      727100
- 1900              	.LASF77:
- 1901 07bd 70657269 		.ascii	"periTrGrSize\000"
- 1901      54724772 
- 1901      53697A65 
- 1901      00
- 1902              	.LASF100:
- 1903 07ca 63707573 		.ascii	"cpussCm4NmiCtlOffset\000"
- 1903      73436D34 
- 1903      4E6D6943 
- 1903      746C4F66 
- 1903      66736574 
- 1904              	.LASF130:
- 1905 07df 636F6D70 		.ascii	"compare0\000"
- 1905      61726530 
- 1905      00
- 1906              	.LASF131:
- 1907 07e8 636F6D70 		.ascii	"compare1\000"
- 1907      61726531 
- 1907      00
- 1908              	.LASF143:
- 1909 07f1 636F756E 		.ascii	"countInput\000"
- 1909      74496E70 
- 1909      757400
- 1910              	.LASF108:
- 1911 07fc 63686172 		.ascii	"char\000"
- 1911      00
- 1912              	.LASF64:
- 1913 0801 666C6173 		.ascii	"flashCtlMainWs1Freq\000"
- 1913      6843746C 
- 1913      4D61696E 
- 1913      57733146 
- 1913      72657100 
- 1914              	.LASF5:
- 1915 0815 5F5F7569 		.ascii	"__uint16_t\000"
- 1915      6E743136 
- 1915      5F7400
- 1916              	.LASF83:
- 1917 0820 70657269 		.ascii	"periDiv16CtlOffset\000"
- 1917      44697631 
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 44
+ 1901 0626 6F667466 		.ascii	"oftfp -mfpu=fpv4-sp-d16 -mthumb -g -Og -ffunction-s"
+ 1901      70202D6D 
+ 1901      6670753D 
+ 1901      66707634 
+ 1901      2D73702D 
+ 1902 0659 65637469 		.ascii	"ections -ffat-lto-objects\000"
+ 1902      6F6E7320 
+ 1902      2D666661 
+ 1902      742D6C74 
+ 1902      6F2D6F62 
+ 1903              	.LASF146:
+ 1904 0673 70776D4D 		.ascii	"pwmMode\000"
+ 1904      6F646500 
+ 1905              	.LASF109:
+ 1906 067b 666C6F61 		.ascii	"float\000"
+ 1906      7400
+ 1907              	.LASF73:
+ 1908 0681 64775374 		.ascii	"dwStatusChIdxMsk\000"
+ 1908      61747573 
+ 1908      43684964 
+ 1908      784D736B 
+ 1908      00
+ 1909              	.LASF161:
+ 1910 0692 63795F64 		.ascii	"cy_device\000"
+ 1910      65766963 
+ 1910      6500
+ 1911              	.LASF101:
+ 1912 069c 63707573 		.ascii	"cpussRomCtl\000"
+ 1912      73526F6D 
+ 1912      43746C00 
+ 1913              	.LASF71:
+ 1914 06a8 64774368 		.ascii	"dwChCtlPreemptablePos\000"
+ 1914      43746C50 
+ 1914      7265656D 
+ 1914      70746162 
+ 1914      6C65506F 
+ 1915              	.LASF154:
+ 1916 06be 6B696C6C 		.ascii	"killMode\000"
+ 1916      4D6F6465 
+ 1916      00
+ 1917              	.LASF24:
+ 1918 06c7 75646242 		.ascii	"udbBase\000"
+ 1918      61736500 
+ 1919              	.LASF138:
+ 1920 06cf 73746172 		.ascii	"startInputMode\000"
+ 1920      74496E70 
+ 1920      75744D6F 
+ 1920      646500
+ 1921              	.LASF17:
+ 1922 06de 696E7433 		.ascii	"int32_t\000"
+ 1922      325F7400 
+ 1923              	.LASF2:
+ 1924 06e6 756E7369 		.ascii	"unsigned char\000"
+ 1924      676E6564 
+ 1924      20636861 
+ 1924      7200
+ 1925              	.LASF67:
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 42
 
 
- 1917      3643746C 
- 1917      4F666673 
- 1917      657400
- 1918              	.LASF7:
- 1919 0833 5F5F696E 		.ascii	"__int32_t\000"
- 1919      7433325F 
- 1919      7400
- 1920              	.LASF33:
- 1921 083d 64775665 		.ascii	"dwVersion\000"
- 1921      7273696F 
- 1921      6E00
- 1922              	.LASF36:
- 1923 0847 6873696F 		.ascii	"hsiomVersion\000"
- 1923      6D566572 
- 1923      73696F6E 
- 1923      00
- 1924              	.LASF170:
- 1925 0854 433A5C55 		.ascii	"C:\\Users\\Nancy\\Documents\\Myriane\\Laboratoire3\\"
- 1925      73657273 
- 1925      5C4E616E 
- 1925      63795C44 
- 1925      6F63756D 
- 1926 0882 4C61626F 		.ascii	"Laboratoire3.cydsn\000"
- 1926      7261746F 
- 1926      69726533 
- 1926      2E637964 
- 1926      736E00
- 1927              	.LASF165:
- 1928 0895 696E6974 		.ascii	"initialisation\000"
- 1928      69616C69 
- 1928      73617469 
- 1928      6F6E00
- 1929              	.LASF133:
- 1930 08a4 696E7465 		.ascii	"interruptSources\000"
- 1930      72727570 
- 1930      74536F75 
- 1930      72636573 
- 1930      00
- 1931              	.LASF137:
- 1932 08b5 72656C6F 		.ascii	"reloadInput\000"
- 1932      6164496E 
- 1932      70757400 
- 1933              	.LASF6:
- 1934 08c1 73686F72 		.ascii	"short unsigned int\000"
- 1934      7420756E 
- 1934      7369676E 
- 1934      65642069 
- 1934      6E7400
- 1935              	.LASF69:
- 1936 08d4 64774368 		.ascii	"dwChSize\000"
- 1936      53697A65 
- 1936      00
- 1937              	.LASF141:
- 1938 08dd 73746F70 		.ascii	"stopInput\000"
- 1938      496E7075 
- 1938      7400
- 1939              	.LASF105:
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 45
-
-
- 1940 08e7 69706353 		.ascii	"ipcStructSize\000"
- 1940      74727563 
- 1940      7453697A 
- 1940      6500
- 1941              	.LASF44:
- 1942 08f5 63707573 		.ascii	"cpussIpc0Irq\000"
- 1942      73497063 
- 1942      30497271 
+ 1926 06f4 666C6173 		.ascii	"flashCtlMainWs4Freq\000"
+ 1926      6843746C 
+ 1926      4D61696E 
+ 1926      57733446 
+ 1926      72657100 
+ 1927              	.LASF160:
+ 1928 0708 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 1928      52784275 
+ 1928      66666572 
+ 1928      00
+ 1929              	.LASF85:
+ 1930 0715 70657269 		.ascii	"periDiv24_5CtlOffset\000"
+ 1930      44697632 
+ 1930      345F3543 
+ 1930      746C4F66 
+ 1930      66736574 
+ 1931              	.LASF132:
+ 1932 072a 656E6162 		.ascii	"enableCompareSwap\000"
+ 1932      6C65436F 
+ 1932      6D706172 
+ 1932      65537761 
+ 1932      7000
+ 1933              	.LASF102:
+ 1934 073c 63707573 		.ascii	"cpussRam0Ctl0\000"
+ 1934      7352616D 
+ 1934      3043746C 
+ 1934      3000
+ 1935              	.LASF113:
+ 1936 074a 73746174 		.ascii	"status\000"
+ 1936      757300
+ 1937              	.LASF147:
+ 1938 0751 70776D41 		.ascii	"pwmAlignment\000"
+ 1938      6C69676E 
+ 1938      6D656E74 
+ 1938      00
+ 1939              	.LASF78:
+ 1940 075e 70657269 		.ascii	"periDivCmdDivSelMsk\000"
+ 1940      44697643 
+ 1940      6D644469 
+ 1940      7653656C 
+ 1940      4D736B00 
+ 1941              	.LASF151:
+ 1942 0772 656E6162 		.ascii	"enablePeriodSwap\000"
+ 1942      6C655065 
+ 1942      72696F64 
+ 1942      53776170 
  1942      00
- 1943              	.LASF149:
- 1944 0902 70657269 		.ascii	"period0\000"
- 1944      6F643000 
- 1945              	.LASF150:
- 1946 090a 70657269 		.ascii	"period1\000"
- 1946      6F643100 
- 1947              	.LASF27:
- 1948 0912 6770696F 		.ascii	"gpioBase\000"
- 1948      42617365 
- 1948      00
- 1949              	.LASF121:
- 1950 091b 696E6974 		.ascii	"initKey\000"
- 1950      4B657900 
- 1951              	.LASF114:
- 1952 0923 72784275 		.ascii	"rxBuf\000"
- 1952      6600
- 1953              	.LASF18:
- 1954 0929 75696E74 		.ascii	"uint32_t\000"
- 1954      33325F74 
- 1954      00
- 1955              	.LASF111:
- 1956 0932 5F426F6F 		.ascii	"_Bool\000"
- 1956      6C00
- 1957              	.LASF162:
- 1958 0938 43595F45 		.ascii	"CY_EINK_SPIM_context\000"
- 1958      494E4B5F 
- 1958      5350494D 
- 1958      5F636F6E 
- 1958      74657874 
- 1959              	.LASF46:
- 1960 094d 63707573 		.ascii	"cpussNotConnectedIrq\000"
- 1960      734E6F74 
- 1960      436F6E6E 
- 1960      65637465 
- 1960      64497271 
- 1961              	.LASF153:
- 1962 0962 696E7665 		.ascii	"invertPWMOutN\000"
- 1962      72745057 
- 1962      4D4F7574 
- 1962      4E00
- 1963              	.LASF60:
- 1964 0970 666C6173 		.ascii	"flashWriteDelay\000"
- 1964      68577269 
- 1964      74654465 
- 1964      6C617900 
- 1965              	.LASF14:
- 1966 0980 75696E74 		.ascii	"uint8_t\000"
- 1966      385F7400 
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 46
+ 1943              	.LASF129:
+ 1944 0783 636F6D70 		.ascii	"compareOrCapture\000"
+ 1944      6172654F 
+ 1944      72436170 
+ 1944      74757265 
+ 1944      00
+ 1945              	.LASF49:
+ 1946 0794 73727373 		.ascii	"srssNumHfroot\000"
+ 1946      4E756D48 
+ 1946      66726F6F 
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 43
 
 
- 1967              	.LASF156:
- 1968 0988 73776170 		.ascii	"swapInput\000"
- 1968      496E7075 
- 1968      7400
- 1969              	.LASF163:
- 1970 0992 43595F45 		.ascii	"CY_EINK_Timer_config\000"
- 1970      494E4B5F 
- 1970      54696D65 
- 1970      725F636F 
- 1970      6E666967 
- 1971              	.LASF93:
- 1972 09a7 63707573 		.ascii	"cpussCm4StatusOffset\000"
- 1972      73436D34 
- 1972      53746174 
- 1972      75734F66 
- 1972      66736574 
- 1973              	.LASF86:
- 1974 09bc 6770696F 		.ascii	"gpioPrtIntrCfgOffset\000"
- 1974      50727449 
- 1974      6E747243 
- 1974      66674F66 
- 1974      66736574 
- 1975              	.LASF159:
- 1976 09d1 63795F73 		.ascii	"cy_stc_tcpwm_pwm_config_t\000"
- 1976      74635F74 
- 1976      6370776D 
- 1976      5F70776D 
- 1976      5F636F6E 
- 1977              	.LASF136:
- 1978 09eb 72656C6F 		.ascii	"reloadInputMode\000"
- 1978      6164496E 
- 1978      7075744D 
- 1978      6F646500 
- 1979              	.LASF97:
- 1980 09fb 63707573 		.ascii	"cpussTrimRomCtlOffset\000"
- 1980      73547269 
- 1980      6D526F6D 
- 1980      43746C4F 
- 1980      66667365 
- 1981              	.LASF47:
- 1982 0a11 73727373 		.ascii	"srssNumClkpath\000"
- 1982      4E756D43 
- 1982      6C6B7061 
- 1982      746800
- 1983              	.LASF1:
- 1984 0a20 7369676E 		.ascii	"signed char\000"
- 1984      65642063 
- 1984      68617200 
- 1985              	.LASF29:
- 1986 0a2c 69706342 		.ascii	"ipcBase\000"
- 1986      61736500 
- 1987              	.LASF171:
- 1988 0a34 6D61696E 		.ascii	"main\000"
- 1988      00
- 1989              	.LASF61:
- 1990 0a39 666C6173 		.ascii	"flashProgramDelay\000"
- 1990      6850726F 
-ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccMUW4pq.s 			page 47
+ 1946      7400
+ 1947              	.LASF62:
+ 1948 07a2 666C6173 		.ascii	"flashEraseDelay\000"
+ 1948      68457261 
+ 1948      73654465 
+ 1948      6C617900 
+ 1949              	.LASF45:
+ 1950 07b2 63707573 		.ascii	"cpussFmIrq\000"
+ 1950      73466D49 
+ 1950      727100
+ 1951              	.LASF77:
+ 1952 07bd 70657269 		.ascii	"periTrGrSize\000"
+ 1952      54724772 
+ 1952      53697A65 
+ 1952      00
+ 1953              	.LASF100:
+ 1954 07ca 63707573 		.ascii	"cpussCm4NmiCtlOffset\000"
+ 1954      73436D34 
+ 1954      4E6D6943 
+ 1954      746C4F66 
+ 1954      66736574 
+ 1955              	.LASF130:
+ 1956 07df 636F6D70 		.ascii	"compare0\000"
+ 1956      61726530 
+ 1956      00
+ 1957              	.LASF131:
+ 1958 07e8 636F6D70 		.ascii	"compare1\000"
+ 1958      61726531 
+ 1958      00
+ 1959              	.LASF143:
+ 1960 07f1 636F756E 		.ascii	"countInput\000"
+ 1960      74496E70 
+ 1960      757400
+ 1961              	.LASF108:
+ 1962 07fc 63686172 		.ascii	"char\000"
+ 1962      00
+ 1963              	.LASF64:
+ 1964 0801 666C6173 		.ascii	"flashCtlMainWs1Freq\000"
+ 1964      6843746C 
+ 1964      4D61696E 
+ 1964      57733146 
+ 1964      72657100 
+ 1965              	.LASF5:
+ 1966 0815 5F5F7569 		.ascii	"__uint16_t\000"
+ 1966      6E743136 
+ 1966      5F7400
+ 1967              	.LASF83:
+ 1968 0820 70657269 		.ascii	"periDiv16CtlOffset\000"
+ 1968      44697631 
+ 1968      3643746C 
+ 1968      4F666673 
+ 1968      657400
+ 1969              	.LASF7:
+ 1970 0833 5F5F696E 		.ascii	"__int32_t\000"
+ 1970      7433325F 
+ 1970      7400
+ 1971              	.LASF33:
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 44
 
 
- 1990      6772616D 
- 1990      44656C61 
- 1990      7900
- 1991              	.LASF169:
- 1992 0a4b 6D61696E 		.ascii	"main_cm4.c\000"
- 1992      5F636D34 
- 1992      2E6300
- 1993              	.LASF31:
- 1994 0a56 63707573 		.ascii	"cpussVersion\000"
- 1994      73566572 
- 1994      73696F6E 
- 1994      00
- 1995              	.LASF58:
- 1996 0a63 666C6173 		.ascii	"flashRwwRequired\000"
- 1996      68527777 
- 1996      52657175 
- 1996      69726564 
+ 1972 083d 64775665 		.ascii	"dwVersion\000"
+ 1972      7273696F 
+ 1972      6E00
+ 1973              	.LASF36:
+ 1974 0847 6873696F 		.ascii	"hsiomVersion\000"
+ 1974      6D566572 
+ 1974      73696F6E 
+ 1974      00
+ 1975              	.LASF165:
+ 1976 0854 696E6974 		.ascii	"initialisation\000"
+ 1976      69616C69 
+ 1976      73617469 
+ 1976      6F6E00
+ 1977              	.LASF133:
+ 1978 0863 696E7465 		.ascii	"interruptSources\000"
+ 1978      72727570 
+ 1978      74536F75 
+ 1978      72636573 
+ 1978      00
+ 1979              	.LASF137:
+ 1980 0874 72656C6F 		.ascii	"reloadInput\000"
+ 1980      6164496E 
+ 1980      70757400 
+ 1981              	.LASF6:
+ 1982 0880 73686F72 		.ascii	"short unsigned int\000"
+ 1982      7420756E 
+ 1982      7369676E 
+ 1982      65642069 
+ 1982      6E7400
+ 1983              	.LASF69:
+ 1984 0893 64774368 		.ascii	"dwChSize\000"
+ 1984      53697A65 
+ 1984      00
+ 1985              	.LASF141:
+ 1986 089c 73746F70 		.ascii	"stopInput\000"
+ 1986      496E7075 
+ 1986      7400
+ 1987              	.LASF105:
+ 1988 08a6 69706353 		.ascii	"ipcStructSize\000"
+ 1988      74727563 
+ 1988      7453697A 
+ 1988      6500
+ 1989              	.LASF44:
+ 1990 08b4 63707573 		.ascii	"cpussIpc0Irq\000"
+ 1990      73497063 
+ 1990      30497271 
+ 1990      00
+ 1991              	.LASF149:
+ 1992 08c1 70657269 		.ascii	"period0\000"
+ 1992      6F643000 
+ 1993              	.LASF150:
+ 1994 08c9 70657269 		.ascii	"period1\000"
+ 1994      6F643100 
+ 1995              	.LASF27:
+ 1996 08d1 6770696F 		.ascii	"gpioBase\000"
+ 1996      42617365 
  1996      00
- 1997              	.LASF119:
- 1998 0a74 74784275 		.ascii	"txBufIdx\000"
- 1998      66496478 
- 1998      00
- 1999              	.LASF139:
- 2000 0a7d 73746172 		.ascii	"startInput\000"
- 2000      74496E70 
- 2000      757400
- 2001              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 45
+
+
+ 1997              	.LASF121:
+ 1998 08da 696E6974 		.ascii	"initKey\000"
+ 1998      4B657900 
+ 1999              	.LASF114:
+ 2000 08e2 72784275 		.ascii	"rxBuf\000"
+ 2000      6600
+ 2001              	.LASF18:
+ 2002 08e8 75696E74 		.ascii	"uint32_t\000"
+ 2002      33325F74 
+ 2002      00
+ 2003              	.LASF111:
+ 2004 08f1 5F426F6F 		.ascii	"_Bool\000"
+ 2004      6C00
+ 2005              	.LASF170:
+ 2006 08f7 433A5C55 		.ascii	"C:\\Users\\Nancy\\Documents\\Projet-final-pulse-oxi"
+ 2006      73657273 
+ 2006      5C4E616E 
+ 2006      63795C44 
+ 2006      6F63756D 
+ 2007 0926 6D657465 		.ascii	"meter\\Laboratoire3.cydsn\000"
+ 2007      725C4C61 
+ 2007      626F7261 
+ 2007      746F6972 
+ 2007      65332E63 
+ 2008              	.LASF162:
+ 2009 093f 43595F45 		.ascii	"CY_EINK_SPIM_context\000"
+ 2009      494E4B5F 
+ 2009      5350494D 
+ 2009      5F636F6E 
+ 2009      74657874 
+ 2010              	.LASF46:
+ 2011 0954 63707573 		.ascii	"cpussNotConnectedIrq\000"
+ 2011      734E6F74 
+ 2011      436F6E6E 
+ 2011      65637465 
+ 2011      64497271 
+ 2012              	.LASF153:
+ 2013 0969 696E7665 		.ascii	"invertPWMOutN\000"
+ 2013      72745057 
+ 2013      4D4F7574 
+ 2013      4E00
+ 2014              	.LASF60:
+ 2015 0977 666C6173 		.ascii	"flashWriteDelay\000"
+ 2015      68577269 
+ 2015      74654465 
+ 2015      6C617900 
+ 2016              	.LASF14:
+ 2017 0987 75696E74 		.ascii	"uint8_t\000"
+ 2017      385F7400 
+ 2018              	.LASF156:
+ 2019 098f 73776170 		.ascii	"swapInput\000"
+ 2019      496E7075 
+ 2019      7400
+ 2020              	.LASF163:
+ 2021 0999 43595F45 		.ascii	"CY_EINK_Timer_config\000"
+ 2021      494E4B5F 
+ 2021      54696D65 
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 46
+
+
+ 2021      725F636F 
+ 2021      6E666967 
+ 2022              	.LASF93:
+ 2023 09ae 63707573 		.ascii	"cpussCm4StatusOffset\000"
+ 2023      73436D34 
+ 2023      53746174 
+ 2023      75734F66 
+ 2023      66736574 
+ 2024              	.LASF86:
+ 2025 09c3 6770696F 		.ascii	"gpioPrtIntrCfgOffset\000"
+ 2025      50727449 
+ 2025      6E747243 
+ 2025      66674F66 
+ 2025      66736574 
+ 2026              	.LASF159:
+ 2027 09d8 63795F73 		.ascii	"cy_stc_tcpwm_pwm_config_t\000"
+ 2027      74635F74 
+ 2027      6370776D 
+ 2027      5F70776D 
+ 2027      5F636F6E 
+ 2028              	.LASF136:
+ 2029 09f2 72656C6F 		.ascii	"reloadInputMode\000"
+ 2029      6164496E 
+ 2029      7075744D 
+ 2029      6F646500 
+ 2030              	.LASF97:
+ 2031 0a02 63707573 		.ascii	"cpussTrimRomCtlOffset\000"
+ 2031      73547269 
+ 2031      6D526F6D 
+ 2031      43746C4F 
+ 2031      66667365 
+ 2032              	.LASF47:
+ 2033 0a18 73727373 		.ascii	"srssNumClkpath\000"
+ 2033      4E756D43 
+ 2033      6C6B7061 
+ 2033      746800
+ 2034              	.LASF1:
+ 2035 0a27 7369676E 		.ascii	"signed char\000"
+ 2035      65642063 
+ 2035      68617200 
+ 2036              	.LASF29:
+ 2037 0a33 69706342 		.ascii	"ipcBase\000"
+ 2037      61736500 
+ 2038              	.LASF171:
+ 2039 0a3b 6D61696E 		.ascii	"main\000"
+ 2039      00
+ 2040              	.LASF61:
+ 2041 0a40 666C6173 		.ascii	"flashProgramDelay\000"
+ 2041      6850726F 
+ 2041      6772616D 
+ 2041      44656C61 
+ 2041      7900
+ 2042              	.LASF169:
+ 2043 0a52 6D61696E 		.ascii	"main_cm4.c\000"
+ 2043      5F636D34 
+ 2043      2E6300
+ 2044              	.LASF31:
+ARM GAS  C:\Users\Nancy\AppData\Local\Temp\ccBo7IXB.s 			page 47
+
+
+ 2045 0a5d 63707573 		.ascii	"cpussVersion\000"
+ 2045      73566572 
+ 2045      73696F6E 
+ 2045      00
+ 2046              	.LASF58:
+ 2047 0a6a 666C6173 		.ascii	"flashRwwRequired\000"
+ 2047      68527777 
+ 2047      52657175 
+ 2047      69726564 
+ 2047      00
+ 2048              	.LASF119:
+ 2049 0a7b 74784275 		.ascii	"txBufIdx\000"
+ 2049      66496478 
+ 2049      00
+ 2050              	.LASF139:
+ 2051 0a84 73746172 		.ascii	"startInput\000"
+ 2051      74496E70 
+ 2051      757400
+ 2052              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
