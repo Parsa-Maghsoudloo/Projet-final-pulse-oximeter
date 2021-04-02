@@ -836,6 +836,12 @@
       <Group key="1">
         <Data key="Port Format" value="8,2" />
       </Group>
+      <Group key="2">
+        <Data key="Port Format" value="8,3" />
+      </Group>
+      <Group key="3">
+        <Data key="Port Format" value="8,7" />
+      </Group>
     </Group>
     <Group key="bd8b55ef-631d-4a1a-8d22-8ad8e1684e57/2605f567-73b7-435d-b3b9-174766b96934">
       <Group key="0">

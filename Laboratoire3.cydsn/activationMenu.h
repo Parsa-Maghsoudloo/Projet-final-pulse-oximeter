@@ -28,8 +28,9 @@ void ClearScreen(void);
 void afficherMenu();
 void afficherEcranPrincipal();
 void afficherInfo();
+void actionSensor4 (void);
+void actionSensor0 (void);
 void deplacerCurseur(void);
 void capSense_task(void);
-
 
 /* [] END OF FILE */

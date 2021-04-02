@@ -36,15 +36,9 @@
   <file name="C:\Users\Nancy\Documents\Projet-final-pulse-oximeter\Laboratoire3.cydsn\codegentemp\CapSense_Structure.h" value="HEADER;;;;;CapSense" />
   <file name="C:\Users\Nancy\Documents\Projet-final-pulse-oximeter\Laboratoire3.cydsn\codegentemp\CapSense_Tuner.h" value="HEADER;;;;;CapSense" />
   <file name="C:\Users\Nancy\Documents\Projet-final-pulse-oximeter\Laboratoire3.cydsn\codegentemp\CapSense_Configuration.h" value="HEADER;;;;;CapSense" />
-  <file name="C:\Users\Nancy\Documents\Projet-final-pulse-oximeter\Laboratoire3.cydsn\codegentemp\CapSense_INT.c" value="SOURCE_C;CortexM0p,CortexM4;;;;CapSense" />
-  <file name="C:\Users\Nancy\Documents\Projet-final-pulse-oximeter\Laboratoire3.cydsn\codegentemp\CapSense_SensingCSD_LL.c" value="SOURCE_C;CortexM0p,CortexM4;;;;CapSense" />
-  <file name="C:\Users\Nancy\Documents\Projet-final-pulse-oximeter\Laboratoire3.cydsn\codegentemp\CapSense_SensingCSD_LL.h" value="HEADER;;;;;CapSense" />
   <file name="C:\Users\Nancy\Documents\Projet-final-pulse-oximeter\Laboratoire3.cydsn\codegentemp\CapSense_SensingCSX_LL.h" value="HEADER;;;;;CapSense" />
   <file name="C:\Users\Nancy\Documents\Projet-final-pulse-oximeter\Laboratoire3.cydsn\codegentemp\CapSense_SensingCSX_LL.c" value="SOURCE_C;CortexM0p,CortexM4;;;;CapSense" />
   <file name="C:\Users\Nancy\Documents\Projet-final-pulse-oximeter\Laboratoire3.cydsn\codegentemp\CapSense_RegisterMap.h" value="HEADER;;;;;CapSense" />
-  <file name="C:\Users\Nancy\Documents\Projet-final-pulse-oximeter\Laboratoire3.cydsn\codegentemp\CapSense_Centroid_LL.c" value="SOURCE_C;CortexM0p,CortexM4;;;;CapSense" />
-  <file name="C:\Users\Nancy\Documents\Projet-final-pulse-oximeter\Laboratoire3.cydsn\codegentemp\CapSense_Centroid_LL.h" value="HEADER;;;;;CapSense" />
-  <file name="C:\Users\Nancy\Documents\Projet-final-pulse-oximeter\Laboratoire3.cydsn\codegentemp\CapSense_SmartSense_LL.h" value="HEADER;;;;;CapSense" />
   <file name="C:\Users\Nancy\Documents\Projet-final-pulse-oximeter\Laboratoire3.cydsn\codegentemp\CY_EINK_SPIM_SCBCLK.h" value="HEADER;;;;;CY_EINK_SPIM_SCBCLK" />
   <file name="C:\Users\Nancy\Documents\Projet-final-pulse-oximeter\Laboratoire3.cydsn\codegentemp\CapSense_ModClk.h" value="HEADER;;;;;CapSense_ModClk" />
   <file name="C:\Users\Nancy\Documents\Projet-final-pulse-oximeter\Laboratoire3.cydsn\codegentemp\project.h" value="OTHER;;;;;" />
