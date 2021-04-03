@@ -29,22 +29,24 @@ volatile bool menuActif=false;
 volatile bool oldMenuActif =false;
 volatile bool menuUpdate = false;
 volatile bool infoActif = false;
-volatile bool bornesActif = false;
+volatile bool rcMinActif = false;
+volatile bool rcMaxActif = false;
+volatile bool SpO2MinActif = false;
 volatile bool courbeActif = false;
 volatile bool choixAlarme = false;
-volatile bool courantActif = false;
+volatile bool DELirActif = false;
+volatile bool DELrActif = false;
 volatile bool entreeProgramme = true;
 volatile uint8_t hauteurCercle=17;
 volatile uint8_t options=0;
-volatile const uint8_t NBOPTIONS =5;
+volatile const uint8_t NBOPTIONS =8;
 
 // Variable capSense:
 volatile uint16_t bouton0=0;
 volatile uint16_t bouton1=0;
 volatile uint8_t currentBouton0=7;
 volatile uint8_t currentBouton1=7;
-volatile uint8_t currentOption=50;
-volatile uint32_t sliderGesture;
+volatile uint8_t currentOption=80;
 
 // Variables options:
 volatile uint8_t rcMin=76;
@@ -55,6 +57,8 @@ volatile uint16_t courantDELr = 255;
 volatile bool grapheIr =true;
 volatile bool grapheR = false;
 volatile bool alarmeActive = false;
+volatile uint16_t copieBouton0;
+volatile uint16_t copieBouton1;
 
 void initialisation (void) {
      bouton_semph = xSemaphoreCreateBinary();
@@ -73,7 +77,6 @@ void initialisation (void) {
     GUI_SetColor(GUI_BLACK);
     GUI_SetBkColor(GUI_WHITE);
     GUI_Clear();
-    ClearScreen();
    
     Cy_SysInt_Init(&SW2_isr_cfg, isr_bouton);
     NVIC_ClearPendingIRQ(SW2_isr_cfg.intrSrc);
@@ -130,7 +133,7 @@ void afficherMenu()
     
    for(;;) {
     
-    if (menuActif == true && infoActif == false && bornesActif == false && courbeActif == false && choixAlarme == false && courantActif == false) {
+    if (menuActif == true && infoActif == false && rcMinActif == false && courbeActif == false && choixAlarme == false && rcMaxActif == false && SpO2MinActif == false && DELrActif == false && DELirActif == false) {
         if (oldMenuActif != menuActif) {
         menuUpdate = true;
         oldMenuActif = menuActif;
@@ -138,12 +141,17 @@ void afficherMenu()
         GUI_Clear();
         GUI_SetFont(GUI_FONT_8_1);
         GUI_SetTextAlign(GUI_TA_LEFT);
-        GUI_DispStringAt("Obtenir les informations", 50, 15);
-        GUI_DispStringAt("Definir les bornes", 50, 50);
-        GUI_DispStringAt("Changer courbe saturation", 50, 85);
-        GUI_DispStringAt("Activer /  Desactiver alarme", 50, 120);
-        GUI_DispStringAt("Modifier courant", 50, 155);
-        GUI_DrawCircle(25, hauteurCercle, 5);
+        GUI_DispStringAt("Activer /  Desactiver alarme", 40, 15);
+        GUI_DispStringAt("Obtenir les informations", 40, 35);
+        GUI_DispStringAt("Definir les bornes : ", 40, 55);
+        GUI_DispStringAt("Rythme cardiaque minimal", 130, 55);
+        GUI_DispStringAt("Rythme cardiaque maximal", 130, 75);
+        GUI_DispStringAt("SpO2 minimal", 130, 95);
+        GUI_DispStringAt("Changer courbe saturation", 40, 115);
+        GUI_DispStringAt("Modifier courant : ", 40, 135);
+        GUI_DispStringAt("DELir", 125, 135);
+        GUI_DispStringAt("DELr", 125, 155);
+        GUI_DrawCircle(25, hauteurCercle, 3);
         if (menuUpdate == true) {
         UpdateDisplay(CY_EINK_FULL_4STAGE, true);
         vTaskDelay(pdMS_TO_TICKS(50));
@@ -224,14 +232,43 @@ void afficherInfo()
    UpdateDisplay(CY_EINK_FULL_4STAGE, true);
 
 }
-void afficherDefinirBornes()
+void afficherRCMin()
+{
+    
+        GUI_Clear();
+        char bufferRcMin[3];
+        sprintf(bufferRcMin, "%d", rcMin);
+        GUI_SetFont(GUI_FONT_8_1);
+        GUI_SetTextAlign(GUI_TA_LEFT);
+        GUI_DispStringAt("Definir rythme cardiaque minimal", 60, 60);
+        GUI_SetFont(GUI_FONT_32_1);
+        GUI_DispStringAt(bufferRcMin, 110, 75);
+        UpdateDisplay(CY_EINK_FULL_4STAGE, true);
+
+        
+}
+void afficherRCMax()
+{
+        GUI_Clear();
+        char bufferRcMax[3];
+        sprintf(bufferRcMax, "%d", rcMax);
+        GUI_SetFont(GUI_FONT_8_1);
+        GUI_SetTextAlign(GUI_TA_LEFT);
+        GUI_DispStringAt("Definir rythme cardiaque maximal", 60, 60);
+        GUI_SetFont(GUI_FONT_32_1);
+        GUI_DispStringAt(bufferRcMax, 110, 75);
+        UpdateDisplay(CY_EINK_FULL_4STAGE, true);
+}
+void afficherSpO2Min()
 {
         GUI_Clear();
         GUI_SetFont(GUI_FONT_8_1);
         GUI_SetTextAlign(GUI_TA_LEFT);
-        GUI_DispStringAt("Definir les bornes", 50, 15);
+        GUI_DispStringAt("Definir SpO2 minimal", 50, 55);
+
         UpdateDisplay(CY_EINK_FULL_4STAGE, true);
 }
+
 void afficherChoixCourbe()
 {
         GUI_Clear();
@@ -244,6 +281,7 @@ void afficherChoixCourbe()
         }
         else {
             GUI_DispStringAt("La courbe infrarouge sera affichee.", 45, 80);
+            grapheIr = true;
         }
         UpdateDisplay(CY_EINK_FULL_4STAGE, true);
 }
@@ -252,28 +290,56 @@ void afficherChoixAlarme()
         GUI_Clear();
         GUI_SetFont(GUI_FONT_8_1);
         GUI_SetTextAlign(GUI_TA_LEFT);
-        GUI_DispStringAt("Alarme active", 50, 15);
+        if (alarmeActive == true) {
+            GUI_DispStringAt("L'alarme a ete desactivee", 55, 80);
+            alarmeActive =false;
+        }
+        else {
+            GUI_DispStringAt("L'alarme a ete activee", 55, 80);
+            alarmeActive = true;
+        }
         UpdateDisplay(CY_EINK_FULL_4STAGE, true);
 }
-void afficherChoixCourant()
+void afficherDELir()
 {
         GUI_Clear();
         GUI_SetFont(GUI_FONT_8_1);
         GUI_SetTextAlign(GUI_TA_LEFT);
-        GUI_DispStringAt("Choisir courant", 50, 15);
+        GUI_DispStringAt("DELir", 50, 15);
         UpdateDisplay(CY_EINK_FULL_4STAGE, true);
 }
+
+void afficherDELr()
+{
+        GUI_Clear();
+        GUI_SetFont(GUI_FONT_8_1);
+        GUI_SetTextAlign(GUI_TA_LEFT);
+        GUI_DispStringAt("DELr", 50, 15);
+        UpdateDisplay(CY_EINK_FULL_4STAGE, true);
+}
+void copierValeurBouton (void) {
+    
+    copieBouton0 = bouton0;
+    copieBouton1 = bouton1;
+}
+
 void actionSensor4 (void) {
     switch (options) {
-        case 0 : infoActif = true; afficherInfo();
+        case 0 : choixAlarme =true; afficherChoixAlarme();
             break;
-        case 1 : bornesActif = true; afficherDefinirBornes();
+        case 1 : infoActif = true; afficherInfo();
             break;
-        case 2 : courbeActif =true ; afficherChoixCourbe();
+        case 2 : rcMinActif = true; copierValeurBouton(); afficherRCMin();
             break;
-        case 3 : choixAlarme =true; afficherChoixAlarme();
+        case 3 : rcMaxActif =true; copierValeurBouton(); afficherRCMax();
             break ;
-        case 4: courantActif= true; afficherChoixCourant();
+        case 4 : SpO2MinActif =true; copierValeurBouton(); afficherSpO2Min();
+            break ;
+        case 5: courbeActif= true; afficherChoixCourbe();
+            break;
+        case 6: DELirActif=true; copierValeurBouton(); afficherDELir();
+            break;
+        case 7: DELrActif = true; copierValeurBouton(); afficherDELr();
             break;
     }
 }
@@ -281,8 +347,8 @@ void actionSensor0 (void) {
     if (infoActif == true) {
         infoActif = false;
     }
-    if (bornesActif == true) {
-        bornesActif = false;
+    if (rcMinActif == true) {
+        rcMinActif = false;
     }
     if (courbeActif == true) {
         courbeActif =false;
@@ -290,8 +356,17 @@ void actionSensor0 (void) {
     if (choixAlarme == true) {
         choixAlarme =false;
     }
-    if (courantActif == true) {
-        courantActif =false;
+    if (rcMaxActif == true) {
+        rcMaxActif =false;
+    }
+    if (SpO2MinActif == true) {
+        SpO2MinActif =false;
+    }
+     if (DELirActif == true) {
+        DELirActif =false;
+    } 
+    if (DELrActif == true) {
+        DELrActif =false;
     }
     menuUpdate= true;
 }
@@ -309,9 +384,47 @@ void deplacerCurseur(void) {
     }
     
     options = currentOption % NBOPTIONS  ;
-    hauteurCercle = (17 + options*35) ;
+    hauteurCercle = (16 + options*20) ;
     
  }
+
+void changerValeur (void) {
+    
+    if (copieBouton0 != bouton0 && currentBouton0 !=bouton0) {
+        currentBouton0 = bouton0;
+        if (rcMinActif == true){
+            rcMin--;
+            afficherRCMin();
+        }
+         if (rcMaxActif == true){
+            rcMax--;
+            afficherRCMax();
+        }
+    
+    }
+     if (copieBouton1 != bouton1 && currentBouton1 != bouton1) {
+        currentBouton1 = bouton1;
+        if (rcMinActif == true){
+            rcMin++;
+            afficherRCMin();
+        }
+        if (rcMaxActif == true){
+            rcMax++;
+            afficherRCMax();
+        }
+    }
+    
+}
+
+void choixCurseur(void) {
+    if (rcMinActif == false && rcMaxActif == false && SpO2MinActif == false && DELirActif ==false && DELrActif==false) {
+        deplacerCurseur();
+    }
+    else {
+        changerValeur();
+    }
+    
+}
 
 void capSense_task(void)
 {
@@ -341,7 +454,7 @@ void capSense_task(void)
         
         CapSense_UpdateAllBaselines();
         CapSense_ScanAllWidgets();
-        deplacerCurseur();
+        choixCurseur();
         
         }
         vTaskDelay(pdMS_TO_TICKS(100));
