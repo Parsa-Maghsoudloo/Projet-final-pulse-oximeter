@@ -52,8 +52,8 @@ volatile uint8_t currentOption=80;
 volatile uint8_t rcMin=76;
 volatile uint8_t rcMax=120;
 volatile uint8_t SPo2Min=99;
-volatile uint16_t courantDELi= 255;
-volatile uint16_t courantDELr = 255;
+volatile uint16_t courantDELi= 30;
+volatile uint16_t courantDELr = 30;
 volatile bool grapheIr =true;
 volatile bool grapheR = false;
 volatile bool alarmeActive = false;
@@ -83,9 +83,22 @@ void initialisation (void) {
     NVIC_EnableIRQ(SW2_isr_cfg.intrSrc);
 }
 
+void DesactiverPage(void) {
+   
+        infoActif = false;
+        rcMinActif = false;
+        courbeActif =false;
+        choixAlarme =false;
+        rcMaxActif =false;
+        SpO2MinActif =false;
+        DELirActif =false;
+        DELrActif =false;
+    
+}
 void isr_bouton(void){
     
     nbSW2++;
+    DesactiverPage();
     xSemaphoreGiveFromISR(bouton_semph,NULL);
     Cy_GPIO_ClearInterrupt(SW2_PORT, SW2_NUM );
     NVIC_ClearPendingIRQ(SW2_isr_cfg.intrSrc);
@@ -262,10 +275,13 @@ void afficherRCMax()
 void afficherSpO2Min()
 {
         GUI_Clear();
+        char bufferSpO2[3];
+        sprintf(bufferSpO2, "%d", SPo2Min);
         GUI_SetFont(GUI_FONT_8_1);
         GUI_SetTextAlign(GUI_TA_LEFT);
-        GUI_DispStringAt("Definir SpO2 minimal", 50, 55);
-
+        GUI_DispStringAt("Definir SpO2 minimal", 70, 60);
+        GUI_SetFont(GUI_FONT_32_1);
+        GUI_DispStringAt(bufferSpO2, 110, 75);
         UpdateDisplay(CY_EINK_FULL_4STAGE, true);
 }
 
@@ -303,18 +319,26 @@ void afficherChoixAlarme()
 void afficherDELir()
 {
         GUI_Clear();
+        char bufferDELir[3];
+        sprintf(bufferDELir, "%d", courantDELi);
         GUI_SetFont(GUI_FONT_8_1);
         GUI_SetTextAlign(GUI_TA_LEFT);
-        GUI_DispStringAt("DELir", 50, 15);
+        GUI_DispStringAt("DELir", 110, 60);
+        GUI_SetFont(GUI_FONT_32_1);
+        GUI_DispStringAt(bufferDELir, 110, 75);
         UpdateDisplay(CY_EINK_FULL_4STAGE, true);
 }
 
 void afficherDELr()
 {
         GUI_Clear();
+        char bufferDELr[3];
+        sprintf(bufferDELr, "%d", courantDELr);
         GUI_SetFont(GUI_FONT_8_1);
         GUI_SetTextAlign(GUI_TA_LEFT);
-        GUI_DispStringAt("DELr", 50, 15);
+        GUI_DispStringAt("DELr", 110, 60);
+        GUI_SetFont(GUI_FONT_32_1);
+        GUI_DispStringAt(bufferDELr, 110, 75);
         UpdateDisplay(CY_EINK_FULL_4STAGE, true);
 }
 void copierValeurBouton (void) {
@@ -344,30 +368,7 @@ void actionSensor4 (void) {
     }
 }
 void actionSensor0 (void) {
-    if (infoActif == true) {
-        infoActif = false;
-    }
-    if (rcMinActif == true) {
-        rcMinActif = false;
-    }
-    if (courbeActif == true) {
-        courbeActif =false;
-    }
-    if (choixAlarme == true) {
-        choixAlarme =false;
-    }
-    if (rcMaxActif == true) {
-        rcMaxActif =false;
-    }
-    if (SpO2MinActif == true) {
-        SpO2MinActif =false;
-    }
-     if (DELirActif == true) {
-        DELirActif =false;
-    } 
-    if (DELrActif == true) {
-        DELrActif =false;
-    }
+    DesactiverPage();
     menuUpdate= true;
 }
 void deplacerCurseur(void) {
@@ -400,6 +401,30 @@ void changerValeur (void) {
             rcMax--;
             afficherRCMax();
         }
+        if (SpO2MinActif ==true) {
+            SPo2Min --;
+            afficherSpO2Min();
+        }
+        if (DELirActif ==true) {
+            if (courantDELi <= 4){
+                courantDELi =0;
+                afficherDELir();
+            }
+            else {
+            courantDELi = courantDELi-5;
+            afficherDELir();
+            }
+        }
+        if (DELrActif ==true) {
+            if (courantDELr <= 4){
+                courantDELr =0;
+                afficherDELr();
+            }
+            else {
+            courantDELr = courantDELr-5;
+            afficherDELr();
+            }
+        }
     
     }
      if (copieBouton1 != bouton1 && currentBouton1 != bouton1) {
@@ -411,6 +436,30 @@ void changerValeur (void) {
         if (rcMaxActif == true){
             rcMax++;
             afficherRCMax();
+        }
+        if (SpO2MinActif ==true) {
+            SPo2Min ++;
+            afficherSpO2Min();
+        }
+        if (DELirActif ==true) {
+            if (courantDELi >= 46){
+                courantDELi =50;
+                afficherDELir();
+            }
+            else {
+            courantDELi = courantDELi+5;
+            afficherDELir();
+            }
+        }
+         if (DELrActif ==true) {
+            if (courantDELr >= 46){
+                courantDELr =50;
+                afficherDELr();
+            }
+            else {
+            courantDELr = courantDELr+5;
+            afficherDELr();
+            }
         }
     }
     
