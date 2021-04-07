@@ -1,5 +1,5 @@
--- Project:   C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\MotionSensor.cyprj
--- Generated: 03/24/2021 14:46:22
+-- Project:   C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\MotionSensor.cyprj
+-- Generated: 03/31/2021 15:35:44
 -- PSoC Creator  4.4
 
 ENTITY MotionSensor IS

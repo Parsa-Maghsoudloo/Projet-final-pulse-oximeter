@@ -1,6 +1,6 @@
-C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\MotionSensor.cyprj|1cddd908-ba82-4740-8de1-07bbdb7bb3fe
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|998e2170-cdd0-4668-9a33-636e693fa316
-C:\Users\Parsa\OneDrive\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|a7219144-674b-44b0-b9bc-c26fdb1d81aa
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|1e81ac1c-1fcd-418a-a7d7-bf73fb8aa410
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|8d9fe29c-8edc-429b-b38f-80b392222dfc
-C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|6b4f5b4e-4d44-4443-8007-23bf3ae0bf99
+C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\MotionSensor.cyprj|23150552-2cdd-4958-92cd-baf2ff51e28b
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|b2f42e96-78d7-4e84-87b4-d36ef07c40aa
+C:\Users\arnau\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|3bc60492-71c4-4ab0-a9fe-3d4eb5db7b21
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|48d9af36-e2e9-44b1-bc6b-106c5a902d48
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|b9a8b2be-1fdf-46ec-a941-87135e0c256e
+C:\Program Files (x86)\Cypress\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|525a76d6-48b8-4068-bb6a-c499062ac3ce

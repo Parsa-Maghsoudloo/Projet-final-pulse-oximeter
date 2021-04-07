@@ -26,7 +26,7 @@ for i in range(0, len(line_IR)):
 
 sos = signal.butter(6, 1, 'high', fs=Fs, output='sos')
 sos2 = signal.butter(6, 6, 'low', fs=Fs, output='sos')
-sos3 = signal.butter(6, 0.001, 'low', fs=Fs, output='sos')
+sos3 = signal.butter(6, 1, 'low', fs=Fs, output='sos')
 high_IR_filtered = signal.sosfilt(sos, high_IR)
 high_IR_filtered = signal.sosfilt(sos2, high_IR_filtered)
 high_RED_filtered = signal.sosfilt(sos, high_RED)
@@ -71,7 +71,7 @@ DC_RED = np.mean(high_RED_filtered_DC)
 
 R = (AC_RED / DC_RED) / (AC_IR / DC_IR)
 print('R : ', R)
-
+print(AC_RED)
 print('%SpO2 : ', a * R ** 2 + b * R + c)
 
 

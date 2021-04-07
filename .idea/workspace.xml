@@ -1,7 +1,174 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="caffbcf2-4fd6-47fa-b981-5a36afb76e41" name="Default Changelist" comment="" />
+    <list default="true" id="caffbcf2-4fd6-47fa-b981-5a36afb76e41" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/FIR.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/%_high.py" beforeDir="false" afterPath="$PROJECT_DIR$/%_high.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/GBM2100_projet_git.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/GBM2100_projet_git.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/BUILD.log" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/BUILD.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/.deps/SOURCE_C__ARM_GCC_GENERIC.P" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/.deps/SOURCE_C__ARM_GCC_GENERIC.P" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/DEBUG_UART.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/DEBUG_UART.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/I2Cm.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/I2Cm.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/LINK_options.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/LINK_options.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/SOURCE_C__ARM_GCC_GENERIC.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/SOURCE_C__ARM_GCC_GENERIC.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_ble_clk.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_ble_clk.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_device.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_device.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_efuse.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_efuse.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_flash.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_flash.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_gpio.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_gpio.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_ipc_drv.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_ipc_drv.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_ipc_pipe.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_ipc_pipe.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_ipc_sema.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_ipc_sema.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_lvd.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_lvd.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_profile.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_profile.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_prot.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_prot.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_scb_common.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_scb_common.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_scb_ezi2c.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_scb_ezi2c.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_scb_i2c.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_scb_i2c.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_scb_spi.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_scb_spi.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_scb_uart.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_scb_uart.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_sysanalog.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_sysanalog.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_sysclk.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_sysclk.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_sysint.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_sysint.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_syslib.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_syslib.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_syslib_gcc.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_syslib_gcc.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_syspm.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_syspm.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_systick.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_systick.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_trigmux.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_trigmux.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_wdt.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cy_wdt.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cyfitter_cfg.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cyfitter_cfg.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cyfitter_sysint_cfg.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cyfitter_sysint_cfg.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cymetadata.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/cymetadata.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/main_cm0p.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/main_cm0p.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/retarget.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/retarget.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/startup_psoc6_01_cm0plus.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/startup_psoc6_01_cm0plus.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/stdio_user.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/stdio_user.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/system_psoc6_cm0plus.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM0p/ARM_GCC_541/Debug/system_psoc6_cm0plus.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/.deps/SOURCE_C__ARM_GCC_GENERIC.P" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/.deps/SOURCE_C__ARM_GCC_GENERIC.P" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/DEBUG_UART.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/DEBUG_UART.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/I2Cm.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/I2Cm.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/LINK_options.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/LINK_options.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/SOURCE_C__ARM_GCC_GENERIC.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/SOURCE_C__ARM_GCC_GENERIC.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/bmi160.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/bmi160.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/croutine.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/croutine.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_ble_clk.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_ble_clk.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_device.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_device.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_efuse.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_efuse.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_flash.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_flash.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_gpio.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_gpio.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_ipc_drv.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_ipc_drv.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_ipc_pipe.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_ipc_pipe.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_ipc_sema.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_ipc_sema.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_lvd.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_lvd.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_profile.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_profile.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_prot.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_prot.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_scb_common.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_scb_common.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_scb_ezi2c.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_scb_ezi2c.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_scb_i2c.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_scb_i2c.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_scb_spi.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_scb_spi.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_scb_uart.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_scb_uart.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_sysanalog.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_sysanalog.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_sysclk.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_sysclk.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_sysint.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_sysint.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_syslib.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_syslib.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_syslib_gcc.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_syslib_gcc.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_syspm.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_syspm.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_systick.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_systick.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_trigmux.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_trigmux.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_wdt.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cy_wdt.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cyfitter_sysint_cfg.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cyfitter_sysint_cfg.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cymetadata.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/cymetadata.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/event_groups.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/event_groups.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/heap_1.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/heap_1.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/i2cm_support.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/i2cm_support.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/list.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/list.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/main_cm4.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/main_cm4.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/motion_task.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/motion_task.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/port.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/port.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/queue.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/queue.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/retarget.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/retarget.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/startup_psoc6_01_cm4.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/startup_psoc6_01_cm4.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/stdio_user.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/stdio_user.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/stream_buffer.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/stream_buffer.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/system_psoc6_cm4.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/system_psoc6_cm4.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/tasks.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/tasks.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/timers.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/timers.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/uart_debug.lst" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/CortexM4/ARM_GCC_541/Debug/uart_debug.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Export/PSoCCreatorExportIDECortexM0p.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Export/PSoCCreatorExportIDECortexM0p.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Export/PSoCCreatorExportIDECortexM4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Export/PSoCCreatorExportIDECortexM4.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/cmsis/include/arm_common_tables.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/cmsis/include/arm_common_tables.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/cmsis/include/arm_const_structs.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/cmsis/include/arm_const_structs.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/cmsis/include/arm_math.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/cmsis/include/arm_math.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/cmsis/include/cmsis_armcc.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/cmsis/include/cmsis_armcc.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/cmsis/include/cmsis_armclang.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/cmsis/include/cmsis_armclang.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/cmsis/include/cmsis_compiler.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/cmsis/include/cmsis_compiler.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/cmsis/include/cmsis_gcc.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/cmsis/include/cmsis_gcc.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/cmsis/include/cmsis_iccarm.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/cmsis/include/cmsis_iccarm.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/cmsis/include/cmsis_version.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/cmsis/include/cmsis_version.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/cmsis/include/core_cm0plus.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/cmsis/include/core_cm0plus.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/cmsis/include/core_cm4.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/cmsis/include/core_cm4.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/cmsis/include/mpu_armv7.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/cmsis/include/mpu_armv7.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/croutine.c" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/croutine.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/event_groups.c" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/event_groups.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/FreeRTOS.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/FreeRTOS.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/StackMacros.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/StackMacros.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/croutine.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/croutine.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/event_groups.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/event_groups.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/list.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/list.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/message_buffer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/message_buffer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/mpu_wrappers.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/mpu_wrappers.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/portable.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/portable.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/projdefs.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/projdefs.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/queue.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/queue.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/semphr.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/semphr.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/stack_macros.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/stack_macros.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/stream_buffer.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/stream_buffer.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/task.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/task.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/timers.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/include/timers.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/list.c" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/list.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/portable/GCC/CM4F/port.c" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/portable/GCC/CM4F/port.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/portable/GCC/CM4F/portmacro.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/portable/GCC/CM4F/portmacro.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/portable/IAR/CM4F/port.c" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/portable/IAR/CM4F/port.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/portable/IAR/CM4F/portasm.s" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/portable/IAR/CM4F/portasm.s" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/portable/IAR/CM4F/portmacro.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/portable/IAR/CM4F/portmacro.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/portable/MDK/CM4F/port.c" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/portable/MDK/CM4F/port.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/portable/MDK/CM4F/portmacro.h" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/portable/MDK/CM4F/portmacro.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/portable/MemMang/heap_1.c" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/portable/MemMang/heap_1.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/queue.c" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/queue.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/stream_buffer.c" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/stream_buffer.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/tasks.c" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/tasks.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/timers.c" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/Generated_Source/PSoC6/pdl/rtos/FreeRTOS/10.0.1/Source/timers.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/MotionSensor.cyfit" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/MotionSensor.cyfit" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/MotionSensor.cyprj" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/MotionSensor.cyprj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/MotionSensor.rpt" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/MotionSensor.rpt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/MotionSensor_timing.html" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/MotionSensor_timing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor.ctl" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor.ctl" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor.cyfit" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor.cyfit" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor.pci" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor.pci" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor.pco" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor.pco" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor.plc_log" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor.plc_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor.rpt" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor.rpt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor.rt_log" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor.rt_log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor.sdc" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor.sdc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor.sdf" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor.sdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor.v" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor.v" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor.vh2" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor.vh2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor_p.vh2" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor_p.vh2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor_r.vh2" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor_r.vh2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor_t.vh2" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor_t.vh2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor_timing.html" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor_timing.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor_u.sdc" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/MotionSensor_u.sdc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/elab_dependencies.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/elab_dependencies.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/generated_files.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/generated_files.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/lcpsoc3/index" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/lcpsoc3/index" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/placer.log" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/placer.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/project_ids.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/codegentemp/project_ids.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/main_cm4.c" beforeDir="false" afterPath="$PROJECT_DIR$/Communication BMI160/MotionSensor.cydsn/main_cm4.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/filtre_high.py" beforeDir="false" afterPath="$PROJECT_DIR$/filtre_high.py" afterDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,9 +193,22 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
-  <component name="RunManager" selected="Python.%_normal">
-    <configuration name="Filtres_normal" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Python.filtre_high">
+    <configuration name="FIR" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="GBM2100_projet_git" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -40,7 +220,7 @@
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Filtres_normal.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/FIR.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -135,11 +315,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.%_normal" />
-        <item itemvalue="Python.%_high" />
-        <item itemvalue="Python.test" />
         <item itemvalue="Python.filtre_high" />
-        <item itemvalue="Python.Filtres_normal" />
+        <item itemvalue="Python.%_high" />
+        <item itemvalue="Python.FIR" />
+        <item itemvalue="Python.%_normal" />
+        <item itemvalue="Python.test" />
       </list>
     </recent_temporary>
   </component>
@@ -155,6 +335,19 @@
       <updated>1616951698519</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1616951984033">

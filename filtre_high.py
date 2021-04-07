@@ -6,7 +6,7 @@ from scipy import signal
 #### Lecture ##################################################
 file_high_IR = open("SpO2_signal_high_BPM\IR.txt", 'r')
 file_high_RED = open("SpO2_signal_high_BPM\RED.txt")
-
+file_test = open("test.txt", 'w')
 read_size = len(file_high_IR.read())
 file_high_IR.seek(0)
 Fs = 250
@@ -24,6 +24,7 @@ for i in range(0, len(line_IR)):
     except ValueError:
         print(i)
 
+file_test.write(str(high_IR[:2000]))
 ################################################
 ####Affichage###################################
 time = len(high_IR) / Fs
@@ -52,11 +53,10 @@ sos = signal.butter(6, 1, 'high', fs=Fs, output='sos')
 Fc = 60
 Wn = Fc / (Fs / 2)
 sos2 = signal.butter(6, 6, 'low', fs=Fs, output='sos')
-high_IR_filtered = signal.sosfilt(sos, high_IR)
-high_IR_filtered = signal.sosfilt(sos2, high_IR_filtered)
+high_IR_filtered = signal.sosfilt(sos2, high_IR)
+#high_IR_filtered = signal.sosfilt(sos2, high_IR_filtered)
 high_RED_filtered = signal.sosfilt(sos, high_RED)
 high_RED_filtered = signal.sosfilt(sos2, high_RED_filtered)
-
 mask = (-5000 < high_IR_filtered) & (high_IR_filtered < 5000)
 all_peaks = signal.find_peaks(high_IR_filtered[mask], 2500)
 BPM = len(all_peaks[0]) / (time / 60)

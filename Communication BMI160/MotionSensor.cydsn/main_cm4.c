@@ -10,7 +10,9 @@
 #include "queue.h"
 #include "motion_task.h"
 #include "uart_debug.h" 
-
+#include <arm_math.h>
+#include <core_cm4.h>
+#include "filtre.h"
 /* Priority of user tasks in this project */
 #define TASK_MOTION_SENSOR_PRIORITY (configMAX_PRIORITIES - 1)
 
@@ -34,7 +36,9 @@
 int main()
 {            
     /* Initialize the hardware used to send debug messages. */
-    DebugPrintfInit();
+    Traitement();
+    
+    
     
     /* \x1b[2J\x1b[;H - ANSI ESC sequence to clear screen */
     DebugPrintf("\x1b[2J\x1b[;H");
@@ -45,10 +49,12 @@ int main()
     xTaskCreate(Task_Motion, "Motion Task", TASK_MOTION_SENSOR_STACK_SIZE,
                 NULL, TASK_MOTION_SENSOR_PRIORITY, &xTaskHandleMotion);
 
+    
     /* Initialize thread-safe debug message printing. See uart_debug.h header 
        file to enable / disable this feature */
     Task_DebugInit();
     
+   
     /* Start the RTOS scheduler. This function should never return */
     vTaskStartScheduler();
     
@@ -57,6 +63,8 @@ int main()
     
     /* Halt the CPU if scheduler exits */
     CY_ASSERT(0);
+    
+    
     
     for(;;)
     {

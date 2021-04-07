@@ -6,8 +6,8 @@
     <Toolchain Name="ARM GCC Generic" Selected="True">
       <Tool Name="prebuild" Command="" Options="" />
       <Tool Name="assembler" Command="arm-none-eabi-as.exe" Options="-mcpu=cortex-m4 -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -mthumb -I. -IGenerated_Source\PSoC6 -IGenerated_Source\PSoC6\pdl\cmsis/include/ -IGenerated_Source\PSoC6\pdl\devices/psoc6/include/ -IGenerated_Source\PSoC6\pdl\devices/psoc6/include/ip/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/device/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/efuse/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/flash/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/gpio/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/ipc/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/lvd/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/profile/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/prot/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/scb/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/sysanalog/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/sysclk/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/sysint/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/syslib/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/syspm/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/systick/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/trigmux/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/wdt/ -IGenerated_Source\PSoC6\pdl\middleware/ -IGenerated_Source\PSoC6\pdl\rtos/FreeRTOS/10.0.1/Source/include/ -IGenerated_Source\PSoC6\pdl\rtos/FreeRTOS/10.0.1/Source/portable/GCC/CM4F/ -IGenerated_Source\PSoC6\pdl\utilities/ -alh=${OutputDir}/${CompileFile}.lst -g -W" />
-      <Tool Name="compiler" Command="arm-none-eabi-gcc.exe" Options="-mcpu=cortex-m4 -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -mthumb -I.\bmi160_library -I. -IGenerated_Source\PSoC6 -IGenerated_Source\PSoC6\pdl\cmsis/include/ -IGenerated_Source\PSoC6\pdl\devices/psoc6/include/ -IGenerated_Source\PSoC6\pdl\devices/psoc6/include/ip/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/device/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/efuse/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/flash/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/gpio/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/ipc/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/lvd/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/profile/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/prot/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/scb/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/sysanalog/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/sysclk/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/sysint/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/syslib/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/syspm/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/systick/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/trigmux/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/wdt/ -IGenerated_Source\PSoC6\pdl\middleware/ -IGenerated_Source\PSoC6\pdl\rtos/FreeRTOS/10.0.1/Source/include/ -IGenerated_Source\PSoC6\pdl\rtos/FreeRTOS/10.0.1/Source/portable/GCC/CM4F/ -IGenerated_Source\PSoC6\pdl\utilities/ -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -D CY_PSOC_CREATOR_USED=1 -D CY8C6347BZI_BLD53 -Wall -ffunction-sections -ffat-lto-objects -Og" />
-      <Tool Name="linker" Command="arm-none-eabi-gcc.exe" Options="-mcpu=cortex-m4 -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -mthumb -L Generated_Source\PSoC6 -Wl,-Map,${OutputDir}/${ProjectShortName}.map -T cy8c6xx7_cm4_dual.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects" />
+      <Tool Name="compiler" Command="arm-none-eabi-gcc.exe" Options="-mcpu=cortex-m4 -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -mthumb -I.\bmi160_library -I.\CMSIS\Core\Include -I.\CMSIS\DSP\Include -I. -IGenerated_Source\PSoC6 -IGenerated_Source\PSoC6\pdl\cmsis/include/ -IGenerated_Source\PSoC6\pdl\devices/psoc6/include/ -IGenerated_Source\PSoC6\pdl\devices/psoc6/include/ip/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/device/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/efuse/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/flash/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/gpio/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/ipc/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/lvd/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/profile/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/prot/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/scb/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/sysanalog/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/sysclk/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/sysint/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/syslib/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/syspm/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/systick/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/trigmux/ -IGenerated_Source\PSoC6\pdl\drivers/peripheral/wdt/ -IGenerated_Source\PSoC6\pdl\middleware/ -IGenerated_Source\PSoC6\pdl\rtos/FreeRTOS/10.0.1/Source/include/ -IGenerated_Source\PSoC6\pdl\rtos/FreeRTOS/10.0.1/Source/portable/GCC/CM4F/ -IGenerated_Source\PSoC6\pdl\utilities/ -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -D ARM_MATH_CM4 -D CY_PSOC_CREATOR_USED=1 -D CY8C6347BZI_BLD53 -Wall -ffunction-sections -ffat-lto-objects -Og" />
+      <Tool Name="linker" Command="arm-none-eabi-gcc.exe" Options="-mcpu=cortex-m4 -mfloat-abi=softfp -mfpu=fpv4-sp-d16 -mthumb -l m -L Generated_Source\PSoC6 .\CMSIS\Lib\GCC\libarm_cortexM4l_math.a -Wl,-Map,${OutputDir}/${ProjectShortName}.map -T cy8c6xx7_cm4_dual.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects" />
       <Tool Name="postbuild" Command="" Options="" />
     </Toolchain>
     <Toolchain Name="ARM MDK Generic" Selected="False">
@@ -25,7 +25,7 @@
       <Tool Name="postbuild" Command="" Options="" />
     </Toolchain>
   </Toolchains>
-  <Project Name="MotionSensor" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn" Version="Unknown" Type="Normal">
+  <Project Name="MotionSensor" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn" Version="Unknown" Type="Normal">
     <CMSIS_SVD_File>MotionSensor.svd</CMSIS_SVD_File>
     <Datasheet />
     <LinkerFiles>
@@ -34,11 +34,14 @@
       <LinkerFile Toolchain="ARM IAR Generic">.\cy8c6xx7_cm4_dual.icf</LinkerFile>
     </LinkerFiles>
     <Folders>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">motion_task.h</File>
           <File BuildType="BUILD" Toolchain="">uart_debug.h</File>
           <File BuildType="BUILD" Toolchain="">FreeRTOSConfig.h</File>
+          <File BuildType="BUILD" Toolchain="">CMSIS\DSP\Include\arm_math.h</File>
+          <File BuildType="BUILD" Toolchain="">CMSIS\Core\Include\core_cm4.h</File>
+          <File BuildType="BUILD" Toolchain="">filtre.h</File>
           <File BuildType="BUILD" Toolchain="">main_cm4.c</File>
           <File BuildType="BUILD" Toolchain="">motion_task.c</File>
           <File BuildType="BUILD" Toolchain="">uart_debug.c</File>
@@ -46,6 +49,7 @@
           <File BuildType="BUILD" Toolchain="ARM IAR Generic">iar\startup_psoc6_01_cm4.s</File>
           <File BuildType="BUILD" Toolchain="ARM MDK Generic">mdk\startup_psoc6_01_cm4.s</File>
           <File BuildType="BUILD" Toolchain="">system_psoc6_cm4.c</File>
+          <File BuildType="BUILD" Toolchain="">filtre.c</File>
           <File BuildType="BUILD" Toolchain="">bmi160_library\bmi160.h</File>
           <File BuildType="BUILD" Toolchain="">bmi160_library\bmi160.c</File>
           <File BuildType="BUILD" Toolchain="">bmi160_library\bmi160_defs.h</File>
@@ -60,8 +64,8 @@
           <File BuildType="BUILD" Toolchain="">system_psoc6.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\cyfitter_cfg.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\cyfitter_sysint_cfg.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\cyfitter_sysint_cfg.c</File>
@@ -86,8 +90,8 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\cycodeshareimport.scat</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\cmsis\include">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\cmsis\include">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\cmsis\include\arm_common_tables.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\cmsis\include\arm_const_structs.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\cmsis\include\arm_math.h</File>
@@ -102,26 +106,26 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\cmsis\include\mpu_armv7.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\efuse">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\efuse">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\efuse\cy_efuse.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\efuse\cy_efuse.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\flash">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\flash">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\flash\cy_flash.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\flash\cy_flash.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\gpio">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\gpio">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\gpio\cy_gpio.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\gpio\cy_gpio.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\ipc">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\ipc">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\ipc\cy_ipc_drv.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\ipc\cy_ipc_drv.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\ipc\cy_ipc_sema.c</File>
@@ -130,26 +134,26 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\ipc\cy_ipc_pipe.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\lvd">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\lvd">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\lvd\cy_lvd.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\lvd\cy_lvd.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\profile">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\profile">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\profile\cy_profile.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\profile\cy_profile.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\prot">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\prot">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\prot\cy_prot.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\prot\cy_prot.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\scb">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\scb">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\scb\cy_scb_common.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\scb\cy_scb_common.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\scb\cy_scb_i2c.c</File>
@@ -162,83 +166,83 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\scb\cy_scb_uart.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\sysanalog">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\sysanalog">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\sysanalog\cy_sysanalog.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\sysanalog\cy_sysanalog.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\sysclk">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\sysclk">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\sysclk\cy_sysclk.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\sysclk\cy_sysclk.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\sysint">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\sysint">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\sysint\cy_sysint.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\sysint\cy_sysint.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\syslib">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\syslib">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\syslib\cy_syslib.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\syslib\cy_syslib.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\syslib\gcc">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\syslib\gcc">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="ARM GCC Generic">Generated_Source\PSoC6\pdl\drivers\peripheral\syslib\gcc\cy_syslib_gcc.S</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\syslib\iar">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\syslib\iar">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="ARM IAR Generic">Generated_Source\PSoC6\pdl\drivers\peripheral\syslib\iar\cy_syslib_iar.s</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\syslib\mdk">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\syslib\mdk">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="ARM MDK Generic">Generated_Source\PSoC6\pdl\drivers\peripheral\syslib\mdk\cy_syslib_mdk.s</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\syspm">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\syspm">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\syspm\cy_syspm.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\syspm\cy_syspm.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\systick">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\systick">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\systick\cy_systick.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\systick\cy_systick.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\trigmux">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\trigmux">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\trigmux\cy_trigmux.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\trigmux\cy_trigmux.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\wdt">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\wdt">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\wdt\cy_wdt.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\wdt\cy_wdt.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\device">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\drivers\peripheral\device">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\device\cy_device.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\drivers\peripheral\device\cy_device.c</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\middleware\ble">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\middleware\ble">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\middleware\ble\cy_ble_clk.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\middleware\ble\cy_ble_clk.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\croutine.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\event_groups.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\list.c</File>
@@ -248,8 +252,8 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\stream_buffer.c</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\include">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\include">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\include\FreeRTOS.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\include\croutine.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\include\event_groups.h</File>
@@ -267,45 +271,45 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\include\stream_buffer.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\portable\GCC\CM4F">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\portable\GCC\CM4F">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="ARM GCC Generic">Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\portable\GCC\CM4F\portmacro.h</File>
           <File BuildType="BUILD" Toolchain="ARM GCC Generic">Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\portable\GCC\CM4F\port.c</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\portable\IAR\CM4F">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\portable\IAR\CM4F">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="ARM IAR Generic">Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\portable\IAR\CM4F\portmacro.h</File>
           <File BuildType="BUILD" Toolchain="ARM IAR Generic">Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\portable\IAR\CM4F\port.c</File>
           <File BuildType="BUILD" Toolchain="ARM IAR Generic">Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\portable\IAR\CM4F\portasm.s</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\portable\MDK\CM4F">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\portable\MDK\CM4F">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="ARM MDK Generic">Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\portable\MDK\CM4F\portmacro.h</File>
           <File BuildType="BUILD" Toolchain="ARM MDK Generic">Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\portable\MDK\CM4F\port.c</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\portable\MemMang">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\portable\MemMang">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\rtos\FreeRTOS\10.0.1\Source\portable\MemMang\heap_1.c</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\utilities\retarget_io">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\utilities\retarget_io">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\utilities\retarget_io\retarget.c</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\devices\psoc6\include">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\devices\psoc6\include">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\devices\psoc6\include\cy8c6347bzi_bld53.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\devices\psoc6\include\psoc6_01_config.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\devices\psoc6\include\cy_device_headers.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\devices\psoc6\include\gpio_psoc6_01_116_bga_ble.h</File>
         </Files>
       </Folder>
-      <Folder BuildType="STRICT" Path="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\devices\psoc6\include\ip">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn">
+      <Folder BuildType="STRICT" Path="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn\Generated_Source\PSoC6\pdl\devices\psoc6\include\ip">
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn">
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\devices\psoc6\include\ip\cyip_backup.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\devices\psoc6\include\ip\cyip_ble.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\pdl\devices\psoc6\include\ip\cyip_cpuss.h</File>
@@ -356,34 +360,34 @@
         </Files>
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\codegentemp">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn" />
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\ARM_GCC_441">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn" />
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\ARM_GCC_473">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn" />
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\DP8051_Keil_952">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn" />
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\DP8051">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn" />
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM0">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn" />
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM0p">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn" />
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM3">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn" />
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM4">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn" />
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn" />
       </Folder>
       <Folder BuildType="EXCLUDE" Path=".\CortexM7">
-        <Files Root="C:\Users\Parsa\OneDrive\Documents\PSoC Creator\Communication BMI160\MotionSensor.cydsn" />
+        <Files Root="C:\Users\arnau\Documents\Projet-final-pulse-oximeter\Communication BMI160\MotionSensor.cydsn" />
       </Folder>
     </Folders>
   </Project>
