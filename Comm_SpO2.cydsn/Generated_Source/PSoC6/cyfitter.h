@@ -42,12 +42,6 @@
 #define UART_SCBCLK__DIV_NUM 2
 #define UART_SCBCLK__DIV_TYPE CY_SYSCLK_DIV_8_BIT
 
-/* Timer */
-#define Timer_TCPWM__CNT_HW TCPWM0_CNT1
-#define Timer_TCPWM__CNT_IDX 1u
-#define Timer_TCPWM__HW TCPWM0
-#define Timer_TCPWM__IDX 0u
-
 /* Clock_2 */
 #define Clock_2__DIV_IDX 28
 #define Clock_2__DIV_NUM 0

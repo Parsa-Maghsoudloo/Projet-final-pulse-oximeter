@@ -26,8 +26,6 @@
   <file name="D:\Documents\GBM2100\Projet\Laboratoire3\Comm_SpO2.cydsn\codegentemp\I2C.h" value="HEADER;;;;;I2C" />
   <file name="D:\Documents\GBM2100\Projet\Laboratoire3\Comm_SpO2.cydsn\codegentemp\UART.c" value="SOURCE_C;CortexM0p,CortexM4;;;;UART" />
   <file name="D:\Documents\GBM2100\Projet\Laboratoire3\Comm_SpO2.cydsn\codegentemp\UART.h" value="HEADER;;;;;UART" />
-  <file name="D:\Documents\GBM2100\Projet\Laboratoire3\Comm_SpO2.cydsn\codegentemp\Timer.c" value="SOURCE_C;CortexM0p,CortexM4;;;;Timer" />
-  <file name="D:\Documents\GBM2100\Projet\Laboratoire3\Comm_SpO2.cydsn\codegentemp\Timer.h" value="HEADER;;;;;Timer" />
   <file name="D:\Documents\GBM2100\Projet\Laboratoire3\Comm_SpO2.cydsn\codegentemp\CY_EINK_SPIM_SCBCLK.h" value="HEADER;;;;;CY_EINK_SPIM_SCBCLK" />
   <file name="D:\Documents\GBM2100\Projet\Laboratoire3\Comm_SpO2.cydsn\codegentemp\I2C_SCBCLK.h" value="HEADER;;;;;I2C_SCBCLK" />
   <file name="D:\Documents\GBM2100\Projet\Laboratoire3\Comm_SpO2.cydsn\codegentemp\UART_SCBCLK.h" value="HEADER;;;;;UART_SCBCLK" />

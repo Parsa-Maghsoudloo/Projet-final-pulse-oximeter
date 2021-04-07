@@ -108,8 +108,6 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\UART.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\UART.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\UART_SCBCLK.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\Timer.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC6\Timer.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="D:\Documents\GBM2100\Projet\Laboratoire3\Comm_SpO2.cydsn\Generated_Source\PSoC6\pdl\cmsis\include">

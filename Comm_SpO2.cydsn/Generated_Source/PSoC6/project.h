@@ -113,7 +113,6 @@
 #include "Clock_2.h"
 #include "I2C.h"
 #include "UART.h"
-#include "Timer.h"
 #include "CY_EINK_SPIM_SCBCLK.h"
 #include "I2C_SCBCLK.h"
 #include "UART_SCBCLK.h"

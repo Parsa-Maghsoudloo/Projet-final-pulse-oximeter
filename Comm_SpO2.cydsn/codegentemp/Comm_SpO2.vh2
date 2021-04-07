@@ -2,7 +2,7 @@
 --	Conversion of Comm_SpO2.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Wed Mar 31 15:30:35 2021
+--	Wed Apr 07 09:30:29 2021
 --
 
 USE cypress.cypress.all;
@@ -166,17 +166,6 @@ SIGNAL Net_508 : bit;
 SIGNAL Net_514 : bit;
 SIGNAL Net_515 : bit;
 SIGNAL Net_507 : bit;
-SIGNAL Net_523 : bit;
-SIGNAL \Timer:capture\ : bit;
-SIGNAL \Timer:count\ : bit;
-SIGNAL \Timer:reload\ : bit;
-SIGNAL \Timer:stop\ : bit;
-SIGNAL \Timer:start\ : bit;
-SIGNAL Net_550 : bit;
-SIGNAL Net_551 : bit;
-SIGNAL Net_549 : bit;
-SIGNAL \Timer:Net_1\ : bit;
-SIGNAL \Timer:Net_2\ : bit;
 BEGIN
 
 one <=  ('1') ;
@@ -858,26 +847,5 @@ Vin:cy_mxs40_gpio_v1_0
 		tr_tx_req=>Net_512,
 		tr_rx_req=>Net_511,
 		tr_i2c_scl_filtered=>\UART:Net_161\);
-traitement_isr:cy_mxs40_isr_v1_0
-	GENERIC MAP(cy_registers=>"",
-		deepsleep_required=>'0',
-		int_type=>"10")
-	PORT MAP(int_signal=>Net_523);
-\Timer:TCPWM\:cy_mxs40_tcpwm_v1_0
-	GENERIC MAP(cy_registers=>"",
-		width=>16,
-		exact_width=>'0')
-	PORT MAP(clock=>Net_700,
-		capture=>zero,
-		count=>one,
-		reload=>zero,
-		stop=>zero,
-		start=>zero,
-		tr_underflow=>Net_550,
-		tr_compare_match=>Net_551,
-		tr_overflow=>Net_549,
-		line_compl=>\Timer:Net_1\,
-		line=>\Timer:Net_2\,
-		interrupt=>Net_523);
 
 END R_T_L;

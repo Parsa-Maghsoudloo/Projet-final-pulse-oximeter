@@ -25,13 +25,13 @@
 uint8_t capteurAdresse1 = 0b1010111;
 
 
-void sensorEcriture(uint8_t slave_addr, uint8_t register_addr, uint8_t *buffer1, uint16_t nb_bytes){
+void sensorEcriture(uint8_t slave_addr, uint8_t register_addr, uint8_t *buffer, uint16_t nb_bytes){
 
     Cy_SCB_I2C_MasterSendStart(I2C_HW, slave_addr, CY_SCB_I2C_WRITE_XFER, 0, &I2C_context);
     Cy_SCB_I2C_MasterWriteByte(I2C_HW, register_addr, 0, &I2C_context);
     
     for(int i = 0; i < nb_bytes; i++){
-        Cy_SCB_I2C_MasterWriteByte(I2C_HW, buffer1[i], 0, &I2C_context);
+        Cy_SCB_I2C_MasterWriteByte(I2C_HW, buffer[i], 0, &I2C_context);
     }
     
     Cy_SCB_I2C_MasterSendStop(I2C_HW, 0, &I2C_context);
@@ -58,7 +58,7 @@ void sensorLecture(uint8_t slave_addr, uint8_t register_addr, uint8_t *buffer1, 
 }
 
 
-void sensorConfiguration(uint8_t int_enable, uint8_t average, uint8_t roll_over, uint8_t nb_restant, uint8_t sensor_mode, uint8_t range_contr, uint8_t SPS, uint8_t ADC_resol, uint8_t LED1_curr, uint8_t LED2_curr){
+void sensorConfiguration(uint8_t int_enable, uint8_t average, uint8_t roll_over, uint8_t nb_restant, uint8_t sensor_mode, uint8_t range_contr, uint8_t SPS, uint8_t ADC_resol, uint8_t LED1_curr, uint8_t LED2_curr, uint8_t temp){
     
     uint8_t fifo_config = average|(roll_over|nb_restant);
     uint8_t mode_config = sensor_mode;
@@ -70,6 +70,7 @@ void sensorConfiguration(uint8_t int_enable, uint8_t average, uint8_t roll_over,
     sensorEcriture(capteurAdresse1, 0x0A, &SpO2_config, 1);
     sensorEcriture(capteurAdresse1, 0x0C, &LED1_curr, 1);
     sensorEcriture(capteurAdresse1, 0x0D, &LED2_curr, 1);
+    sensorEcriture(capteurAdresse1, 0x03, &temp, 1);
     
 }
 

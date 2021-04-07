@@ -452,23 +452,12 @@ net Net_501
 	switch ":SCB[2]i2c_sda_input_permute.SCB[2]i2c_sda==>:SCBcontainer:SCB[2].i2c_sda"
 	term   ":SCBcontainer:SCB[2].i2c_sda"
 end Net_501
-net Net_523
-	term   ":TCPWMcontainer:TCPWM[1].interrupt"
-	switch ":TCPWMcontainer:TCPWM[1].interrupt==>:intc_0:interrupt91.interrupt"
-	term   ":intc_0:interrupt91.interrupt"
-end Net_523
 net Net_700_ff11
 	term   ":Clockcontainer:Clock[0].ff_div_11"
 	switch ":Clockcontainer:Clock[0].ff_div_11==>:Clockcontainer:ff_permute.ff_div_11"
 	switch ":Clockcontainer:ff_permute.Clock[0]ff_div_19==>:TCPWMcontainer:TCPWM[0].clock"
 	term   ":TCPWMcontainer:TCPWM[0].clock"
 end Net_700_ff11
-net Net_700_ff12
-	term   ":Clockcontainer:Clock[0].ff_div_12"
-	switch ":Clockcontainer:Clock[0].ff_div_12==>:Clockcontainer:ff_permute.ff_div_12"
-	switch ":Clockcontainer:ff_permute.Clock[0]ff_div_20==>:TCPWMcontainer:TCPWM[1].clock"
-	term   ":TCPWMcontainer:TCPWM[1].clock"
-end Net_700_ff12
 net \CY_EINK_SPIM:Net_216\
 	term   ":SCBcontainer:SCB[6].spi_miso"
 	switch ":SCBcontainer:SCB[6].spi_miso==>:ioport12:hsiomOut1.fixedIn1_ACT_8"

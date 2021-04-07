@@ -62,17 +62,23 @@
 //vecteur sinus de 150 élément entre -1 et 1
 //float vectorSinus[]={0.099833,0.29552,0.47943,0.64422,0.78333,0.89121,0.96356,0.99749,0.99166,0.9463,0.86321,0.74571,0.59847,0.42738,0.23925,0.041581,-0.15775,-0.35078,-0.52984,-0.68777,-0.81828,-0.91617,-0.97753,-0.99992,-0.98245,-0.92581,-0.83227,-0.70554,-0.55069,-0.37388,-0.18216,0.016814,0.21512,0.40485,0.57844,0.72897,0.85044,0.938,0.98817,0.99894,0.96989,0.90217,0.79849,0.66297,0.50102,0.3191,0.12445,-0.075151,-0.27176,-0.45754,-0.62507,-0.76769,-0.8797,-0.95664,-0.99544,-0.99455,-0.95402,-0.87545,-0.76198,-0.61814,-0.44965,-0.26323,-0.066322,0.13323,0.32747,0.50866,0.66957,0.80378,0.90595,0.97201,0.99931,0.98677,0.9349,0.84575,0.72288,0.5712,0.39674,0.20647,0.0079632,-0.19086,-0.38207,-0.55805,-0.71179,-0.83714,-0.92912,-0.98407,-0.99977,-0.97563,-0.91258,-0.81316,-0.68131,-0.52231,-0.34248,-0.149,0.050423,0.24783,0.43537,0.60554,0.75157,0.86764,0.94912,0.99277,0.99683,0.96115,0.88716,0.77779,0.63742,0.47164,0.28705,0.091022,-0.10864,-0.30396,-0.48717,-0.65096,-0.7888,-0.89519,-0.96589,-0.99808,-0.99049,-0.9434,-0.85871,-0.73978,-0.59136,-0.41936,-0.23065};
 
-const uint16_t nbDonneesParSec = 100;
+const uint16_t nbDonneesParSec = 200;
 uint8_t capteurAdresse = 0b1010111;
 uint8_t fifoAdresse = 0x07;
-uint8_t red[9000];
-uint8_t ir[9000];
-uint32_t redSample[3000];
-uint32_t irSample[3000];
-//SemaphoreHandle_t semaph;
-uint16_t compteur = 0;
+uint8_t red[3];
+uint8_t ir[3];
+uint32_t redSample[4000];
+uint32_t irSample[4000];
+uint8_t temp_int[60];
+uint8_t temp_frac[60];
+float temp[60];
+SemaphoreHandle_t semaph;
+uint32_t compteur = 0;
 uint8_t lol[1];
 uint8_t lol2[1];
+TaskHandle_t SpO2;
+TaskHandle_t temp_task;
+
 
 /* Image buffer cache */
 uint8 imageBufferCache[CY_EINK_FRAME_SIZE] = {0};
@@ -188,33 +194,105 @@ void drawGraph(float* vecteur){
 
 void gereur(){
     
+    uint8_t test[1];
+    uint8_t temp_test[1];
     for(;;){
         
-        uint8_t test[0];
         sensorLecture(capteurAdresse, 0x00, lol, test, 0, 1);
         
-        if(test[0] != 0){
-            
+        if(test[0] != 0)
+        {
             compteur +=1;
-            sensorLecture(capteurAdresse, fifoAdresse, red, ir, 3, (3*compteur)-3);
+            sensorLecture(capteurAdresse, fifoAdresse, red, ir, 3, 0);
             //sensorLecture(capteurAdresse, fifoAdresse, ir, 3, (3*compteur)-3);
-            redSample[compteur-1] = (uint32_t)((((uint32_t)red[3*(compteur-1)])<<16)|(((uint32_t)red[3*(compteur-1)+1])<<8)|((uint32_t)red[3*(compteur-1)+2]));
-            irSample[compteur-1] = (uint32_t)((((uint32_t)ir[3*(compteur-1)])<<16)|(((uint32_t)ir[3*(compteur-1)+1])<<8)|((uint32_t)ir[3*(compteur-1)+2]));
+            redSample[compteur-1] = (uint32_t)((((uint32_t)red[0])<<16)|(((uint32_t)red[1])<<8)|((uint32_t)red[2]));
+            irSample[compteur-1] = (uint32_t)((((uint32_t)ir[0])<<16)|(((uint32_t)ir[1])<<8)|((uint32_t)ir[2]));
             affichage_UART(redSample[compteur-1]);
             UART_PutString(" : ");
             affichage_UART(irSample[compteur-1]);
             UART_PutString("\n\r");
             
-            
-            if(compteur == 10*nbDonneesParSec){
-                affichage_UART(redSample[1]);
-                //for(int i = 0; i < 10; i++){
-                    //affichage_UART(redSample[i]);
-                    //UART_PutString(" : ");
-                    //affichage_UART(irSample[i]);
-                    //UART_PutString("\n\r");
-                //}
+            if(compteur == 4000){
+                compteur = 0;
             }
+        }    
+            
+        if(compteur%nbDonneesParSec == 0)
+        {
+            uint8_t temp_Start[1];
+            temp_Start[0] = 0b00000001;
+            sensorEcriture(capteurAdresse, 0x21, temp_Start, 1);
+        }
+        
+        temp_test[0] = 0;
+        sensorLecture(capteurAdresse, 0x01, lol, temp_test, 0, 1);
+        
+        if(temp_test[0] != 0)
+        {
+            xSemaphoreGive(semaph);
+            vTaskPrioritySet(temp_task, 2);
+            vTaskPrioritySet(SpO2, 1);
+        }
+    }
+}
+
+void temp_getter(){
+    
+    uint8_t compte_sec = 0;
+    
+    for(;;){
+        
+        if(xSemaphoreTake(semaph, 5)){
+            
+            compte_sec += 1;
+            sensorLecture(capteurAdresse, 0x1F, lol, temp_int, 0, compte_sec);
+            sensorLecture(capteurAdresse, 0x20, lol, temp_frac, 0, compte_sec);
+            
+            
+            UART_PutString("Temperature = ");
+            
+            if(temp_int[compte_sec-1] < 128){
+                
+                affichage_UART(temp_int[compte_sec-1]);
+                UART_PutString(".");
+                if(temp_frac[compte_sec-1] <= 1){
+                    affichage_UART(0);
+                    affichage_UART(temp_frac[compte_sec-1]*625);
+                }
+                if(temp_frac[compte_sec-1] > 1){
+                    affichage_UART(temp_frac[compte_sec-1]*625);
+                }
+                temp[compte_sec-1] = (float) (temp_int[compte_sec-1] + 0.0625*temp_frac[compte_sec-1]);
+            }
+            
+            if(temp_int[compte_sec-1] >= 128){
+                
+                if(temp_frac[compte_sec-1] == 0){
+                    affichage_UART(temp_int[compte_sec-1]-256);
+                    UART_PutString(".00");
+                }
+                if(temp_frac[compte_sec-1] > 0){
+                    affichage_UART(temp_int[compte_sec-1]-255);
+                    UART_PutString(".");
+                    if(temp_frac[compte_sec-1] < 15){
+                        affichage_UART(1000-(temp_frac[compte_sec-1]*625));
+                    }
+                    if(temp_frac[compte_sec-1] == 15){
+                        UART_PutString("0");
+                        affichage_UART(1000-(temp_frac[compte_sec-1]*625));
+                    }
+                }
+                temp[compte_sec-1] = (float) (temp_int[compte_sec-1] - 256 + 0.0625*temp_frac[compte_sec-1]);
+            }
+            
+            UART_PutString("\n\r");
+            
+            if(compte_sec == 60){
+                compte_sec = 0;
+            }
+            
+            vTaskPrioritySet(temp_task, 1);
+            vTaskPrioritySet(SpO2, 2);
         }
     }
 }
@@ -280,19 +358,21 @@ int main(void)
     
     I2C_Start();
     UART_Start();
-    //semaph = xSemaphoreCreateBinary();
+    semaph = xSemaphoreCreateBinary();
     
     /*Cy_SysInt_Init(&traitement_isr_cfg, isr_trait);
     NVIC_ClearPendingIRQ(traitement_isr_cfg.intrSrc);
     NVIC_EnableIRQ(traitement_isr_cfg.intrSrc);*/
     
-    xTaskCreate(gereur, "Gestionnaire des taches", 300, NULL, 1, NULL);
+    xTaskCreate(gereur, "Gestionnaire des taches", 300, NULL, 2, SpO2);
+    xTaskCreate(temp_getter, "Temperature", 300, NULL, 1, temp_task);
     
-    sensorConfiguration(0b01000000, 0b00000000, 0b00010000, 0b00000000, 0b00000011, 0b01100000, 0b00001000, 0b00000011, 0x7F, 0x7F);
+    sensorConfiguration(0b01000000, 0b00000000, 0b00010000, 0b00000000, 0b00000011, 0b01100000, 0b00001000, 0b00000011, 0x7F, 0x7F, 0b00000010);
     
     sensorLecture(capteurAdresse, 0x00, lol, lol2, 0, 1);
     //Timer_Start();
     vTaskStartScheduler();
+    vTaskSuspend(temp_task);
     
     
     for(;;)

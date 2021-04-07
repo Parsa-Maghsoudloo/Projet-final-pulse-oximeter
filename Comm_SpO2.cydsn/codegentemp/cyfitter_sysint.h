@@ -34,14 +34,6 @@
 #define UART_SCB_IRQ_INTC_CORTEXM4_PRIORITY 7u
 #define UART_SCB_IRQ_INTC_NUMBER 46u
 
-/* traitement_isr */
-#define traitement_isr__INTC_CORTEXM4_ASSIGNED 1
-#define traitement_isr__INTC_CORTEXM4_PRIORITY 7u
-#define traitement_isr__INTC_NUMBER 91u
-#define traitement_isr_INTC_CORTEXM4_ASSIGNED 1
-#define traitement_isr_INTC_CORTEXM4_PRIORITY 7u
-#define traitement_isr_INTC_NUMBER 91u
-
 /* CY_EINK_SPIM_SCB_IRQ */
 #define CY_EINK_SPIM_SCB_IRQ__INTC_CORTEXM4_ASSIGNED 1
 #define CY_EINK_SPIM_SCB_IRQ__INTC_CORTEXM4_PRIORITY 7u

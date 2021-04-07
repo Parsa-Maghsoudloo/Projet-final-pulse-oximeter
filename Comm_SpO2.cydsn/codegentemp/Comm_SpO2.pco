@@ -1,5 +1,5 @@
 # Comm_SpO2
-# 2021-03-31 19:30:57Z
+# 2021-04-07 13:30:47Z
 
 dont_use_location p4usbcell -1 -1 0
 dont_use_location USB -1 -1 0
@@ -33,5 +33,3 @@ set_location "\I2C:SCB\" SCB -1 -1 2
 set_location "\I2C:SCB_IRQ\" interrupt -1 -1 43
 set_location "\UART:SCB_IRQ\" interrupt -1 -1 46
 set_location "\UART:SCB\" SCB -1 -1 5
-set_location "traitement_isr" interrupt -1 -1 91
-set_location "\Timer:TCPWM\" TCPWM -1 -1 1
