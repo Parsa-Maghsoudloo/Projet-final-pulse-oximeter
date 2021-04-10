@@ -63,9 +63,7 @@
 int main(void) {
     
     initialisation();
-    
-
-      
+     
       xTaskCreate(activerMenu, "ActiverMenu", configMINIMAL_STACK_SIZE, NULL, 1, 0);
       xTaskCreate(afficherMenu, "AfficherMenu", 400, NULL, 1, 0);
       xTaskCreate(afficherEcranPrincipal, "AfficherEcran", 400, NULL, 1, 0);

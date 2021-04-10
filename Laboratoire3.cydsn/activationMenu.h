@@ -20,8 +20,10 @@
 #include "task.h"
 #include "semphr.h"
 
+
 void initialisation(void);
 void isr_bouton(void);
+void desactiverPage();
 void activerMenu();
 void UpdateDisplay(cy_eink_update_t updateMethod, bool powerCycle);
 void ClearScreen(void);
@@ -32,5 +34,6 @@ void actionSensor4 (void);
 void actionSensor0 (void);
 void deplacerCurseur(void);
 void capSense_task(void);
+void activerAlarme (void);
 
 /* [] END OF FILE */
