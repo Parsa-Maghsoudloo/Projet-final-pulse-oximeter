@@ -1,0 +1,6 @@
+D:\Documents\GBM2100\Projet\Laboratoire3\Comm_SpO2.cydsn\Comm_SpO2.cyprj|74281418-d238-4ac5-b8c6-750b1536c9be
+D:\PSoC Creator\4.4\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|a2cc2f2c-dce3-4b56-adeb-b7683f427433
+D:\Documents\PSoC Creator\4.4\Downloads ( 4.4).cylib\Downloads ( 4.4).cyprj|8891e4cf-2ee7-4ac3-b68f-25e3e5eb8e37
+D:\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|0d3e82a7-df74-4839-84bb-022f6ce12c10
+D:\PSoC Creator\4.4\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|c06168b2-a436-4de5-b536-2b6b4e0fdbad
+D:\PSoC Creator\4.4\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|af07fb49-6324-4a9e-8f87-ed929b2fdc6e
